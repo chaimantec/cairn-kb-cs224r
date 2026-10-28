@@ -4,7 +4,8 @@ Actor-critic methods are a family of online RL algorithms that build on
 [policy gradients](policy-gradients.md). They learn to estimate how good each action was, and then
 do more of the actions estimated to be good. Lecture 4 introduces them and says they are "the basis
 for algorithms like PPO, which are used to train language models, and that are used to train
-humanoids in simulation" (≈3:08). Symbols are as on [MDPs and RL notation](mdp-and-notation.md):
+humanoids in simulation" (≈3:08). Lecture 5 makes them off-policy and arrives at PPO and soft
+actor-critic. Symbols are as on [MDPs and RL notation](mdp-and-notation.md):
 $\mathbf{s}$ is a state, $\mathbf{a}$ an action, $r$ the reward, and $\pi_\theta$ a
 [policy](policies.md) with parameters $\theta$.
 
@@ -90,39 +91,40 @@ learn, especially with bootstrapped estimates, that the step forward has a posit
 compared with other actions. The algorithm therefore makes much more efficient use of the data it
 collects (≈1:02:21).
 
-## Off-policy versions (slides only)
+## Off-policy versions
 
 The algorithm above is on-policy: it needs a fresh batch from the current policy for each update.
-Lecture 4's deck has a section on making it off-policy, but **the recording ends before it**, so
-what follows is what the slides print, with no spoken explanation. See the
-[lecture page](04-actor-critic.md#not-in-the-recording-off-policy-actor-critic) and the
-[slide file](../raw/slides/04-actor-critic.md).
+Lecture 4's deck ends with a section on making it off-policy that its recording does not reach
+(Lecture 4, slides 24–37). Lecture 5 teaches that material, in two stages that end at the two
+practical algorithms the course names, PPO and SAC. See the
+[Lecture 5 page](05-off-policy-actor-critic.md) for the whole argument.
 
-**Version 1: multiple gradient steps** (Lecture 4, slides 25–27). Weight each term of the policy
-gradient by the importance ratio
-$\pi_{\theta'}(\mathbf{a}_ {i,t} \mid \mathbf{s}_ {i,t}) / \pi_\theta(\mathbf{a}_ {i,t} \mid \mathbf{s}_ {i,t})$,
+**Version 1: multiple gradient steps.** Weight each term of the policy gradient by the importance
+ratio $\pi_{\theta'}(\mathbf{a}_ {i,t} \mid \mathbf{s}_ {i,t}) / \pi_\theta(\mathbf{a}_ {i,t} \mid \mathbf{s}_ {i,t})$,
 as the off-policy policy gradient does (see [importance sampling](importance-sampling.md)), so that
-several gradient steps can be taken on one batch. The advantages are still the old policy's and
-"will get out-dated". The deck asks what goes wrong with too many gradient steps and offers two
-ideas: a KL constraint on the policy, and bounding the importance weights, which is the
-"Key idea behind proximal policy optimization (PPO)".
+several gradient steps can be taken on one batch (Lecture 5, slides 7–8). The advantages are still
+the old policy's, and with too many steps the policy overfits them: it is "incentivized to differ
+significantly from old policy, can easily overfit" (Lecture 5, slide 9). The remedies keep the new
+policy close to the old one, with a KL penalty or by clipping the importance weights. Clipping, a
+minimum that makes the objective a lower bound, and generalized advantage estimation make up
+[proximal policy optimization (PPO)](ppo.md) (Lecture 5, slides 10–13).
 
-**Version 2: replay buffers** (Lecture 4, slides 28–34). Keep a **replay buffer** of all past data
-and train on minibatches drawn from all of it. Done naively, "The algorithm is currently broken".
-The value target is not right for the current policy, and the buffer's actions are not the ones
-the current policy would have taken. The fixes switch the critic to a Q-function, fitted to targets
-$y_i = r_i + \gamma \hat{Q}^\pi_\phi(\mathbf{s}'_ i, \mathbf{a}'_ i)$ with the next action
-$\mathbf{a}'_ i$ sampled from the current policy. They also compute the policy gradient on a freshly
-sampled action $\mathbf{a}^\pi_ i \sim \pi_\theta(\mathbf{a} \mid \mathbf{s}_ i)$, weighted in
-practice by $\hat{Q}^\pi$. One problem is accepted rather than fixed: the buffer's states do not
-come from the current policy's state distribution. The slides' example of a practical algorithm is
-soft actor-critic (SAC).
+**Version 2: replay buffers.** Keep a **replay buffer** of all past data and train on minibatches
+drawn from all of it. Done naively, "The algorithm is currently broken": a value function fitted on
+the buffer belongs to a mixture of past policies, and the buffer's actions are not the ones the
+current policy would take (Lecture 5, slide 16). The fixes switch the critic to a Q-function, fitted
+to targets $y_i = r_i + \gamma \hat{Q}^\pi_\phi(\mathbf{s}'_ i, \mathbf{a}'_ i)$ with the next action
+$\mathbf{a}'_ i$ sampled from the current policy, and compute the policy gradient on a freshly
+sampled action $\mathbf{a}^\pi_ i \sim \pi_\theta(\mathbf{a} \mid \mathbf{s}_ i)$, weighted by
+$\hat{Q}^\pi$ (Lecture 5, slides 17–21). The result is essentially soft actor-critic (SAC); see
+[replay buffers and soft actor-critic](replay-buffers.md).
 
-**More or less off-policy?** (Lecture 4, slide 35.) Learning curves on two humanoid tasks compare
-SAC, labelled more off-policy (with a replay buffer), with PPO, labelled less off-policy (no
-replay buffer). The slide's verdict is that off-policy methods with a replay buffer "can be far
-more data efficient", but "can also generally be harder to tune hyperparameters, less stable (than
-e.g. PPO)".
+**More or less off-policy?** Learning curves on two humanoid tasks compare SAC, labelled more
+off-policy (with a replay buffer), with PPO, labelled less off-policy (no replay buffer). Off-policy
+methods with a replay buffer "can be far more data efficient", but are harder to tune and less
+stable than, for example, PPO (Lecture 4, slide 35; Lecture 5, slide 23, ≈1:07:08). PPO is the
+common choice for stable, less efficient learning, as in simulation, and SAC's efficiency is enough
+for RL on real robots (Lecture 5, slides 24–27).
 
 ![Lecture 4, slide 35 — More off-policy vs. less off-policy actor critic?](../raw/images/04-actor-critic/slide-35.jpg)
 
@@ -132,6 +134,8 @@ e.g. PPO)".
 
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the whole method, from the advantage to
   the full algorithm, with the off-policy slides that the recording does not reach.
+- [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the off-policy versions,
+  multiple gradient steps leading to PPO and replay buffers leading to SAC.
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
   actor-critic as the family that estimates the value of the current policy and uses it to improve
   the policy; see [RL algorithm families](rl-algorithm-families.md).

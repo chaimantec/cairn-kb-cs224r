@@ -45,9 +45,14 @@ weight on each action is not the sampled reward to go but an estimated advantage
 learned value function, the critic (Lecture 4, slides 10 and 22). In the lecture's review, policy
 gradients "do more of the good stuff, less of the bad stuff, based on what you observe", while
 actor-critic methods "are learning to estimate what's good and bad, and then doing more of the good
-stuff according to your estimate" (≈1:02:21). Its deck also has off-policy versions with replay
-buffers, which the recording does not reach; the slides note that these "can be far more data
-efficient" but are harder to tune and less stable than, for example, PPO (Lecture 4, slide 35).
+stuff according to your estimate" (≈1:02:21). Lecture 5 makes it off-policy and arrives at the two practical
+algorithms the course names. [PPO](ppo.md) takes many gradient steps per batch with clipped
+importance weights, and soft actor-critic learns a Q-function from a
+[replay buffer](replay-buffers.md) of all past data. The off-policy version "can be far more data
+efficient" but is harder to tune and less stable than PPO (Lecture 4, slide 35; Lecture 5, slide
+23). That is the stability-against-efficiency trade-off listed below, and Lecture 5's examples show
+both sides: SAC is efficient enough to learn on real robots, while PPO is the common choice in
+simulation, where data is cheap, and for language models (Lecture 5, slides 24–28).
 
 ## Why so many algorithms?
 
@@ -75,3 +80,5 @@ parts.
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md): the first family in depth.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md): the second family in depth.
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the third family in depth.
+- [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): its off-policy versions, PPO
+  and SAC, and the trade-off between them.

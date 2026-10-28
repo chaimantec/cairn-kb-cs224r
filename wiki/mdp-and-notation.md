@@ -140,9 +140,31 @@ Lecture 4 adds the symbols for value estimation; see [actor-critic methods](acto
 - $\gamma \in [0, 1]$ is the discount factor (slide 21), and $\tilde{p}$ the transition
   probabilities of the MDP as discounting changes it.
 - $\mathbf{s}'$ is the next state, and $\mathcal{R}$ a replay buffer of past transitions
-  $(\mathbf{s}, \mathbf{a}, \mathbf{s}', r)$ (slides 29–31, not discussed in the recording).
+  $(\mathbf{s}, \mathbf{a}, \mathbf{s}', r)$ (slides 29–31, not discussed in the recording;
+  Lecture 5 uses both aloud).
 - The deck indexes a time step and trajectory both as $\mathbf{s}_ {i,t}$ and as
   $\mathbf{s}_ {t,i}$ (slide 22 uses the second).
+
+## Notation for off-policy actor-critic
+
+Lecture 5 adds these; see [PPO](ppo.md) and [replay buffers and soft actor-critic](replay-buffers.md).
+
+- $\theta$ is the policy that collected the batch and $\theta'$ the policy after one or more
+  gradient steps on it (slide 8).
+- $\tilde{J}(\theta')$ is the surrogate objective, "technically not the true objective" $J$, whose
+  gradient is the importance-weighted policy gradient (slide 9, ≈27:51).
+- $\epsilon$ is PPO's clipping range, about 0.2, so that $\mathrm{clip}(\cdot, 1 - \epsilon, 1 + \epsilon)$
+  bounds the importance weight (slides 11, 13).
+- $\beta$ is the weight on a KL penalty, spoken but not printed (≈26:19), and $\delta$ the bound in
+  the KL constraint (slide 10).
+- $\hat{A}^\pi_ n$ is the n-step advantage estimate, $w_n$ its weight in the generalized advantage
+  estimate $\hat{A}^\pi_ {\mathrm{GAE}}$, with $w_n \propto \lambda^{n-1}$ (slide 12), and $M$ the number
+  of gradient steps per PPO update (slide 13).
+- $\hat{Q}^\pi_\phi$ is a fitted Q-network. $\bar{\mathbf{a}}'$ or $\mathbf{a}'_ i$ is a next action
+  sampled from the current policy rather than taken from the buffer, and $\mathbf{a}^\pi_ i$ an action
+  sampled from it at the current state (slides 17–20).
+- $p_\theta(\mathbf{s})$ is the current policy's state distribution, which the buffer's states do
+  not come from (slide 21).
 
 ## Where this appears
 
@@ -154,3 +176,5 @@ Lecture 4 adds the symbols for value estimation; see [actor-critic methods](acto
   baselines and off-policy updates, and the fixed-horizon remark on the Markov property.
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the notation for advantages, fitted value
   networks, regression labels and the discount factor.
+- [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the notation for surrogate
+  objectives, clipping, generalized advantage estimation and Q-functions fitted from a replay buffer.

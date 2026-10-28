@@ -130,9 +130,27 @@ The slide says 0.99 works well. In the n-step target the value term is multiplie
 (slide 22, ≈58:33). For what discounting means for the decision process, see
 [the RL objective](rl-objective.md#horizon-and-discounting).
 
+## Beyond the one-step advantage and the current batch
+
+Lecture 5 extends policy evaluation in two directions. PPO's **generalized advantage estimation**
+keeps the value function fitted the normal way, by Monte Carlo or bootstrapping, but estimates the
+advantage from a weighted mixture of n-step estimates, with weights proportional to
+$\lambda^{n-1}$ that decay quickly so that most weight stays on $n = 1$ (Lecture 5, slide 12,
+≈37:51–41:42). Finn is not sure it is necessary; see [PPO](ppo.md#generalized-advantage-estimation).
+
+And with a replay buffer of data from many past policies, a bootstrapped value function no longer
+evaluates the current policy: it learns a value function for "some sort of mixture of all of your
+past policies" (≈50:57). The fix is to fit a Q-function instead, bootstrapping from the next state's
+Q-value under an action sampled from the current policy,
+$y_i = r(\mathbf{s}_ i, \mathbf{a}_ i) + \gamma Q^{\pi_\theta}(\mathbf{s}'_ i, \bar{\mathbf{a}}'_ i)$,
+which needs data covering actions similar to the current policy's (Lecture 5, slides 16–18). See
+[replay buffers and soft actor-critic](replay-buffers.md).
+
 ## Where this appears
 
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#estimating-the-value-function-version-1-monte-carlo):
   the three methods, the worked example and the discount factor.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md): the single-sample reward to go, which is
   the Monte Carlo estimate with no model.
+- [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the recap of the three
+  methods, generalized advantage estimation, and fitting a Q-function from a replay buffer.

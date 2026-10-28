@@ -137,6 +137,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 2 Imitation Learning | 15 of 27 pages | the multimodal steering chart, distribution and generative-policy diagrams, success-rate bar charts, robot and driving model stills, the compounding-error and DAgger diagrams, demonstration interfaces, SFV video frames |
 | 3 Policy Gradients | 11 of 28 pages | the online-RL loop and its iterations, the trajectory plots, the REINFORCE and reward-weighted-imitation slides, the humanoid and jacket-folding examples, the summary and review slides, the off-policy algorithm |
 | 4 Actor-Critic Methods | 21 of 37 pages | the recap, the V/Q trajectory fans and drum example, the dissatisfying-PG stills, the loop with its fit-a-model step, the value-network and Monte Carlo/bootstrap/n-step slides, the discounted MDP, the full algorithm and review, the off-policy slides (KL/PPO ideas, replay buffer, fixes), the SAC-versus-PPO chart |
+| 5 Off-Policy Actor Critic | 15 of 30 pages | the recap diagrams (online loops, V/Q trajectory fans), version 1's surrogate objective with the KL and clipping ideas, the PPO algorithm with its Half-Cheetah chart, the replay-buffer timeline and annotated broken/fixed algorithm steps, the Q-network slide, the SAC-versus-PPO chart, the SAC and PPO robot video frames and the HIL-SERL table |
 
 ## Rebuilding
 

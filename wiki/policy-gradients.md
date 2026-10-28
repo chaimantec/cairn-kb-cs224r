@@ -214,7 +214,8 @@ weaknesses above. In Lecture 4's terms, policy gradients do more of the good stu
 you observe", while actor-critic methods learn to estimate what is good and bad (slide 23,
 ≈1:02:21). A humanoid that steps forward and then falls can then learn that the step itself had a
 positive advantage (≈1:02:21). How the critic is fitted is on
-[policy evaluation](policy-evaluation.md).
+[policy evaluation](policy-evaluation.md). Lecture 5 then makes the method off-policy, giving
+[PPO](ppo.md) and [soft actor-critic](replay-buffers.md).
 
 ## Where this appears
 

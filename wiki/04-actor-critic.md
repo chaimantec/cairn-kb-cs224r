@@ -540,8 +540,8 @@ The recording ends here. The slide's last line asks "What about off-policy versi
 The deck continues for fourteen more slides that the recording does not reach. Everything in this
 section comes from the [slide file](../raw/slides/04-actor-critic.md) alone, with no spoken
 explanation, so it states what the slides print and no more. The course schedule's next lecture
-is titled Off-Policy Actor Critic (see [`sources.md`](../sources.md#lectures)). This knowledge base
-does not cover that lecture yet.
+is titled Off-Policy Actor Critic, and it teaches this material aloud from a revised deck: see
+[Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md).
 
 Slide 24 repeats the plan with the names the lecture gave: policy evaluation, Monte Carlo
 estimation, bootstrapping or temporal difference learning, and n-step returns. The third part,
@@ -643,6 +643,8 @@ project groups and ideas (survey due next Wednesday) and that Homework 1 is due 
 
 - [Actor-critic methods](actor-critic.md): the method as a whole, from the advantage-weighted
   gradient to the off-policy versions.
+- [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the lecture that teaches
+  this deck's last section, with PPO and soft actor-critic.
 - [Policy evaluation](policy-evaluation.md): Monte Carlo, bootstrapping and n-step returns, and
   their bias and variance.
 - [Value functions](value-functions.md): $V^\pi$, $Q^\pi$ and the advantage $A^\pi$.

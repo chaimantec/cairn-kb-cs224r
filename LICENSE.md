@@ -162,3 +162,25 @@ from Sergey Levine".
 Not rendered from this deck: slides 11, 15 and 26, build steps of slides 12, 16 and 27; slides 4,
 10, 33 and 34, equation slides whose annotations are transcribed; and the title, reminder, plan and
 text slides.
+
+### Lecture 5 — Off-Policy Actor Critic
+
+Deck: [05_cs224r_offpolicy_actor_critic_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/05_cs224r_offpolicy_actor_critic_2025.pdf).
+Rendered: 15 slides, in `raw/images/05-off-policy-actor-critic/`. Slides 15, 16 and 19–21 print
+"Slide adapted from Sergey Levine".
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 13 | A "HalfCheetah-v1" learning-curve chart (reward against time steps collected, PPO against vanilla policy gradient and four unlabelled curves) and a small Half-Cheetah simulator render. Not credited. |
+| 15, 16, 19, 20 | Slides "adapted from Sergey Levine": the replay-buffer timeline (15) and algorithm slides with hand-drawn annotations (16, 19, 20). |
+| 23 | Two learning-curve charts, "(e) Humanoid-v1" and "(f) Humanoid (rllab)", comparing SAC, DDPG, PPO, SQL and TD3, pasted from a paper the slide does not name, and a cropped simulated-humanoid render. |
+| 24 | A video frame of a four-legged robot, credited to Haarnoja, Zhou, Hartikainen, Tucker, Ha, Tan, Kumar, Zhu, Gupta, Abbeel, Levine, *Soft Actor-Critic Algorithms and Applications* (2018). |
+| 25 | Two video frames of robot assembly (motherboard, timing belt) and a results table, credited to Luo, Xu, Wu, Levine, *HIL-SERL: Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning* (2024). |
+| 26 | A simulator frame of a quadruped robot, credited to Tan, Zhang, Coumans, Iscen, Bai, Hafner, Bohez, Vanhoucke, *Sim-to-Real: Learning Agile Locomotion For Quadruped Robots* (2018). |
+| 27 | A photograph of a robot hand and a grid of simulated renderings, credited to OpenAI, *Solving Rubik's Cube with a Robot Hand* (2019). |
+| 3, 4, 5, 10, 18 | No third-party content identified: the deck's own loop diagrams, trajectory sketches, neural-network drawing and annotated equations. |
+
+Not rendered from this deck: slide 12, whose only picture is a comic-book meme, credited on the
+slide only as "from one of the GAE authors"; slides 8 and 9, build steps of slides 7 and 10; slides
+7, 11, 17, 21 and 22, equation slides whose annotations are transcribed; and the title, reminder,
+plan and text slides.

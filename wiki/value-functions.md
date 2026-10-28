@@ -63,11 +63,23 @@ $A^\pi(\mathbf{s}_ t, \mathbf{a}_ t) \approx r(\mathbf{s}_ t, \mathbf{a}_ t) + V
 This is why actor-critic methods learn only a value function. How to learn it, by Monte Carlo
 estimation, bootstrapping or n-step returns, is on [policy evaluation](policy-evaluation.md).
 
+Lecture 5 takes the relation one step further, writing the Q-value in terms of the next Q-value
+(slide 17, ≈53:18–57:10). Split the first reward off the sum in the definition; the remaining
+rewards, in expectation over the next state from the dynamics and the next action from the policy,
+are the next Q-value:
+
+$$Q^{\pi_\theta}(\mathbf{s}, \mathbf{a}) = r(\mathbf{s}, \mathbf{a}) + \gamma \mathbb{E}_ {\mathbf{s}' \sim p(\cdot \mid \mathbf{s}, \mathbf{a}), \bar{\mathbf{a}}' \sim \pi_\theta(\cdot \mid \mathbf{s}')} \left[ Q^{\pi_\theta}(\mathbf{s}', \bar{\mathbf{a}}') \right]$$
+
+Here $\gamma$ is the discount factor, $\mathbf{s}'$ the next state and $\bar{\mathbf{a}}'$ the
+action the policy takes there. It holds for any state and action, whichever policy chose the
+action, which is what lets a Q-function for the current policy be fitted from a replay buffer of
+other policies' data; see [replay buffers and soft actor-critic](replay-buffers.md).
+
 ![Lecture 4, slide 6 — Revisiting Some Useful Objects](../raw/images/04-actor-critic/slide-6.jpg)
 
 *Lecture 4, slide 6 — the value function averages the rewards of trajectories that run the policy from s; the Q-function first takes the action a (green) and then runs the policy. [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
 
-## A worked example
+## Worked examples
 
 Lecture 4 makes the three concrete with an exercise (slide 7, ≈11:37–15:27). The reward is 1 if you
 can play a drum piece in a month and 0 otherwise. The actions are to sit on the beach, watch TV, or
@@ -80,6 +92,11 @@ after practicing. The advantage is positive for practicing and zero for the othe
 ![Lecture 4, slide 7 — Let's look at an example](../raw/images/04-actor-critic/slide-7.jpg)
 
 *Lecture 4, slide 7 — the drum example: three actions (beach, TV, practicing) from the current state, a reward for playing the piece in a month, and a policy that always picks the beach. [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
+
+Lecture 5 adds Go (≈3:11–4:43). If the reward is whether AlphaGo won or lost, the value function
+is the expected outcome given the board state and the policy being run. A better policy has a
+higher value, and so does a board state where things look good for that policy, so the value
+depends on both. A Q-function considers a particular move first and then runs the policy.
 
 ## Where they are used
 
@@ -96,3 +113,6 @@ without equations beyond the definitions; Q-functions are used from the week aft
   definitions of $V^\pi$ and $Q^\pi$.
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#value-q-and-advantage-functions): the
   advantage, the relations between the three, the drum example, and why only $V^\pi$ is fitted.
+- [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#fitting-a-q-function-with-data-from-past-policies):
+  the Go example, the recursive form of $Q^\pi$, and why a Q-function rather than $V^\pi$ is fitted
+  from a replay buffer.

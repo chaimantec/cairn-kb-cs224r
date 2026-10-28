@@ -63,6 +63,21 @@ remedies. One is a KL constraint on the policy. The other is to bound the import
 "Doesn't directly constrain policy, but removes incentives" and is the "Key idea behind proximal
 policy optimization (PPO)" (slide 27).
 
+Lecture 5 teaches that version aloud (slides 7–10, ≈6:14–31:42). In practice the weighted gradient
+is obtained from a **surrogate objective**, the importance-weighted sum of advantages, whose gradient
+with respect to the new parameters $\theta'$ is the weighted policy gradient:
+
+$$\tilde{J}(\theta') \approx \sum_{t,i} \frac{\pi_{\theta'}(\mathbf{a}_ {i,t} \mid \mathbf{s}_ {i,t})}{\pi_\theta(\mathbf{a}_ {i,t} \mid \mathbf{s}_ {i,t})} \hat{A}^{\pi_\theta}(\mathbf{s}_ {t,i}, \mathbf{a}_ {t,i})$$
+
+The ratio is where the trouble starts. The policy controls only its numerator; the denominator, the
+old policy, is fixed, so the policy can drive the weight toward zero or make it very large,
+potentially infinite if the old probability was tiny (≈23:15–24:01). Maximizing the surrogate, it
+raises the probability of positive-advantage actions the old policy rarely took, moves far from the
+old policy, and overfits advantages that were only valid for that policy. PPO's answer is to clip the
+weight to between $1 - \epsilon$ and $1 + \epsilon$, typically 0.8 and 1.2, which removes the
+incentive to push it further, and to take the minimum with the unclipped term; see
+[proximal policy optimization](ppo.md).
+
 ## Where this appears
 
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#importance-sampling): the technique and the
@@ -70,3 +85,5 @@ policy optimization (PPO)" (slide 27).
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#not-in-the-recording-off-policy-actor-critic):
   the caution that it is not a silver bullet, and importance weights in off-policy actor-critic,
   with the idea behind PPO (slides only).
+- [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-1-multiple-gradient-steps-with-importance-weights):
+  importance weights for multiple gradient steps, the surrogate objective, and clipping them in PPO.

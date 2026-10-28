@@ -9,46 +9,48 @@
     "courseUrl": "https://cs224r.stanford.edu/spring_2025/"
   },
   "coverage": {
-    "lecturesCovered": 4,
+    "lecturesCovered": 5,
     "lecturesTotal": 19,
-    "transcripts": 4,
-    "wikiLecturePages": 4,
-    "wikiTopicPages": 13,
+    "transcripts": 5,
+    "wikiLecturePages": 5,
+    "wikiTopicPages": 15,
     "byLecture": {
       "1": "Class Intro (course intro and MDPs): transcript, slides, wiki page, 16 images",
       "2": "Imitation Learning: transcript, slides, wiki page, 15 images",
       "3": "Policy Gradients: transcript, slides, wiki page, 11 images",
-      "4": "Actor-Critic Methods: transcript, slides, wiki page, 21 images"
+      "4": "Actor-Critic Methods: transcript, slides, wiki page, 21 images",
+      "5": "Off-Policy Actor Critic: transcript, slides, wiki page, 15 images"
     },
-    "note": "lecturesTotal is the 19 recordings in the Cairn catalog on 2026-10-28: 18 lectures and the Q-learning TA session, which the catalog lists last. Lectures 1-4 are covered. All 19 slide decks are on the course site and listed in sources.md. wikiTopicPages counts the twelve concept pages and the course-logistics page."
+    "note": "lecturesTotal is the 19 recordings in the Cairn catalog on 2026-10-28: 18 lectures and the Q-learning TA session, which the catalog lists last. Lectures 1-5 are covered. All 19 slide decks are on the course site and listed in sources.md. wikiTopicPages counts the fourteen concept pages and the course-logistics page."
   },
   "materials": {
     "primary": "slides",
     "slideDecks": {
       "available": 19,
-      "transcribed": 4,
-      "note": "Lecture 1's deck (45 pages), Lecture 2's (27 pages), Lecture 3's (28 pages) and Lecture 4's (37 pages) are transcribed to raw/slides/. The other 15 decks are linked in sources.md."
+      "transcribed": 5,
+      "note": "Lecture 1's deck (45 pages), Lecture 2's (27 pages), Lecture 3's (28 pages), Lecture 4's (37 pages) and Lecture 5's (30 pages) are transcribed to raw/slides/. The other 14 decks are linked in sources.md."
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 4,
-      "decksTotal": 4,
+      "decksAudited": 5,
+      "decksTotal": 5,
       "unaudited": [],
-      "note": "Counts are over transcribed decks. All four were transcribed by Claude Sonnet 5.5 and spot-checked by Claude Opus 5.5 against 1400px renders, six figure slides each: Lecture 1's 24, 25, 30, 33, 36, 37; Lecture 2's 7, 8, 10, 12, 19, 21; Lecture 3's 6, 11, 12, 16, 23, 24; and Lecture 4's 6, 14, 19, 21, 30, 35. Lectures 1-3's audits added context or small descriptive fixes only. Lecture 4's corrected slide 35's chart (which series owns the widest shaded band, and two curve values), clarified slide 19's trajectory layout, and removed an arrow wrongly carried from slide 26 to slide 27."
+      "note": "Counts are over transcribed decks. All five were transcribed by Claude Sonnet 5.5 and spot-checked by Claude Opus 5.5 against 1400px renders, six figure slides each: Lecture 1's 24, 25, 30, 33, 36, 37; Lecture 2's 7, 8, 10, 12, 19, 21; Lecture 3's 6, 11, 12, 16, 23, 24; Lecture 4's 6, 14, 19, 21, 30, 35; and Lecture 5's 12, 13, 16, 18, 23, 25. Lectures 1-3's audits added context or small descriptive fixes only. Lecture 4's corrected slide 35's chart (which series owns the widest shaded band, and two curve values), clarified slide 19's trajectory layout, and removed an arrow wrongly carried from slide 26 to slide 27. Lecture 5's re-read three curve values on slide 23's right-hand chart and one on slide 13's, and removed a character name slide 12's meme does not print; slide 25's results table matched cell by cell."
     },
     "images": {
-      "lecturesWithImages": 4,
-      "files": 63,
+      "lecturesWithImages": 5,
+      "files": 78,
       "byLecture": {
         "1": 16,
         "2": 15,
         "3": 11,
-        "4": 21
+        "4": 21,
+        "5": 15
       },
       "format": "1400px whole-slide renders (JPEG, PNG where smaller)",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
-      "note": "Lectures 1-4 only. Lecture 1: 16 of the deck's 45 pages, every figure-bearing slide except staff photographs, a meme, clip-art icons, a logo wall, and slides whose only images are equations transcribed exactly. Lecture 2: 15 of 27 pages, every figure-bearing slide except two SpongeBob cartoon stills credited to Viacom International. Lecture 3: 11 of 28 pages, every figure-bearing slide except a repeat of slide 5, three equation slides whose only picture is a thumbnail of slide 12's humanoid, and slides whose only images are pasted equations transcribed exactly. Lecture 4: 21 of 37 pages, every figure-bearing slide except three build steps (11, 15, 26) whose content the next slide shows, and equation slides whose annotations are transcribed. No other lecture has images."
+      "note": "Lectures 1-5 only. Lecture 1: 16 of the deck's 45 pages, every figure-bearing slide except staff photographs, a meme, clip-art icons, a logo wall, and slides whose only images are equations transcribed exactly. Lecture 2: 15 of 27 pages, every figure-bearing slide except two SpongeBob cartoon stills credited to Viacom International. Lecture 3: 11 of 28 pages, every figure-bearing slide except a repeat of slide 5, three equation slides whose only picture is a thumbnail of slide 12's humanoid, and slides whose only images are pasted equations transcribed exactly. Lecture 4: 21 of 37 pages, every figure-bearing slide except three build steps (11, 15, 26) whose content the next slide shows, and equation slides whose annotations are transcribed. Lecture 5: 15 of 30 pages, every figure-bearing slide except a meme (12), two build steps (8, 9) and equation slides whose annotations are transcribed. No other lecture has images."
     }
   },
   "provenance": {
@@ -57,12 +59,13 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Only Lectures 1-4 of 19 are covered; the KB cannot answer questions about the technical content of Lectures 5-19.",
+      "Only Lectures 1-5 of 19 are covered; the KB cannot answer questions about the technical content of Lectures 6-19.",
       "Lecture 1's recording leaves out the course-logistics slides (5-6 and 10-15); their content comes from the slides alone.",
       "Lecture 2's recording ends after slide 21; slides 22-27 (collecting demonstrations, the embodiment gap, the summary) come from the slides alone.",
       "Lecture 3's recording does not discuss slide 2's reminders and skips the KL constraint on slide 25 for time; that constraint comes from the slides alone.",
-      "Lecture 4's recording ends on the review slide (23); slides 24-37 (off-policy actor-critic, replay buffers, soft actor-critic, the SAC-versus-PPO chart, the closing slides) come from the slides alone, with no spoken explanation.",
-      "Transcripts are copy-edited from YouTube auto-captions; students are inaudible, so their questions appear only as the lecturer restates them. Lectures 1 and 2 each have three passages marked [Ed: unclear], Lecture 3 one, Lecture 4 two.",
+      "Lecture 4's recording ends on the review slide (23); its slides 24-37 (off-policy actor-critic, replay buffers, soft actor-critic, the SAC-versus-PPO chart, the closing slides) are not discussed in that recording, but Lecture 5 teaches the same material aloud from a revised deck.",
+      "Lecture 5's recording covers slides 3-28; slide 2's reminders and slides 29-30 (plan recap, next time) come from the slides alone. Several steps (a KL-penalized objective, the clipping written out, the recursive Q-function) were worked on a board the recording does not show and are reconstructed from the spoken words.",
+      "Transcripts are copy-edited from YouTube auto-captions; students are inaudible, so their questions appear only as the lecturer restates them. Lectures 1 and 2 each have three passages marked [Ed: unclear], Lecture 3 one, Lecture 4 two, Lecture 5 five (plus four flagged restorations).",
       "The verbatim captions are not committed; each transcript says how to regenerate them."
     ]
   },
