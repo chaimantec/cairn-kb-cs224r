@@ -64,6 +64,15 @@ slide 39, ≈47:01–47:47):
 This is where tools from **generative modeling** come in: a policy can be a generative model over
 actions given states or observations.
 
+Lecture 2 shows why the choice of distribution matters. When demonstrators do the same thing in
+different ways, a policy that outputs a single action, or a single Gaussian, learns the average of
+their actions, which can be an action none of them took (≈8:32–10:05). The network should output
+the parameters of an expressive distribution instead, such as a Gaussian mixture, a discretized
+autoregressive model or a diffusion model, trained to maximize the log-likelihood of the
+demonstrated actions. And making the network bigger does not help on its own, because "neural
+network expressivity is often distinct from distribution expressivity" (Lecture 2, ≈46:16). See
+[expressive policy distributions](expressive-policy-distributions.md).
+
 A stochastic policy is also one of the two sources of randomness in the RL objective; see
 [The RL objective](rl-objective.md#where-the-randomness-comes-from).
 
@@ -71,3 +80,6 @@ A stochastic policy is also one of the two sources of randomness in the RL objec
 
 - [Lecture 1 — Class Intro](01-class-intro.md#representing-behavior-the-policy): the policy as a
   neural network, roll-outs, memory, and why policies are stochastic.
+- [Lecture 2 — Imitation Learning](02-imitation-learning.md#learning-distributions-with-neural-networks):
+  the policy as a network that outputs a distribution's parameters, and the generative models that
+  make it expressive.

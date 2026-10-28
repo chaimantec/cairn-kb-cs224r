@@ -114,7 +114,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   image under `## Slide N` in the slide file and after the first block that cites slide N in a
   wiki page. Run it once per wiki page, `--dry-run` first. Never cite a rendered slide inside a
   table row or in a sentence that ends in `:` before a displayed equation; the image would land
-  there. A range such as "slides 26–28" cites every slide in it.
+  there. A range such as "slides 26–28" cites every slide in it, and one 12 or more wide cites its first slide, so keep slide ranges out of coverage notes. The same goes for a sentence ending in `:` before a list.
 - Render every figure-bearing slide except title, agenda and text-only slides, photographs of
   course staff, memes and clip-art whose captions are transcribed, logo walls whose names are
   transcribed, and slides whose only images are equations reproduced exactly in the slide file.
@@ -128,6 +128,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | Lecture | Images | Notes |
 | --- | --- | --- |
 | 1 Class Intro | 16 of 45 pages | robot video stills, a Go broadcast, two simulation screenshots, generated-image strips, the chip-placement diagram, the RL graphical models, the policy network |
+| 2 Imitation Learning | 15 of 27 pages | the multimodal steering chart, distribution and generative-policy diagrams, success-rate bar charts, robot and driving model stills, the compounding-error and DAgger diagrams, demonstration interfaces, SFV video frames |
 
 ## Rebuilding
 

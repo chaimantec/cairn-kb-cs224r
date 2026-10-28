@@ -440,7 +440,8 @@ them heavily; Q-functions come in from the week after this lecture (≈49:20). S
 
 The course's algorithms all target the expected-reward objective (slide 41, ≈49:20–50:53):
 
-1. **Imitation learning** mimics a policy that achieves high reward (the next lecture).
+1. **Imitation learning** mimics a policy that achieves high reward (the next lecture; see
+   [Lecture 2](02-imitation-learning.md)).
 2. **Policy gradients** directly differentiate the objective, learning from practice and
    experience.
 3. **Actor-critic** methods estimate the value of the current policy and use it to make the

@@ -7,7 +7,7 @@ Lecture 1 sorts them into five families (slide 41, ≈49:20–50:53).
 
 | Family | Idea (Lecture 1, slide 41) | Lecture in the Spring 2025 schedule |
 | --- | --- | --- |
-| Imitation learning | mimic a policy that achieves high reward | 2 |
+| Imitation learning | mimic a policy that achieves high reward | 2; see [imitation learning](imitation-learning.md) |
 | Policy gradients | directly differentiate the objective | 3 |
 | Actor-critic | estimate the value of the current policy and use it to make the policy better | 4, 5 |
 | Value-based | estimate the value of the optimal policy | 6 |
@@ -21,8 +21,14 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lecture 1 only**, so none of the families has its own page
-yet.
+**This knowledge base so far covers Lectures 1 and 2.** Imitation learning has its own page,
+[imitation learning](imitation-learning.md); the other four families do not yet. Lecture 2 adds
+two points about where imitation learning sits. It is fully **offline** and needs no reward
+function, but it may need a great deal of data and gives the policy no way to improve on its own
+from practicing; its summary slide notes that "Many successful methods **combine** imitation
+learning and reinforcement learning!" (Lecture 2, slide 25). And the offline/online distinction it
+introduces is a general way to classify algorithms; see
+[offline and online algorithms](offline-and-online.md).
 
 ## Why so many algorithms?
 
@@ -47,3 +53,4 @@ parts.
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
   the five families and the trade-offs between them.
+- [Lecture 2 — Imitation Learning](02-imitation-learning.md): the first family in depth.

@@ -9,12 +9,13 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lecture 1 only, of the 19 recordings in the catalog** (18 lectures and one
-> Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs): its edited
-> transcript, its slide deck as text, 16 of its slides as images, and the topic pages it starts.
-> **It cannot answer questions about the technical content of Lectures 2–19** (imitation
-> learning onward). For those, point the learner to the lecture's slide deck, listed with every
-> other course document in [`sources.md`](sources.md). Build progress is in [TODO.md](TODO.md).
+> **Coverage: Lectures 1 and 2 only, of the 19 recordings in the catalog** (18 lectures and one
+> Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs) and
+> Lecture 2 (imitation learning): their edited transcripts, their slide decks as text, 31 of their
+> slides as images, and the topic pages they start. **It cannot answer questions about the
+> technical content of Lectures 3–19** (policy gradients onward). For those, point the learner to
+> the lecture's slide deck, listed with every other course document in [`sources.md`](sources.md).
+> Build progress is in [TODO.md](TODO.md).
 
 ## How to read this knowledge base
 
@@ -28,12 +29,18 @@ complementary to the more theoretical CS234.
   figure described in prose. Prefer them for anything written down: equations, numbers,
   citations. Lecture 1's recording leaves out the course-logistics slides (5–6 and 10–15); their
   content is only in the slide file and on [course logistics](wiki/course-logistics.md).
+  Lecture 2's recording ends after slide 21, so its slides on collecting demonstrations, its
+  summary and its closing reminders (22–27) are only in the slide file and on the wiki pages that
+  say so.
 
 ### Images
 
-Lecture 1 has images: 16 slides rendered as pictures, each shown under its `## Slide N` heading in
-[`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md) and, where a wiki page cites that
-slide, in the passage that cites it. **No other lecture has images yet.**
+Lectures 1 and 2 have images: 16 slides of Lecture 1 and 15 of Lecture 2 rendered as pictures,
+each shown under its `## Slide N` heading in the lecture's slide file
+([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
+[`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md)) and, where a wiki
+page cites that slide, in the passage that cites it. **No other lecture has images yet**, and not
+every slide of these two has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -54,6 +61,16 @@ slide, in the passage that cites it. **No other lecture has images yet.**
   why policies are stochastic; value and Q-functions; the five algorithm families and why RL has so
   many; and the MDP/POMDP recap.
 
+- [Lecture 2 — Imitation Learning](wiki/02-imitation-learning.md): learning a policy from expert
+  demonstrations; version 0 (regression to the expert's actions) and why it fails on multimodal
+  data such as drivers who merge or stay straight; policies that output distributions, from
+  categorical and Gaussian to Gaussian mixtures, discretized autoregressive models and diffusion;
+  training by maximum likelihood and cross-entropy; network versus distribution expressivity;
+  version 1 and its evidence (transport and shirt-hanging success rates); expressive policies in
+  π0, Gr00t N1, Helix, OpenVLA, Waymo EMMA and Wayve LINGO-2; offline versus online; compounding
+  errors and covariate shift; DAgger and human-gated DAgger, with safety drivers; and, from the
+  slides only, how to collect demonstrations, the embodiment gap and the summary.
+
 ## Topic pages
 
 - [MDPs and RL notation](wiki/mdp-and-notation.md): a table of the course's symbols (state,
@@ -68,6 +85,16 @@ slide, in the passage that cites it. **No other lecture has images yet.**
   through that distribution, the horizon $T$, and the discount factor.
 - [Value functions](wiki/value-functions.md): the definitions of $V^\pi(\mathbf{s})$ and
   $Q^\pi(\mathbf{s}, \mathbf{a})$ as Lecture 1 gives them.
+- [Imitation learning](wiki/imitation-learning.md): the problem (demonstrations from an unknown
+  expert policy), behavior cloning versions 0 and 1, compounding errors and covariate shift,
+  corrective data with DAgger and human-gated DAgger, a table of their trade-offs, and how
+  demonstrations are collected.
+- [Expressive policy distributions](wiki/expressive-policy-distributions.md): why a policy needs
+  more than a mean; categorical, Gaussian, Gaussian-mixture, discretized autoregressive and
+  diffusion policies, what each outputs and how each is trained; why a bigger network does not
+  help; and the evidence for expressive policies.
+- [Offline and online algorithms](wiki/offline-and-online.md): the definitions Lecture 2
+  introduces, why online data can be expensive or unsafe, and which imitation methods are which.
 - [RL algorithm families](wiki/rl-algorithm-families.md): imitation learning, policy gradients,
   actor-critic, value-based and model-based methods, which lecture of the schedule covers each, and
   the trade-offs (data cost, supervision, stability, action space, dynamics) that explain why RL

@@ -9,40 +9,42 @@
     "courseUrl": "https://cs224r.stanford.edu/spring_2025/"
   },
   "coverage": {
-    "lecturesCovered": 1,
+    "lecturesCovered": 2,
     "lecturesTotal": 19,
-    "transcripts": 1,
-    "wikiLecturePages": 1,
-    "wikiTopicPages": 6,
+    "transcripts": 2,
+    "wikiLecturePages": 2,
+    "wikiTopicPages": 9,
     "byLecture": {
-      "1": "Class Intro (course intro and MDPs): transcript, slides, wiki page, 16 images"
+      "1": "Class Intro (course intro and MDPs): transcript, slides, wiki page, 16 images",
+      "2": "Imitation Learning: transcript, slides, wiki page, 15 images"
     },
-    "note": "lecturesTotal is the 19 recordings in the Cairn catalog on 2026-10-28: 18 lectures and the Q-learning TA session, which the catalog lists last. Only Lecture 1 is covered. All 19 slide decks are on the course site and listed in sources.md. wikiTopicPages counts the five concept pages and the course-logistics page."
+    "note": "lecturesTotal is the 19 recordings in the Cairn catalog on 2026-10-28: 18 lectures and the Q-learning TA session, which the catalog lists last. Lectures 1 and 2 are covered. All 19 slide decks are on the course site and listed in sources.md. wikiTopicPages counts the eight concept pages and the course-logistics page."
   },
   "materials": {
     "primary": "slides",
     "slideDecks": {
       "available": 19,
-      "transcribed": 1,
-      "note": "Lecture 1's deck (45 pages) is transcribed to raw/slides/. The other 18 decks are linked in sources.md."
+      "transcribed": 2,
+      "note": "Lecture 1's deck (45 pages) and Lecture 2's (27 pages) are transcribed to raw/slides/. The other 17 decks are linked in sources.md."
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 1,
-      "decksTotal": 1,
+      "decksAudited": 2,
+      "decksTotal": 2,
       "unaudited": [],
-      "note": "Counts are over transcribed decks. Lecture 1 was transcribed by Claude Sonnet 5.5; six figure slides (24, 25, 30, 33, 36, 37) were checked by Claude Opus 5.5 against 1400px renders. All six agreed; the audit added the lecture's context to slide 30 and corrected one printed-slip note."
+      "note": "Counts are over transcribed decks. Both were transcribed by Claude Sonnet 5.5 and spot-checked by Claude Opus 5.5 against 1400px renders, six figure slides each: Lecture 1's 24, 25, 30, 33, 36, 37 and Lecture 2's 7, 8, 10, 12, 19, 21. All twelve agreed on structure, series, values, labels and equations; the audits added context or small descriptive fixes only."
     },
     "images": {
-      "lecturesWithImages": 1,
-      "files": 16,
+      "lecturesWithImages": 2,
+      "files": 31,
       "byLecture": {
-        "1": 16
+        "1": 16,
+        "2": 15
       },
       "format": "1400px whole-slide renders (JPEG, PNG where smaller)",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
-      "note": "Lecture 1 only: 16 of the deck's 45 pages, every figure-bearing slide except staff photographs, a meme, clip-art icons, a logo wall, and slides whose only images are equations transcribed exactly. No other lecture has images."
+      "note": "Lectures 1 and 2 only. Lecture 1: 16 of the deck's 45 pages, every figure-bearing slide except staff photographs, a meme, clip-art icons, a logo wall, and slides whose only images are equations transcribed exactly. Lecture 2: 15 of 27 pages, every figure-bearing slide except two SpongeBob cartoon stills credited to Viacom International. No other lecture has images."
     }
   },
   "provenance": {
@@ -51,9 +53,10 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Only Lecture 1 of 19 is covered; the KB cannot answer questions about the technical content of Lectures 2-19.",
+      "Only Lectures 1 and 2 of 19 are covered; the KB cannot answer questions about the technical content of Lectures 3-19.",
       "Lecture 1's recording leaves out the course-logistics slides (5-6 and 10-15); their content comes from the slides alone.",
-      "Transcripts are copy-edited from YouTube auto-captions; students are inaudible, so their questions appear only as the lecturer restates them. Three passages are marked [Ed: unclear].",
+      "Lecture 2's recording ends after slide 21; slides 22-27 (collecting demonstrations, the embodiment gap, the summary) come from the slides alone.",
+      "Transcripts are copy-edited from YouTube auto-captions; students are inaudible, so their questions appear only as the lecturer restates them. Lectures 1 and 2 each have three passages marked [Ed: unclear].",
       "The verbatim captions are not committed; each transcript says how to regenerate them."
     ]
   },

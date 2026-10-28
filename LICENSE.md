@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1 deck. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1 or Lecture 2 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -104,3 +104,26 @@ Rendered: 16 slides, in `raw/images/01-class-intro/`.
 
 Not rendered from this deck: the photographs of course staff (slide 3), a meme (slide 13), clip-art
 icons (slide 8) and product logos (slide 22).
+
+### Lecture 2 — Imitation Learning
+
+Deck: [02_cs224r_imitation_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/02_cs224r_imitation_2025.pdf).
+Rendered: 15 slides, in `raw/images/02-imitation-learning/`.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 3 | The policy-network diagram from Lecture 1, with photographs of the towel-and-hook robot setup. Not credited. |
+| 5, 7 | A highway photograph (the one used in Lecture 1); slide 7 adds the deck's own arrows and chart. Not credited. |
+| 8 | A Super Mario game screenshot and a photograph from a driver's seat. Not credited. |
+| 9 | A random-noise image. Not credited. |
+| 10 | A photograph of a robot arm pushing a T-shaped block. Not credited. |
+| 12 | A simulation render of two robot arms and a photograph of a four-arm robot workspace, beside the deck's bar charts. The slide gives the sources "https://diffusion-policy.cs.columbia.edu/" and "https://aloha-unleashed.github.io/". |
+| 13 | Video stills captioned "Physical Intelligence π0", "NVIDIA Gr00t N1" (with a "Fourier GR-1" banner) and "Figure Helix", and robot-view photographs captioned "OpenVLA". |
+| 14 | An image captioned "Waymo EMMA" and a video frame captioned "Wayve LINGO-2", carrying a Wayve logo. |
+| 20 | A clip-art drawing of a car with a girl and a robot driver. Not credited. |
+| 23 | Photographs of kinesthetic teaching with a PR2 robot, of a game controller, a 3D mouse and a VR controller, and of a person puppeteering leader arms. Not credited. |
+| 24 | Video frames of a person and of simulated characters, cited on the slide as Peng, Kanazawa, Malik, Abbeel, Levine, "SFV: Reinforcement Learning of Physical Skills from Videos", SIGGRAPH Asia 2018. |
+| 18, 19, 21 | No third-party content identified: the deck's own diagrams. |
+
+Not rendered from this deck: slides 1 and 15, whose only images are SpongeBob SquarePants cartoon
+stills; the slides print "SpongeBob image rights & credits to Viacom International".

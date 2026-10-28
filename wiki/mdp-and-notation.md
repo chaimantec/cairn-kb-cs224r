@@ -86,7 +86,25 @@ but a few seconds of history recovers that, and the history then serves as the s
 Conversely, a sensor that very occasionally fails is often still treated as giving the state,
 because adding a lot of history has real costs (≈32:24–33:12).
 
+## Notation for learning from demonstrations
+
+Lecture 2 adds a few symbols for [imitation learning](imitation-learning.md).
+
+- $\mathcal{D}$ is a dataset of demonstrations, trajectories collected by an expert,
+  $\mathcal{D} := \lbrace(\mathbf{s}_ 1, \mathbf{a}_ 1, \ldots, \mathbf{s}_ T)\rbrace$ (Lecture 2, slide 6).
+- $\pi_{\text{expert}}$ is the unknown policy the demonstrations are assumed to be sampled from
+  (≈3:55).
+- $\hat{\mathbf{a}}$ is an action predicted by the learned policy, as opposed to the demonstrated
+  $\mathbf{a}$; $\mathbf{a}^{\ast}$ is an action the expert supplies as a correction, and
+  $\mathbf{s}'$ a state the learned policy visited (slide 20).
+- $\mathbf{a}_ {t,d}$ is dimension $d$ of the action at time $t$, when an action is predicted one
+  dimension at a time (slide 10).
+- $p_{\text{expert}}(\mathbf{s})$ and $p_\pi(\mathbf{s})$ are the distributions of states visited by
+  the expert and by the learned policy $\pi$ (slide 18).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
   robot and chatbot examples.
+- [Lecture 2 — Imitation Learning](02-imitation-learning.md): the notation for demonstrations,
+  corrections and state distributions.
