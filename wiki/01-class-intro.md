@@ -447,7 +447,7 @@ The course's algorithms all target the expected-reward objective (slide 41, ≈4
 3. **Actor-critic** methods estimate the value of the current policy and use it to make the
    policy better.
 4. **Value-based** methods estimate the value of the *optimal* policy and use it to back out a
-   good policy.
+   good policy (Lecture 6; see [Q-learning](q-learning.md)).
 5. **Model-based** methods learn to model the dynamics of the world, predicting the future, and
    use the model for planning or to improve the policy.
 

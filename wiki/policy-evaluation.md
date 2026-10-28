@@ -118,6 +118,12 @@ picked (≈55:28–56:13).
 
 *Lecture 4, slide 20 — Monte Carlo sums every reward (red), one-step bootstrapping uses one reward plus a value, and n-step returns sum n rewards (purple) and then use the value at t plus n (blue). [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
 
+Lecture 6 carries n-step returns over to Q-learning's targets (slides 24–25, ≈52:42–57:19), where
+they help most early in training, while the Q-network is still bad and the single reward is the only
+informative part of the target. There they have a cost the value-function version does not: the
+summed rewards come from the policy that collected the data, not from the optimal policy being
+estimated, so the target is only correct on-policy. See [Q-learning](q-learning.md).
+
 ## Discounting the targets
 
 With very long or infinite episodes, summed rewards, and so the values, can grow without bound. A
@@ -146,6 +152,16 @@ $y_i = r(\mathbf{s}_ i, \mathbf{a}_ i) + \gamma Q^{\pi_\theta}(\mathbf{s}'_ i, \
 which needs data covering actions similar to the current policy's (Lecture 5, slides 16–18). See
 [replay buffers and soft actor-critic](replay-buffers.md).
 
+## Policy evaluation inside policy iteration
+
+Lecture 6 names the step. Fitting $Q^\pi$ for the current policy is **policy evaluation**, because it
+learns the values of a policy, and it can take several gradient steps since it is only fitting
+targets. Replacing the policy with the greedy one, which takes the action with the highest Q-value,
+is **policy improvement**, and alternating the two is **policy iteration** (slide 10, ≈17:12–18:00).
+Folding the improvement into the target, so that it bootstraps from the max over next actions
+rather than from the current policy's action, gives Q-learning (slide 11); the equation each target
+encodes is on [Bellman equations](bellman-equations.md).
+
 ## Where this appears
 
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#estimating-the-value-function-version-1-monte-carlo):
@@ -154,3 +170,5 @@ which needs data covering actions similar to the current policy's (Lecture 5, sl
   the Monte Carlo estimate with no model.
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the recap of the three
   methods, generalized advantage estimation, and fitting a Q-function from a replay buffer.
+- [Lecture 6 — Q-Learning](06-q-learning.md#policy-iteration-from-actor-critic-to-critic-only):
+  policy evaluation and improvement as policy iteration, and n-step returns for Q-learning targets.

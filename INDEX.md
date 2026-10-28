@@ -9,14 +9,15 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–5 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–6 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
-> (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods) and
-> Lecture 5 (off-policy actor-critic: PPO and soft actor-critic): their edited transcripts, their
-> slide decks as text, 78 of their slides as images, and the topic pages they start. **It cannot
-> answer questions about the technical content of Lectures 6–19** (Q-learning onward). For those
-> lectures, point the learner to the lecture's slide deck, listed with every other course document
-> in [`sources.md`](sources.md).
+> (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
+> (off-policy actor-critic: PPO and soft actor-critic) and Lecture 6 (Q-learning: DQN, double
+> Q-learning, n-step returns): their edited transcripts, their slide decks as text, 90 of their
+> slides as images, and the topic pages they start. **It cannot answer questions about the
+> technical content of Lectures 7–19** (offline RL onward, and the Q-learning TA session). For
+> those lectures, point the learner to the lecture's slide deck, listed with every other course
+> document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
 
 ## How to read this knowledge base
@@ -38,19 +39,21 @@ complementary to the more theoretical CS234.
   (23), so its off-policy actor-critic section, comparison chart and closing slides (24–37) are
   only in its slide file; Lecture 5 teaches that material aloud from a revised deck. Lecture 5's
   recording covers slides 3–28; slide 2's reminders and the closing plan and next-time slides
-  (29–30) are only in the slide file.
+  (29–30) are only in the slide file. Lecture 6's recording covers slides 3–29 but does not discuss
+  slide 2's reminders or slide 29's next-week topics, which are only in the slide file.
 
 ### Images
 
-Lectures 1, 2, 3, 4 and 5 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture 3,
-21 of Lecture 4 and 15 of Lecture 5 rendered as pictures, each shown under its `## Slide N` heading
-in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
+Lectures 1, 2, 3, 4, 5 and 6 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+3, 21 of Lecture 4, 15 of Lecture 5 and 12 of Lecture 6 rendered as pictures, each shown under its
+`## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
 [`raw/slides/04-actor-critic.md`](raw/slides/04-actor-critic.md),
-[`raw/slides/05-off-policy-actor-critic.md`](raw/slides/05-off-policy-actor-critic.md)) and, where
-a wiki page cites that slide, in the passage that cites it. **No other lecture has images yet**, and
-not every slide of these five has one: the slide file's header lists which do.
+[`raw/slides/05-off-policy-actor-critic.md`](raw/slides/05-off-policy-actor-critic.md),
+[`raw/slides/06-q-learning.md`](raw/slides/06-q-learning.md)) and, where a wiki page cites that
+slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
+these six has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -112,6 +115,18 @@ not every slide of these five has one: the slide file's header lists which do.
   policy, and action coverage; the fixed policy update; soft actor-critic; SAC versus PPO; and
   robot examples (walking and HIL-SERL assembly with SAC, sim-to-real and a Rubik's cube with PPO).
 
+- [Lecture 6 — Q-Learning](wiki/06-q-learning.md): the recap of fitting a Q-function from a replay
+  buffer; the 2D-navigation thought exercise on the greedy policy a Q-function defines (better, not
+  optimal) and its follow-ups (iterating, discounting, dense rewards); why the greedy policy is at
+  least as good, so the policy gradient can go; continuous actions and sparse rewards (backups);
+  policy evaluation, improvement and policy iteration; the max target ("Q-values for new policy");
+  the Bellman equation and Bellman optimality equation, and why Q rather than V; convergence (tables
+  yes, in general no); epsilon-greedy and Boltzmann exploration; full Q-learning with a replay buffer,
+  the restaurant example and buffer management; target networks and DQN; Q-values over training on
+  Atari and the rising-loss tip; overestimation and double Q-learning with the current and target
+  networks; n-step returns and why they are only correct on-policy (with the slide's printed
+  exponent slip); Atari and robot-grasping results; and Finn's advice on choosing PPO, DQN or SAC.
+
 ## Topic pages
 
 - [MDPs and RL notation](wiki/mdp-and-notation.md): a table of the course's symbols (state,
@@ -119,10 +134,12 @@ not every slide of these five has one: the slide file's header lists which do.
   each means in the towel and chatbot examples, the Markov property and why observations break
   it (and why a fixed horizon needs the time remaining in the state), when to treat something as
   a state or an observation, and the extra notation for demonstrations, for policy gradients, for
-  actor-critic methods and for off-policy actor-critic (surrogate objectives, clipping, GAE).
+  actor-critic methods, for off-policy actor-critic (surrogate objectives, clipping, GAE) and for
+  Q-learning (optimal policy, target networks, double Q-learning, exploration).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
-  observations, and the two reasons policies are stochastic.
+  observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
+  policy with the epsilon-greedy and Boltzmann exploration policies built around it.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
@@ -132,24 +149,28 @@ not every slide of these five has one: the slide file's header lists which do.
   Q-function $Q^\pi(\mathbf{s}, \mathbf{a})$ and the advantage $A^\pi(\mathbf{s}, \mathbf{a})$,
   how the three relate (V as the expectation of Q; Q as the reward plus the next state's value, and
   Lecture 5's recursive form in terms of the next Q-value), why the advantage can be estimated from V
-  alone, and the drum-practice and Go examples.
+  alone, why a policy comes out of Q but not out of V, and the drum-practice and Go examples.
 - [Actor-critic methods](wiki/actor-critic.md): the method as a whole: from the policy gradient's
   reward to go to the advantage, the critic as a learned value function, the five-step algorithm and
   the names actor and critic, and the off-policy versions Lecture 5 teaches (multiple gradient steps
-  leading to PPO, replay buffers leading to soft actor-critic, and the comparison of the two).
+  leading to PPO, replay buffers leading to soft actor-critic, and the comparison of the two), and
+  how dropping the actor leads to Q-learning.
 - [Proximal policy optimization (PPO)](wiki/ppo.md): why many gradient steps on one batch overfit
   stale advantages, the surrogate objective, the KL-penalty and clipping remedies, the clipped and
   minimum objective as a lower bound, generalized advantage estimation, the four-step algorithm
-  and example hyperparameters, and where PPO is the right trade (simulation, language models).
+  and example hyperparameters, and where PPO is the right trade (simulation, language models, and
+  Lecture 6's advice).
 - [Replay buffers and soft actor-critic](wiki/replay-buffers.md): reusing all past data, why a
   value function fitted on a buffer belongs to a mixture of past policies, the recursive Q-function
   and targets with actions from the current policy, action coverage, the fixed policy update, the
   remaining state-distribution problem, soft actor-critic, and its efficiency against PPO's
-  stability.
+  stability; and the buffer in Q-learning, with how it is managed (first in, first out,
+  pre-populating, asynchronous collection).
 - [Policy evaluation](wiki/policy-evaluation.md): fitting a value network by Monte Carlo
   estimation, bootstrapping (temporal difference learning) or n-step returns; the shared
   regression; the worked example where they disagree; bias versus variance; discounted targets;
-  and Lecture 5's generalized advantage estimation and Q-function fitting from a replay buffer.
+  Lecture 5's generalized advantage estimation and Q-function fitting from a replay buffer; and
+  Lecture 6's policy iteration and n-step Q-learning targets.
 - [Imitation learning](wiki/imitation-learning.md): the problem (demonstrations from an unknown
   expert policy), behavior cloning versions 0 and 1, compounding errors and covariate shift,
   corrective data with DAgger and human-gated DAgger, a table of their trade-offs, how
@@ -162,7 +183,8 @@ not every slide of these five has one: the slide file's header lists which do.
 - [Offline and online algorithms](wiki/offline-and-online.md): the offline/online definitions
   Lecture 2 introduces, why online data can be expensive or unsafe, which imitation methods are
   which, Lecture 3's on-policy/off-policy distinction among online algorithms, and Lecture 5's
-  spectrum of increasingly off-policy actor-critic methods, from PPO to replay buffers.
+  spectrum of increasingly off-policy actor-critic methods, from PPO to replay buffers, and why
+  Q-learning is off-policy while its n-step targets are not.
 - [Policy gradients](wiki/policy-gradients.md): the method as a whole, from the online loop and
   the derivation to REINFORCE, the reading as reward-weighted imitation, its three weaknesses
   (high variance, sensitivity to reward scale, need for dense rewards and large batches) and the
@@ -172,11 +194,21 @@ not every slide of these five has one: the slide file's header lists which do.
   distribution with samples from a proposal distribution, its catches (support, similarity), and
   how it makes the policy gradient off-policy, including why per-trajectory ratios explode, and
   its use in off-policy actor-critic: the surrogate objective, why the ratio invites overfitting,
-  and PPO's clipping.
+  and PPO's clipping; and Lecture 6's mention of it as a fix for off-policy n-step targets.
 - [RL algorithm families](wiki/rl-algorithm-families.md): imitation learning, policy gradients,
-  actor-critic (with PPO and SAC), value-based and model-based methods, which lecture of the schedule covers each,
-  how the first three relate, and the trade-offs (data cost, supervision, stability, action space, dynamics) that explain why RL
-  has so many algorithms.
+  actor-critic (with PPO and SAC), value-based (Q-learning, DQN) and model-based methods, which
+  lecture of the schedule covers each, how the first four relate, Finn's advice on when to use PPO,
+  DQN or SAC, and the trade-offs (data cost, supervision, stability, action space, dynamics) that
+  explain why RL has so many algorithms.
+- [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
+  Q-function defines and why it is at least as good, policy iteration and backups, the max target,
+  convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
+  the three tricks (target networks and DQN, double Q-learning against overestimation, n-step
+  returns and their on-policy catch), continuous actions, and when to use it.
+- [Bellman equations](wiki/bellman-equations.md): the Bellman equation for any policy's Q-function
+  and how it lets a Q-function be fitted from other policies' data, the Bellman optimality equation
+  for the optimal policy and how Q-learning uses it, the names, the value-function versions, and why
+  the course builds on Q.
 
 ## Course pages
 

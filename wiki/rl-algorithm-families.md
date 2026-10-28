@@ -10,7 +10,7 @@ Lecture 1 sorts them into five families (slide 41, ≈49:20–50:53).
 | Imitation learning | mimic a policy that achieves high reward | 2; see [imitation learning](imitation-learning.md) |
 | Policy gradients | directly differentiate the objective | 3; see [policy gradients](policy-gradients.md) |
 | Actor-critic | estimate the value of the current policy and use it to make the policy better | 4, 5; see [actor-critic methods](actor-critic.md) |
-| Value-based | estimate the value of the optimal policy | 6 |
+| Value-based | estimate the value of the optimal policy | 6; see [Q-learning](q-learning.md) |
 | Model-based | learn to model the dynamics, and use it for planning or policy improvement | 11 |
 
 The last column comes from the [course schedule](../sources.md#lectures), not from Lecture 1;
@@ -21,10 +21,11 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–4.** Imitation learning, policy gradients and
-actor-critic methods have their own pages, [imitation learning](imitation-learning.md),
-[policy gradients](policy-gradients.md) and [actor-critic methods](actor-critic.md); value-based
-and model-based methods do not yet. Lecture 2 adds
+**This knowledge base so far covers Lectures 1–6.** Imitation learning, policy gradients,
+actor-critic methods and value-based methods have their own pages,
+[imitation learning](imitation-learning.md), [policy gradients](policy-gradients.md),
+[actor-critic methods](actor-critic.md) and [Q-learning](q-learning.md); model-based methods do
+not yet. Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -54,6 +55,20 @@ efficient" but is harder to tune and less stable than PPO (Lecture 4, slide 35; 
 both sides: SAC is efficient enough to learn on real robots, while PPO is the common choice in
 simulation, where data is cheap, and for language models (Lecture 5, slides 24–28).
 
+Lecture 6 builds the fourth family out of the third by dropping the actor. With a Q-function
+critic, the greedy policy that takes the highest-valued action is at least as good as the current
+policy, so the policy network and its gradient can go; putting the max into the critic's target
+gives [Q-learning](q-learning.md), which fits the Q-function of the optimal policy through the
+Bellman optimality equation (Lecture 6, slides 8–12). With a target network it is DQN. Lecture 6
+ends the course's online methods with Finn's advice on choosing among the three practical ones
+(slide 27, "Chelsea's advice", ≈59:41–1:00:27):
+
+- **PPO and variants** when you care about stability and ease of use and not about data
+  efficiency;
+- **DQN and variants** when you have discrete actions or low-dimensional continuous actions;
+- **SAC and variants** when you care most about data efficiency and are fine with tuning
+  hyperparameters and less stability.
+
 ## Why so many algorithms?
 
 Supervised learning has gradient descent, which is simple and works. RL has many algorithms
@@ -82,3 +97,5 @@ parts.
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the third family in depth.
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): its off-policy versions, PPO
   and SAC, and the trade-off between them.
+- [Lecture 6 — Q-Learning](06-q-learning.md): the fourth family in depth, and when to use PPO, DQN
+  or SAC.

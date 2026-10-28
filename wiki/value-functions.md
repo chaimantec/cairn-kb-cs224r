@@ -73,7 +73,16 @@ $$Q^{\pi_\theta}(\mathbf{s}, \mathbf{a}) = r(\mathbf{s}, \mathbf{a}) + \gamma \m
 Here $\gamma$ is the discount factor, $\mathbf{s}'$ the next state and $\bar{\mathbf{a}}'$ the
 action the policy takes there. It holds for any state and action, whichever policy chose the
 action, which is what lets a Q-function for the current policy be fitted from a replay buffer of
-other policies' data; see [replay buffers and soft actor-critic](replay-buffers.md).
+other policies' data; see [replay buffers and soft actor-critic](replay-buffers.md). Lecture 6
+names it the **Bellman equation**, and adds its counterpart for the optimal policy, the **Bellman
+optimality equation**, in which the expectation over the next action becomes a max (slide 12,
+≈21:50–27:15); see [Bellman equations](bellman-equations.md).
+
+**Why a policy comes out of Q and not out of V.** Given $Q^\pi$, the policy that takes the action
+with the highest Q-value is at least as good as $\pi$ (Lecture 6, slide 8, ≈12:32–13:18). Given
+only $V(\mathbf{s})$, nothing says which action leads to a higher value; you would have to predict
+the next state each action leads to, which needs the dynamics, and those are unknown (Lecture 6,
+≈23:24–24:56). See [Q-learning](q-learning.md).
 
 ![Lecture 4, slide 6 — Revisiting Some Useful Objects](../raw/images/04-actor-critic/slide-6.jpg)
 
@@ -103,7 +112,9 @@ depends on both. A Q-function considers a particular move first and then runs th
 Two of the [algorithm families](rl-algorithm-families.md) are defined by value functions (Lecture
 1, slide 41). Actor-critic methods estimate the value of the current policy and use it to improve
 the policy; see [actor-critic methods](actor-critic.md). Value-based methods estimate the value of
-the optimal policy and back a good policy out of it. Lecture 1 only introduces the two functions,
+the optimal policy and back a good policy out of it; Lecture 6's [Q-learning](q-learning.md) does
+this by fitting a Q-function to the Bellman optimality equation and acting greedily on it (see
+[Bellman equations](bellman-equations.md)). Lecture 1 only introduces the two functions,
 without equations beyond the definitions; Q-functions are used from the week after it (Lecture 1,
 ≈49:20).
 
@@ -116,3 +127,5 @@ without equations beyond the definitions; Q-functions are used from the week aft
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#fitting-a-q-function-with-data-from-past-policies):
   the Go example, the recursive form of $Q^\pi$, and why a Q-function rather than $V^\pi$ is fitted
   from a replay buffer.
+- [Lecture 6 — Q-Learning](06-q-learning.md#why-it-works-the-bellman-optimality-equation): the
+  greedy policy a Q-function defines, the Bellman optimality equation, and why Q rather than V.

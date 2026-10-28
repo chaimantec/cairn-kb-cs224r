@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1, 2 or 3 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–6 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -184,3 +184,22 @@ Not rendered from this deck: slide 12, whose only picture is a comic-book meme, 
 slide only as "from one of the GAE authors"; slides 8 and 9, build steps of slides 7 and 10; slides
 7, 11, 17, 21 and 22, equation slides whose annotations are transcribed; and the title, reminder,
 plan and text slides.
+
+### Lecture 6 — Q-Learning
+
+Deck: [06_cs224r_qlearning_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/06_cs224r_qlearning_2025.pdf).
+Rendered: 12 slides, in `raw/images/06-q-learning/`. Slides 8, 15, 17 and 19–23 print "Slide
+adapted from Sergey Levine".
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 8, 15 | Slides "adapted from Sergey Levine": the greedy-policy argument with the three-box loop (8), and the full algorithm with a diagram of the world (an Earth-globe icon), the replay buffer and off-policy Q-learning (15). |
+| 19 | Slide "adapted from Sergey Levine": four training-curve charts (average reward and average predicted Q on Breakout and Seaquest) and two figure panels of Atari game frames with value and action-value charts, pasted from sources the slide does not name. |
+| 20 | Slide "adapted from Sergey Levine": a four-panel chart of value estimates against true values for DQN and Double DQN (Alien, Space Invaders, Time Pilot, Zaxxon), not credited on the slide. |
+| 26 | A bar chart of Atari results, credited to "Mnih et al. 2015"; a video frame of robot arms grasping from bins and a results table comparing QT-Opt with "Levine et al. [27]", credited to "Kalashnikov et al. 2018". |
+| 3, 4, 5, 7, 12, 18, 24 | No third-party content identified: the deck's own trajectory sketches, loop diagrams, neural-network drawing, 2D-navigation sketch and annotated algorithms and equations. Slide 18 cites Mnih et al., *Playing Atari with Deep Reinforcement Learning* (2013) for the algorithm, not for an image. |
+
+Not rendered from this deck: slides 9–11, 13, 14, 17, 21–23 and 25, equation slides whose
+strikethroughs, highlights, loop arrows and annotations are transcribed (17 and 21–23 print "Slide
+adapted from Sergey Levine"); and the title, reminder, plan, advice and next-time slides (1, 2, 6,
+16, 27, 28, 29).

@@ -166,6 +166,23 @@ Lecture 5 adds these; see [PPO](ppo.md) and [replay buffers and soft actor-criti
 - $p_\theta(\mathbf{s})$ is the current policy's state distribution, which the buffer's states do
   not come from (slide 21).
 
+## Notation for Q-learning
+
+Lecture 6 adds these; see [Q-learning](q-learning.md) and [Bellman equations](bellman-equations.md).
+
+- $\pi^\ast$ is the optimal policy and $Q^{\pi^\ast}$ its Q-function, the one the Bellman
+  optimality equation describes (slide 12).
+- $\hat{Q}_ \phi$ or $Q_\phi$ is the Q-network with parameters $\phi$; once the policy is greedy
+  the superscript $\pi$ is dropped (slides 11–15). $\phi'$ is a frozen copy of $\phi$, the target
+  network (slide 18).
+- $\phi_A$ and $\phi_B$ are the two networks of double Q-learning (slide 22).
+- $\epsilon$ here is the exploration probability of an epsilon-greedy policy, unrelated to PPO's
+  clipping range above, and $\vert \mathcal{A} \vert$ the number of actions (slide 14).
+- $K$ is the number of gradient steps per round of data collection, and $N$ the number of rounds
+  between target-network updates (slides 15, 18). In the n-step target, $N$ is instead the number of
+  summed rewards (slides 24–25).
+- $y_j$ and $y_{j,t}$ are targets with $j$ indexing the samples in a batch (slides 21, 24).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -178,3 +195,5 @@ Lecture 5 adds these; see [PPO](ppo.md) and [replay buffers and soft actor-criti
   networks, regression labels and the discount factor.
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the notation for surrogate
   objectives, clipping, generalized advantage estimation and Q-functions fitted from a replay buffer.
+- [Lecture 6 — Q-Learning](06-q-learning.md): the notation for the optimal policy, target networks,
+  double Q-learning and exploration.

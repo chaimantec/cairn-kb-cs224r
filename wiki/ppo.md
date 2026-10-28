@@ -131,6 +131,12 @@ to the real robot, and a robot hand that solves a Rubik's cube with a policy tra
 though sim-to-real transfer is generally much harder for manipulation. PPO is also a common choice
 for language models (slide 28), which the course takes up with reward modeling.
 
+Lecture 6's closing advice puts it the same way (slide 27, "Chelsea's advice", ≈59:41–1:00:27):
+PPO and its variants when you care about stability and ease of use and not about data efficiency.
+PPO generally does not need much tuning, but it is very data-inefficient. SAC is for when data
+efficiency matters most, and DQN for discrete or low-dimensional continuous actions; see
+[Q-learning](q-learning.md#when-to-use-it).
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-1-multiple-gradient-steps-with-importance-weights):
@@ -141,3 +147,5 @@ for language models (slide 28), which the course takes up with reward modeling.
   "the basis for algorithms like PPO".
 - [Importance sampling](importance-sampling.md): where the importance weight comes from.
 - [Actor-critic methods](actor-critic.md): the on-policy algorithm PPO starts from.
+- [Lecture 6 — Q-Learning](06-q-learning.md#which-online-rl-algorithm-to-use): when to use PPO,
+  DQN or SAC.

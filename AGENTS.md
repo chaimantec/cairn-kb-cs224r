@@ -100,6 +100,9 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 - Run `slide_number_map.py` before transcribing and hand the agent the map. A number the text
   layer finds can still be invisible on the page (covered by an image); the label stands, but
   say so in the slide file.
+- The map script reads only one corner, and these decks also print the number at bottom centre or
+  bottom right. When it reports pages unnumbered, read the raw spans of those pages before
+  calling a label inferred.
 - Transcription is delegated to a Sonnet subagent, reading contiguous ranges of at most 15
   pages and appending as it goes; `--verify` must pass. Then the Opus parent spot-checks six
   figure slides from the 1400px renders (~1.5k tokens each, cross-model with the transcriber),
@@ -138,6 +141,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 3 Policy Gradients | 11 of 28 pages | the online-RL loop and its iterations, the trajectory plots, the REINFORCE and reward-weighted-imitation slides, the humanoid and jacket-folding examples, the summary and review slides, the off-policy algorithm |
 | 4 Actor-Critic Methods | 21 of 37 pages | the recap, the V/Q trajectory fans and drum example, the dissatisfying-PG stills, the loop with its fit-a-model step, the value-network and Monte Carlo/bootstrap/n-step slides, the discounted MDP, the full algorithm and review, the off-policy slides (KL/PPO ideas, replay buffer, fixes), the SAC-versus-PPO chart |
 | 5 Off-Policy Actor Critic | 15 of 30 pages | the recap diagrams (online loops, V/Q trajectory fans), version 1's surrogate objective with the KL and clipping ideas, the PPO algorithm with its Half-Cheetah chart, the replay-buffer timeline and annotated broken/fixed algorithm steps, the Q-network slide, the SAC-versus-PPO chart, the SAC and PPO robot video frames and the HIL-SERL table |
+| 6 Q-Learning | 12 of 29 pages | the recap diagrams (V/Q trajectory fans, the faded loop, the Q-network), the 2D-navigation thought exercise, the greedy-policy loop, the Q-learning algorithm with its two Bellman equations, the full algorithm with its replay-buffer diagram, the DQN algorithm, the Atari Q-value and DQN-versus-double-DQN charts, the n-step fan, the Atari bar chart and grasping table |
 
 ## Rebuilding
 

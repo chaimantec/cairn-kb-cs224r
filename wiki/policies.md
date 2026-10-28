@@ -81,6 +81,23 @@ from the same policy: the policy is not deterministic, so different samples expl
 strategies, and the environment may be stochastic, so even a deterministic policy sees different
 outcomes worth learning about (≈29:48–30:34).
 
+## Deterministic greedy policies, and exploring around them
+
+Lecture 6's value-based method uses a policy that is deterministic and is not a network at all:
+given a Q-function, take the action with the highest Q-value with probability one (slide 8,
+≈12:32–14:05),
+
+$$\pi'(\mathbf{a}_ t \mid \mathbf{s}_ t) = \begin{cases} 1 & \text{if } \mathbf{a}_ t = \arg\max_{\mathbf{a}} Q^\pi(\mathbf{s}_ t, \mathbf{a}) \cr 0 & \text{otherwise} \end{cases}$$
+
+which is at least as good as $\pi$ whatever $\pi$ was, given an accurate $Q^\pi$ (see
+[Q-learning](q-learning.md)). Being deterministic, it is one reason not to collect data with it
+(≈18:48–19:34). So [Q-learning](q-learning.md) collects data with a
+stochastic exploration policy built around it (slide 14, ≈30:19–32:37). **Epsilon-greedy** takes a
+uniformly random action with a small probability $\epsilon$ and the greedy action otherwise, often
+starting with a larger $\epsilon$ and lowering it during training. **Boltzmann exploration** takes
+actions with probability proportional to $\exp(Q_\phi(\mathbf{s}_ t, \mathbf{a}_ t))$, more often
+the higher their Q-value. The policy deployed at the end is the greedy one (slide 15).
+
 ## Initializing a policy for online RL
 
 An online RL algorithm starts by initializing the policy, as when training any neural network:
@@ -100,3 +117,6 @@ See [policy gradients](policy-gradients.md).
   make it expressive.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#estimating-the-gradient-reinforce): how a
   policy is initialized for online RL, and how its log-probabilities are differentiated.
+- [Lecture 6 — Q-Learning](06-q-learning.md#what-data-to-collect-epsilon-greedy-and-boltzmann-exploration):
+  the deterministic greedy policy defined by a Q-function, and the epsilon-greedy and Boltzmann
+  exploration policies built around it.

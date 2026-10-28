@@ -108,7 +108,8 @@ $p_\theta(\mathbf{s})$. "nothing we can do here, just accept it", and it is not 
 policy is trained on a broader distribution than the one it would visit (slide 21, ≈1:06:23).
 
 This is essentially **soft actor-critic** (Haarnoja, Zhou, Abbeel, Levine, 2018; slide 22). There
-are fancier ways to fit the Q-function, which the next lecture covers, and other ways to estimate
+are fancier ways to fit the Q-function, which the next lecture covers (see
+[Q-learning](q-learning.md)), and other ways to estimate
 the gradient, such as the **reparameterization trick** for a Gaussian policy (slide 22,
 ≈1:06:23–1:07:08).
 
@@ -128,6 +129,24 @@ robot learns to walk from scratch in under two hours with SAC. An SAC-based meth
 demonstrations (HIL-SERL) reaches 100% success on precise assembly tasks where behaviour cloning
 gets much lower success rates, with faster cycle times.
 
+## In Q-learning
+
+Lecture 6's [Q-learning](q-learning.md) uses the same buffer without an actor: collect transitions
+with an exploration policy such as epsilon-greedy, sample batches from the buffer uniformly, and
+take $K$ gradient steps on the Q-function per round of collection (slide 15, ≈33:23–34:55).
+Sampling from the whole buffer rather than from what was just collected decorrelates the batch
+(≈34:09). The lecture adds how a buffer is usually managed (≈38:45–40:18). It has a fixed size,
+often a large one, and once full it discards the oldest data first, first in, first out. At the
+start it is small, so the first iteration sometimes collects extra data to pre-populate it. And in
+asynchronous algorithms, where some threads add data while others update the network, managing the
+buffer matters especially, so that no data point gets a thousand gradient steps while another gets
+one.
+
+Lecture 6 closes the course's online methods with advice on choosing among them (slide 27,
+"Chelsea's advice", ≈59:41–1:00:27): SAC and its variants when you care most about data efficiency
+and can accept tuning and less stability, PPO when you care about stability and ease of use rather
+than data efficiency, and DQN for discrete or low-dimensional continuous actions.
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-2-replay-buffers):
@@ -136,4 +155,6 @@ gets much lower success rates, with faster cycle times.
   the first version of these slides, which that recording does not reach.
 - [Policy evaluation](policy-evaluation.md): fitting value functions by Monte Carlo and
   bootstrapping, which the Q-function target extends.
+- [Lecture 6 — Q-Learning](06-q-learning.md#full-q-learning-with-a-replay-buffer): the buffer in
+  Q-learning, how it is managed, and the advice on choosing PPO, DQN or SAC.
 - [Offline and online algorithms](offline-and-online.md): on-policy and off-policy.

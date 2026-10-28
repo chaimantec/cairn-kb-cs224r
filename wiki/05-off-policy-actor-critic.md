@@ -570,7 +570,7 @@ puts it as "we want optimal policy on $p_\theta(\mathbf{s})$" "but we get optima
 This is essentially the **soft actor-critic** algorithm, or SAC (slide 22, ≈1:06:23–1:07:08). There
 are other ways to estimate the gradient that the lecture has no time for; the slide names the
 **reparameterization trick** for a Gaussian policy. There are also fancier ways to fit the
-Q-function, which the next lecture covers. The slide cites Haarnoja, Zhou, Abbeel and Levine, *Soft
+Q-function, which the next lecture covers ([Lecture 6](06-q-learning.md)). The slide cites Haarnoja, Zhou, Abbeel and Levine, *Soft
 Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor*
 (2018).
 
@@ -641,7 +641,8 @@ The recording begins on the recap and ends on slide 28, so three slides are know
 [slide file](../raw/slides/05-off-policy-actor-critic.md). Slide 2's course reminders are that the
 project survey is due that night, Homework 1 is due Friday and Homework 2 comes out Friday. Slide
 29 repeats the plan. Slide 30 announces the next lecture: Q-learning, the "last big online RL
-method", and the practical implementation of Q-learning, with the same reminders.
+method", and the practical implementation of Q-learning, with the same reminders. See
+[Lecture 6 — Q-Learning](06-q-learning.md).
 
 ## Related pages
 
@@ -662,3 +663,5 @@ method", and the practical implementation of Q-learning, with the same reminders
   methods.
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the on-policy algorithm this lecture
   starts from.
+- [Lecture 6 — Q-Learning](06-q-learning.md): the next lecture, which drops the actor and arrives
+  at Q-learning.

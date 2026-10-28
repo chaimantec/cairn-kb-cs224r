@@ -78,6 +78,14 @@ weight to between $1 - \epsilon$ and $1 + \epsilon$, typically 0.8 and 1.2, whic
 incentive to push it further, and to take the minimum with the unclipped term; see
 [proximal policy optimization](ppo.md).
 
+## In Q-learning's n-step targets
+
+Lecture 6 lists importance sampling as one way to repair an n-step Q-learning target (slide 25,
+≈57:19). The target sums several observed rewards before bootstrapping, and off-policy those rewards
+come from the policy that collected the data rather than the one being estimated; the rewards can be
+weighted by importance weights to correct for that. The lecture does not develop it, and notes that
+most commonly the problem is simply ignored. See [Q-learning](q-learning.md#making-it-work-three-tricks).
+
 ## Where this appears
 
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#importance-sampling): the technique and the
@@ -87,3 +95,5 @@ incentive to push it further, and to take the minimum with the unclipped term; s
   with the idea behind PPO (slides only).
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-1-multiple-gradient-steps-with-importance-weights):
   importance weights for multiple gradient steps, the surrogate objective, and clipping them in PPO.
+- [Lecture 6 — Q-Learning](06-q-learning.md#trick-3-n-step-returns): importance sampling as one fix
+  for off-policy n-step targets.

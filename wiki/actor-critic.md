@@ -130,6 +130,14 @@ for RL on real robots (Lecture 5, slides 24–27).
 
 *Lecture 4, slide 35 — learning curves on two humanoid tasks: SAC (orange, with a replay buffer) learns far faster than PPO (brown, no replay buffer) on the second task, at the cost of being harder to tune. [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
 
+## Dropping the actor
+
+Lecture 6 takes the off-policy algorithm one step further and removes the actor. If the critic is a
+Q-function, the policy that always takes the action with the highest Q-value is at least as good as
+the current policy, so the policy-gradient steps can be replaced by defining that greedy policy
+(slides 8–9, ≈12:32–16:26). Moving the max into the Q-function's target then gives
+[Q-learning](q-learning.md), a "critic only" method (slides 9–12).
+
 ## Where this appears
 
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the whole method, from the advantage to
@@ -141,3 +149,5 @@ for RL on real robots (Lecture 5, slides 24–27).
   the policy; see [RL algorithm families](rl-algorithm-families.md).
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#review-and-next-time): the method it builds
   on.
+- [Lecture 6 — Q-Learning](06-q-learning.md#policy-iteration-from-actor-critic-to-critic-only):
+  from actor-critic to critic only.

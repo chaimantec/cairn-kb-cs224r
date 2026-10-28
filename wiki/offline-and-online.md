@@ -64,6 +64,17 @@ efficient but harder to tune and less stable (Lecture 5, slide 23). Even it does
 data entirely: a Q-function fitted from the buffer needs data covering actions similar to the
 current policy's (slide 18), and its states come from past policies' state distributions (slide 21).
 
+Lecture 6's [Q-learning](q-learning.md) is off-policy by construction (slides 13–14, ≈28:48).
+Its target, $r + \gamma \max_{\mathbf{a}'} Q(\mathbf{s}', \mathbf{a}')$, does not involve the
+policy that collected the transition, so the data can and should come from an exploration policy
+broader than the current, greedy one, to cover the actions the max considers. It is called
+off-policy because its updates use a replay buffer of essentially all past experience; some of that
+data is from the current policy, but not only that data (≈36:27–37:14). Even a buffer of size one
+is off-policy when the collecting policy differs from the current one (≈38:45). Its n-step version
+is the exception that proves the rule: summed rewards come from the policy that collected them, so
+an n-step target is "only actually correct when learning on-policy" (slide 25). Lecture 6 ends the
+course's online RL methods (slide 29).
+
 The course schedule has a later lecture on offline RL (Lecture 7 in this KB's numbering; see
 [`sources.md`](../sources.md#lectures)). This knowledge base does not cover it yet.
 
@@ -77,3 +88,5 @@ The course schedule has a later lecture on offline RL (Lecture 7 in this KB's nu
   the on-policy limit recalled, and off-policy actor-critic with replay buffers (slides only).
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the spectrum from one
   gradient step per batch, through PPO, to a replay buffer of all past data.
+- [Lecture 6 — Q-Learning](06-q-learning.md#what-data-to-collect-epsilon-greedy-and-boltzmann-exploration):
+  why Q-learning is off-policy, the questions on what that means, and why n-step targets are not.
