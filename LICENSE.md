@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1 or Lecture 2 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1, 2 or 3 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -127,3 +127,20 @@ Rendered: 15 slides, in `raw/images/02-imitation-learning/`.
 
 Not rendered from this deck: slides 1 and 15, whose only images are SpongeBob SquarePants cartoon
 stills; the slides print "SpongeBob image rights & credits to Viacom International".
+
+### Lecture 3 — Policy Gradients
+
+Deck: [03_cs224r_policy_gradients_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/03_cs224r_policy_gradients_2025.pdf).
+Rendered: 11 slides, in `raw/images/03-policy-gradients/`. Slides 7–10 print "Slide adapted from
+Sergey Levine".
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 5 | A photograph of a humanoid robot, captioned "Source: Unitree", and a screenshot of a chat interface showing code. The screenshot is not credited. |
+| 7, 10, 11 | 3D plots of trajectories over a gridded surface (slide 11's heat-mapped). The slides they appear on are "adapted from Sergey Levine" (7, 10); slide 11 credits nothing. |
+| 12, 14 | A still of a simulated humanoid. Not credited. |
+| 17 | A photograph of a humanoid robot holding a jacket on a table. Not credited. |
+| 6, 19, 24, 26 | No third-party content identified: the deck's own loop diagrams and trajectory sketches. |
+
+Not rendered from this deck: slide 27, which repeats slide 5; slides 13, 15 and 16, whose only
+picture is a thumbnail of the slide 12 humanoid.

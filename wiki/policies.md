@@ -76,6 +76,21 @@ network expressivity is often distinct from distribution expressivity" (Lecture 
 A stochastic policy is also one of the two sources of randomness in the RL objective; see
 [The RL objective](rl-objective.md#where-the-randomness-comes-from).
 
+Lecture 3 returns to both points when it asks why a policy gradient samples several trajectories
+from the same policy: the policy is not deterministic, so different samples explore different
+strategies, and the environment may be stochastic, so even a deterministic policy sees different
+outcomes worth learning about (≈29:48–30:34).
+
+## Initializing a policy for online RL
+
+An online RL algorithm starts by initializing the policy, as when training any neural network:
+randomly, with imitation learning, or with heuristics, depending on the problem (Lecture 3,
+slide 6, ≈2:27–3:14). Training then needs the gradient of
+$\log \pi_\theta(\mathbf{a} \mid \mathbf{s})$ for actions the policy took: a forward pass gives
+the distribution over actions, the action's log-probability is read off it, and a backward pass
+through the network gives the gradient, which automatic differentiation computes (≈19:44–21:16).
+See [policy gradients](policy-gradients.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#representing-behavior-the-policy): the policy as a
@@ -83,3 +98,5 @@ A stochastic policy is also one of the two sources of randomness in the RL objec
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#learning-distributions-with-neural-networks):
   the policy as a network that outputs a distribution's parameters, and the generative models that
   make it expressive.
+- [Lecture 3 — Policy Gradients](03-policy-gradients.md#estimating-the-gradient-reinforce): how a
+  policy is initialized for online RL, and how its log-probabilities are differentiated.

@@ -82,7 +82,26 @@ The same expectation, started from a given state (and action) instead of the ini
 distribution, defines the [value function and the Q-function](value-functions.md)
 (slide 40).
 
+## Estimating and differentiating the objective
+
+Lecture 3 names the objective $J(\theta)$ and makes two moves with it. First, it can be
+**estimated** but not read off the policy's weights: run the policy $N$ times and average the
+summed rewards (slide 7, ≈4:00–4:47),
+
+$$J(\theta) = \mathbb{E}_ {\tau \sim p_\theta(\tau)} \left[ \sum_t r(\mathbf{s}_ t, \mathbf{a}_ t) \right] \approx \frac{1}{N} \sum_i \sum_t r(\mathbf{s}_ {i,t}, \mathbf{a}_ {i,t})$$
+
+where $i$ indexes the sampled trajectories. Second, it can be **differentiated**, even though
+$\theta$ enters only through $p_\theta(\tau)$ and the dynamics are unknown. Writing the
+expectation as an integral and using the identity
+$p_\theta(\tau) \nabla_\theta \log p_\theta(\tau) = \nabla_\theta p_\theta(\tau)$ gives
+$\nabla_\theta J(\theta) = \mathbb{E}_ {\tau \sim p_\theta(\tau)} \left[ \nabla_\theta \log p_\theta(\tau) \thinspace r(\tau) \right]$,
+where $r(\tau)$ is the sum of rewards along $\tau$, and in $\log p_\theta(\tau)$ the initial-state
+and dynamics terms do not depend on $\theta$, so they drop out (slides 8–9). That is the
+[policy gradient](policy-gradients.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#the-goal-of-reinforcement-learning): the objective,
   its sources of randomness, the horizon and the discount factor.
+- [Lecture 3 — Policy Gradients](03-policy-gradients.md#deriving-the-policy-gradient): estimating
+  the objective from samples and deriving its gradient.

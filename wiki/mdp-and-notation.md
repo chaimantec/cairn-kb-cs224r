@@ -74,6 +74,10 @@ you are while an earlier one says a lot (≈25:28). How much history is needed t
 is heavily domain dependent; current sensor readings are often enough in robotics, much less so
 with touch alone (≈23:07–23:54).
 
+The Markov property also constrains how time is handled. With a fixed horizon $T$, a policy that
+does not know how many steps remain is not acting on a truly Markovian state; the number of time
+steps left has to be incorporated into the state (Lecture 3, ≈36:11–36:57).
+
 ## MDP and POMDP
 
 States, actions, a reward function, an initial state distribution and dynamics together form a
@@ -102,9 +106,30 @@ Lecture 2 adds a few symbols for [imitation learning](imitation-learning.md).
 - $p_{\text{expert}}(\mathbf{s})$ and $p_\pi(\mathbf{s})$ are the distributions of states visited by
   the expert and by the learned policy $\pi$ (slide 18).
 
+## Notation for policy gradients
+
+Lecture 3 adds symbols for sampled trajectories and their gradients; see
+[policy gradients](policy-gradients.md).
+
+- $J(\theta)$ is the RL objective as a function of the policy parameters, and
+  $\theta^{\ast} = \arg\max_\theta J(\theta)$ (slide 7).
+- $r(\tau)$ is shorthand for the sum of rewards along a trajectory,
+  $\sum_{t=1}^{T} r(\mathbf{s}_ t, \mathbf{a}_ t)$ (slide 8).
+- $N$ is the number of sampled trajectories, $\tau^i$ the $i$-th, and $\mathbf{s}_ {i,t}$,
+  $\mathbf{a}_ {i,t}$ (also written $\mathbf{s}_ t^i$, $\mathbf{a}_ t^i$) its state and action at
+  time $t$ (slides 7, 10).
+- $t'$ indexes the time steps from $t$ onward in a sum of future rewards (slide 13).
+- $b$ is a baseline subtracted from the reward, such as the average reward (slide 16).
+- $\alpha$ is the step size in the update $\theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$
+  (slide 10).
+- $\theta'$ is the latest policy being updated with samples from $\pi_\theta$, and
+  $\bar{\pi}$, $\bar{p}(\tau)$ a previous policy and its trajectory distribution (slides 21–22).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
   robot and chatbot examples.
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md): the notation for demonstrations,
   corrections and state distributions.
+- [Lecture 3 — Policy Gradients](03-policy-gradients.md): the notation for sampled trajectories,
+  baselines and off-policy updates, and the fixed-horizon remark on the Markov property.

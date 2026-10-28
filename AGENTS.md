@@ -104,6 +104,8 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   figure slides from the 1400px renders (~1.5k tokens each, cross-model with the transcriber),
   checking structure, arrows, labels and equations. Check every "printed slip" the agent lists
   against the page before recording it.
+- When the lecturer corrects a printed slide aloud, note it under that slide with the timestamp,
+  and write the corrected form in `wiki/`, saying the slide prints it otherwise.
 - A slide holding a video holds one frame. What the video showed comes from the transcript,
   written into the slide entry by the parent with its timestamp.
 
@@ -120,6 +122,9 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   transcribed, and slides whose only images are equations reproduced exactly in the slide file.
 - Replace the script's default captions (`Slide N — <title>?.`) with hand-written ones saying
   what to look at; no math or emphasis inside a caption.
+- The embed script anchors on "slide N" and cannot tell lectures apart, so on a topic page that
+  cites more than one lecture's slides, place the new lecture's images by hand with the lecture
+  page's captions ("Lecture N, slide M — …"); run the script only on single-lecture pages.
 - `grep -o 'raw/images/[^)]*' wiki/NN-*.md` lists a lecture's wiki images. The slide file's
   `images:` header lists every rendered slide and why the rest were not.
 - When a lecture adds images, update `INDEX.md`'s images paragraph, the table below,
@@ -129,6 +134,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | --- | --- | --- |
 | 1 Class Intro | 16 of 45 pages | robot video stills, a Go broadcast, two simulation screenshots, generated-image strips, the chip-placement diagram, the RL graphical models, the policy network |
 | 2 Imitation Learning | 15 of 27 pages | the multimodal steering chart, distribution and generative-policy diagrams, success-rate bar charts, robot and driving model stills, the compounding-error and DAgger diagrams, demonstration interfaces, SFV video frames |
+| 3 Policy Gradients | 11 of 28 pages | the online-RL loop and its iterations, the trajectory plots, the REINFORCE and reward-weighted-imitation slides, the humanoid and jacket-folding examples, the summary and review slides, the off-policy algorithm |
 
 ## Rebuilding
 

@@ -157,9 +157,33 @@ exploration (slide 24).
 
 *Slide 24 — the embodiment gap: video frames of a person's cartwheel and backflip above simulated characters reproducing them, from SFV (Peng et al., 2018). [Deck](https://cs224r.stanford.edu/spring_2025/slides/02_cs224r_imitation_2025.pdf)*
 
+## Relation to policy gradients
+
+Lecture 3 opens by recalling the imitation objective and its limits: it is a simple, scalable
+approach, but it cannot outperform the demonstrator and does not allow improvement from practice
+(slide 4, ≈0:54–1:40). Policy gradients address that, and they turn out to be closely related. The
+policy gradient's first factor is exactly the gradient of the imitation objective,
+$\sum_t \nabla_\theta \log \pi_\theta(\mathbf{a}_ {i,t} \mid \mathbf{s}_ {i,t})$, so a policy
+gradient is the **imitation gradient weighted by reward**, applied to the policy's own rollouts
+rather than to an expert's demonstrations (slide 11, ≈21:16–22:50). Imitation learning, by
+contrast, imitates all of its data blindly and assumes it is good (≈23:36). In implementation the
+connection is literal: the policy gradient's surrogate objective is "weighted maximum likelihood",
+a cross-entropy or squared-error loss weighted by reward (slide 18).
+
+![Slide 11 — What does the gradient mean?](../raw/images/03-policy-gradients/slide-11.jpg)
+
+*Lecture 3, slide 11 — the policy gradient beside imitation learning's gradient, with the shared term shaded teal: the policy gradient is the imitation gradient weighted by each trajectory's reward. [Deck](https://cs224r.stanford.edu/spring_2025/slides/03_cs224r_policy_gradients_2025.pdf)*
+
+The two also combine in practice. A policy can be initialized with imitation learning and then
+improved with policy gradients, which can be a very good fit when demonstrations are available,
+since a randomly initialized policy does random things (≈24:23–25:09; slide 6 lists imitation
+learning as one way to initialize the policy). See [policy gradients](policy-gradients.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
   imitation learning as one of the five algorithm families.
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md): the whole of this page, with the
   student questions and the deployed systems.
+- [Lecture 3 — Policy Gradients](03-policy-gradients.md#what-the-gradient-means): the policy
+  gradient as an imitation gradient weighted by reward, and imitation learning as initialization.

@@ -104,6 +104,12 @@ tend to learn the structure fairly quickly, but this may cost data, makes the bi
 important hyperparameter, and can be eased by smoothing the labels so they are not one-hot
 (≈40:54–41:39).
 
+The same log-likelihood reappears in reinforcement learning. Lecture 3 implements the
+[policy gradient](policy-gradients.md) as a surrogate objective that weights each action's
+log-probability by its reward, "weighted maximum likelihood": a cross-entropy loss for a
+discrete-action policy, something like a squared error for a Gaussian policy, and more
+sophisticated policies such as diffusion can be used too (slide 18, ≈53:56).
+
 ## Network expressivity is not distribution expressivity
 
 Why not keep squared error and use a bigger network? Because however large the network, it still
@@ -137,4 +143,6 @@ section](02-imitation-learning.md#expressive-policies-in-deployed-systems) shows
   stochastic, and the pointer to generative modeling.
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#learning-distributions-with-neural-networks):
   the full development, with the student questions.
+- [Lecture 3 — Policy Gradients](03-policy-gradients.md#implementing-it-the-surrogate-objective):
+  the log-likelihood weighted by reward.
 - [Policies](policies.md) and [imitation learning](imitation-learning.md).
