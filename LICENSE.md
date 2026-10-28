@@ -144,3 +144,21 @@ Sergey Levine".
 
 Not rendered from this deck: slide 27, which repeats slide 5; slides 13, 15 and 16, whose only
 picture is a thumbnail of the slide 12 humanoid.
+
+### Lecture 4 — Actor-Critic Methods
+
+Deck: [04_cs224r_actor_critic_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf).
+Rendered: 21 slides, in `raw/images/04-actor-critic/`. Slides 21 and 29–33 print "Slide adapted
+from Sergey Levine".
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 7 | Stick-figure drawings (a person at a drum kit, at a television, on a lounge chair) and an image of a sheet of drum notation headed "Improvisation test examples and ideas for Rockschool Grade 1 drums exam", credited on the sheet to Theo Lawrence / TL Music Lessons. The stick figures are not credited. |
+| 8 | A still of a simulated humanoid and a photograph of a humanoid robot at a table with a jacket, as in Lecture 3. Not credited. |
+| 21, 29, 30, 31, 32 | Slides "adapted from Sergey Levine": the discounted-MDP diagram with a skull symbol (21), the replay-buffer timeline (29), and equation slides with hand-drawn annotations (30–32). |
+| 35 | Two learning-curve charts, "(e) Humanoid-v1" and "(f) Humanoid (rllab)", comparing SAC, DDPG, PPO, SQL and TD3, pasted from a paper the slide does not name. |
+| 3, 6, 9, 12, 14, 16, 17, 18, 19, 20, 22, 23, 27 | No third-party content identified: the deck's own loop diagrams, trajectory sketches, neural-network drawings and annotated equations. |
+
+Not rendered from this deck: slides 11, 15 and 26, build steps of slides 12, 16 and 27; slides 4,
+10, 33 and 34, equation slides whose annotations are transcribed; and the title, reminder, plan and
+text slides.

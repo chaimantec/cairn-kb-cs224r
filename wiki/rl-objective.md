@@ -76,6 +76,24 @@ distant ones (≈45:28–47:01).
 Lecture 1 introduces the discount factor in speech only: it is on no slide of that deck and is
 given no symbol. The lecture says discount factors return in a couple of lectures.
 
+Lecture 4 brings it back as $\gamma \in [0, 1]$, to keep value estimates finite (slide 21,
+≈56:13–58:33). If the episode length $T$ is infinite, or very long, a value that sums every future
+reward can get very large. Multiplying the next state's value by $\gamma$ in each target weights
+earlier rewards more than later ones. $\gamma = 1$ changes nothing; the lecture suggests something
+like 0.9 or 0.99, and the slide says 0.99 works well. See
+[policy evaluation](policy-evaluation.md#discounting-the-targets).
+
+Lecture 4 also reads the discount factor as a change to the decision process: it is equivalent to
+the agent dying at any point in time with some probability (≈57:47). With $\gamma = 0.99$ there
+is a 1% chance at each step of entering a state with zero reward and staying there forever. In the
+slide's diagram, every original transition probability $p(\mathbf{s}' \mid \mathbf{s}, \mathbf{a})$
+is multiplied by $\gamma$, and with probability $1 - \gamma$ the agent drops into a death state
+where it "can't do anything else after that" (≈58:33).
+
+![Lecture 4, slide 21 — Aside: discount factors](../raw/images/04-actor-critic/slide-21.jpg)
+
+*Lecture 4, slide 21 — discounting as a change to the MDP: each original transition keeps probability gamma times its old value, and with probability one minus gamma the agent drops into a death state. [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
+
 ## How good is a particular policy?
 
 The same expectation, started from a given state (and action) instead of the initial state
@@ -105,3 +123,5 @@ and dynamics terms do not depend on $\theta$, so they drop out (slides 8–9). T
   its sources of randomness, the horizon and the discount factor.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#deriving-the-policy-gradient): estimating
   the objective from samples and deriving its gradient.
+- [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#aside-discount-factors): the discount
+  factor $\gamma$ and its reading as a probability of the agent dying.

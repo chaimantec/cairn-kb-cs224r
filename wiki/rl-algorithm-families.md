@@ -9,7 +9,7 @@ Lecture 1 sorts them into five families (slide 41, ≈49:20–50:53).
 | --- | --- | --- |
 | Imitation learning | mimic a policy that achieves high reward | 2; see [imitation learning](imitation-learning.md) |
 | Policy gradients | directly differentiate the objective | 3; see [policy gradients](policy-gradients.md) |
-| Actor-critic | estimate the value of the current policy and use it to make the policy better | 4, 5 |
+| Actor-critic | estimate the value of the current policy and use it to make the policy better | 4, 5; see [actor-critic methods](actor-critic.md) |
 | Value-based | estimate the value of the optimal policy | 6 |
 | Model-based | learn to model the dynamics, and use it for planning or policy improvement | 11 |
 
@@ -21,9 +21,10 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–3.** Imitation learning and policy gradients have
-their own pages, [imitation learning](imitation-learning.md) and
-[policy gradients](policy-gradients.md); the other three families do not yet. Lecture 2 adds
+**This knowledge base so far covers Lectures 1–4.** Imitation learning, policy gradients and
+actor-critic methods have their own pages, [imitation learning](imitation-learning.md),
+[policy gradients](policy-gradients.md) and [actor-critic methods](actor-critic.md); value-based
+and model-based methods do not yet. Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -38,6 +39,15 @@ learning, it can improve beyond a demonstrator, from practice. It is the course'
 algorithm, and an **on-policy** one: it needs fresh data from the current policy for every
 gradient step, unless importance sampling is used to reuse a batch (slide 20). The lecture's
 verdict is that it works best with large batches and dense rewards (slide 26).
+
+Lecture 4 builds the third family on the second. An actor-critic method is a policy gradient whose
+weight on each action is not the sampled reward to go but an estimated advantage, computed from a
+learned value function, the critic (Lecture 4, slides 10 and 22). In the lecture's review, policy
+gradients "do more of the good stuff, less of the bad stuff, based on what you observe", while
+actor-critic methods "are learning to estimate what's good and bad, and then doing more of the good
+stuff according to your estimate" (≈1:02:21). Its deck also has off-policy versions with replay
+buffers, which the recording does not reach; the slides note that these "can be far more data
+efficient" but are harder to tune and less stable than, for example, PPO (Lecture 4, slide 35).
 
 ## Why so many algorithms?
 
@@ -64,3 +74,4 @@ parts.
   the five families and the trade-offs between them.
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md): the first family in depth.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md): the second family in depth.
+- [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the third family in depth.

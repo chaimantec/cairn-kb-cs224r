@@ -56,7 +56,8 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   for conditioning and `\thinspace` for spacing. Put a space after every underscore that
   follows `}` or `)` (`\mathbf{s}_ t`, `\mathbb{E}_ {…}`), or GitHub's markdown pairs the
   underscores into italics; never end an inline formula with `)` directly before a `)`
-  (`…)$)` renders as raw text on github.com). A literal dollar sign in
+  (`…)$)` renders as raw text on github.com), and never open inline math straight after a quotation
+  mark (`"$\tau^4$: …"`): put the symbol outside the quotes. A literal dollar sign in
   prose opens a math span: write "1 million dollars". Run `check_math.mjs --github`
   (the `cairn-kb` skill) before pushing.
 - **Transcripts stay verbatim.** Captions spell notation out as speech ("theta
@@ -135,6 +136,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 1 Class Intro | 16 of 45 pages | robot video stills, a Go broadcast, two simulation screenshots, generated-image strips, the chip-placement diagram, the RL graphical models, the policy network |
 | 2 Imitation Learning | 15 of 27 pages | the multimodal steering chart, distribution and generative-policy diagrams, success-rate bar charts, robot and driving model stills, the compounding-error and DAgger diagrams, demonstration interfaces, SFV video frames |
 | 3 Policy Gradients | 11 of 28 pages | the online-RL loop and its iterations, the trajectory plots, the REINFORCE and reward-weighted-imitation slides, the humanoid and jacket-folding examples, the summary and review slides, the off-policy algorithm |
+| 4 Actor-Critic Methods | 21 of 37 pages | the recap, the V/Q trajectory fans and drum example, the dissatisfying-PG stills, the loop with its fit-a-model step, the value-network and Monte Carlo/bootstrap/n-step slides, the discounted MDP, the full algorithm and review, the off-policy slides (KL/PPO ideas, replay buffer, fixes), the SAC-versus-PPO chart |
 
 ## Rebuilding
 

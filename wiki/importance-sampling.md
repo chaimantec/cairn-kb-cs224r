@@ -48,7 +48,25 @@ $\pi_\theta$ the one that collected the data. That is what lets the off-policy p
 several gradient steps on one batch; see
 [policy gradients](policy-gradients.md#on-policy-and-an-off-policy-version).
 
+## In actor-critic methods
+
+Lecture 4 recalls the off-policy policy gradient with a caution: the math "is very simple and very
+nice, but it's important to remember that this isn't a silver bullet" (≈2:22). It suits only
+policies that are very similar. When they differ, the ratio gets very large or very small, and the
+gradient estimate gets worse (slide 4, ≈3:08).
+
+The deck's first off-policy [actor-critic](actor-critic.md) version puts the same per-step ratio in
+front of each advantage-weighted term so as to take several gradient steps per batch (Lecture 4,
+slides 25–27; the recording does not reach these slides). The deck names the risk of taking too
+many steps: the advantages come from the old policy and "will get out-dated". It offers two
+remedies. One is a KL constraint on the policy. The other is to bound the importance weights, which
+"Doesn't directly constrain policy, but removes incentives" and is the "Key idea behind proximal
+policy optimization (PPO)" (slide 27).
+
 ## Where this appears
 
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#importance-sampling): the technique and the
   off-policy policy gradient built from it.
+- [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#not-in-the-recording-off-policy-actor-critic):
+  the caution that it is not a silver bullet, and importance weights in off-policy actor-critic,
+  with the idea behind PPO (slides only).

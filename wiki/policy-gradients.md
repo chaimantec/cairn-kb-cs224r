@@ -197,17 +197,31 @@ but Lecture 3 skips it for time (≈1:01:40).
 The lecture's own summary (slides 19 and 26): even with causality and a baseline the gradient is
 noisy, so policy gradients work best with **large batches and dense rewards**. Lecture 3 closes
 by saying that the next lecture, on actor-critic methods, builds closely on policy gradients and is
-the basis for algorithms such as PPO (slide 28, ≈1:02:26). This knowledge base does not cover that
-lecture yet.
+the basis for algorithms such as PPO (slide 28, ≈1:02:26).
 
 ![Slide 19 — Summary so far](../raw/images/03-policy-gradients/slide-19.jpg)
 
 *Slide 19 — the summary of the on-policy algorithm, colour-keyed to the two halves of the online loop. [Deck](https://cs224r.stanford.edu/spring_2025/slides/03_cs224r_policy_gradients_2025.pdf)*
 
+## What actor-critic methods change
+
+[Actor-critic methods](actor-critic.md) (Lecture 4) keep this gradient and replace its weight. The
+sampled reward to go is a one-trajectory estimate of an action's future rewards. Its expectation is
+the Q-function, and the natural baseline is the value function. So the weight becomes the advantage
+$A^\pi(\mathbf{s}, \mathbf{a}) = Q^\pi(\mathbf{s}, \mathbf{a}) - V^\pi(\mathbf{s})$, estimated by a
+learned value network, the critic (Lecture 4, slides 9–10, ≈18:33–22:22). This targets the
+weaknesses above. In Lecture 4's terms, policy gradients do more of the good stuff "based on what
+you observe", while actor-critic methods learn to estimate what is good and bad (slide 23,
+≈1:02:21). A humanoid that steps forward and then falls can then learn that the step itself had a
+positive advantage (≈1:02:21). How the critic is fitted is on
+[policy evaluation](policy-evaluation.md).
+
 ## Where this appears
 
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md): the derivation, the three examples, the
   surrogate objective, and the off-policy version.
+- [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#improving-the-gradient-with-q-and-a-baseline):
+  the recap of the method and the advantage-weighted version that replaces the reward to go.
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
   policy gradients as the family that differentiates the objective directly; see
   [RL algorithm families](rl-algorithm-families.md).

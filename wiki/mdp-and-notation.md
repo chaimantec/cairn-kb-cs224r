@@ -125,6 +125,25 @@ Lecture 3 adds symbols for sampled trajectories and their gradients; see
 - $\theta'$ is the latest policy being updated with samples from $\pi_\theta$, and
   $\bar{\pi}$, $\bar{p}(\tau)$ a previous policy and its trajectory distribution (slides 21–22).
 
+## Notation for actor-critic methods
+
+Lecture 4 adds the symbols for value estimation; see [actor-critic methods](actor-critic.md) and
+[policy evaluation](policy-evaluation.md).
+
+- $A^\pi(\mathbf{s}, \mathbf{a}) = Q^\pi(\mathbf{s}, \mathbf{a}) - V^\pi(\mathbf{s})$ is the
+  advantage, beside the value function $V^\pi$ and Q-function $Q^\pi$ (slide 6).
+- A hat marks an estimate: $\hat{V}^\pi_\phi$ is the fitted value network with parameters $\phi$,
+  and $\hat{A}^{\pi_\theta}$ the estimated advantage (slides 14, 22).
+- $y_{i,t}$ is the regression label for the state $\mathbf{s}_ {i,t}$, and $\mathcal{L}(\phi)$
+  the squared-error loss fitted to it (slides 17–18).
+- $n$ is the number of observed rewards in an n-step return (slide 20).
+- $\gamma \in [0, 1]$ is the discount factor (slide 21), and $\tilde{p}$ the transition
+  probabilities of the MDP as discounting changes it.
+- $\mathbf{s}'$ is the next state, and $\mathcal{R}$ a replay buffer of past transitions
+  $(\mathbf{s}, \mathbf{a}, \mathbf{s}', r)$ (slides 29–31, not discussed in the recording).
+- The deck indexes a time step and trajectory both as $\mathbf{s}_ {i,t}$ and as
+  $\mathbf{s}_ {t,i}$ (slide 22 uses the second).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -133,3 +152,5 @@ Lecture 3 adds symbols for sampled trajectories and their gradients; see
   corrections and state distributions.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md): the notation for sampled trajectories,
   baselines and off-policy updates, and the fixed-horizon remark on the Markov property.
+- [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the notation for advantages, fitted value
+  networks, regression labels and the discount factor.

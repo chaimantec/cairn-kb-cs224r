@@ -1,0 +1,138 @@
+# Policy evaluation
+
+**Policy evaluation** means estimating how good a state, or a state and action, is for a given
+policy. Lecture 4 makes it the first learning goal, how to estimate how good a state and action is for
+a policy: "This is called policy evaluation" (slide 5, ≈3:55). It is the critic's job in
+[actor-critic methods](actor-critic.md). The lecture fits the [value function](value-functions.md)
+$V^\pi(\mathbf{s})$, the expected sum of future rewards from state $\mathbf{s}$ under policy $\pi$,
+with a neural network $\hat{V}^\pi_\phi$ whose parameters are $\phi$. It gives three ways to supervise
+that network (Lecture 4, slides 23 and 36). Symbols are as on
+[MDPs and RL notation](mdp-and-notation.md).
+
+## Why the value function
+
+Fitting the advantage $A^\pi$ directly is hard to supervise, and fitting both $Q^\pi$ and $V^\pi$
+means two networks. But with one sampled next state $\mathbf{s}_ {t+1}$ the advantage is
+approximately $r(\mathbf{s}_ t, \mathbf{a}_ t) + V^\pi(\mathbf{s}_ {t+1}) - V^\pi(\mathbf{s}_ t)$,
+so $V^\pi$ alone is enough: "Let's just fit $V^\pi$!" (Lecture 4, slide 14, ≈27:00–33:14). The
+superscript matters. Finn notes that much RL work "drops the pi just for simplicity", but the
+function estimates a value for a particular policy, not for any policy (≈32:28–33:14).
+
+All three methods below share one regression. From the sampled trajectories, indexed by $i$ with
+time steps $t$, they build a dataset of states $\mathbf{s}_ {i,t}$ with labels $y_{i,t}$, and they
+minimize a squared error (Lecture 4, slides 17–18, ≈38:35–40:07):
+
+$$\mathcal{L}(\phi) = \frac{1}{2} \sum_i \left\Vert \hat{V}^\pi_\phi(\mathbf{s}_ i) - y_i \right\Vert^2$$
+
+They differ only in the label. Because the policy is not changed by these gradient steps, many of
+them can be taken on one batch without collecting new data (≈40:07).
+
+## Monte Carlo estimation
+
+The label is the sum of rewards actually observed from that time step to the end of the trajectory
+(Lecture 4, slides 15–17, ≈34:00–40:53):
+
+$$y_{i,t} = \sum_{t'=t}^{T} r(\mathbf{s}_ {i,t'}, \mathbf{a}_ {i,t'})$$
+
+Averaging many rollouts from the same state would be better, but that needs the world reset to that
+state, which "in many scenarios" is "very hard" (≈34:46). So instead a single network is trained on
+single-sample labels from many trajectories. Similar states recur across them, and the network
+learns to "amortize the data" (≈35:31). The dataset has the number of trajectories times the average
+trajectory length as its size (≈37:04). Finn calls this "the simplest and kind of dumbest approach
+you can use to fit a value function", and it has to be refit whenever the policy changes (≈37:50).
+
+![Lecture 4, slide 17 — Estimating V-pi](../raw/images/04-actor-critic/slide-17.jpg)
+
+*Lecture 4, slide 17 — Monte Carlo estimation as supervised learning: two trajectories pass close to the same state (circled), so a network trained on many single-sample labels learns from both. [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
+
+## Bootstrapping (temporal difference learning)
+
+The label is the reward now plus the network's current estimate of the next state's value
+(Lecture 4, slide 18, ≈40:53–47:45):
+
+$$y_{i,t} = r(\mathbf{s}_ {i,t}, \mathbf{a}_ {i,t}) + \hat{V}^\pi_\phi(\mathbf{s}_ {i,t+1})$$
+
+This comes from the ideal target, the expected sum of future rewards, which equals the current
+reward plus the value of the next state. The slide's note on the last term is "directly use
+previous fitted value function!" Since the labels contain the network's own output, they change
+during training and are typically recomputed after every gradient update (≈43:58–44:43). The name
+is "bootstrapping" because the method bootstraps off its own estimate of the value function as part
+of the learning process (≈43:58). It is also called **temporal difference learning**, after the
+difference between the next time step and the current one. This propagates information backwards
+in time, which "is distinct from propagating gradients through the network" (≈46:59–47:45).
+
+Initialization needs nothing fancy, though values initialized around "negative a thousand" would
+be bad, and one could start with the Monte Carlo objective to get into the right ballpark
+(≈46:14–46:59).
+
+![Lecture 4, slide 18 — Estimating V-pi](../raw/images/04-actor-critic/slide-18.jpg)
+
+*Lecture 4, slide 18 — the bootstrapped target: the reward now plus the fitted network's own estimate of the next state's value, with labels updated after every gradient step. [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
+
+## How they differ: an example
+
+Two trajectories start from the same state and earn reward 0 until the end (Lecture 4, slide 19,
+≈47:45–51:38). The black one passes through a pink state and then a blue state and ends with reward
+$-1$. The grey one bypasses the pink state, joins at the blue state, and ends with reward $1$.
+
+| State | Monte Carlo | Bootstrapping |
+| --- | --- | --- |
+| blue (both trajectories) | 0, the average of $-1$ and $1$ | 0 |
+| pink (black trajectory only) | $-1$, that trajectory's own outcome | 0, from the blue state's estimate |
+
+Monte Carlo pools the two trajectories only at the blue state, where the same exact state appears
+with two labels (≈50:51). Bootstrapping passes the blue state's estimate back to the pink state, so
+it is "able to look at its estimated value and actually aggregate information across trajectories
+more effectively". Finn calls its answer arguably the more accurate one (≈50:04).
+
+![Lecture 4, slide 19 — Estimating V-pi: Monte Carlo vs. Bootstrap](../raw/images/04-actor-critic/slide-19.jpg)
+
+*Lecture 4, slide 19 — the think-pair-share: both trajectories pass through the blue state, only the black one (which ends at reward -1) passes through the pink state, and the question is what Monte Carlo and bootstrapping estimate at each. [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
+
+## Bias and variance
+
+"Monte Carlo is going to have high variance, but it is completely unbiased, whereas the
+bootstrapped estimate has much lower variance" (≈51:38). The bootstrapped estimate is biased,
+because the current value estimate inevitably has at least a small amount of error (≈52:23).
+
+The single next state has a cost too. It is a good approximation when the environment is close to
+deterministic, "because there aren't that many futures", and worse when it is stochastic (≈32:28).
+
+## N-step returns
+
+The middle ground sums the observed rewards for $n$ steps and then bootstraps from the value at
+step $t+n$ (Lecture 4, slide 20, ≈52:23–56:13):
+
+$$y_{i,t} = \sum_{t'=t}^{t+n-1} r(\mathbf{s}_ {i,t'}, \mathbf{a}_ {i,t'}) + \hat{V}^\pi_\phi(\mathbf{s}_ {i,t+n})$$
+
+It has less variance than Monte Carlo and lower bias than a one-step bootstrap. With $n = 1$ it is
+bootstrapping, and with $n = T$ it is Monte Carlo. The slide's advice is that $n \gt 1$, $n \lt T$
+"often works the best in practice". This is especially useful with very short time steps, such as
+10 milliseconds, where little happens between steps (≈54:41). Choosing $n$ does not change how
+greedy the agent is, since every target estimates the same quantity. What it trades is variance:
+look further ahead when the variance grows slowly, and use a smaller $n$ when it grows quickly
+(≈59:19–1:00:04). Mixing labels of several kinds is possible in principle, but in practice one is
+picked (≈55:28–56:13).
+
+![Lecture 4, slide 20 — Estimating V-pi: Monte Carlo vs. Bootstrap](../raw/images/04-actor-critic/slide-20.jpg)
+
+*Lecture 4, slide 20 — Monte Carlo sums every reward (red), one-step bootstrapping uses one reward plus a value, and n-step returns sum n rewards (purple) and then use the value at t plus n (blue). [Deck](https://cs224r.stanford.edu/spring_2025/slides/04_cs224r_actor_critic_2025.pdf)*
+
+## Discounting the targets
+
+With very long or infinite episodes, summed rewards, and so the values, can grow without bound. A
+discount factor $\gamma \in [0, 1]$ on the next state's value fixes this (Lecture 4, slide 21,
+≈56:13–58:33):
+
+$$y_{i,t} \approx r(\mathbf{s}_ {i,t}, \mathbf{a}_ {i,t}) + \gamma \hat{V}^\pi_\phi(\mathbf{s}_ {i,t+1})$$
+
+The slide says 0.99 works well. In the n-step target the value term is multiplied by $\gamma^n$
+(slide 22, ≈58:33). For what discounting means for the decision process, see
+[the RL objective](rl-objective.md#horizon-and-discounting).
+
+## Where this appears
+
+- [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#estimating-the-value-function-version-1-monte-carlo):
+  the three methods, the worked example and the discount factor.
+- [Lecture 3 — Policy Gradients](03-policy-gradients.md): the single-sample reward to go, which is
+  the Monte Carlo estimate with no model.

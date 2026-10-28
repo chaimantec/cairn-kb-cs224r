@@ -43,6 +43,17 @@ normally trained with thousands of them (Lecture 3, ≈54:41–55:27). An off-po
 calls it only "a little" off-policy (≈56:14). Its estimate becomes less accurate the further the
 policy moves from the one that collected the data (slide 24).
 
+Lecture 4 opens by recalling this limit: one gradient step per batch means collecting "a ton and
+ton of data", and importance weights are "not a silver bullet", suitable only when the policies are
+very similar (slide 4, ≈1:37–3:08). Its deck then makes [actor-critic methods](actor-critic.md)
+increasingly off-policy, in slides the recording does not reach (Lecture 4, slides 25–35). The
+first step takes multiple gradient steps on one batch with importance weights. The second keeps a
+**replay buffer** of all past data and trains on minibatches from it, which forces changes to the
+equations: a Q-function critic, and actions resampled from the current policy rather than taken
+from the buffer. The deck's comparison says off-policy methods with a replay buffer, such as soft
+actor-critic, "can be far more data efficient", but "can also generally be harder to tune
+hyperparameters, less stable (than e.g. PPO)" (slide 35).
+
 The course schedule has a later lecture on offline RL (Lecture 7 in this KB's numbering; see
 [`sources.md`](../sources.md#lectures)). This knowledge base does not cover it yet.
 
@@ -52,3 +63,5 @@ The course schedule has a later lecture on offline RL (Lecture 7 in this KB's nu
   the definitions, and why behavior cloning is offline.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#the-trouble-with-on-policy): offline and
   online recalled (slide 4), and the on-policy and off-policy definitions.
+- [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#not-in-the-recording-off-policy-actor-critic):
+  the on-policy limit recalled, and off-policy actor-critic with replay buffers (slides only).

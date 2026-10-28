@@ -608,8 +608,8 @@ best with large batches and dense rewards.
 *Slide 26 — the review: the on-policy algorithm, the off-policy version with importance sampling and a KL constraint, and the intuition, keyed to the online loop. [Deck](https://cs224r.stanford.edu/spring_2025/slides/03_cs224r_policy_gradients_2025.pdf)*
 
 **Next time** (slide 28, ≈1:02:26): actor-critic methods, which build closely on policy gradients
-and are the basis for popular algorithms such as PPO. This knowledge base does not cover that
-lecture yet. The slide's course reminders, not read out in the recording, are to start forming
+and are the basis for popular algorithms such as PPO; see
+[Lecture 4 — Actor-Critic Methods](04-actor-critic.md). The slide's course reminders, not read out in the recording, are to start forming
 final project groups (survey due next Wednesday) and that Homework 1 is out, due next Friday
 (slide 2 dates it Friday, April 18).
 
@@ -626,3 +626,5 @@ final project groups (survey due next Wednesday) and that Homework 1 is out, due
   reweights.
 - [RL algorithm families](rl-algorithm-families.md): where policy gradients sit among the
   course's methods.
+- [Actor-critic methods](actor-critic.md): the next lecture's method, which replaces the reward to
+  go with an estimated advantage.
