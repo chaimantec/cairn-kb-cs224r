@@ -1,0 +1,62 @@
+{
+  "kbVersion": 1,
+  "course": {
+    "code": "CS224R",
+    "title": "Deep Reinforcement Learning",
+    "instructor": "Chelsea Finn, with guest lecturers Archit Sharma, Aviral Kumar and Ashish Kumar",
+    "term": "Spring 2025",
+    "catalogId": "39921dee-a11a-41e8-9757-5cbea3b36a9d",
+    "courseUrl": "https://cs224r.stanford.edu/spring_2025/"
+  },
+  "coverage": {
+    "lecturesCovered": 1,
+    "lecturesTotal": 19,
+    "transcripts": 1,
+    "wikiLecturePages": 1,
+    "wikiTopicPages": 6,
+    "byLecture": {
+      "1": "Class Intro (course intro and MDPs): transcript, slides, wiki page, 16 images"
+    },
+    "note": "lecturesTotal is the 19 recordings in the Cairn catalog on 2026-10-28: 18 lectures and the Q-learning TA session, which the catalog lists last. Only Lecture 1 is covered. All 19 slide decks are on the course site and listed in sources.md. wikiTopicPages counts the five concept pages and the course-logistics page."
+  },
+  "materials": {
+    "primary": "slides",
+    "slideDecks": {
+      "available": 19,
+      "transcribed": 1,
+      "note": "Lecture 1's deck (45 pages) is transcribed to raw/slides/. The other 18 decks are linked in sources.md."
+    },
+    "method": "page-images",
+    "figuresAudited": true,
+    "figureAudit": {
+      "decksAudited": 1,
+      "decksTotal": 1,
+      "unaudited": [],
+      "note": "Counts are over transcribed decks. Lecture 1 was transcribed by Claude Sonnet 5.5; six figure slides (24, 25, 30, 33, 36, 37) were checked by Claude Opus 5.5 against 1400px renders. All six agreed; the audit added the lecture's context to slide 30 and corrected one printed-slip note."
+    },
+    "images": {
+      "lecturesWithImages": 1,
+      "files": 16,
+      "byLecture": {
+        "1": 16
+      },
+      "format": "1400px whole-slide renders (JPEG, PNG where smaller)",
+      "discovery": "inline in wiki/ and raw/slides/; no index file",
+      "note": "Lecture 1 only: 16 of the deck's 45 pages, every figure-bearing slide except staff photographs, a meme, clip-art icons, a logo wall, and slides whose only images are equations transcribed exactly. No other lecture has images."
+    }
+  },
+  "provenance": {
+    "builtBy": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "caveats": [
+      "Only Lecture 1 of 19 is covered; the KB cannot answer questions about the technical content of Lectures 2-19.",
+      "Lecture 1's recording leaves out the course-logistics slides (5-6 and 10-15); their content comes from the slides alone.",
+      "Transcripts are copy-edited from YouTube auto-captions; students are inaudible, so their questions appear only as the lecturer restates them. Three passages are marked [Ed: unclear].",
+      "The verbatim captions are not committed; each transcript says how to regenerate them."
+    ]
+  },
+  "entryPoint": "INDEX.md",
+  "updated": "2026-10-28"
+}
