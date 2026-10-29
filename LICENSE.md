@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–7 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–8 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -221,3 +221,29 @@ Not rendered from this deck: slides 8, 10, 15, 18, 20, 27 and 28, equation slide
 labels, strikethrough, loop arrows and circles are transcribed (27 and 28 print "Slide adapted from
 Sergey Levine"); and the title, reminder, plan, text, summary and recommendation slides (1, 2, 6, 7,
 9, 12, 13, 24, 29, 30, 32, 33).
+
+### Lecture 8 — Reward Learning
+
+Deck: [08_cs224r_reward_learning_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/08_cs224r_reward_learning_2025.pdf).
+Rendered: 18 slides, in `raw/images/08-reward-learning/`. Slides 5–8 print "Slide adapted from Sergey
+Levine". The deck's text layer has no licence notice; slide 13's embedded video frame (not rendered)
+prints "© Warneken & Tomasello" in the image.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 5, 6, 8 | Slides "adapted from Sergey Levine": the randomly initialized Q-function plot with the Q-value penalty (5), the conservative Q-learning objective with its coloured labels (6), and the computation of the CQL objective (8). |
+| 9 | A system-architecture diagram of LinkedIn's notification pipeline and a results table ("Table 1: Online A/B test results for DDQN with and without CQL"), credited to Prabhakar, Yuan, Yang, Sun, Muralidharan, *Multi-Objective Optimization of Notifications Using Offline RL* ('22). |
+| 12 | An Atari Breakout screenshot captioned "Mnih et al. '15"; a photograph of a toddler at a table with a pitcher and glass, speech-bubble clip-art and an aerial photograph of a motorway, not credited. |
+| 15 | Photographs of a robot workspace (a notebook, a pencil case and a robot arm), not credited. |
+| 19 | Two video frames of a robot on a cloth task, from the work the slide cites: Sharma, Ahmed, Ahmad, Finn, *Self-Improving Robots: End-to-End Autonomous Visuomotor Reinforcement Learning* ('23). |
+| 20 | Three generated images of Yorkshire terriers, credited to Yu et al., *ViT-VQGAN* (ICLR '22), and a video frame from Villegas et al., *Phenaki* (ICLR '23). |
+| 27 | A simulation screenshot and a chart of learned reward-weight densities with a road diagram, from the two works the slide cites: Christiano et al., *Deep Reinforcement Learning from Human Preferences* (NeurIPS 2017), and Sadigh et al., *Active Preference-Based Learning of Reward Functions* (RSS 2017). |
+| 28, 29 | Screenshots of a chat prompt ("How do I cook an omelette?") and two replies, with speech-bubble and trophy icons, not credited. |
+| 30 | A helpfulness-against-harmlessness Elo chart, credited to Bai et al., *Constitutional AI: Harmlessness from AI Feedback* (2022). |
+| 32 | A three-panel grid-world self-play diagram, credited to Sukhbaatar et al., *Intrinsic Motivation and Automatic Curricula via Asymmetric Self-Play* (ICLR 2018). |
+| 4, 17, 23, 25, 26 | No third-party content identified: the deck's own recap with its Q-function plot, the goal-classifier algorithm, the trajectory sketches, and the preference objective and algorithm. |
+
+Not rendered from this deck: slides 2 and 34, whose only pictures are photographs of the two guest
+lecturers; slide 13, whose embedded video frame is black; slides 7, 18 and 24, equation and text slides
+whose loop arrow, emoji and brace are transcribed (7 prints "Slide adapted from Sergey Levine"); and the
+title, plan, summary and recap slides (1, 3, 10, 11, 14, 16, 21, 22, 31, 33).

@@ -9,15 +9,16 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–7 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–8 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
-> Q-learning, n-step returns) and Lecture 7 (offline RL: filtered behavior cloning, AWR, AWAC and
-> implicit Q-learning, with conservative Q-learning from its slides only): their edited
-> transcripts, their slide decks as text, 104 of their slides as images, and the topic pages they
-> start. **It cannot answer questions about the technical content of Lectures 8–19** (reward
-> learning onward, and the Q-learning TA session). For
+> Q-learning, n-step returns), Lecture 7 (offline RL: filtered behavior cloning, AWR, AWAC and
+> implicit Q-learning) and Lecture 8 (conservative Q-learning, and reward learning from goal
+> classifiers and from human preferences, including RL from human feedback): their edited
+> transcripts, their slide decks as text, 122 of their slides as images, and the topic pages they
+> start. **It cannot answer questions about the technical content of Lectures 9–19** (RL for
+> language models onward, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
@@ -44,22 +45,25 @@ complementary to the more theoretical CS234.
   (29–30) are only in the slide file. Lecture 6's recording covers slides 3–29 but does not discuss
   slide 2's reminders or slide 29's next-week topics, which are only in the slide file. Lecture 7's
   recording covers slides 3–23 and 30–32: it does not teach conservative Q-learning (CQL, slides
-  24–28) or slide 31's application, so those, and slides 2 and 33, are only in the slide file and in
-  the sections of the wiki pages that say so.
+  24–28) or slide 31's application, which Lecture 8 teaches aloud from the same slides; slides 2 and
+  33 are only in the slide file. Lecture 8's recording covers slides 3–32; its reminders (slides 2
+  and 34, which announce the two guest lectures) and its repeated plan (slide 33) are only in the
+  slide file.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6 and 7 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
-3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6 and 14 of Lecture 7 rendered as pictures, each shown under its
+Lectures 1, 2, 3, 4, 5, 6, 7 and 8 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7 and 18 of Lecture 8 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
 [`raw/slides/04-actor-critic.md`](raw/slides/04-actor-critic.md),
 [`raw/slides/05-off-policy-actor-critic.md`](raw/slides/05-off-policy-actor-critic.md),
 [`raw/slides/06-q-learning.md`](raw/slides/06-q-learning.md),
-[`raw/slides/07-offline-rl.md`](raw/slides/07-offline-rl.md)) and, where a wiki page cites that
+[`raw/slides/07-offline-rl.md`](raw/slides/07-offline-rl.md),
+[`raw/slides/08-reward-learning.md`](raw/slides/08-reward-learning.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these seven has one: the slide file's header lists which do.
+these eight has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -142,7 +146,23 @@ these seven has one: the slide file's header lists which do.
   reading; advantage-weighted regression (AWR) with the deterministic-data think-pair-share and the
   worked advantage example; advantage-weighted actor-critic (AWAC); expectile regression and implicit
   Q-learning (IQL), with the questions on choosing lambda; the summary and which algorithm to use
-  (with IDQL); and, from the slides only, conservative Q-learning (CQL) and the LinkedIn application.
+  (with IDQL); and, from the slides only, conservative Q-learning (CQL) and the LinkedIn application,
+  which Lecture 8 teaches aloud.
+
+- [Lecture 8 — Reward Learning](wiki/08-reward-learning.md): the end of offline RL and the start of
+  reward learning. The recap of offline RL and implicit Q-learning, and why IQL's asymmetric loss is
+  for the value function and not the Q-function (the luck argument, with a worked example);
+  conservative Q-learning (CQL) taught aloud: pushing down on large Q-values, pushing back up on the
+  data's, the lower bounds, the role of alpha and of mu, the student questions, the full algorithm, the
+  log-sum-exp form, and the LinkedIn notification application; why be conservative; the offline RL
+  summary. Then where rewards come from (games, pouring water, dialog, driving, proxies) and why
+  imitation is not enough; goal classifiers, how RL exploits them, adding visited states as negatives,
+  regularization, 50/50 balancing and the false-negative argument; the self-improving robot (26% to
+  62%); the GAN connection; learning from human preferences (relative preferences, the sigmoid
+  objective, partial roll-outs, the complete algorithm, in the loop of RL); the backflip and driving
+  examples; RL from human feedback for language models (the omelette prompt, the three-stage pipeline,
+  PPO); AI feedback (RLAIF, Constitutional AI); the summary and other forms of feedback; agents that
+  set their own goals; and, from the slides only, the reminders announcing the two guest lectures.
 
 ## Topic pages
 
@@ -153,7 +173,8 @@ these seven has one: the slide file's header lists which do.
   a state or an observation, and the extra notation for demonstrations, for policy gradients, for
   actor-critic methods, for off-policy actor-critic (surrogate objectives, clipping, GAE), for
   Q-learning (optimal policy, target networks, double Q-learning, exploration) and for offline RL
-  (behavior policy, filtered datasets, the expectile loss, CQL).
+  (behavior policy, filtered datasets, the expectile loss, CQL) and for reward learning (goal sets,
+  learned rewards, preference pairs, the sigmoid, prompts and responses).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
@@ -161,8 +182,8 @@ these seven has one: the slide file's header lists which do.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
-  a probability of the agent dying), and how Lecture 3 estimates the objective from samples and
-  differentiates it.
+  a probability of the agent dying), how Lecture 3 estimates the objective from samples and
+  differentiates it, and Lecture 8's question of where the reward comes from.
 - [Value functions](wiki/value-functions.md): the value function $V^\pi(\mathbf{s})$, the
   Q-function $Q^\pi(\mathbf{s}, \mathbf{a})$ and the advantage $A^\pi(\mathbf{s}, \mathbf{a})$,
   how the three relate (V as the expectation of Q; Q as the reward plus the next state's value, and
@@ -179,7 +200,7 @@ these seven has one: the slide file's header lists which do.
   stale advantages, the surrogate objective, the KL-penalty and clipping remedies, the clipped and
   minimum objective as a lower bound, generalized advantage estimation, the four-step algorithm
   and example hyperparameters, and where PPO is the right trade (simulation, language models, and
-  Lecture 6's advice).
+  Lecture 6's advice), and its use for the RL step of RL from human feedback (Lecture 8).
 - [Replay buffers and soft actor-critic](wiki/replay-buffers.md): reusing all past data, why a
   value function fitted on a buffer belongs to a mixture of past policies, the recursive Q-function
   and targets with actions from the current policy, action coverage, the fixed policy update, the
@@ -197,8 +218,9 @@ these seven has one: the slide file's header lists which do.
   expert policy), behavior cloning versions 0 and 1, compounding errors and covariate shift,
   corrective data with DAgger and human-gated DAgger, a table of their trade-offs, how
   demonstrations are collected, how the policy gradient relates to it (an imitation gradient
-  weighted by reward; imitation learning as initialization), and imitation as an offline RL baseline
-  (filtered behavior cloning, advantage weighting, why it cannot stitch).
+  weighted by reward; imitation learning as initialization), imitation as an offline RL baseline
+  (filtered behavior cloning, advantage weighting, why it cannot stitch), and Lecture 8's case for
+  learning a reward instead.
 - [Expressive policy distributions](wiki/expressive-policy-distributions.md): why a policy needs
   more than a mean; categorical, Gaussian, Gaussian-mixture, discretized autoregressive and
   diffusion policies, what each outputs and how each is trained; why a bigger network does not
@@ -228,8 +250,8 @@ these seven has one: the slide file's header lists which do.
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
   the three tricks (target networks and DQN, double Q-learning against overestimation, n-step
-  returns and their on-policy catch), continuous actions, when to use it, and why its coverage
-  fails offline.
+  returns and their on-policy catch), continuous actions, when to use it, why its coverage
+  fails offline, and the conservative Q-learning remedy.
 - [Bellman equations](wiki/bellman-equations.md): the Bellman equation for any policy's Q-function
   and how it lets a Q-function be fitted from other policies' data, the Bellman optimality equation
   for the optimal policy and how Q-learning uses it, the names, the value-function versions, why
@@ -238,13 +260,29 @@ these seven has one: the slide file's header lists which do.
   interaction; the behavior policy and distribution shift; why off-policy methods overestimate Q-values
   on out-of-distribution actions; why imitation is not enough (rewards, trajectory stitching); the three
   approaches (filtered or weighted imitation, implicit policy constraints, conservative objectives);
-  conservative Q-learning (CQL) from Lecture 7's slides, with its LinkedIn application; and which
-  algorithm to use.
+  conservative Q-learning (CQL) in brief, with its LinkedIn application; and which algorithm to use.
 - [Implicit policy constraint methods](wiki/implicit-policy-constraints.md): filtered behavior cloning,
   advantage-weighted imitation and its KL-constrained reading, advantage-weighted regression (AWR),
   advantage-weighted actor-critic (AWAC), expectile regression and implicit Q-learning (IQL), each
-  fixing the previous one's weakness, with the deterministic-data special case and the choice of
-  the expectile.
+  fixing the previous one's weakness, with the deterministic-data special case, the choice of
+  the expectile, and Lecture 8's explanation of why only the value function gets the asymmetric loss.
+- [Conservative Q-learning (CQL)](wiki/conservative-q-learning.md): the offline RL method that
+  penalizes Q-values, as Lecture 8 teaches it from Lecture 7's slides: pushing down on large Q-values
+  with a search distribution mu, pushing back up on the data's, the two lower bounds, what alpha and mu
+  do, the entropy regularizer and log-sum-exp that remove mu, the algorithm for discrete and continuous
+  actions, why be conservative rather than clone, the LinkedIn application, and the parallel with
+  reward classifiers.
+- [Reward learning](wiki/reward-learning.md): why rewards cannot be taken for granted (games against
+  pouring water, dialog and driving; proxies), why imitation is not enough, goal classifiers, how RL
+  exploits a fixed classifier, adding visited states as negatives with regularization and 50/50
+  balancing (and why mislabelled successes are tolerable), the GAN connection and full reward
+  functions, the self-improving robot, the trade-offs, other forms of feedback, and agents that set
+  their own goals.
+- [Learning rewards from preferences](wiki/preference-learning.md): why comparing trajectories is
+  easier than scoring them, the reward model and its sigmoid log-likelihood objective, partial
+  roll-outs and the missing margin, the complete algorithm over ranked batches and in the loop of RL,
+  the backflip and driving examples, RL from human feedback for language models (reward model,
+  three-stage pipeline, PPO), AI feedback (RLAIF, Constitutional AI), and the trade-offs.
 
 ## Course pages
 

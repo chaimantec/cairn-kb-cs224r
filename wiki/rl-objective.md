@@ -117,6 +117,13 @@ where $r(\tau)$ is the sum of rewards along $\tau$, and in $\log p_\theta(\tau)$
 and dynamics terms do not depend on $\theta$, so they drop out (slides 8–9). That is the
 [policy gradient](policy-gradients.md).
 
+## Where the reward comes from
+
+The objective assumes a reward function. In games the score supplies one, but in the real world rewards
+rarely come directly, and Lecture 8 is about learning them: from examples of goals, with a classifier,
+or from human preferences between trajectories (slide 12, ≈24:48–27:53). See
+[reward learning](reward-learning.md) and [learning rewards from preferences](preference-learning.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#the-goal-of-reinforcement-learning): the objective,
@@ -125,3 +132,5 @@ and dynamics terms do not depend on $\theta$, so they drop out (slides 8–9). T
   the objective from samples and deriving its gradient.
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#aside-discount-factors): the discount
   factor $\gamma$ and its reading as a probability of the agent dying.
+- [Lecture 8 — Reward Learning](08-reward-learning.md#where-does-the-reward-come-from): where the
+  reward in the objective comes from, and how to learn it.

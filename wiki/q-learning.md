@@ -171,10 +171,11 @@ Q-function of the policy being learned, Q-learning learns the optimal policy's, 
 next action, and that can be done off-policy "as long as your estimates have good coverage" (≈8:35–9:21).
 On a fixed offline dataset that coverage cannot be repaired by collecting more data, and a maximization
 over actions the data does not contain is what overestimates Q-values there (Lecture 7, slides 10–11;
-see [offline RL](offline-rl.md)). The conservative Q-learning objective in Lecture 7's slides is the
-offline remedy that keeps a Q-function: with discrete actions its policy is the greedy $\arg\max$ of the
-conservative Q-function (slide 27), and its slide 31 application compares double DQN with and without
-it.
+see [offline RL](offline-rl.md)). [Conservative Q-learning](conservative-q-learning.md), in Lecture 7's
+slides and taught aloud in Lecture 8, is the offline remedy that keeps a Q-function: with discrete
+actions its policy is the greedy $\arg\max$ of the conservative Q-function (Lecture 7, slide 27), and
+its LinkedIn application adds the CQL terms to a double DQN objective (Lecture 7, slide 31; Lecture 8,
+≈21:39–23:13).
 
 ## Where this appears
 
@@ -186,3 +187,5 @@ it.
   double Q-learning, n-step returns and the examples.
 - [Lecture 7 — Offline RL](07-offline-rl.md#recap-three-ways-to-fit-a-value-function): Q-learning's
   target recalled, and why coverage fails offline; conservative Q-learning from the slides.
+- [Lecture 8 — Reward Learning](08-reward-learning.md#conservative-q-learning-cql): conservative
+  Q-learning taught aloud, and its double DQN application.

@@ -1,9 +1,10 @@
 # Offline reinforcement learning
 
 Offline RL learns a policy from a fixed dataset that someone else collected, with no further
-interaction. Lecture 7 teaches it. This page gathers the setting, the central difficulty, why
-imitation learning is not enough, and the methods, with the
-[implicit policy constraint methods](implicit-policy-constraints.md) given their own page.
+interaction. Lecture 7 teaches it, and Lecture 8 opens by finishing it with conservative Q-learning.
+This page gathers the setting, the central difficulty, why imitation learning is not enough, and the
+methods, with the [implicit policy constraint methods](implicit-policy-constraints.md) and
+[conservative Q-learning](conservative-q-learning.md) given their own pages.
 
 ## The setting
 
@@ -106,9 +107,10 @@ Lecture 7's summary (slide 30) lists three.
 
 ## Conservative Q-learning (CQL)
 
-The recording does not teach this part. Everything here is from Lecture 7's slides 24–28, which credit
-it as "Slide adapted from Sergey Levine"; see the
-[lecture page](07-offline-rl.md#not-in-the-recording-conservative-q-learning-and-the-closing-slides).
+Lecture 7's recording does not teach this part; its slides 24–28, credited "Slide adapted from Sergey
+Levine", hold it, and Lecture 8 teaches it aloud from the same slides (Lecture 8, slides 5–8,
+≈6:57–21:39). The full treatment, with the lecture's explanations and student questions, is on
+[conservative Q-learning](conservative-q-learning.md); the summary below cites Lecture 7's slide numbers.
 
 Instead of avoiding OOD actions, CQL discourages overestimation directly, "without explicitly modeling
 the behavior policy" (slide 25). To the standard critic update it adds a term that finds, through a
@@ -135,6 +137,12 @@ the optimal $\mu$ is proportional to $\exp(Q(\mathbf{s}, \mathbf{a}))$, and the 
 $\log \sum_{\mathbf{a}} \exp(Q(\mathbf{s}, \mathbf{a}))$, so $\mu$ never has to be constructed
 (slide 28). Homework 3 implements both CQL and IQL (slides 23 and 28).
 
+Lecture 8 adds the reasoning the slides leave out (≈7:43–16:57). Pushing down alone is too pessimistic,
+because it lowers the Q-values of the data's own actions too, which is why the push-up term is added;
+the aim is a Q-function accurate inside the data's support and low outside it, where an accurate one
+cannot be learned. The weight $\alpha$ sets how pessimistic the critic is outside the data, and the bound
+fails if $\alpha$ is zero.
+
 Slide 31's application uses it. LinkedIn's notification policy, trained offline by Prabhakar et al.
 (2022), was tested online against a baseline: double DQN alone gave −0.69% weekly active users and
 −7.79% click-through rate, while double DQN with CQL gave +0.18% and +2.26%.
@@ -151,6 +159,9 @@ also works well. Offline RL is "still an active area of research!" (slide 32).
 ## Where this appears
 
 - [Lecture 7 — Offline RL](07-offline-rl.md): the whole topic; CQL from the slides only.
+- [Lecture 8 — Reward Learning](08-reward-learning.md#recap-offline-rl-and-implicit-q-learning): the
+  recap, why IQL's asymmetric loss is for the value function only, CQL taught aloud with its LinkedIn
+  application, and the summary of offline RL.
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md): behavior cloning as a fully offline
   method, which offline RL generalizes.
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md) and

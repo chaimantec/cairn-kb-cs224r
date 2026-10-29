@@ -204,7 +204,27 @@ dataset.
   curve fitted with it (slide 22); slide 21 writes the loss $\ell_2^\tau(x)$.
 - In conservative Q-learning, $\mu$ is the distribution over actions whose Q-values are pushed down,
   $R(\mu)$ a regularizer on it, $\mathcal{H}$ entropy, and $L_{CQL}$ the CQL loss (slides 25–28). Slide 27
-  writes the policy's step size as $\eta$, unrelated to filtered behavior cloning's threshold.
+  writes the policy's step size as $\eta$, unrelated to filtered behavior cloning's threshold. Lecture 8
+  teaches CQL from the same slides (its slides 5–8, which write $\mathbb{E}$); on the board Finn writes
+  the critic's usual loss as $L_\text{critic}$ and minimizes over the Q-function's parameters $\phi$.
+
+## Notation for reward learning
+
+Lecture 8 adds these; see [reward learning](reward-learning.md) and
+[learning rewards from preferences](preference-learning.md).
+
+- $G$ is a goal set of states, and a goal classifier is trained on inputs $s_i$ with labels
+  $\mathbb{1}(s_i \in G)$, one for a state in the goal set and zero otherwise (slide 15). $D_+$ and $D_-$ are
+  its successful and unsuccessful example states; visited states are added to $D_-$ (slide 17).
+- $r_\theta(s, a)$ is a learned reward function with parameters $\theta$, here the reward model's, not
+  the policy's; $r_\theta(\tau)$ is shorthand for its sum over the state-action pairs of a trajectory
+  $\tau$ (slide 24).
+- $\tau_w \succ \tau_l$ says a person preferred trajectory $\tau_w$ (winning) over $\tau_l$ (losing), and
+  $\sigma$ is the sigmoid, so $\sigma(r_\theta(\tau_a) - r_\theta(\tau_b))$ is the estimated probability
+  that $\tau_a \succ \tau_b$ (slides 24–25). $k$ is the number of trajectories ranked per batch, giving
+  $\binom{k}{2}$ pairs (slide 26).
+- For language models, $x$ is a prompt (often the whole history), $y$ and $y'$ are responses, and
+  $r(x, y)$ is the reward model judging how good $y$ is for $x$ (slides 28–29).
 
 ## Where this appears
 
@@ -222,3 +242,5 @@ dataset.
   double Q-learning and exploration.
 - [Lecture 7 — Offline RL](07-offline-rl.md): the notation for offline datasets, the behavior policy,
   advantage weighting, expectile regression and conservative Q-learning.
+- [Lecture 8 — Reward Learning](08-reward-learning.md): the notation for goal classifiers, learned
+  rewards and preferences.

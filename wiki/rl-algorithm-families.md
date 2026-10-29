@@ -21,12 +21,14 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–7.** Imitation learning, policy gradients,
+**This knowledge base so far covers Lectures 1–8.** Imitation learning, policy gradients,
 actor-critic methods and value-based methods have their own pages,
 [imitation learning](imitation-learning.md), [policy gradients](policy-gradients.md),
 [actor-critic methods](actor-critic.md) and [Q-learning](q-learning.md), and Lecture 7's offline
-RL has [offline RL](offline-rl.md) and [implicit policy constraint methods](implicit-policy-constraints.md);
-model-based methods do not yet. Lecture 2 adds
+RL has [offline RL](offline-rl.md), [implicit policy constraint methods](implicit-policy-constraints.md)
+and [conservative Q-learning](conservative-q-learning.md); Lecture 8's question of where the reward
+comes from has [reward learning](reward-learning.md) and
+[learning rewards from preferences](preference-learning.md); model-based methods do not yet. Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -108,3 +110,5 @@ parts.
   or SAC.
 - [Lecture 7 — Offline RL](07-offline-rl.md#which-offline-rl-algorithm-to-use): which offline RL
   algorithm to use.
+- [Lecture 8 — Reward Learning](08-reward-learning.md): conservative Q-learning, and how to get the
+  reward every family but imitation learning needs.

@@ -140,6 +140,17 @@ policy afterwards, which is computationally fast. "Policy improvement is implici
 expectile idea would also work with Monte Carlo returns, but a bootstrapped Q-function gives a
 lower-variance target (≈1:05:10–1:05:55). Homework 3 implements IQL (slide 23).
 
+**Why the asymmetric loss is for V and not for Q.** Lecture 8's recap answers this (≈3:09–7:43). A
+roll-out varies in two ways: which action is taken, and, given the action, which next state the
+environment produces. The value loss regresses $V$ onto the data's Q-values, so leaning toward the
+larger ones leans toward better actions, the value of a better policy. The Q-function's targets are the
+next states' values, so an asymmetric loss there would lean toward next states that turned out well by
+chance, optimizing "not a better policy, but a more lucky policy", which the agent cannot control with
+its actions. Finn's board example: an action can have a Q-value of 5 and still be followed by a state
+worth 8 because the agent got lucky, and a risky action with a Q-value of −5 can be followed by a state
+worth 0. The Q-function is still needed, because it is what tells which actions are better when the
+policy is extracted (≈6:57).
+
 Finn's recommendation (slide 32): IQL can stitch, stays within the data's support, will probably work
 better than filtered behavior cloning with a broader dataset, and "seems most performant" for offline
 pre-training followed by online fine-tuning. IDQL is a variant with
@@ -149,7 +160,9 @@ pre-training followed by online fine-tuning. IDQL is a variant with
 
 - [Lecture 7 — Offline RL](07-offline-rl.md): every method on this page, with the student questions on
   each.
-- [Offline RL](offline-rl.md): the problem these methods solve, and conservative Q-learning, the
-  alternative approach.
+- [Lecture 8 — Reward Learning](08-reward-learning.md#why-iqls-asymmetric-loss-is-for-v-and-not-for-q):
+  the IQL recap, and why only the value function gets the asymmetric loss.
+- [Offline RL](offline-rl.md): the problem these methods solve, and
+  [conservative Q-learning](conservative-q-learning.md), the alternative approach.
 - [Policy evaluation](policy-evaluation.md): the Monte Carlo and bootstrapped targets these methods
   adapt.

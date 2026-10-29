@@ -31,7 +31,8 @@ Q-learning it goes straight to the summary (≈1:05:55), and it passes over slid
 one "for the algorithm we didn't cover" (≈1:06:42). It ends at about 1:07:51 on slide 32's pointer to
 IDQL. The [last section](#not-in-the-recording-conservative-q-learning-and-the-closing-slides) gives
 CQL, the application and the closing slides from the [slide file](../raw/slides/07-offline-rl.md)
-alone.
+alone. [Lecture 8](08-reward-learning.md#pushing-down-on-large-q-values) opens by teaching CQL aloud
+from the same slides.
 
 Much of the lecture is worked live, with Finn writing and drawing while talking: the recap's
 targets, the formal setting, a randomly initialized Q-function over a car's actions, the stitching
@@ -586,6 +587,9 @@ at it (≈1:06:42–1:07:51). The slide adds that offline RL is "still an active
 
 The recording does not teach slides 24–28, the deck's third part, so everything in this section comes
 from the [slide file](../raw/slides/07-offline-rl.md) alone. It is part of homework 3 (slides 24 and 28).
+The next lecture teaches it aloud, with the reasoning and the student questions: see
+[Lecture 8](08-reward-learning.md#pushing-down-on-large-q-values) and
+[conservative Q-learning](conservative-q-learning.md).
 
 **Pushing down on large Q-values** (slide 25). The deck returns to the randomly initialized Q-function of
 slide 11 and asks whether overestimation can be discouraged without explicitly modeling the behavior
@@ -659,6 +663,7 @@ rewards??"
 
 - [Offline reinforcement learning](offline-rl.md): the setting, the overestimation problem, stitching,
   and the methods of this lecture side by side, with CQL.
+- [Conservative Q-learning](conservative-q-learning.md): CQL as Lecture 8 teaches it from these slides.
 - [Implicit policy constraint methods](implicit-policy-constraints.md): filtered behavior cloning, AWR,
   AWAC, expectile regression and IQL as one line of development.
 - [Offline and online algorithms](offline-and-online.md): where offline RL sits among the course's
@@ -671,3 +676,5 @@ rewards??"
   its action-coverage requirement.
 - [Q-learning](q-learning.md): overestimation, and Q-learning's own target, recalled at ≈8:35.
 - [Lecture 6 — Q-Learning](06-q-learning.md): the lecture before, which ends the course's online methods.
+- [Lecture 8 — Reward Learning](08-reward-learning.md): the lecture after, which finishes offline RL
+  with CQL and then turns to learning rewards.

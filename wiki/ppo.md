@@ -129,7 +129,9 @@ efficient learning" (slides 26–27, ≈1:08:40). Where data is cheap, as in sim
 favours PPO. The lecture's examples are a quadruped that learns to walk in simulation and transfers
 to the real robot, and a robot hand that solves a Rubik's cube with a policy trained in simulation,
 though sim-to-real transfer is generally much harder for manipulation. PPO is also a common choice
-for language models (slide 28), which the course takes up with reward modeling.
+for language models (slide 28), which the course takes up with reward modeling: in Lecture 8, after a
+reward model is learned from human preferences, "one somewhat common approach is to use PPO to maximize
+the reward" (≈1:00:23; see [learning rewards from preferences](preference-learning.md)).
 
 Lecture 6's closing advice puts it the same way (slide 27, "Chelsea's advice", ≈59:41–1:00:27):
 PPO and its variants when you care about stability and ease of use and not about data efficiency.
@@ -149,3 +151,5 @@ efficiency matters most, and DQN for discrete or low-dimensional continuous acti
 - [Actor-critic methods](actor-critic.md): the on-policy algorithm PPO starts from.
 - [Lecture 6 — Q-Learning](06-q-learning.md#which-online-rl-algorithm-to-use): when to use PPO,
   DQN or SAC.
+- [Lecture 8 — Reward Learning](08-reward-learning.md#rewards-for-language-models): PPO as a common
+  choice for the RL step of RL from human feedback.

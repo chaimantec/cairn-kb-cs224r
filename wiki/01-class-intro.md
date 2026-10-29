@@ -195,7 +195,7 @@ experiments the reward was the negative distance between the object's position a
 position. In the shape-sorting task the robot was holding the cube, so the arm's own position
 told it where the cube was. The hockey puck carried a motion-capture (mocap) marker that measured
 where it was in the room. Neither trick works in general, which is why reward learning is needed
-to solve the problem more generally.
+to solve the problem more generally; Lecture 8 teaches it (see [reward learning](reward-learning.md)).
 
 ## Representing experience as data
 

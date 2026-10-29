@@ -9,11 +9,11 @@
     "courseUrl": "https://cs224r.stanford.edu/spring_2025/"
   },
   "coverage": {
-    "lecturesCovered": 7,
+    "lecturesCovered": 8,
     "lecturesTotal": 19,
-    "transcripts": 7,
-    "wikiLecturePages": 7,
-    "wikiTopicPages": 19,
+    "transcripts": 8,
+    "wikiLecturePages": 8,
+    "wikiTopicPages": 22,
     "byLecture": {
       "1": "Class Intro (course intro and MDPs): transcript, slides, wiki page, 16 images",
       "2": "Imitation Learning: transcript, slides, wiki page, 15 images",
@@ -21,28 +21,29 @@
       "4": "Actor-Critic Methods: transcript, slides, wiki page, 21 images",
       "5": "Off-Policy Actor Critic: transcript, slides, wiki page, 15 images",
       "6": "Q-Learning: transcript, slides, wiki page, 12 images",
-      "7": "Offline RL: transcript, slides, wiki page, 14 images"
+      "7": "Offline RL: transcript, slides, wiki page, 14 images",
+      "8": "Reward Learning (conservative Q-learning, reward learning): transcript, slides, wiki page, 18 images"
     },
-    "note": "lecturesTotal is the 19 recordings in the Cairn catalog on 2026-10-28: 18 lectures and the Q-learning TA session, which the catalog lists last. Lectures 1-7 are covered. All 19 slide decks are on the course site and listed in sources.md. wikiTopicPages counts the eighteen concept pages and the course-logistics page."
+    "note": "lecturesTotal is the 19 recordings in the Cairn catalog on 2026-10-28: 18 lectures and the Q-learning TA session, which the catalog lists last. Lectures 1-8 are covered. All 19 slide decks are on the course site and listed in sources.md. wikiTopicPages counts the twenty-one concept pages and the course-logistics page."
   },
   "materials": {
     "primary": "slides",
     "slideDecks": {
       "available": 19,
-      "transcribed": 7,
-      "note": "Lecture 1's deck (45 pages), Lecture 2's (27 pages), Lecture 3's (28 pages), Lecture 4's (37 pages), Lecture 5's (30 pages), Lecture 6's (29 pages) and Lecture 7's (33 pages) are transcribed to raw/slides/. The other 12 decks are linked in sources.md."
+      "transcribed": 8,
+      "note": "Lecture 1's deck (45 pages), Lecture 2's (27 pages), Lecture 3's (28 pages), Lecture 4's (37 pages), Lecture 5's (30 pages), Lecture 6's (29 pages), Lecture 7's (33 pages) and Lecture 8's (34 pages) are transcribed to raw/slides/. The other 11 decks are linked in sources.md."
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 7,
-      "decksTotal": 7,
+      "decksAudited": 8,
+      "decksTotal": 8,
       "unaudited": [],
-      "note": "Counts are over transcribed decks. All seven were transcribed by Claude Sonnet 5.5 and spot-checked by Claude Opus 5.5 against 1400px renders, six figure slides each: Lecture 1's 24, 25, 30, 33, 36, 37; Lecture 2's 7, 8, 10, 12, 19, 21; Lecture 3's 6, 11, 12, 16, 23, 24; Lecture 4's 6, 14, 19, 21, 30, 35; Lecture 5's 12, 13, 16, 18, 23, 25; Lecture 6's 7, 15, 19, 20, 24, 26; and Lecture 7's 11, 14, 16, 21, 22, 31. Lectures 1-3's audits added context or small descriptive fixes only. Lecture 4's corrected slide 35's chart (which series owns the widest shaded band, and two curve values), clarified slide 19's trajectory layout, and removed an arrow wrongly carried from slide 26 to slide 27. Lecture 5's re-read three curve values on slide 23's right-hand chart and one on slide 13's, and removed a character name slide 12's meme does not print; slide 25's results table matched cell by cell. Lecture 6's moved slide 26's human-level line, which had been placed at 100% but sits between H.E.R.O. (76%) and Asterix (69%), and re-read a few curve values on slides 19 and 20; slide 26's 49 printed percentages and its table matched, and slides 24-25's discount exponent was confirmed as printed. Lecture 7's agreed on slides 11, 22 (all loss-curve endpoints and fitted curves) and 31 (every table cell and the architecture's arrows); it drew s7 beside s3 rather than on it in slides 14 and 16, removed an interpretation of slide 16's arrow weights, and corrected where slide 21's second dashed line and underline sit."
+      "note": "Counts are over transcribed decks. All eight were transcribed by Claude Sonnet 5.5 and spot-checked by Claude Opus 5.5 against 1400px renders, six figure slides each: Lecture 1's 24, 25, 30, 33, 36, 37; Lecture 2's 7, 8, 10, 12, 19, 21; Lecture 3's 6, 11, 12, 16, 23, 24; Lecture 4's 6, 14, 19, 21, 30, 35; Lecture 5's 12, 13, 16, 18, 23, 25; Lecture 6's 7, 15, 19, 20, 24, 26; Lecture 7's 11, 14, 16, 21, 22, 31; and Lecture 8's 9, 15, 23, 27, 30, 32. Lectures 1-3's audits added context or small descriptive fixes only. Lecture 4's corrected slide 35's chart (which series owns the widest shaded band, and two curve values), clarified slide 19's trajectory layout, and removed an arrow wrongly carried from slide 26 to slide 27. Lecture 5's re-read three curve values on slide 23's right-hand chart and one on slide 13's, and removed a character name slide 12's meme does not print; slide 25's results table matched cell by cell. Lecture 6's moved slide 26's human-level line, which had been placed at 100% but sits between H.E.R.O. (76%) and Asterix (69%), and re-read a few curve values on slides 19 and 20; slide 26's 49 printed percentages and its table matched, and slides 24-25's discount exponent was confirmed as printed. Lecture 7's agreed on slides 11, 22 (all loss-curve endpoints and fitted curves) and 31 (every table cell and the architecture's arrows); it drew s7 beside s3 rather than on it in slides 14 and 16, removed an interpretation of slide 16's arrow weights, and corrected where slide 21's second dashed line and underline sit. Lecture 8's agreed on slide 9 (every table cell and the architecture's arrows) and slide 32; it re-read the last three points of slide 30's dark-grey Elo series, placed slide 27's green density peak inside the plot and withdrew a lane count the render cannot show, corrected the pencil case's position in slide 15's second classifier photograph, and moved the end of slide 23's green trajectory."
     },
     "images": {
-      "lecturesWithImages": 7,
-      "files": 104,
+      "lecturesWithImages": 8,
+      "files": 122,
       "byLecture": {
         "1": 16,
         "2": 15,
@@ -50,11 +51,12 @@
         "4": 21,
         "5": 15,
         "6": 12,
-        "7": 14
+        "7": 14,
+        "8": 18
       },
       "format": "1400px whole-slide renders (JPEG, PNG where smaller)",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
-      "note": "Lectures 1-7 only. Lecture 1: 16 of the deck's 45 pages, every figure-bearing slide except staff photographs, a meme, clip-art icons, a logo wall, and slides whose only images are equations transcribed exactly. Lecture 2: 15 of 27 pages, every figure-bearing slide except two SpongeBob cartoon stills credited to Viacom International. Lecture 3: 11 of 28 pages, every figure-bearing slide except a repeat of slide 5, three equation slides whose only picture is a thumbnail of slide 12's humanoid, and slides whose only images are pasted equations transcribed exactly. Lecture 4: 21 of 37 pages, every figure-bearing slide except three build steps (11, 15, 26) whose content the next slide shows, and equation slides whose annotations are transcribed. Lecture 5: 15 of 30 pages, every figure-bearing slide except a meme (12), two build steps (8, 9) and equation slides whose annotations are transcribed. Lecture 6: 12 of 29 pages, every figure-bearing slide except equation slides whose strikethroughs, highlights, loop arrows and annotations are transcribed. Lecture 7: 14 of 33 pages, the ten figure-bearing slides plus four algorithm and objective slides rendered for their structure (5, 19, 23, 26); the other equation slides, whose underlines, labels, strikethrough, loop arrows and circles are transcribed, and the text slides are not rendered. No other lecture has images."
+      "note": "Lectures 1-8 only. Lecture 1: 16 of the deck's 45 pages, every figure-bearing slide except staff photographs, a meme, clip-art icons, a logo wall, and slides whose only images are equations transcribed exactly. Lecture 2: 15 of 27 pages, every figure-bearing slide except two SpongeBob cartoon stills credited to Viacom International. Lecture 3: 11 of 28 pages, every figure-bearing slide except a repeat of slide 5, three equation slides whose only picture is a thumbnail of slide 12's humanoid, and slides whose only images are pasted equations transcribed exactly. Lecture 4: 21 of 37 pages, every figure-bearing slide except three build steps (11, 15, 26) whose content the next slide shows, and equation slides whose annotations are transcribed. Lecture 5: 15 of 30 pages, every figure-bearing slide except a meme (12), two build steps (8, 9) and equation slides whose annotations are transcribed. Lecture 6: 12 of 29 pages, every figure-bearing slide except equation slides whose strikethroughs, highlights, loop arrows and annotations are transcribed. Lecture 7: 14 of 33 pages, the ten figure-bearing slides plus four algorithm and objective slides rendered for their structure (5, 19, 23, 26); the other equation slides, whose underlines, labels, strikethrough, loop arrows and circles are transcribed, and the text slides are not rendered. Lecture 8: 18 of 34 pages, every figure-bearing slide except photographs of the two guest lecturers (2, 34) and a black video frame (13), plus five algorithm and objective slides rendered for their structure (6, 8, 17, 25, 26); the other equation and text slides are not rendered. No other lecture has images."
     }
   },
   "provenance": {
@@ -63,15 +65,16 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Only Lectures 1-7 of 19 are covered; the KB cannot answer questions about the technical content of Lectures 8-19.",
+      "Only Lectures 1-8 of 19 are covered; the KB cannot answer questions about the technical content of Lectures 9-19.",
       "Lecture 1's recording leaves out the course-logistics slides (5-6 and 10-15); their content comes from the slides alone.",
       "Lecture 2's recording ends after slide 21; slides 22-27 (collecting demonstrations, the embodiment gap, the summary) come from the slides alone.",
       "Lecture 3's recording does not discuss slide 2's reminders and skips the KL constraint on slide 25 for time; that constraint comes from the slides alone.",
       "Lecture 4's recording ends on the review slide (23); its slides 24-37 (off-policy actor-critic, replay buffers, soft actor-critic, the SAC-versus-PPO chart, the closing slides) are not discussed in that recording, but Lecture 5 teaches the same material aloud from a revised deck.",
       "Lecture 5's recording covers slides 3-28; slide 2's reminders and slides 29-30 (plan recap, next time) come from the slides alone. Several steps (a KL-penalized objective, the clipping written out, the recursive Q-function) were worked on a board the recording does not show and are reconstructed from the spoken words.",
       "Lecture 6's recording covers slides 3-29; slide 2's reminders and slide 29's next-week topics come from the slides alone. Slide 7's thought exercise is answered while pointing at the slide, and the algorithm is written on a board the recording does not show; the wiki reconstructs both from the spoken words and says so. Slides 24-25 print the n-step target's discount exponent as t - t', which the wiki notes as an apparent slip.",
-      "Lecture 7's recording covers slides 3-23 and 30-32. It does not teach the conservative-methods section (slides 24-28, conservative Q-learning) or slide 31's LinkedIn application, which use the slides alone, and it does not discuss slides 2 and 33. Much of the lecture is written or drawn live; the wiki reconstructs that work from the spoken words and says so. Slides 4, 18 and 19 print the Monte Carlo target's reward at t inside a sum over t', which the wiki notes as an apparent slip. In its worked advantage example the returns as captioned (+10, +1, -5) average to 2, not the 3 the lecturer uses; the wiki says so.",
-      "Transcripts are copy-edited from YouTube auto-captions; students are inaudible, so their questions appear only as the lecturer restates them. Lectures 1 and 2 each have three passages marked [Ed: unclear], Lecture 3 one, Lecture 4 two, Lecture 5 five (plus four flagged restorations). Lecture 6's captions are much noisier: 53 of its 80 paragraphs carry [Ed:] notes, mostly on garbled board dictation and mis-heard notation. Lecture 7's captions are cleaner: 8 [Ed:] notes in 7 of its 88 paragraphs.",
+      "Lecture 7's recording covers slides 3-23 and 30-32. It does not teach the conservative-methods section (slides 24-28, conservative Q-learning) or slide 31's LinkedIn application, which Lecture 8 teaches aloud from the same slides, and it does not discuss slides 2 and 33. Much of the lecture is written or drawn live; the wiki reconstructs that work from the spoken words and says so. Slides 4, 18 and 19 print the Monte Carlo target's reward at t inside a sum over t', which the wiki notes as an apparent slip. In its worked advantage example the returns as captioned (+10, +1, -5) average to 2, not the 3 the lecturer uses; the wiki says so.",
+      "Lecture 8's recording covers slides 3-32; slides 2 and 34 (reminders, the guest-lecture announcement) and slide 33 come from the slides alone. Its CQL derivation and goal-classifier picture are worked on a board the recording does not show, the CQL objective in the critic's parameters rather than the slides' notation; the wiki reconstructs both from the spoken words and says so. In the recap's worked example the Q-value of the first action is written on the board and never read out. Slide 29 prints the RLHF stage's sub-line as the supervised stage's, which the wiki notes as an apparent copy slip.",
+      "Transcripts are copy-edited from YouTube auto-captions; students are inaudible, so their questions appear only as the lecturer restates them. Lectures 1 and 2 each have three passages marked [Ed: unclear], Lecture 3 one, Lecture 4 two, Lecture 5 five (plus four flagged restorations). Lecture 6's captions are much noisier: 53 of its 80 paragraphs carry [Ed:] notes, mostly on garbled board dictation and mis-heard notation. Lecture 7's captions are cleaner: 8 [Ed:] notes in 7 of its 88 paragraphs. Lecture 8 has 4 [Ed:] notes in its 86 paragraphs.",
       "The verbatim captions are not committed; each transcript says how to regenerate them."
     ]
   },

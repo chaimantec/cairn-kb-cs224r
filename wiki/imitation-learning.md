@@ -194,6 +194,18 @@ exponentiated advantage (slide 16). When the behavior policy is deterministic, e
 and advantage-weighted regression falls back on vanilla imitation learning (≈47:20). See
 [implicit policy constraint methods](implicit-policy-constraints.md).
 
+## Imitation versus learning a reward
+
+Lecture 8 sets imitation learning against learning a reward (slide 13, ≈27:07–27:53). Imitation needs
+no reward function, but it mimics actions with no reasoning about outcomes or dynamics; the expert might
+have different degrees of freedom from the robot; and it might not be possible to provide
+demonstrations at all. Reward learning asks instead what the expert is trying to achieve. In Lecture
+8's robot example, imitating 50 demonstrations succeeded 26% of the time, and RL with a reward
+classifier learned from those demonstrations' final states reached 62% (slide 19). The supervised
+fine-tuning stage of training a chat model is "basically imitation learning" on a higher-quality
+dataset, before RL from human feedback (≈58:52–59:38). See [reward learning](reward-learning.md) and
+[learning rewards from preferences](preference-learning.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
@@ -205,3 +217,6 @@ and advantage-weighted regression falls back on vanilla imitation learning (≈4
 - [Lecture 7 — Offline RL](07-offline-rl.md#offline-rl-versus-imitation-learning-stitching):
   imitation as the implicit way to avoid out-of-distribution actions, why it cannot stitch, filtered
   behavior cloning and advantage-weighted imitation.
+- [Lecture 8 — Reward Learning](08-reward-learning.md#imitation-and-reasoning-about-what-the-expert-wants):
+  why imitation is not enough as task specification, and imitation as the baseline a learned reward
+  beats.

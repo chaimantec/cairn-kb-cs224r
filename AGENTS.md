@@ -110,6 +110,8 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   against the page before recording it.
 - When the lecturer corrects a printed slide aloud, note it under that slide with the timestamp,
   and write the corrected form in `wiki/`, saying the slide prints it otherwise.
+- Describe a photographed person by the name the slide prints, never by apparent gender; tell the
+  transcriber so.
 - A slide holding a video holds one frame. What the video showed comes from the transcript,
   written into the slide entry by the parent with its timestamp.
 
@@ -119,8 +121,8 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   rendered by `extract_slide_images.py` and placed by `embed_slide_images.py`, which puts each
   image under `## Slide N` in the slide file and after the first block that cites slide N in a
   wiki page. Run it once per wiki page, `--dry-run` first. Never cite a rendered slide inside a
-  table row or in a sentence that ends in `:` before a displayed equation; the image would land
-  there. A range such as "slides 26–28" cites every slide in it, and one 12 or more wide cites its first slide, so keep slide ranges out of coverage notes. The same goes for a sentence ending in `:` before a list.
+  table row or in a sentence that runs on into a displayed equation, with or without a `:`; the
+  image would land there. A range such as "slides 26–28" cites every slide in it, and one 12 or more wide cites its first slide, so keep slide ranges out of coverage notes. The same goes for a sentence ending in `:` before a list.
 - Render every figure-bearing slide except title, agenda and text-only slides, photographs of
   course staff, memes and clip-art whose captions are transcribed, logo walls whose names are
   transcribed, and slides whose only images are equations reproduced exactly in the slide file.
@@ -147,6 +149,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 5 Off-Policy Actor Critic | 15 of 30 pages | the recap diagrams (online loops, V/Q trajectory fans), version 1's surrogate objective with the KL and clipping ideas, the PPO algorithm with its Half-Cheetah chart, the replay-buffer timeline and annotated broken/fixed algorithm steps, the Q-network slide, the SAC-versus-PPO chart, the SAC and PPO robot video frames and the HIL-SERL table |
 | 6 Q-Learning | 12 of 29 pages | the recap diagrams (V/Q trajectory fans, the faded loop, the Q-network), the 2D-navigation thought exercise, the greedy-policy loop, the Q-learning algorithm with its two Bellman equations, the full algorithm with its replay-buffer diagram, the DQN algorithm, the Atari Q-value and DQN-versus-double-DQN charts, the n-step fan, the Atari bar chart and grasping table |
 | 7 Offline RL | 14 of 33 pages | the recap loops and value-function targets, the full off-policy actor-critic algorithm, the randomly initialized Q-function plot with its data support, the two-trajectory stitching diagram, the advantage-weighted imitation slides with their s3 weights, the full AWR algorithm, the AWAC target and value histogram, the expectile-loss and fitted-expectile charts, the IQL algorithm, the CQL penalty and objective, the LinkedIn notification diagram and A/B table |
+| 8 Reward Learning | 18 of 34 pages | the IQL recap with its Q-function plot, the CQL penalty, objective and log-sum-exp computation, the LinkedIn diagram and A/B table, the reward-source pictures, the goal-classifier photos and algorithm, the cloth-task frames, the GAN examples, the trajectory-preference sketches, the preference objective and algorithm, the backflip and driving-weight figures, the omelette RLHF slides, the Constitutional AI chart, the asymmetric self-play diagram |
 
 ## Rebuilding
 
