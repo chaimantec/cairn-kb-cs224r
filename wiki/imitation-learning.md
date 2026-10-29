@@ -179,6 +179,21 @@ improved with policy gradients, which can be a very good fit when demonstrations
 since a randomly initialized policy does random things (≈24:23–25:09; slide 6 lists imitation
 learning as one way to initialize the policy). See [policy gradients](policy-gradients.md).
 
+## Imitation as an offline RL baseline
+
+Lecture 7 returns to imitation learning as a way to learn from a fixed dataset. It avoids the central
+failure of [offline RL](offline-rl.md), overestimated Q-values on actions the data never contains,
+because it only supervises with actions that are seen in the data (≈26:30). But it cannot outperform
+the expert, or what the data provides, and where two trajectories cross it averages their action
+distributions instead of stitching the good start of one to the good finish of the other (Lecture 7,
+slide 14, ≈27:15–29:33). Lecture 7's offline methods add reward information to the imitation
+objective. **Filtered behavior cloning** imitates only trajectories whose return clears a threshold,
+"a very primitive approach to using reward information" and "a **good baseline** to test against"
+(slide 15). **Advantage-weighted** methods weight each transition's log-likelihood by its
+exponentiated advantage (slide 16). When the behavior policy is deterministic, every advantage is zero
+and advantage-weighted regression falls back on vanilla imitation learning (≈47:20). See
+[implicit policy constraint methods](implicit-policy-constraints.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
@@ -187,3 +202,6 @@ learning as one way to initialize the policy). See [policy gradients](policy-gra
   student questions and the deployed systems.
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#what-the-gradient-means): the policy
   gradient as an imitation gradient weighted by reward, and imitation learning as initialization.
+- [Lecture 7 — Offline RL](07-offline-rl.md#offline-rl-versus-imitation-learning-stitching):
+  imitation as the implicit way to avoid out-of-distribution actions, why it cannot stitch, filtered
+  behavior cloning and advantage-weighted imitation.

@@ -118,6 +118,17 @@ this by fitting a Q-function to the Bellman optimality equation and acting greed
 without equations beyond the definitions; Q-functions are used from the week after it (Lecture 1,
 ≈49:20).
 
+### Offline: the behavior policy's advantage
+
+Lecture 7 uses the advantage to weight imitation on offline data, and stresses that an advantage
+belongs to a policy: it is the advantage of taking $\mathbf{a}$ in $\mathbf{s}$ and then following some
+policy (≈39:34). Its methods use the behavior policy's, $A^{\pi_\beta}$, the policy that collected the
+data (slide 17). Advantage-weighted regression estimates it as the empirical return minus a Monte Carlo
+value estimate (slide 18). Advantage-weighted actor-critic bootstraps a Q-function with next actions
+from the data (slide 20). Implicit Q-learning fits the value function with an expectile loss, so that
+$\hat{Q} - \hat{V}$ measures actions against a policy better than the behavior policy (slides 21–23).
+See [implicit policy constraint methods](implicit-policy-constraints.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#how-good-is-a-policy-value-and-q-functions): the
@@ -129,3 +140,6 @@ without equations beyond the definitions; Q-functions are used from the week aft
   from a replay buffer.
 - [Lecture 6 — Q-Learning](06-q-learning.md#why-it-works-the-bellman-optimality-equation): the
   greedy policy a Q-function defines, the Bellman optimality equation, and why Q rather than V.
+- [Lecture 7 — Offline RL](07-offline-rl.md#weighting-imitation-by-the-advantage): the advantage of
+  the behavior policy, estimated by Monte Carlo, by bootstrapping on data actions, and with an
+  expectile-fitted value function.

@@ -661,7 +661,7 @@ the [slide file](../raw/slides/06-q-learning.md). Slide 2's reminders, repeated 
 form for GPU quota, "Very important" "if you want GPUs, especially for default project"; and there is
 an extra Q-learning section from 1:30 to 2:30 pm. Slide 29 announces the next week: offline RL
 ("can we learn behavior from existing datasets?"), and reward learning with the start of RL for
-LLMs.
+LLMs. Offline RL is [Lecture 7](07-offline-rl.md).
 
 ## Related pages
 
@@ -681,3 +681,5 @@ LLMs.
   algorithms, and when to use which.
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md): the off-policy actor-critic
   algorithm this lecture starts from.
+- [Lecture 7 — Offline RL](07-offline-rl.md): the next lecture, which runs off-policy methods on a fixed
+  dataset and shows why that fails.

@@ -164,6 +164,18 @@ discrete or low-dimensional continuous, where it can be fairly data-efficient; P
 and ease of use matter more than data efficiency; and SAC when data efficiency matters most and
 tuning and some instability are acceptable. See [RL algorithm families](rl-algorithm-families.md).
 
+## Offline
+
+Lecture 7 recalls Q-learning's target in answer to a student. Unlike soft actor-critic, which learns the
+Q-function of the policy being learned, Q-learning learns the optimal policy's, taking a max over the
+next action, and that can be done off-policy "as long as your estimates have good coverage" (≈8:35–9:21).
+On a fixed offline dataset that coverage cannot be repaired by collecting more data, and a maximization
+over actions the data does not contain is what overestimates Q-values there (Lecture 7, slides 10–11;
+see [offline RL](offline-rl.md)). The conservative Q-learning objective in Lecture 7's slides is the
+offline remedy that keeps a Q-function: with discrete actions its policy is the greedy $\arg\max$ of the
+conservative Q-function (slide 27), and its slide 31 application compares double DQN with and without
+it.
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many): the
@@ -172,3 +184,5 @@ tuning and some instability are acceptable. See [RL algorithm families](rl-algor
   fitting a Q-function from a replay buffer, the step Q-learning starts from.
 - [Lecture 6 — Q-Learning](06-q-learning.md): the whole algorithm, its exploration policies, DQN,
   double Q-learning, n-step returns and the examples.
+- [Lecture 7 — Offline RL](07-offline-rl.md#recap-three-ways-to-fit-a-value-function): Q-learning's
+  target recalled, and why coverage fails offline; conservative Q-learning from the slides.

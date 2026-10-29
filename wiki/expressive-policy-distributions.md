@@ -137,6 +137,10 @@ Intelligence's $\pi_0$, NVIDIA's Gr00t N1 and Figure's Helix, and discretized au
 prediction in OpenVLA, Waymo's EMMA and Wayve's LINGO-2. The lecture's [deployed systems
 section](02-imitation-learning.md#expressive-policies-in-deployed-systems) shows the slides.
 
+Lecture 7 points to IDQL, a variant of implicit Q-learning for offline RL "that uses diffusion policies
+for your policy class", which "also works quite well" (slide 32, ≈1:06:42–1:07:30). See
+[implicit policy constraint methods](implicit-policy-constraints.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#aside-why-stochastic-policies): why policies are
@@ -146,3 +150,5 @@ section](02-imitation-learning.md#expressive-policies-in-deployed-systems) shows
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#implementing-it-the-surrogate-objective):
   the log-likelihood weighted by reward.
 - [Policies](policies.md) and [imitation learning](imitation-learning.md).
+- [Lecture 7 — Offline RL](07-offline-rl.md#which-offline-rl-algorithm-to-use): IDQL, an offline RL
+  method with diffusion policies.

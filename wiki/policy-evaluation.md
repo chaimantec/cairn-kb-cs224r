@@ -162,6 +162,23 @@ Folding the improvement into the target, so that it bootstraps from the max over
 rather than from the current policy's action, gives Q-learning (slide 11); the equation each target
 encodes is on [Bellman equations](bellman-equations.md).
 
+## Evaluating the behavior policy offline
+
+Lecture 7 opens by recalling the three regressions, Monte Carlo and bootstrapped targets for $V$ and the
+bootstrapped Q target whose next action comes from the current policy (slide 4, ≈0:05–7:02). Its slides
+print the Monte Carlo target's reward as $r(\mathbf{s}_ t, \mathbf{a}_ t)$ inside a sum over $t'$
+(slides 4, 18 and 19); the lecture describes it as the sum of rewards from that state onward (≈1:38).
+
+On an offline dataset all three change role. The data comes from a behavior policy $\pi_\beta$, so Monte
+Carlo regression onto the empirical return evaluates $\pi_\beta$, which advantage-weighted regression
+uses (slide 18). The Q target with the current policy's next action queries actions the data may never
+contain, which is what makes Q-values overestimated offline (slides 10–11). Taking the next action from
+the data instead evaluates $\pi_\beta$ by bootstrapping without that risk (slide 20, advantage-weighted
+actor-critic). And replacing the squared error with an asymmetric **expectile** loss moves the fitted
+value from the mean of the outcomes the data shows toward the value of the best policy in the data's
+support (slides 21–23, implicit Q-learning). See
+[implicit policy constraint methods](implicit-policy-constraints.md).
+
 ## Where this appears
 
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md#estimating-the-value-function-version-1-monte-carlo):
@@ -172,3 +189,6 @@ encodes is on [Bellman equations](bellman-equations.md).
   methods, generalized advantage estimation, and fitting a Q-function from a replay buffer.
 - [Lecture 6 — Q-Learning](06-q-learning.md#policy-iteration-from-actor-critic-to-critic-only):
   policy evaluation and improvement as policy iteration, and n-step returns for Q-learning targets.
+- [Lecture 7 — Offline RL](07-offline-rl.md#recap-three-ways-to-fit-a-value-function): the recap of
+  the three regressions, and their offline versions (Monte Carlo for the behavior policy, bootstrapping
+  on data actions, expectile regression).

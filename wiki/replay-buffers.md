@@ -147,6 +147,15 @@ Lecture 6 closes the course's online methods with advice on choosing among them 
 and can accept tuning and less stability, PPO when you care about stability and ease of use rather
 than data efficiency, and DQN for discrete or low-dimensional continuous actions.
 
+## With no new data
+
+Lecture 7 recalls the action-coverage requirement: because the Q target bootstraps from the critic's own
+estimate, the critic must have been trained on actions resembling those it is evaluated on, so it "needs
+good coverage over actions" (≈6:17–7:02). An online buffer keeps receiving the current policy's actions.
+A fixed offline dataset never does, and running soft actor-critic on one lets the policy exploit the
+critic on actions the data does not contain, overestimating their Q-values (slides 10–11). That failure
+is the starting point of [offline RL](offline-rl.md).
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-2-replay-buffers):
@@ -158,3 +167,5 @@ than data efficiency, and DQN for discrete or low-dimensional continuous actions
 - [Lecture 6 — Q-Learning](06-q-learning.md#full-q-learning-with-a-replay-buffer): the buffer in
   Q-learning, how it is managed, and the advice on choosing PPO, DQN or SAC.
 - [Offline and online algorithms](offline-and-online.md): on-policy and off-policy.
+- [Lecture 7 — Offline RL](07-offline-rl.md#can-we-just-use-off-policy-algorithms): the coverage
+  requirement recalled, and what goes wrong when the buffer is a fixed dataset.

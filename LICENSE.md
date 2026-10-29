@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–6 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–7 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -203,3 +203,21 @@ Not rendered from this deck: slides 9–11, 13, 14, 17, 21–23 and 25, equation
 strikethroughs, highlights, loop arrows and annotations are transcribed (17 and 21–23 print "Slide
 adapted from Sergey Levine"); and the title, reminder, plan, advice and next-time slides (1, 2, 6,
 16, 27, 28, 29).
+
+### Lecture 7 — Offline RL
+
+Deck: [07_cs224r_offline_rl_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/07_cs224r_offline_rl_2025.pdf).
+Rendered: 14 slides, in `raw/images/07-offline-rl/`. Slides 25–28 print "Slide adapted from Sergey
+Levine".
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 22 | Two charts, the expectile loss for five values of lambda and expectile curves fitted to a 2D scatter of points; the slide cites Kostrikov, Nair, Levine, *Implicit Q-Learning*, ICLR '22, and does not credit the charts separately. |
+| 25, 26 | Slides "adapted from Sergey Levine": the randomly initialized Q-function plot with the Q-value penalty (25), and the conservative Q-learning objective with its coloured labels (26). |
+| 31 | A system-architecture diagram of LinkedIn's notification pipeline and a results table ("Table 1: Online A/B test results for DDQN with and without CQL"), credited to Prabhakar, Yuan, Yang, Sun, Muralidharan, *Multi-Objective Optimization of Notifications Using Offline RL* ('22). |
+| 3, 4, 5, 11, 14, 16, 17, 19, 21, 23 | No third-party content identified: the deck's own loop diagrams, annotated equations, Q-function plot, two-trajectory stitching diagram, histogram and loss sketch, and algorithm slides. Slides 16–17 cite Peters et al. (REPS) and Rawlik et al. ("psi-learning"), slides 18–19 Peng, Kumar, Zhang, Levine, *Advantage-Weighted Regression* ('19), and slides 21 and 23 Kostrikov, Nair, Levine, *Implicit Q-Learning*, for the methods, not for an image. |
+
+Not rendered from this deck: slides 8, 10, 15, 18, 20, 27 and 28, equation slides whose underlines,
+labels, strikethrough, loop arrows and circles are transcribed (27 and 28 print "Slide adapted from
+Sergey Levine"); and the title, reminder, plan, text, summary and recommendation slides (1, 2, 6, 7,
+9, 12, 13, 24, 29, 30, 32, 33).

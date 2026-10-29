@@ -183,6 +183,29 @@ Lecture 6 adds these; see [Q-learning](q-learning.md) and [Bellman equations](be
   summed rewards (slides 24–25).
 - $y_j$ and $y_{j,t}$ are targets with $j$ indexing the samples in a batch (slides 21, 24).
 
+## Notation for offline RL
+
+Lecture 7 adds these; see [offline RL](offline-rl.md) and
+[implicit policy constraint methods](implicit-policy-constraints.md). Its slides 3–11 write
+$\mathbb{E}$ and $\mathcal{D}$, and slides 15–28 a plain $E$ and $D$, for the same expectation and
+dataset.
+
+- $\mathcal{D}$ or $D$ is the offline dataset of transitions $(\mathbf{s}, \mathbf{a}, \mathbf{s}', r)$,
+  and $\pi_\beta$ the unknown **behavior policy** that collected it, possibly a mixture of policies;
+  $p_{\pi_\beta}$ is its state distribution (slide 8). $A^{\pi_\beta}$, $\hat{V}^{\pi_\beta}_ \phi$ and
+  $\hat{Q}^{\pi_\beta}$ are its advantage and fitted value and Q-functions (slides 17–21).
+- $\tilde{D}$ is the filtered dataset of filtered behavior cloning, keeping trajectories whose return
+  $r(\tau)$ exceeds the threshold $\eta$ (slide 15).
+- $\alpha$ is a temperature in advantage-weighted regression and implicit Q-learning, dividing the
+  advantage inside the exponential (slides 19, 23). In conservative Q-learning $\alpha$ instead weights
+  the Q-value penalty (slides 25–28).
+- $\psi$ is the parameters of the Q-network in slide 20; $\phi$ stays the value network's.
+- $\ell_2^\lambda(x)$ is the expectile loss with asymmetry $\lambda$, and $m_\lambda(x)$ an expectile
+  curve fitted with it (slide 22); slide 21 writes the loss $\ell_2^\tau(x)$.
+- In conservative Q-learning, $\mu$ is the distribution over actions whose Q-values are pushed down,
+  $R(\mu)$ a regularizer on it, $\mathcal{H}$ entropy, and $L_{CQL}$ the CQL loss (slides 25–28). Slide 27
+  writes the policy's step size as $\eta$, unrelated to filtered behavior cloning's threshold.
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -197,3 +220,5 @@ Lecture 6 adds these; see [Q-learning](q-learning.md) and [Bellman equations](be
   objectives, clipping, generalized advantage estimation and Q-functions fitted from a replay buffer.
 - [Lecture 6 — Q-Learning](06-q-learning.md): the notation for the optimal policy, target networks,
   double Q-learning and exploration.
+- [Lecture 7 — Offline RL](07-offline-rl.md): the notation for offline datasets, the behavior policy,
+  advantage weighting, expectile regression and conservative Q-learning.

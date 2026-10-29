@@ -27,6 +27,11 @@ That is **policy evaluation** from a replay buffer, the step soft actor-critic i
 5, slides 17–18; see [replay buffers and soft actor-critic](replay-buffers.md) and
 [policy evaluation](policy-evaluation.md)).
 
+Lecture 7's advantage-weighted actor-critic fits the behavior policy's Q-function from offline data by
+taking the target's next action from the data, $r + \gamma E_{\mathbf{a}' \sim D}[\hat{Q}^\pi_ \psi(\mathbf{s}', \mathbf{a}')]$,
+so the Q-function is only ever evaluated on actions the data contains (slide 20). See
+[implicit policy constraint methods](implicit-policy-constraints.md#awac-bootstrapping-with-the-datas-own-next-actions).
+
 ## The Bellman optimality equation
 
 The optimal policy $\pi^\ast$ always takes the action that maximizes future reward, which is the
@@ -73,3 +78,5 @@ action leads to the better next state (Lecture 6, ≈23:24–24:56).
   buffer.
 - [Lecture 6 — Q-Learning](06-q-learning.md#why-it-works-the-bellman-optimality-equation): the
   Bellman optimality equation, the two names, and why Q rather than V.
+- [Lecture 7 — Offline RL](07-offline-rl.md#advantage-weighted-actor-critic-awac): a Q-function for the
+  behavior policy, bootstrapped with next actions from the data.

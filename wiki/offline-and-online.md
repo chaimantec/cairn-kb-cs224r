@@ -75,8 +75,15 @@ is the exception that proves the rule: summed rewards come from the policy that 
 an n-step target is "only actually correct when learning on-policy" (slide 25). Lecture 6 ends the
 course's online RL methods (slide 29).
 
-The course schedule has a later lecture on offline RL (Lecture 7 in this KB's numbering; see
-[`sources.md`](../sources.md#lectures)). This knowledge base does not cover it yet.
+Lecture 7 is about the offline side. Offline RL is given a static dataset and trains a policy on it
+without collecting more (slide 7). It is worth it when data already exists and collecting it with an
+untrained policy would be risky or unsafe, and because reusing data beats recollecting it every time an
+algorithm is rerun: "online data is more expensive than offline data" (≈11:39–12:27). Offline and online
+can be blended, training offline and then improving online. Asked whether offline RL is a special case of
+off-policy online RL with an unknown data source, Finn calls that "sort of a correct way to view it",
+except that pure offline RL can never collect more data (≈12:27–13:13). Running an off-policy method
+such as soft actor-critic on the fixed data fails, because the critic is evaluated on actions the data
+does not contain and the Q-values become overestimated (slides 10–11). See [offline RL](offline-rl.md).
 
 ## Where this appears
 
@@ -90,3 +97,5 @@ The course schedule has a later lecture on offline RL (Lecture 7 in this KB's nu
   gradient step per batch, through PPO, to a replay buffer of all past data.
 - [Lecture 6 — Q-Learning](06-q-learning.md#what-data-to-collect-epsilon-greedy-and-boltzmann-exploration):
   why Q-learning is off-policy, the questions on what that means, and why n-step targets are not.
+- [Lecture 7 — Offline RL](07-offline-rl.md#why-offline-rl): why offline RL, how it relates to
+  off-policy RL, and why off-policy methods fail on a fixed dataset.

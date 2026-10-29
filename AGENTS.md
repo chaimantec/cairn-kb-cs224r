@@ -129,6 +129,10 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 - The embed script anchors on "slide N" and cannot tell lectures apart, so on a topic page that
   cites more than one lecture's slides, place the new lecture's images by hand with the lecture
   page's captions ("Lecture N, slide M — …"); run the script only on single-lecture pages.
+- `INDEX.md` tells the chat that a rendered slide is shown wherever a wiki page cites it, so a
+  lecture page shows every rendered slide it cites. When the embed dry run reports images to add,
+  place them (or drop the citation if the passage did not come from that slide), rather than
+  leaving a near-duplicate out.
 - `grep -o 'raw/images/[^)]*' wiki/NN-*.md` lists a lecture's wiki images. The slide file's
   `images:` header lists every rendered slide and why the rest were not.
 - When a lecture adds images, update `INDEX.md`'s images paragraph, the table below,
@@ -142,6 +146,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 4 Actor-Critic Methods | 21 of 37 pages | the recap, the V/Q trajectory fans and drum example, the dissatisfying-PG stills, the loop with its fit-a-model step, the value-network and Monte Carlo/bootstrap/n-step slides, the discounted MDP, the full algorithm and review, the off-policy slides (KL/PPO ideas, replay buffer, fixes), the SAC-versus-PPO chart |
 | 5 Off-Policy Actor Critic | 15 of 30 pages | the recap diagrams (online loops, V/Q trajectory fans), version 1's surrogate objective with the KL and clipping ideas, the PPO algorithm with its Half-Cheetah chart, the replay-buffer timeline and annotated broken/fixed algorithm steps, the Q-network slide, the SAC-versus-PPO chart, the SAC and PPO robot video frames and the HIL-SERL table |
 | 6 Q-Learning | 12 of 29 pages | the recap diagrams (V/Q trajectory fans, the faded loop, the Q-network), the 2D-navigation thought exercise, the greedy-policy loop, the Q-learning algorithm with its two Bellman equations, the full algorithm with its replay-buffer diagram, the DQN algorithm, the Atari Q-value and DQN-versus-double-DQN charts, the n-step fan, the Atari bar chart and grasping table |
+| 7 Offline RL | 14 of 33 pages | the recap loops and value-function targets, the full off-policy actor-critic algorithm, the randomly initialized Q-function plot with its data support, the two-trajectory stitching diagram, the advantage-weighted imitation slides with their s3 weights, the full AWR algorithm, the AWAC target and value histogram, the expectile-loss and fitted-expectile charts, the IQL algorithm, the CQL penalty and objective, the LinkedIn notification diagram and A/B table |
 
 ## Rebuilding
 

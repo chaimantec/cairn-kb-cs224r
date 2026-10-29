@@ -138,6 +138,19 @@ the current policy, so the policy-gradient steps can be replaced by defining tha
 (slides 8–9, ≈12:32–16:26). Moving the max into the Q-function's target then gives
 [Q-learning](q-learning.md), a "critic only" method (slides 9–12).
 
+## Offline: why the off-policy version breaks
+
+Lecture 7 asks what happens if an off-policy actor-critic method such as soft actor-critic is run on a
+fixed dataset (slides 10–11, ≈19:29–24:58). The critic's target evaluates the Q-function on next actions
+from the learned policy, which the data may not contain; the policy seeks out actions where the
+randomly initialized critic is over-optimistic; and the Q-values become substantially overestimated.
+The offline methods that follow keep an actor and a critic but never let either touch an action outside
+the data. Their policy objective resembles the actor-critic one but weights the log-likelihood of the
+data's own actions by the exponentiated advantage. Finn suggests thinking of the online objectives as
+often optimizing a reverse KL and the offline ones as looking more at a forward KL (≈38:02–39:34).
+Advantage-weighted actor-critic (AWAC) is one of them (slide 20). See [offline RL](offline-rl.md) and
+[implicit policy constraint methods](implicit-policy-constraints.md).
+
 ## Where this appears
 
 - [Lecture 4 — Actor-Critic Methods](04-actor-critic.md): the whole method, from the advantage to
@@ -151,3 +164,5 @@ the current policy, so the policy-gradient steps can be replaced by defining tha
   on.
 - [Lecture 6 — Q-Learning](06-q-learning.md#policy-iteration-from-actor-critic-to-critic-only):
   from actor-critic to critic only.
+- [Lecture 7 — Offline RL](07-offline-rl.md#can-we-just-use-off-policy-algorithms): why off-policy
+  actor-critic fails on a fixed dataset, and the advantage-weighted actor-critic that replaces it.
