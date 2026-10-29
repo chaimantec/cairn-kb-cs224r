@@ -14,7 +14,7 @@ authoritative. This page records a past offering.
   Slide 3 also shows eighteen further staff members by name, without roles.
 - **Guest lecturers** (slide 6): Ashish Kumar (Tesla), Archit Sharma (Google DeepMind) and one
   still to be announced. The site's schedule has Archit Sharma on RL for LLMs: preference
-  optimization (Lecture 9), Aviral Kumar on RL for LLMs: reasoning (Lecture 10) and Ashish Kumar on
+  optimization ([Lecture 9](09-rl-for-llms.md)), Aviral Kumar on RL for LLMs: reasoning (Lecture 10) and Ashish Kumar on
   RL for robots: sim-to-real transfer (Lecture 17).
 - **Contact** (slide 5): the course website, <https://cs224r.stanford.edu/>; Ed and Gradescope,
   through Canvas; and the staff mailing list, cs224r-staff-spr2425@cs.stanford.edu, which reaches

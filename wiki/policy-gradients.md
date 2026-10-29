@@ -217,6 +217,22 @@ positive advantage (≈1:02:21). How the critic is fitted is on
 [policy evaluation](policy-evaluation.md). Lecture 5 then makes the method off-policy, giving
 [PPO](ppo.md) and [soft actor-critic](replay-buffers.md).
 
+## For language models
+
+Lecture 9, a guest lecture by Archit Sharma, recaps the estimator for language models with generic
+notation: a sample $\hat{s}$ from $p_\theta(s)$, which here is a full sentence rather than a token, and a
+reward $R$ (Lecture 9, slides 62–64, ≈14:39–20:49). The steps are those of Lecture 3: write the
+expectation as a sum, move the gradient inside, apply the log-derivative trick
+$\nabla_\theta p_\theta(s) = p_\theta(s) \thinspace \nabla_\theta \log p_\theta(s)$, and estimate the result
+with $m$ samples, giving the update
+$\theta_{t+1} := \theta_t + \alpha \frac{1}{m} \sum_{i=1}^{m} R(s_i) \thinspace \nabla_{\theta_t} \log p_{\theta_t}(s_i)$.
+"This is why it's called 'reinforcement learning': we reinforce good actions, increasing the chance
+they happen again" (Lecture 9, slide 64). The lecture gives two reasons the gradient is needed: the
+reward may not be differentiable (a person's judgment), and the parameters sit inside the distribution
+the expectation is over (≈18:31). Even with a differentiable learned reward model the outputs are
+discrete sampled tokens, so gradients cannot flow back through them, and RL is still needed (≈27:02);
+see [RL from human feedback](rlhf.md#the-rl-step-and-why-it-is-rl).
+
 ## Where this appears
 
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md): the derivation, the three examples, the
@@ -226,3 +242,5 @@ positive advantage (≈1:02:21). How the critic is fitted is on
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
   policy gradients as the family that differentiates the objective directly; see
   [RL algorithm families](rl-algorithm-families.md).
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md#a-recap-of-the-policy-gradient): the recap for
+  language models, and why RL is needed even with a differentiable reward model.

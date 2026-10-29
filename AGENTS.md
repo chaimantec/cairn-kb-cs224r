@@ -76,6 +76,9 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   them as the site gives them and says so; do not "fix" them from outside knowledge.
 - Confirm a guest-lecture deck against its video by its title slide, not its filename
   (lecture 17's catalog title differs from the site's).
+- A guest deck may revise one already transcribed in a sibling KB (Lecture 9's is CS224N's
+  post-training deck). List the sibling in `SEE_ALSO.md`, but never borrow its slide labels or
+  descriptions: the revision renumbers and changes slides.
 - No licence is stated on the site or in the decks. See `LICENSE.md`.
 
 ## Transcripts
@@ -150,6 +153,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 6 Q-Learning | 12 of 29 pages | the recap diagrams (V/Q trajectory fans, the faded loop, the Q-network), the 2D-navigation thought exercise, the greedy-policy loop, the Q-learning algorithm with its two Bellman equations, the full algorithm with its replay-buffer diagram, the DQN algorithm, the Atari Q-value and DQN-versus-double-DQN charts, the n-step fan, the Atari bar chart and grasping table |
 | 7 Offline RL | 14 of 33 pages | the recap loops and value-function targets, the full off-policy actor-critic algorithm, the randomly initialized Q-function plot with its data support, the two-trajectory stitching diagram, the advantage-weighted imitation slides with their s3 weights, the full AWR algorithm, the AWAC target and value histogram, the expectile-loss and fitted-expectile charts, the IQL algorithm, the CQL penalty and objective, the LinkedIn notification diagram and A/B table |
 | 8 Reward Learning | 18 of 34 pages | the IQL recap with its Q-function plot, the CQL penalty, objective and log-sum-exp computation, the LinkedIn diagram and A/B table, the reward-source pictures, the goal-classifier photos and algorithm, the cloth-task frames, the GAN examples, the trajectory-preference sketches, the preference objective and algorithm, the backflip and driving-weight figures, the omelette RLHF slides, the Constitutional AI chart, the asymmetric self-play diagram |
+| 9 RL for LLMs | 24 of 57 pages | the scale chart and AI 2027 screenshot, the assistant start screens, the Khan Academy graph, the pretrain/finetune diagrams, the FLAN-T5 diagram and Flan-T5 table, the crossed-out LM outputs, the InstructGPT pipeline (twice), the REINFORCE, Bradley-Terry, KL-penalty and DPO equation slides, the RLHF summary chart, the PPO-RLHF pipeline, the DPO win-rate bars, the Open LLM Leaderboard, the boat-race still, the over-optimization chart, the STaR loop, the PRISM and FSPO figures |
 
 ## Rebuilding
 

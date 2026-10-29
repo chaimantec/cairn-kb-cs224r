@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–8 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–9 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -247,3 +247,33 @@ Not rendered from this deck: slides 2 and 34, whose only pictures are photograph
 lecturers; slide 13, whose embedded video frame is black; slides 7, 18 and 24, equation and text slides
 whose loop arrow, emoji and brace are transcribed (7 prints "Slide adapted from Sergey Levine"); and the
 title, plan, summary and recap slides (1, 3, 10, 11, 14, 16, 21, 22, 31, 33).
+
+### Lecture 9 — RL for LLMs: Preference Optimization
+
+Deck: [09_cs224r-2025-rlhf.pdf](https://cs224r.stanford.edu/spring_2025/slides/09_cs224r-2025-rlhf.pdf),
+a guest lecture by Archit Sharma whose title slide reads "Based on slides in CS224N". Rendered: 24
+slides, in `raw/images/09-rl-for-llms/`. The deck's text layer has no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 2 | The Economist's chart "The blessings of scale" (sources printed on it: Sevilla et al., "Compute trends across three eras of machine learning", arXiv, 2022; Our World in Data), and a screenshot of the AI 2027 website (ai-2027.com). |
+| 4 | Screenshots of the ChatGPT, Claude and Gemini start screens, not credited. |
+| 7 | A screenshot of a Khan Academy SAT page on circle equations, with its graph (khanacademy.org). |
+| 43 | The FLAN-T5 instruction-finetuning diagram, credited "FLAN-T5; Chung et al., 2022". |
+| 50 | The Flan-T5 results table, credited to Chung et al., 2022, beside a sketch of the T5 encoder-decoder (Raffel et al., 2018). |
+| 61, 80 | The InstructGPT three-step pipeline diagram, credited on slide 80 to Ouyang et al., 2022. |
+| 72, 94 | Charts of summary preference against model size (72) and of reward-model over-optimization (94), credited to Stiennon et al., 2020. |
+| 74 | A diagram of the PPO-based RLHF pipeline, credited to Zheng et al. 2023, "Secrets of RLHF". |
+| 78 | Bar charts of summarization and dialogue win rates; no source printed on the slide. |
+| 87 | Screenshots of the Hugging Face Open LLM Leaderboard (with handwritten annotations), the Mistral AI and Mixtral "8X7" logos with an MT-Bench table (mistral.ai), and a Meta blog section with the Llama 3 logo. |
+| 92 | A still from a boat-racing game, from OpenAI's post on faulty reward functions (openai.com). |
+| 98 | The title block of Huang et al., "Large Language Models Can Self-Improve" (2022), and a diagram of the Self-Taught Reasoner (STaR, Zelikman et al., 2022). |
+| 99 | Figures from the PRISM Alignment Project (Kirk et al., 2024) and from FSPO: Few-Shot Preference Optimization (Singh, Hsu et al., 2024). |
+| 41, 42, 56, 63, 64, 67, 70, 76, 77 | No third-party content identified: the deck's own diagrams of pretraining and finetuning and of a language model's outputs, and its policy-gradient, reward-model, RLHF and DPO equations. |
+
+Not rendered from this deck: slide 12, identical to slide 4; slides whose pictures are screenshots or
+panels of text transcribed in full, or clip-art (6, 8, 9, 10, 39, 40, 51, 52, 60, 65, 81, 82, 83, 84,
+85, 88, 93, 95, 96, 97), among them a paper excerpt (Andreas, 2022), GitHub Copilot, a paper abstract
+(Larnerd, 2023), Bing chat, OpenAI's ChatGPT and sycophancy posts, AlpacaFarm (Dubois et al., 2023),
+NPR, AP and Semafor headlines, and Constitutional AI (Bai et al., 2022); and the title, plan,
+section-divider, text and equation slides (1, 5, 13, 14, 57, 62, 66, 69, 73, 75, 79, 89).

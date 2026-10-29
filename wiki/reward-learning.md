@@ -130,6 +130,12 @@ time-consuming to produce (slides 21 and 31, ≈44:11–44:57, ≈1:03:29). Lear
 needs no such examples; see [learning rewards from preferences](preference-learning.md) for its side
 of the comparison.
 
+A learned reward is a proxy, and optimizing hard against a proxy exploits it, as RL exploits a fixed goal
+classifier. Lecture 9 shows the same with reward models for language models: as the policy moves away
+from its starting point, the reward model's predicted preference keeps rising while actual human
+preference peaks and then falls (Lecture 9, slide 94, ≈59:48–1:00:35); see
+[RL from human feedback](rlhf.md#costs-and-limitations).
+
 ## Other supervision, and agents that set their own goals
 
 Goals and preferences are only two forms of feedback. Slide 31's thought exercise asks for others: an
@@ -148,6 +154,8 @@ of curiosity. One example makes it a two-player game between a goal-setter and a
 
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the whole topic, with the student questions.
 - [Learning rewards from preferences](preference-learning.md): the second approach.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md#frontier-and-challenges): reward hacking and
+  over-optimization of learned reward models for language models.
 - [Lecture 1 — Class Intro](01-class-intro.md): reward learning as one of the course's open problems.
 - [Imitation learning](imitation-learning.md): the reward-free alternative.
 - [Conservative Q-learning](conservative-q-learning.md): the offline RL method whose idea the

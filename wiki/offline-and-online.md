@@ -85,6 +85,15 @@ except that pure offline RL can never collect more data (≈12:27–13:13). Runn
 such as soft actor-critic on the fixed data fails, because the critic is evaluated on actions the data
 does not contain and the Q-values become overestimated (slides 10–11). See [offline RL](offline-rl.md).
 
+## Preference optimization for language models
+
+Lecture 9 draws the same line for language models. [RL from human feedback](rlhf.md) samples from the
+model being trained and scores the samples with a reward model, which is expensive because of that
+sampling. [Direct preference optimization](direct-preference-optimization.md) trains on a fixed
+preference dataset and "does not leverage online data" (Lecture 9, slide 79, ≈52:49). It removes the
+sampling during RL but not the sampling that builds the preference dataset (≈49:41), and online RL needs
+only prompts, so it can use more of them than the preference data covers (≈49:41–50:28).
+
 ## Where this appears
 
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#summary-of-part-1-offline-and-reward-free):
@@ -99,3 +108,5 @@ does not contain and the Q-values become overestimated (slides 10–11). See [of
   why Q-learning is off-policy, the questions on what that means, and why n-step targets are not.
 - [Lecture 7 — Offline RL](07-offline-rl.md#why-offline-rl): why offline RL, how it relates to
   off-policy RL, and why off-policy methods fail on a fixed dataset.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md#summary-rlhf-and-dpo): RLHF's online sampling against
+  DPO's fixed preference data.

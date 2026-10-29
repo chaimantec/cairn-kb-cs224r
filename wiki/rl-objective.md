@@ -124,6 +124,23 @@ rarely come directly, and Lecture 8 is about learning them: from examples of goa
 or from human preferences between trajectories (slide 12, ≈24:48–27:53). See
 [reward learning](reward-learning.md) and [learning rewards from preferences](preference-learning.md).
 
+## A KL-penalized objective
+
+Lecture 9 (a guest lecture by Archit Sharma) uses the objective for a language model: the "trajectory" is a
+whole completion $\hat{y}$ sampled from the model $p^{RL}_ \theta(\hat{y} \mid x)$ for a prompt $x$, and
+the reward is a learned reward model $RM_\phi(x, \hat{y})$. Because that reward is only accurate near the
+data it was fitted on, the objective subtracts a penalty for drifting from the starting model $p^{PT}$
+(Lecture 9, slide 70, ≈29:21–30:58):
+
+$$\mathbb{E}_ {\hat{y} \sim p^{RL}_ \theta(\hat{y} \mid x)}\left[RM_\phi(x, \hat{y}) - \beta \log \left(\frac{p^{RL}_ \theta(\hat{y} \mid x)}{p^{PT}(\hat{y} \mid x)}\right)\right]$$
+
+In expectation the penalty is the KL divergence between the two models, weighted by $\beta$. Plain
+expected-reward maximization has no closed-form optimum, but this KL-penalized objective does:
+$p^\ast(\hat{y} \mid x) = \frac{1}{Z(x)} p^{PT}(\hat{y} \mid x) \exp\left(\frac{1}{\beta} RM(x, \hat{y})\right)$,
+the starting model reweighted by the exponentiated reward, with $Z(x)$ the normalizer (Lecture 9,
+slide 76, ≈38:46–40:18). That closed form is what [direct preference optimization](direct-preference-optimization.md)
+builds on; [RL from human feedback](rlhf.md) optimizes the objective with RL instead.
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#the-goal-of-reinforcement-learning): the objective,
@@ -134,3 +151,5 @@ or from human preferences between trajectories (slide 12, ≈24:48–27:53). See
   factor $\gamma$ and its reading as a probability of the agent dying.
 - [Lecture 8 — Reward Learning](08-reward-learning.md#where-does-the-reward-come-from): where the
   reward in the objective comes from, and how to learn it.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md#the-kl-penalty): the expected reward of a language
+  model's samples, its KL-penalized form, and that form's closed-form optimum.

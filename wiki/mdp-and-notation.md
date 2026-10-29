@@ -226,6 +226,28 @@ Lecture 8 adds these; see [reward learning](reward-learning.md) and
 - For language models, $x$ is a prompt (often the whole history), $y$ and $y'$ are responses, and
   $r(x, y)$ is the reward model judging how good $y$ is for $x$ (slides 28–29).
 
+## Notation for preference optimization
+
+Lecture 9, a guest lecture whose deck comes from CS224N, uses its own notation; see
+[RL from human feedback](rlhf.md) and [direct preference optimization](direct-preference-optimization.md).
+
+- $x$ is an instruction or prompt and $y$ a language-model sample, a whole completion; $\hat{y}$ marks a
+  sampled one. In the policy-gradient recap, $\hat{s} \sim p_\theta(s)$ is the same idea in generic
+  notation (slides 60–64).
+- $R(x, y)$ is a human reward and $RM_\phi(x, y)$ a learned reward model with parameters $\phi$ (slides
+  60, 65).
+- $p^{PT}(y \mid x)$ is the pretrained, possibly instruction-finetuned, model, held fixed;
+  $p^{RL}_ \theta(y \mid x)$ is its copy being optimized, with parameters $\theta$ (slide 69);
+  $p^{IFT}$ labels the instruction-finetuned model on slide 72.
+- $(x, y^w, y^l) \sim D$ is a preference triple, $y^w$ winning and $y^l$ losing; $J_{RM}(\phi)$ is the
+  Bradley-Terry loss (slide 67), and $J_{DPO}(\theta)$ the DPO loss (slide 77).
+- $\beta$ weighs the KL penalty (slide 70); $p^\ast$ is the optimal policy of the KL-penalized objective,
+  $Z(x)$ its normalizer, and $RM_\theta$ the reward model DPO defines from $p^{RL}_ \theta$ (slide 76).
+
+These play the roles of Lecture 8's $\tau_w$, $\tau_l$ and $r_\theta$, with a whole response in place of a
+trajectory; note that Lecture 8's $\theta$ is the reward model's parameters while Lecture 9's $\theta$ is
+the language model's.
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -244,3 +266,5 @@ Lecture 8 adds these; see [reward learning](reward-learning.md) and
   advantage weighting, expectile regression and conservative Q-learning.
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the notation for goal classifiers, learned
   rewards and preferences.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md): the notation for instruction finetuning, RLHF and
+  DPO.

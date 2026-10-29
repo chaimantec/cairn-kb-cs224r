@@ -204,7 +204,11 @@ demonstrations at all. Reward learning asks instead what the expert is trying to
 classifier learned from those demonstrations' final states reached 62% (slide 19). The supervised
 fine-tuning stage of training a chat model is "basically imitation learning" on a higher-quality
 dataset, before RL from human feedback (≈58:52–59:38). See [reward learning](reward-learning.md) and
-[learning rewards from preferences](preference-learning.md).
+[learning rewards from preferences](preference-learning.md). Lecture 9 teaches that stage as
+[instruction finetuning](instruction-finetuning.md): finetuning on (instruction, output) pairs by
+increasing the log-likelihood of the target outputs, whose limits (costly targets, no single right
+answer, every mistake penalized equally) motivate learning from preferences instead (Lecture 9,
+slides 41 and 56).
 
 ## Where this appears
 
@@ -220,3 +224,5 @@ dataset, before RL from human feedback (≈58:52–59:38). See [reward learning]
 - [Lecture 8 — Reward Learning](08-reward-learning.md#imitation-and-reasoning-about-what-the-expert-wants):
   why imitation is not enough as task specification, and imitation as the baseline a learned reward
   beats.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md#instruction-finetuning): instruction finetuning, the
+  supervised stage of training a chat model.

@@ -131,7 +131,13 @@ to the real robot, and a robot hand that solves a Rubik's cube with a policy tra
 though sim-to-real transfer is generally much harder for manipulation. PPO is also a common choice
 for language models (slide 28), which the course takes up with reward modeling: in Lecture 8, after a
 reward model is learned from human preferences, "one somewhat common approach is to use PPO to maximize
-the reward" (≈1:00:23; see [learning rewards from preferences](preference-learning.md)).
+the reward" (≈1:00:23; see [learning rewards from preferences](preference-learning.md)). In Lecture 9, PPO is the RL
+step of InstructGPT's pipeline (slide 61) and of ChatGPT's (slide 85), and an RLHF-trained Alpaca is
+labelled "Alpaca + PPO" (slide 88). Lecture 9 also shows why it is costly there: slide 74's PPO-based
+RLHF pipeline needs a policy, a reference model, a reward model and a value model, generalized advantage
+estimation and an experience buffer, and "Performance can be sensitive to hyperparameters". That cost
+motivates [direct preference optimization](direct-preference-optimization.md), which drops the RL loop;
+see [RL from human feedback](rlhf.md).
 
 Lecture 6's closing advice puts it the same way (slide 27, "Chelsea's advice", ≈59:41–1:00:27):
 PPO and its variants when you care about stability and ease of use and not about data efficiency.
@@ -153,3 +159,5 @@ efficiency matters most, and DQN for discrete or low-dimensional continuous acti
   DQN or SAC.
 - [Lecture 8 — Reward Learning](08-reward-learning.md#rewards-for-language-models): PPO as a common
   choice for the RL step of RL from human feedback.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md#direct-preference-optimization-why): PPO in
+  InstructGPT and ChatGPT, and the complexity of a PPO-based RLHF pipeline.

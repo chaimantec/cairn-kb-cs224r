@@ -115,7 +115,14 @@ crudely by treating the next response as the thing being optimized (≈1:00:23).
 *Lecture 8, slide 29 — the three stages of training a chat model (pre-training, supervised fine-tuning, RL from human feedback) and the three steps of the last. [Deck](https://cs224r.stanford.edu/spring_2025/slides/08_cs224r_reward_learning_2025.pdf)*
 
 Lecture 9, a guest lecture by Archit Sharma on preference optimization for language models, continues
-from here (slide 2); this knowledge base does not cover it yet.
+from here (Lecture 8, slide 2). It names the objective above the **Bradley-Terry** paired comparison
+model, writes it for a prompt $x$ with a winning response $y^w$ and a losing one $y^l$ as a loss to
+minimize, and argues for comparisons over scores because people's scores are noisy and miscalibrated
+(Lecture 9, slides 66–67, ≈22:23–23:56). It adds that ranking $N$ responses gives $\binom{N}{2}$ pairs,
+and that the Plackett-Luce family generalizes Bradley-Terry to whole rankings (≈56:40). See
+[RL from human feedback](rlhf.md) for the full method and its limitations, and
+[direct preference optimization](direct-preference-optimization.md) for training the language model on
+preferences without the RL step.
 
 ## AI feedback
 
@@ -139,3 +146,7 @@ time (slide 31, ≈1:03:29). Compare learning from goals and demonstrations on
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the whole topic, with the student questions.
 - [Reward learning](reward-learning.md): why rewards must be learned, and the goal-classifier approach.
 - [PPO](ppo.md): the RL algorithm Lecture 8 names for the last step of RLHF.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md#a-reward-model-from-pairwise-comparisons): the
+  Bradley-Terry reward model for language models, RLHF and DPO.
+- [RL from human feedback](rlhf.md) and [direct preference optimization](direct-preference-optimization.md):
+  the two ways Lecture 9 optimizes a language model on preferences.

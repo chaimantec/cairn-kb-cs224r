@@ -602,7 +602,7 @@ like a copy slip; Finn describes this step as preference data. It has three step
 data (existing preference datasets can be used, rather than collecting them with your own model);
 train a reward model; and run reinforcement learning to maximize it, fine-tuning the model to produce
 responses $y$ with high reward for prompts $x$. One somewhat common choice is [PPO](ppo.md)
-(≈1:00:23). Preference learning returns on Wednesday next week (≈59:38).
+(≈1:00:23). Preference learning returns on Wednesday next week (≈59:38), in [Lecture 9](09-rl-for-llms.md).
 
 ![Slide 29 — Learning rewards from human feedback for LLMs](../raw/images/08-reward-learning/slide-29.png)
 
@@ -675,7 +675,7 @@ repeated plan on slide 33; this section is from the [slide file](../raw/slides/0
 alone. Fill out the AWS form for GPU quota; the project proposal is due today, "graded fairly lightly-
 it's for your benefit!"; homework 2 is due next Friday ("start early!!"). Next week has two guest
 lectures, both "very useful for default project": Archit Sharma (researcher on the Gemini team, lead
-author of DPO) on preference optimization for LLMs, and Aviral Kumar (professor at CMU) on RL for LLM
+author of DPO) on preference optimization for LLMs ([Lecture 9](09-rl-for-llms.md)), and Aviral Kumar (professor at CMU) on RL for LLM
 reasoning. "Please join lecture in person!"
 
 ## Related pages
@@ -693,3 +693,5 @@ reasoning. "Please join lecture in person!"
 - [Imitation learning](imitation-learning.md): the reward-free alternative, and why it is not enough.
 - [The RL objective](rl-objective.md): the sum of rewards that every method here needs a reward for.
 - [Lecture 7 — Offline RL](07-offline-rl.md): the lecture before, whose recording stops before CQL.
+- [Lecture 9 — RL for LLMs](09-rl-for-llms.md): the lecture after, on RLHF and direct preference
+  optimization for language models.
