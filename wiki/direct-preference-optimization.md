@@ -133,6 +133,19 @@ open LLMs used it, and Llama and Mistral models were post-trained with it (slide
 shows the Open LLM Leaderboard's top models annotated "DPO" one by one, and Meta's note that learning
 from preference rankings via PPO and DPO improved Llama 3 on reasoning and coding.
 
+## Per-step preference pairs for reasoning
+
+Lecture 10 uses DPO as an offline RL method for math reasoning, with preference pairs built from
+rollouts rather than from human judgments (Lecture 10, slides 20–22, ≈51:34–56:09). From a prefix of
+one of the model's solutions, a rollout policy completes the solution several times, and a
+continuation that reaches the right answer is preferred over one that does not, the two sharing the
+prefix. Either a successful rollout is preferred over the model's own wrong ending, or the model's
+correct ending over a rollout that fails. The shared prefix localizes the difference to the segment
+after it, and the rollout tokens themselves are trained on (≈53:05). The loss is "the same old DPO
+loss on top of these two segments of solutions" (≈53:50). On GSM8K and MATH this per-step DPO reaches
+the test error of supervised finetuning on human-written solutions with 8x fewer questions (slide 23,
+≈59:13). See [RL for LLM reasoning](llm-reasoning.md).
+
 ## Where this appears
 
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md#direct-preference-optimization-why): the motivation,
@@ -142,3 +155,5 @@ from preference rankings via PPO and DPO improved Llama 3 on reasoning and codin
   Lecture 8.
 - [The RL objective](rl-objective.md#a-kl-penalized-objective): the KL-penalized objective and its
   closed-form optimum.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#option-2-offline-rl-with-per-step-dpo):
+  per-step DPO on preference pairs built from rollouts, for math reasoning.

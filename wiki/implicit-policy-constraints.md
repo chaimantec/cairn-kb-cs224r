@@ -156,6 +156,18 @@ better than filtered behavior cloning with a broader dataset, and "seems most pe
 pre-training followed by online fine-tuning. IDQL is a variant with
 [diffusion policies](expressive-policy-distributions.md) and a different update.
 
+## Filtering steps by advantage, for language reasoning
+
+Lecture 10 applies this page's idea to the steps of a language model's math solutions. The advantage
+of each step is estimated with rollouts from a separate rollout policy, and only steps with positive
+advantage are imitated, each conditioned on its prefix, including good steps from solutions that
+ended wrong (Lecture 10, slide 18, ≈43:52–46:58). Kumar calls it "very much reminiscent of
+advantage-weighted regression", with a filter in place of exponentiated advantages. Training on
+everything with each loss multiplied by $e^{A}$ also works, but "I think that objective requires a
+lot of tuning, and if you can only run one experiment, you probably prefer this objective over e to
+the A in general" (≈45:23). Asked whether this resembles trajectory stitching and advantage weights,
+Kumar says "exactly yes" (≈39:13). See [process rewards and per-step credit](process-rewards.md).
+
 ## Where this appears
 
 - [Lecture 7 — Offline RL](07-offline-rl.md): every method on this page, with the student questions on
@@ -166,3 +178,5 @@ pre-training followed by online fine-tuning. IDQL is a variant with
   [conservative Q-learning](conservative-q-learning.md), the alternative approach.
 - [Policy evaluation](policy-evaluation.md): the Monte Carlo and bootstrapped targets these methods
   adapt.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#option-1-filtering-steps-by-advantage):
+  advantage filtering of a language model's reasoning steps.

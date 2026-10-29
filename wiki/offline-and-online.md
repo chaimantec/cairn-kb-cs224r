@@ -94,6 +94,16 @@ preference dataset and "does not leverage online data" (Lecture 9, slide 79, ≈
 sampling during RL but not the sampling that builds the preference dataset (≈49:41), and online RL needs
 only prompts, so it can use more of them than the preference data covers (≈49:41–50:28).
 
+## Imitation, offline and online RL for reasoning
+
+Lecture 10 organizes RL for language-model reasoning along the same line: imitation of reference
+solutions, on-policy imitation of the model's own correct samples (rejection finetuning), offline RL
+on the model's sampled solutions (per-step DPO), and online RL that samples from the current policy
+throughout training (Lecture 10, slide 6, ≈6:59). Kumar measures them by data efficiency: rejection
+finetuning about 2x supervised finetuning (≈24:37), offline per-step DPO about 8x (≈59:13), and
+online RL with dense per-step rewards 5–6x as sample-efficient as online RL with the outcome reward
+alone (slide 27, ≈1:06:56). See [RL for LLM reasoning](llm-reasoning.md).
+
 ## Where this appears
 
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#summary-of-part-1-offline-and-reward-free):
@@ -110,3 +120,5 @@ only prompts, so it can use more of them than the preference data covers (≈49:
   off-policy RL, and why off-policy methods fail on a fixed dataset.
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md#summary-rlhf-and-dpo): RLHF's online sampling against
   DPO's fixed preference data.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#the-plan-classical-techniques-then-thinking-models):
+  imitation, offline RL and online RL for math reasoning.

@@ -28,9 +28,26 @@ raw URL returns plain markdown and so also works as a `web_fetch` target.
   KB: `https://github.com/chaimantec/cairn-kb-cs336` — pass this as `kb` to `kb_read` / `kb_list`.
   Post-training as it is built: its Lecture 15 covers supervised fine-tuning and RLHF, and its Lecture
   16 reinforcement learning from verifiable rewards for reasoning models (PPO, GRPO and open recipes),
-  the direction Lecture 9 closes on. Reach for it when a question is about how RLHF or DPO is done in
-  practice, or about RL for reasoning, rather than about this course's derivations. It covers all 18 of
+  the direction Lecture 9 closes on and the subject of Lecture 10. Reach for it when a question is
+  about how RLHF or DPO is done in practice, or about GRPO and open reasoning recipes, which Lecture 10
+  only names, rather than about this course's derivations. It covers all 18 of
   its lectures; it does not teach RL outside language models.
   Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs336/main/INDEX.md) ·
   [Lecture 15](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs336/main/wiki/15-mid-post-training.md) ·
-  [DPO](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs336/main/wiki/dpo.md)
+  [DPO](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs336/main/wiki/dpo.md) ·
+  [Lecture 16](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs336/main/wiki/16-post-training-rlvr.md)
+
+- **CS329A — Self-Improving AI Agents** (Stanford, Aakanksha Chowdhery and Azalia Mirhoseini, Autumn
+  2025).
+  KB: `https://github.com/chaimantec/cairn-kb-cs329a` — pass this as `kb` to `kb_read` / `kb_list`.
+  A paper-reading seminar on the neighbourhood of Lecture 10: scaling test-time compute (its Lecture
+  2), verifiers, including outcome and process reward models and the PRM800K dataset (Lecture 3), and
+  train-time scaling with RL, from STaR's filtered self-training to DeepSeekMath and the reasoning
+  models (Lecture 6). Reach for it when a question about Lecture 10 turns to test-time scaling,
+  verifiers or the papers behind thinking models, which Lecture 10 covers only in its slides or in
+  passing. It is a different course's reading of different papers, so it does not explain Lecture
+  10's own methods (rejection finetuning's scaling, per-step DPO, process advantage verifiers). It
+  covers all 9 of its lectures.
+  Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs329a/main/INDEX.md) ·
+  [Lecture 3](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs329a/main/wiki/03-robust-verification.md) ·
+  [Lecture 6](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs329a/main/wiki/06-train-time-scaling-scaling-rl.md)

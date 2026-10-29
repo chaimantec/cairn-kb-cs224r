@@ -145,6 +145,16 @@ PPO generally does not need much tuning, but it is very data-inefficient. SAC is
 efficiency matters most, and DQN for discrete or low-dimensional continuous actions; see
 [Q-learning](q-learning.md#when-to-use-it).
 
+## GRPO for reasoning
+
+Lecture 10 mentions **GRPO** as a common choice for training language models to reason. Kumar
+describes it as "nothing but an extension of the basic PPO algorithm in this setting": PPO uses a
+learned value function, and GRPO replaces it with advantages estimated from rollouts (Lecture 10,
+≈1:03:06). DeepSeek-R1 is trained with GRPO, "basically PPO with some tweaks", and Kimi 1.5 with a
+version of advantage-induced policy alignment (APA); Kumar's advice is to think of both as
+policy-gradient methods with slight tweaks (slide 32, ≈1:07:42–1:08:28). The lecture does not give
+GRPO's objective. See [RL for LLM reasoning](llm-reasoning.md#online-rl-with-an-outcome-reward).
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-1-multiple-gradient-steps-with-importance-weights):
@@ -161,3 +171,5 @@ efficiency matters most, and DQN for discrete or low-dimensional continuous acti
   choice for the RL step of RL from human feedback.
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md#direct-preference-optimization-why): PPO in
   InstructGPT and ChatGPT, and the complexity of a PPO-based RLHF pipeline.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#online-rl-with-a-01-reward): GRPO
+  as PPO with rollout-based advantages, and its use for DeepSeek-R1.

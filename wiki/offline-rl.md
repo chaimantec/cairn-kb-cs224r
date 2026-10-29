@@ -156,6 +156,16 @@ hyperparameter" (slide only). For offline pre-training followed by online fine-t
 performant". IDQL, a variant of IQL with [diffusion policies](expressive-policy-distributions.md),
 also works well. Offline RL is "still an active area of research!" (slide 32).
 
+## Offline RL for language reasoning
+
+Lecture 10 places offline RL between imitation and online RL for training language models to solve
+math problems. The data are the model's own sampled solutions, correct and incorrect. A rollout
+policy completes prefixes of them, and the rollouts become preference pairs for DPO (Lecture 10,
+slides 20–22, ≈51:34–56:09). Unlike imitation, this learns from the incorrect solutions too, which RL
+can do (≈18:29–19:15). With Llama 2 and DeepSeek models it reached the test error of supervised
+finetuning on human-written solutions with 8x fewer questions (slide 23, ≈59:13). See [RL for LLM
+reasoning](llm-reasoning.md).
+
 ## Where this appears
 
 - [Lecture 7 — Offline RL](07-offline-rl.md): the whole topic; CQL from the slides only.
@@ -167,3 +177,5 @@ also works well. Offline RL is "still an active area of research!" (slide 32).
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md) and
   [Lecture 6 — Q-Learning](06-q-learning.md): the off-policy methods whose action-coverage requirement
   is what breaks offline.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#option-2-offline-rl-with-per-step-dpo):
+  offline RL for math reasoning, with per-step DPO.

@@ -141,7 +141,8 @@ and bad ideas alike (slide 95, ≈58:14–59:48).
 **Data.** Preference data is still expensive, and not necessarily representative of the behaviors we
 want. Directions include AI feedback (slide 97, and Lecture 8's
 [RLAIF](preference-learning.md#ai-feedback)), finetuning models on their own outputs (slide 98),
-verifiable rewards for reasoning, and personalization (slide 99, ≈1:01:21–1:02:08).
+verifiable rewards for reasoning (the subject of [Lecture 10](10-rl-for-reasoning.md); see [RL for LLM
+reasoning](llm-reasoning.md)), and personalization (slide 99, ≈1:01:21–1:02:08).
 
 ## Where this appears
 
@@ -154,3 +155,5 @@ verifiable rewards for reasoning, and personalization (slide 99, ≈1:01:21–1:
   RL loop.
 - [Policy gradients](policy-gradients.md) and [PPO](ppo.md): the RL algorithms used in the third step.
 - [Instruction finetuning](instruction-finetuning.md): the first step.
+- [Process rewards and per-step credit](process-rewards.md): Lecture 10's reward models that score
+  each step of a solution.

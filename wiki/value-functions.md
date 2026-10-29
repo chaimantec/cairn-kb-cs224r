@@ -129,6 +129,19 @@ from the data (slide 20). Implicit Q-learning fits the value function with an ex
 $\hat{Q} - \hat{V}$ measures actions against a policy better than the behavior policy (slides 21–23).
 See [implicit policy constraint methods](implicit-policy-constraints.md).
 
+### Language: the value of a solution prefix
+
+Lecture 10 applies both functions to a language model writing a math solution step by step. The
+state is the problem plus the steps written so far, the action is the next step, and the reward is
+1 only if the final answer is right. The Q-value of a step under a rollout policy $\tilde{\pi}$ is
+the chance that $\tilde{\pi}$, continuing from there, reaches a correct answer, estimated by rolling
+it out many times (Lecture 10, slides 15–16, ≈33:06–36:55). With the discount factor set to 1 and
+the only reward at the end, the definition's expected sum of rewards collapses to that one
+expectation (≈37:42–38:27). Because each state is the previous state with a step appended, the value
+of the state before a step is the Q-value of the step before it, so the advantage becomes a
+difference of consecutive Q-values (slide 17, ≈40:47). See [process rewards and per-step
+credit](process-rewards.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#how-good-is-a-policy-value-and-q-functions): the
@@ -143,3 +156,5 @@ See [implicit policy constraint methods](implicit-policy-constraints.md).
 - [Lecture 7 — Offline RL](07-offline-rl.md#weighting-imitation-by-the-advantage): the advantage of
   the behavior policy, estimated by Monte Carlo, by bootstrapping on data actions, and with an
   expectile-fitted value function.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#the-q-value-of-a-step): the Q-value
+  and advantage of each step of a solution, under a rollout policy.

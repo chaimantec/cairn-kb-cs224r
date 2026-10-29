@@ -9,17 +9,19 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–9 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–10 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
 > Q-learning, n-step returns), Lecture 7 (offline RL: filtered behavior cloning, AWR, AWAC and
 > implicit Q-learning), Lecture 8 (conservative Q-learning, and reward learning from goal
-> classifiers and from human preferences, including RL from human feedback) and Lecture 9 (a guest
+> classifiers and from human preferences, including RL from human feedback), Lecture 9 (a guest
 > lecture on RL for language models: instruction finetuning, RLHF and direct preference
-> optimization): their edited transcripts, their slide decks as text, 146 of their slides as
-> images, and the topic pages they start. **It cannot answer questions about the technical content
-> of Lectures 10–19** (RL for LLM reasoning onward, and the Q-learning TA session). For
+> optimization) and Lecture 10 (a guest lecture on RL for LLM reasoning: rejection finetuning,
+> per-step credit assignment, offline and online RL, and thinking models): their edited
+> transcripts, their slide decks as text, 173 of their slides as images, and the topic pages they
+> start. **It cannot answer questions about the technical content of Lectures 11–19** (model-based
+> RL onward, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
@@ -53,12 +55,17 @@ complementary to the more theoretical CS234.
   exported, so cite the printed number, never the page. Its recording follows the deck but does not
   discuss slides 81, 93, 97 and 98, which are only in the slide file. For what came before
   instruction finetuning in the deck it is based on (prompting, chain-of-thought), see the CS224N
-  knowledge base listed in [`SEE_ALSO.md`](SEE_ALSO.md).
+  knowledge base listed in [`SEE_ALSO.md`](SEE_ALSO.md). Lecture 10's recording covers slides 2–27
+  and then slide 32; slides 28–31 and 33–41 (thinking models: the formulation, meta strategies,
+  response length, test-time scaling, leaderboard results, open questions) are only in the slide
+  file. Its result charts on slides 10, 19 and 23 hold only the first frame of an animation, so
+  their results come from what the lecturer says.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8 and 9 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
-3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8 and 24 of Lecture 9 rendered as pictures, each shown under its
+Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9 and 10 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9 and 27 of
+Lecture 10 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -67,9 +74,10 @@ Lectures 1, 2, 3, 4, 5, 6, 7, 8 and 9 have images: 16 slides of Lecture 1, 15 of
 [`raw/slides/06-q-learning.md`](raw/slides/06-q-learning.md),
 [`raw/slides/07-offline-rl.md`](raw/slides/07-offline-rl.md),
 [`raw/slides/08-reward-learning.md`](raw/slides/08-reward-learning.md),
-[`raw/slides/09-rl-for-llms.md`](raw/slides/09-rl-for-llms.md)) and, where a wiki page cites that
+[`raw/slides/09-rl-for-llms.md`](raw/slides/09-rl-for-llms.md),
+[`raw/slides/10-rl-for-reasoning.md`](raw/slides/10-rl-for-reasoning.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these nine has one: the slide file's header lists which do.
+these ten has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -185,6 +193,26 @@ these nine has one: the slide file's header lists which do.
   and the stylistic changes; engagement and whose preferences; sycophancy, reward hacking and
   reward-model over-optimization; and what's next (verifiable rewards, personalization).
 
+- [Lecture 10 — RL for LLM Reasoning](wiki/10-rl-for-reasoning.md) (guest lecture by Aviral
+  Kumar): training language models to solve math problems with RL. Why next-token prediction on
+  reference solutions scales slowly (the data-similarity bound, running out of text by 2028, an
+  o1 proof that asserts its way out); reasoning as a sparse-reward MDP with deterministic dynamics;
+  the three data axes (SFT, rejection finetuning, RL on incorrect solutions); rejection finetuning
+  on the board and the questions on it; the fitted exponents and RFT's 2x efficiency; why too much
+  on-policy imitation hurts, deduplication, and spurious steps (the 100 times 2 example, causal
+  confusion); credit for steps by rollouts from each prefix; the Q-value of a step under a rollout
+  policy, which rollout policy to use, and the advantage as one Q-value minus the previous one with
+  slide 17's worked example; process reward models; option 1, filtering steps by advantage (versus
+  AWR's exponentiated weights), with the questions on training single steps and the Markov
+  property; option 2, per-step DPO pairs, the rollout policy's quality versus diversity, and how to
+  split a solution into steps; the 8x data efficiency of offline RL, $\text{pass@}k$ and the
+  temperature
+  question; online RL with a 0/1 reward and GRPO; process advantage verifiers and their 5–6x sample
+  efficiency, with the generalization question; what changed for thinking models (same objective,
+  macro actions, a larger token budget); and, from the slides only, solving hard questions, a
+  thinking trace, the compute-constrained objective, meta strategies, longer responses, test-time
+  scaling, the leaderboards and the open questions.
+
 ## Topic pages
 
 - [MDPs and RL notation](wiki/mdp-and-notation.md): a table of the course's symbols (state,
@@ -197,7 +225,8 @@ these nine has one: the slide file's header lists which do.
   (behavior policy, filtered datasets, the expectile loss, CQL) and for reward learning (goal sets,
   learned rewards, preference pairs, the sigmoid, prompts and responses) and for preference
   optimization (prompts and completions, the reward model, the pretrained and RL models, winning and
-  losing completions, the KL weight and the partition function).
+  losing completions, the KL weight and the partition function), and for RL for LLM reasoning (the
+  reasoning MDP, rollout policies, the Q-value and advantage of a step, the compute budget).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
@@ -213,7 +242,8 @@ these nine has one: the slide file's header lists which do.
   how the three relate (V as the expectation of Q; Q as the reward plus the next state's value, and
   Lecture 5's recursive form in terms of the next Q-value), why the advantage can be estimated from V
   alone, why a policy comes out of Q but not out of V, the drum-practice and Go examples, and Lecture
-  7's offline use of the behavior policy's advantage.
+  7's offline use of the behavior policy's advantage, and Lecture 10's Q-value and advantage of a
+  step in a language model's solution.
 - [Actor-critic methods](wiki/actor-critic.md): the method as a whole: from the policy gradient's
   reward to go to the advantage, the critic as a learned value function, the five-step algorithm and
   the names actor and critic, and the off-policy versions Lecture 5 teaches (multiple gradient steps
@@ -225,7 +255,8 @@ these nine has one: the slide file's header lists which do.
   minimum objective as a lower bound, generalized advantage estimation, the four-step algorithm
   and example hyperparameters, and where PPO is the right trade (simulation, language models, and
   Lecture 6's advice), and its use for the RL step of RL from human feedback (Lectures 8 and 9),
-  with the complexity of a PPO-based RLHF pipeline that motivates DPO.
+  with the complexity of a PPO-based RLHF pipeline that motivates DPO; and GRPO, which Lecture 10
+  describes as PPO with rollout-based advantages.
 - [Replay buffers and soft actor-critic](wiki/replay-buffers.md): reusing all past data, why a
   value function fitted on a buffer belongs to a mixture of past policies, the recursive Q-function
   and targets with actions from the current policy, action coverage, the fixed policy update, the
@@ -246,7 +277,7 @@ these nine has one: the slide file's header lists which do.
   weighted by reward; imitation learning as initialization), imitation as an offline RL baseline
   (filtered behavior cloning, advantage weighting, why it cannot stitch), Lecture 8's case for
   learning a reward instead, and instruction finetuning as the supervised stage of training a chat
-  model (Lecture 9).
+  model (Lecture 9), and rejection finetuning, spurious steps and causal confusion (Lecture 10).
 - [Expressive policy distributions](wiki/expressive-policy-distributions.md): why a policy needs
   more than a mean; categorical, Gaussian, Gaussian-mixture, discretized autoregressive and
   diffusion policies, what each outputs and how each is trained; why a bigger network does not
@@ -257,13 +288,14 @@ these nine has one: the slide file's header lists which do.
   spectrum of increasingly off-policy actor-critic methods, from PPO to replay buffers, and why
   Q-learning is off-policy while its n-step targets are not; and Lecture 7's offline RL, why it is
   worth it and why off-policy methods fail on fixed data; and Lecture 9's contrast between RLHF's
-  online sampling and DPO's fixed preference data.
+  online sampling and DPO's fixed preference data; and Lecture 10's imitation, offline and online RL
+  for reasoning, compared by data efficiency.
 - [Policy gradients](wiki/policy-gradients.md): the method as a whole, from the online loop and
   the derivation to REINFORCE, the reading as reward-weighted imitation, its three weaknesses
   (high variance, sensitivity to reward scale, need for dense rewards and large batches) and the
   two fixes (causality and baselines), the surrogate objective, the off-policy version, what
   actor-critic methods change, and Lecture 9's recap for language models (why RL is needed even with a
-  differentiable reward model).
+  differentiable reward model), and Lecture 10's online RL for reasoning with a 0/1 reward.
 - [Importance sampling](wiki/importance-sampling.md): estimating an expectation under one
   distribution with samples from a proposal distribution, its catches (support, similarity), and
   how it makes the policy gradient off-policy, including why per-trajectory ratios explode, and
@@ -273,7 +305,7 @@ these nine has one: the slide file's header lists which do.
   actor-critic (with PPO and SAC), value-based (Q-learning, DQN) and model-based methods, which
   lecture of the schedule covers each, how the first four relate, Finn's advice on when to use PPO,
   DQN or SAC and on which offline RL algorithm to use, and the trade-offs (data cost, supervision, stability, action space, dynamics) that
-  explain why RL has so many algorithms, with pointers to Lecture 9's RL for language models.
+  explain why RL has so many algorithms, with pointers to Lectures 9 and 10's RL for language models.
 - [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
@@ -288,12 +320,14 @@ these nine has one: the slide file's header lists which do.
   interaction; the behavior policy and distribution shift; why off-policy methods overestimate Q-values
   on out-of-distribution actions; why imitation is not enough (rewards, trajectory stitching); the three
   approaches (filtered or weighted imitation, implicit policy constraints, conservative objectives);
-  conservative Q-learning (CQL) in brief, with its LinkedIn application; and which algorithm to use.
+  conservative Q-learning (CQL) in brief, with its LinkedIn application; which algorithm to use;
+  and Lecture 10's offline RL for language reasoning.
 - [Implicit policy constraint methods](wiki/implicit-policy-constraints.md): filtered behavior cloning,
   advantage-weighted imitation and its KL-constrained reading, advantage-weighted regression (AWR),
   advantage-weighted actor-critic (AWAC), expectile regression and implicit Q-learning (IQL), each
   fixing the previous one's weakness, with the deterministic-data special case, the choice of
-  the expectile, and Lecture 8's explanation of why only the value function gets the asymmetric loss.
+  the expectile, and Lecture 8's explanation of why only the value function gets the asymmetric loss;
+  and Lecture 10's filtering of reasoning steps by advantage.
 - [Conservative Q-learning (CQL)](wiki/conservative-q-learning.md): the offline RL method that
   penalizes Q-values, as Lecture 8 teaches it from Lecture 7's slides: pushing down on large Q-values
   with a search distribution mu, pushing back up on the data's, the two lower bounds, what alpha and mu
@@ -305,7 +339,8 @@ these nine has one: the slide file's header lists which do.
   exploits a fixed classifier, adding visited states as negatives with regularization and 50/50
   balancing (and why mislabelled successes are tolerable), the GAN connection and full reward
   functions, the self-improving robot, the trade-offs, other forms of feedback, agents that set
-  their own goals, and Lecture 9's over-optimized reward models.
+  their own goals, Lecture 9's over-optimized reward models, and Lecture 10's process reward models
+  and verifiers.
 - [Learning rewards from preferences](wiki/preference-learning.md): why comparing trajectories is
   easier than scoring them, the reward model and its sigmoid log-likelihood objective, partial
   roll-outs and the missing margin, the complete algorithm over ranked batches and in the loop of RL,
@@ -324,7 +359,20 @@ these nine has one: the slide file's header lists which do.
 - [Direct preference optimization (DPO)](wiki/direct-preference-optimization.md): training a language
   model on preferences with a classification loss, its notation, the five-step derivation from the
   KL-constrained objective's closed-form optimum (with the partition function cancelling), what the
-  loss does and the role of beta, DPO against RLHF, and its use in open models (Lecture 9).
+  loss does and the role of beta, DPO against RLHF, and its use in open models (Lecture 9); and
+  per-step preference pairs built from rollouts for reasoning (Lecture 10).
+- [RL for LLM reasoning](wiki/llm-reasoning.md): training language models to solve math problems
+  with RL (Lecture 10): why imitating reference solutions scales slowly, reasoning as a sparse-reward
+  MDP with deterministic dynamics, the three data axes, rejection finetuning and why it stops
+  working (spurious steps), the three uses of per-step advantages (filtering, per-step DPO, process
+  advantage verifiers as a dense reward), online RL with an outcome reward and GRPO, and how
+  thinking models such as DeepSeek-R1 are trained, with test-time scaling from the slides.
+- [Process rewards and per-step credit](wiki/process-rewards.md): the Q-value of a step of a
+  solution under a rollout policy, estimated by rollouts from each prefix; the advantage as one
+  Q-value minus the previous one, with a worked example; choosing the rollout policy (a different
+  policy, quality against diversity); rollouts against a learned model (process reward models,
+  process advantage verifiers); its three uses; and its relation to advantage-weighted regression,
+  stitching and RLHF's reward models (Lecture 10).
 
 ## Course pages
 
@@ -343,7 +391,9 @@ these nine has one: the slide file's header lists which do.
   decks, homeworks, project guidelines and the site's optional readings.
 - [`LICENSE.md`](LICENSE.md) — what may be reused, and the attribution of every image.
 - [`SEE_ALSO.md`](SEE_ALSO.md) — related knowledge bases (CS224N, whose post-training lecture is an
-  earlier version of Lecture 9's deck, and CS336), with the repo URL to pass as `kb`.
+  earlier version of Lecture 9's deck; CS336, whose post-training lectures cover RLHF and RL for
+  reasoning in practice; and CS329A, on test-time compute, verifiers and RL for reasoning models),
+  with the repo URL to pass as `kb`.
 
 Slide and handout PDFs are **not** committed to this repo; [`sources.md`](sources.md) has the
 canonical URL of each.

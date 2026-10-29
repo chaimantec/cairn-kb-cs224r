@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–9 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–10 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -277,3 +277,28 @@ panels of text transcribed in full, or clip-art (6, 8, 9, 10, 39, 40, 51, 52, 60
 (Larnerd, 2023), Bing chat, OpenAI's ChatGPT and sycophancy posts, AlpacaFarm (Dubois et al., 2023),
 NPR, AP and Semafor headlines, and Constitutional AI (Bai et al., 2022); and the title, plan,
 section-divider, text and equation slides (1, 5, 13, 14, 57, 62, 66, 69, 73, 75, 79, 89).
+
+### Lecture 10 — RL for LLM Reasoning
+
+Deck: [10_cs224r-rl_for_reasoning_lecture.pdf](https://cs224r.stanford.edu/spring_2025/slides/10_cs224r-rl_for_reasoning_lecture.pdf),
+a guest lecture by Aviral Kumar (title slide with the Carnegie Mellon University School of Computer
+Science logo). Rendered: 27 slides, in `raw/images/10-rl-for-reasoning/`. The deck's text layer has no
+licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 4 | A chart of the effective stock of internet text against projected dataset sizes, with named models, and two robot-dataset infographics, one titled "DROID, Distributed Robot Interaction Dataset"; no source printed on the slide. |
+| 7 | A math problem with its ground-truth solution; no source printed on the slide. |
+| 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 | Charts, diagrams and a GSM8K example from Setlur, Garg, Geng, Garg, Smith and Kumar, "RL on Incorrect Synthetic Data Scales the Efficiency of LLM Math Reasoning by Eight-Fold" (NeurIPS 2024), credited in each footer; the lecturer is an author. |
+| 24, 25, 27, 28 | Diagrams and charts from Setlur et al., "Rewarding Progress: Scaling Automated Process Supervision for LLM Reasoning" (arXiv 2024), credited in each footer; the lecturer is an author. |
+| 35 | A figure from Gandhi et al., "Cognitive Behaviors that Enable Self-Improving Reasoners" (arXiv 2025), with two model logos that the slide does not name. |
+| 36 | A figure from the Kimi team's "Kimi 1.5 Technical Report" (arXiv 2025). |
+| 39 | The deck's test-time scaling diagram, citing Snell et al., "Scaling LLM Test-Time Compute Optimally can be more Effective than Scaling Model Parameters" (ICLR 2025). |
+| 40 | Bar charts from OpenAI's o3 and o4-mini blog post (2025), credited in the footer, and a bar chart comparing DeepSeek and OpenAI models on AIME 2024, not separately credited. |
+| 3, 9, 34, 41 | No third-party content identified: the deck's own diagrams of next-token training, the data-scaling axes, the thinking-model objective and the open questions. |
+
+Not rendered from this deck: panels of text transcribed in full (2, AIME 2025 questions with a
+solution signed by its author; 5, an IMO 2021 problem with a model's solution; 31, a thinking trace
+from Marjanović et al., "DeepSeek-R1 Thoughtology", arXiv 2025); slide 26, a text pop-up over a faded
+copy of earlier slides; the build steps 33, 37 and 38; and the title, outline, section-divider and
+text slides (1, 6, 8, 13, 29, 30, 32).

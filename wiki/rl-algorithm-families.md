@@ -21,7 +21,7 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–9.** Imitation learning, policy gradients,
+**This knowledge base so far covers Lectures 1–10.** Imitation learning, policy gradients,
 actor-critic methods and value-based methods have their own pages,
 [imitation learning](imitation-learning.md), [policy gradients](policy-gradients.md),
 [actor-critic methods](actor-critic.md) and [Q-learning](q-learning.md), and Lecture 7's offline
@@ -30,7 +30,9 @@ and [conservative Q-learning](conservative-q-learning.md); Lecture 8's question 
 comes from has [reward learning](reward-learning.md) and
 [learning rewards from preferences](preference-learning.md); Lecture 9's RL for language models has
 [instruction finetuning](instruction-finetuning.md), [RL from human feedback](rlhf.md) and
-[direct preference optimization](direct-preference-optimization.md); model-based methods do not yet. Lecture 2 adds
+[direct preference optimization](direct-preference-optimization.md); Lecture 10's RL for LLM reasoning has
+[RL for LLM reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-rewards.md);
+model-based methods do not yet. Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -116,3 +118,5 @@ parts.
   reward every family but imitation learning needs.
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md): policy gradients applied to language models, and
   DPO, which reaches the same objective with a classification loss.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): imitation, offline RL and online
+  RL for math reasoning, and how thinking models are trained.

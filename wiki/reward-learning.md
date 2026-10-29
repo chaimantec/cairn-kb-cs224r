@@ -150,6 +150,18 @@ of curiosity. One example makes it a two-player game between a goal-setter and a
 
 *Lecture 8, slide 32 — asymmetric self-play, where Alice sets a task by moving and stopping, Bob must reach it, and Bob is then applied to a target task with external reward. [Deck](https://cs224r.stanford.edu/spring_2025/slides/08_cs224r_reward_learning_2025.pdf)*
 
+## Process rewards for reasoning
+
+Lecture 10 meets a learned reward of a different kind. In math reasoning the outcome reward needs no
+learning, since a final answer can be checked against the ground truth. What gets learned is a
+per-step reward: a model that predicts how much each step of a solution helped. The NLP community
+calls such a model a **process reward model** (PRM), because it scores the process rather than only
+the answer, as RLHF's reward models do; in reasoning, reward models are often called **verifiers**
+(Lecture 10, ≈42:19–43:05, ≈1:06:10). Kumar's group fits a process advantage verifier to advantages
+estimated by rollouts and uses it as a dense reward in online RL, 5–6x as sample-efficient as the
+outcome reward alone (slides 25–27, ≈1:03:52–1:06:56). See [process rewards and per-step
+credit](process-rewards.md).
+
 ## Where this appears
 
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the whole topic, with the student questions.
@@ -160,3 +172,5 @@ of curiosity. One example makes it a two-player game between a goal-setter and a
 - [Imitation learning](imitation-learning.md): the reward-free alternative.
 - [Conservative Q-learning](conservative-q-learning.md): the offline RL method whose idea the
   negatives fix mirrors.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#dense-rewards-process-advantage-verifiers):
+  process reward models and process advantage verifiers for reasoning.

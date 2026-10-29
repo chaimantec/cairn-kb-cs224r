@@ -210,6 +210,21 @@ increasing the log-likelihood of the target outputs, whose limits (costly target
 answer, every mistake penalized equally) motivate learning from preferences instead (Lecture 9,
 slides 41 and 56).
 
+## Imitating a model's own correct samples
+
+Lecture 10, a guest lecture by Aviral Kumar on RL for LLM reasoning, treats supervised finetuning on
+reference solutions as imitation learning, and adds an on-policy variant, **rejection finetuning**
+(RFT): sample several solutions from the model, keep the ones whose final answer is correct, and
+imitate those (Lecture 10, ≈13:54–18:29). Because the data come from the learner itself, it needs no
+human-written solutions, and it matches SFT trained on twice as many questions and human solutions
+(≈23:51–24:37). Pushed too far it gets worse (slide 11, ≈24:37–26:08). The model imitates **spurious
+steps**, incorrect steps that happened not to derail a correct solution, and Kumar likens this to
+causal confusion in imitation learning, where a policy learns incorrect associations from what
+successful trajectories happen to contain (slide 12, ≈31:32–32:19). The remedy is to imitate only
+the steps with positive advantage, a filtered form of the
+[advantage-weighted imitation](#imitation-as-an-offline-rl-baseline) above; see [RL for LLM
+reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-rewards.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
@@ -226,3 +241,5 @@ slides 41 and 56).
   beats.
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md#instruction-finetuning): instruction finetuning, the
   supervised stage of training a chat model.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#rejection-finetuning): supervised
+  finetuning and rejection finetuning on math solutions, spurious steps and causal confusion.

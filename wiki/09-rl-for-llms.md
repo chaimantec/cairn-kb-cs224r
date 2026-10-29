@@ -741,7 +741,7 @@ but several areas for improvement" (slide 96). Preference data is still expensiv
 necessarily representative of the behaviors we want, so better kinds of feedback are being sought.
 Sharma points to reasoning, where models generate their own outputs and are graded by verifiable
 rewards, as one of the most exciting topics in post-training, which students will hear more about
-(≈1:01:21; [Lecture 10](../sources.md) is the guest lecture on RL for LLM reasoning). Language models
+(≈1:01:21; [Lecture 10](10-rl-for-reasoning.md) is the guest lecture on RL for LLM reasoning). Language models
 are aligned to the aggregate preferences of people, but each person interacts with them one on one, so
 **personalizing** language models, with more context about each user and their preferences, is an
 area Sharma finds very interesting (slide 99, ≈1:02:08). Slide 99 shows the PRISM Alignment Project
@@ -796,3 +796,5 @@ These slides are not discussed aloud; this section is from the
 - [PPO](ppo.md): the RL algorithm in InstructGPT's third step and slide 74's pipeline.
 - [The RL objective](rl-objective.md): the expected reward, and its KL-penalized form.
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the lecture before, which introduces RLHF.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): the lecture after, on RL for
+  reasoning with verifiable rewards.

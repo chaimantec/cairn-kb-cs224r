@@ -233,6 +233,22 @@ the expectation is over (≈18:31). Even with a differentiable learned reward mo
 discrete sampled tokens, so gradients cannot flow back through them, and RL is still needed (≈27:02);
 see [RL from human feedback](rlhf.md#the-rl-step-and-why-it-is-rl).
 
+### For reasoning, with a 0/1 reward
+
+Lecture 10 applies the estimator to math reasoning, where the reward $r(\mathbf{x}, \mathbf{y})$ is 1
+if the final answer of the solution $\mathbf{y}$ to the problem $\mathbf{x}$ is correct and 0
+otherwise. With $\mathcal{D}_ {\text{train}}$ the training problems and $\mathbf{y}_ j$ the $j$-th
+piece of the response, the gradient is
+
+$$\mathbb{E}_ {\mathbf{x} \sim \mathcal{D}_ {\text{train}}, \mathbf{y} \sim \pi(\cdot \mid \mathbf{x})} \left[ \sum_j \nabla_\pi \log \pi(\mathbf{y}_ j \mid \mathbf{x}, \mathbf{y}_ {0:j-1}) \cdot r(\mathbf{x}, \mathbf{y}) \right]$$
+
+which Kumar reads as "grad log pi times the reward" (Lecture 10, slide 24, ≈1:03:06). It generalizes
+rejection finetuning: rather than filtering samples for correctness and imitating the correct ones,
+it runs on-policy RL on them (≈1:01:32–1:02:18). Methods beyond REINFORCE, such as GRPO, are now
+common (see [PPO](ppo.md#grpo-for-reasoning)), and Kumar describes the thinking models' training as
+policy-gradient methods with slight tweaks (≈1:07:42–1:08:28). See [RL for LLM
+reasoning](llm-reasoning.md).
+
 ## Where this appears
 
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md): the derivation, the three examples, the
@@ -244,3 +260,5 @@ see [RL from human feedback](rlhf.md#the-rl-step-and-why-it-is-rl).
   [RL algorithm families](rl-algorithm-families.md).
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md#a-recap-of-the-policy-gradient): the recap for
   language models, and why RL is needed even with a differentiable reward model.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#online-rl-with-a-01-reward):
+  online RL for math reasoning with a 0/1 reward on the final answer.

@@ -248,6 +248,29 @@ These play the roles of Lecture 8's $\tau_w$, $\tau_l$ and $r_\theta$, with a wh
 trajectory; note that Lecture 8's $\theta$ is the reward model's parameters while Lecture 9's $\theta$ is
 the language model's.
 
+## Notation for RL for LLM reasoning
+
+Lecture 10, a guest lecture by Aviral Kumar, poses math reasoning as an MDP; see
+[RL for LLM reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-rewards.md).
+
+- On the board, $\mathbf{s}_ 0$ is the problem, $\mathbf{a}_ t$ a step of the solution, and each
+  state the problem with the steps so far appended: $\mathbf{s}_ 1 = [\mathbf{s}_ 0, \mathbf{a}_ 0]$,
+  $\mathbf{s}_ 2 = [\mathbf{s}_ 0, \mathbf{a}_ 0, \mathbf{a}_ 1]$ (Lecture 10, ≈10:03–10:50,
+  reconstructed from the spoken words).
+- On the slides, $\mathbf{x}$ is the problem and $\hat{\mathbf{y}}_ i$ the $i$-th step of a sampled
+  solution, with $\hat{\mathbf{y}}_ {1:i-1}$ the steps before it. In the Q-value, $\mathbf{y}$ is the
+  reference solution the reward checks against (slide 16); in the policy gradient it is the sampled
+  response, and $r(\mathbf{x}, \mathbf{y}) \in \lbrace 0, 1 \rbrace$ the outcome reward (slide 24).
+- $\pi$ or $\pi_\theta$ is the model being trained, and $\tilde{\pi}$ the rollout policy that completes
+  a prefix; $Q_{\tilde{\pi}}$ and $A_{\tilde{\pi}}$ are the Q-value and advantage of a step under it,
+  the advantage being one Q-value minus the previous one (slides 16–17).
+- In rejection finetuning, $\mathbf{y}_ 1, \ldots, \mathbf{y}_ N$ are $N$ independent solutions to one
+  question and $\tilde{S}$ the correct ones; Kumar notes the clash with the slides' step subscript
+  (≈36:10).
+- $\mathcal{D}_ {\text{train}}$ and $\mathcal{D}_ {\text{test}}$ are distributions of training and test
+  problems. In the thinking-model objective, $\mathbf{z}$ is a long response and $C_0$ the fixed
+  compute budget per problem (slides 33–34).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -268,3 +291,5 @@ the language model's.
   rewards and preferences.
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md): the notation for instruction finetuning, RLHF and
   DPO.
+- [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): the notation for the reasoning
+  MDP, rollout policies, the Q-values and advantages of steps, and the thinking-model objective.
