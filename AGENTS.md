@@ -91,7 +91,8 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   LaTeX and no `$` in the body; never move words across a marker; "So the question is" opens a
   repeated student question. A restoration that depends on context (a common word that is
   also a benchmark or a name) applies only at the timestamps the glossary gives: check the
-  agent's other uses of it.
+  agent's other uses of it. When the target is one of several identical words in a paragraph, quote the
+  words around it, and check where the agent put it.
 - Only the lecturer is audible. Student turns are marked `*[Student question, inaudible]*` /
   `*[Student answer, inaudible]*` before the lecturer's restatement.
 - The verbatim captions stay on disk in `raw/transcripts/original/` and are **not
@@ -142,6 +143,9 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   lecture page shows every rendered slide it cites. When the embed dry run reports images to add,
   place them (or drop the citation if the passage did not come from that slide), rather than
   leaving a near-duplicate out.
+- `--format auto` keeps whichever of `.jpg` and `.png` is smaller, so one lecture mixes both. When placing
+  images by hand, take each path from `ls`, and run the embed dry run: a mistyped extension shows up as an
+  image still to add.
 - `grep -o 'raw/images/[^)]*' wiki/NN-*.md` lists a lecture's wiki images. The slide file's
   `images:` header lists every rendered slide and why the rest were not.
 - When a lecture adds images, update `INDEX.md`'s images paragraph, the table below,
@@ -159,6 +163,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 8 Reward Learning | 18 of 34 pages | the IQL recap with its Q-function plot, the CQL penalty, objective and log-sum-exp computation, the LinkedIn diagram and A/B table, the reward-source pictures, the goal-classifier photos and algorithm, the cloth-task frames, the GAN examples, the trajectory-preference sketches, the preference objective and algorithm, the backflip and driving-weight figures, the omelette RLHF slides, the Constitutional AI chart, the asymmetric self-play diagram |
 | 9 RL for LLMs | 24 of 57 pages | the scale chart and AI 2027 screenshot, the assistant start screens, the Khan Academy graph, the pretrain/finetune diagrams, the FLAN-T5 diagram and Flan-T5 table, the crossed-out LM outputs, the InstructGPT pipeline (twice), the REINFORCE, Bradley-Terry, KL-penalty and DPO equation slides, the RLHF summary chart, the PPO-RLHF pipeline, the DPO win-rate bars, the Open LLM Leaderboard, the boat-race still, the over-optimization chart, the STaR loop, the PRISM and FSPO figures |
 | 10 RL for LLM Reasoning | 27 of 41 pages | the next-token training diagram, the data-stock chart and robot datasets, the reasoning MDP, the three data axes, the first frames of the animated result charts (10, 19, 23), the RFT-scaling chart, the spurious-steps picture, the credit, rollout, Q-value and advantage slides, the filtering and DPO-pair diagrams, the online-RL and PAV slides, the dense-reward and hard-question charts, the compute-constrained objective, the meta-strategy and Kimi length charts, the test-time scaling diagram, the leaderboards, the open questions |
+| 11 Model-Based RL | 17 of 38 pages | the recap map of offline and online algorithms, the Veo 2 and Sora stills, the notional algorithm with its maze and Sora frame, the backpropagation and sampling planning chains, the gradient-versus-sampling plots with CEM, the cliff photographs and the fixed loop, the open/closed-loop diagram, the MPC slide with its car, the MBPO roll-out diagram, the case study's setup, simulated charts, ablations and real-hand chart |
 
 ## Rebuilding
 

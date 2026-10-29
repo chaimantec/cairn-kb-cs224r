@@ -225,6 +225,16 @@ the steps with positive advantage, a filtered form of the
 [advantage-weighted imitation](#imitation-as-an-offline-rl-baseline) above; see [RL for LLM
 reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-rewards.md).
 
+## Distilling a planner
+
+Lecture 11 uses imitation to turn planning into a policy. A planner that optimizes actions against a
+learned model at every step is compute intensive at test time. Storing the planner's actions and
+training a policy to match them, "Distill planner's actions into a policy (i.e. train policy to match
+actions taken by planner)", makes acting a single forward pass through a network (Lecture 11, slide 25,
+≈1:02:51–1:03:36). The planner plays the expert. It does not lift the planner's own limit: the actions
+still come from short-horizon planning, so the policy is "still limited to short-horizon problems"
+(slide 25). See [planning with a learned model](planning-with-models.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
@@ -243,3 +253,5 @@ reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-r
   supervised stage of training a chat model.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#rejection-finetuning): supervised
   finetuning and rejection finetuning on math solutions, spurious steps and causal confusion.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md#training-a-policy-and-longer-horizons): imitation
+  learning's place on the map of algorithms, and distilling a planner's actions into a policy.

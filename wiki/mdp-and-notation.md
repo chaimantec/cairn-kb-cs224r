@@ -271,6 +271,27 @@ Lecture 10, a guest lecture by Aviral Kumar, poses math reasoning as an MDP; see
   problems. In the thinking-model objective, $\mathbf{z}$ is a long response and $C_0$ the fixed
   compute budget per problem (slides 33–34).
 
+## Notation for model-based RL
+
+Lecture 11; see [model-based RL](model-based-rl.md) and
+[planning with a learned model](planning-with-models.md).
+
+- $f(\mathbf{s}, \mathbf{a}) = \mathbf{s}'$ is a learned "simulator" (slide 7), and
+  $f_ \phi(\mathbf{s}, \mathbf{a})$ the dynamics model with parameters $\phi$, trained to minimize
+  $\sum_ i \Vert f_ \phi(\mathbf{s}_ i, \mathbf{a}_ i) - \mathbf{s}'_ i \Vert^2$ on data
+  $\mathcal{D} = \lbrace (\mathbf{s}, \mathbf{a}, \mathbf{s}')_ i \rbrace$ collected by a base
+  policy $\pi_0$ (slides 12 and 22). The probabilistic form is
+  $p(\mathbf{s}_ {t+1} \mid \mathbf{s}_ t, \mathbf{a}_ t)$ (slide 30).
+- $H$ is the planning horizon, $\mathbf{a}_ {t:t+H}$ the planned actions and
+  $\hat{\mathbf{a}}_ {t:t+H}$ the plan being optimized; $\mathbf{A} := \mathbf{a}_ t, \ldots, \mathbf{a}_ {t+H}$
+  is a sampled action sequence and $J(\mathbf{A})$ its predicted sum of rewards (slide 16).
+- $p_ {\pi_ 0}(\mathbf{s})$ and $p_ {\pi_ f}(\mathbf{s})$ are the state distributions of the base and
+  the final policy, whose mismatch breaks planning (slide 18).
+- In model-based policy optimization (slide 28), the slide switches letters: $\pi_\phi$ is the policy,
+  $p_\theta(s' \mid s, a)$ the model, $D_ {env}$ the real data and $D_ {model}$ the synthetic roll-outs.
+- On the board, $\mathbf{z}_ t$ is a learned low-dimensional representation of an image state
+  $\mathbf{s}_ t$ (≈17:02).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -293,3 +314,5 @@ Lecture 10, a guest lecture by Aviral Kumar, poses math reasoning as an MDP; see
   DPO.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): the notation for the reasoning
   MDP, rollout policies, the Q-values and advantages of steps, and the thinking-model objective.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md): the notation for dynamics models, planning
+  horizons, sampled action sequences and model-based policy optimization.

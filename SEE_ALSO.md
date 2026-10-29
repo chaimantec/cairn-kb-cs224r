@@ -51,3 +51,18 @@ raw URL returns plain markdown and so also works as a `web_fetch` target.
   Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs329a/main/INDEX.md) ·
   [Lecture 3](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs329a/main/wiki/03-robust-verification.md) ·
   [Lecture 6](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs329a/main/wiki/06-train-time-scaling-scaling-rl.md)
+
+- **Princeton ROB 345/549 — Introduction to Robotics** (Princeton, Anirudha Majumdar, Fall 2026).
+  KB: `https://github.com/chaimantec/cairn-kb-princeton-rob-345` — pass this as `kb` to `kb_read` /
+  `kb_list`. The control side of Lecture 11's planning: trajectory optimization with *known* dynamics,
+  solved as a quadratic program or by sequential quadratic programming (its Lecture 6), and receding
+  horizon control, its name for model predictive control, presented as replanning that turns an open-loop
+  plan into feedback (its Lecture 7 and its feedback-control page). Reach for it when a question about
+  Lecture 11's model predictive control or open- and closed-loop execution wants the control-theory
+  framing, or how a plan is optimized when the dynamics are given. It does not learn dynamics models, and
+  it does not cover random shooting, the cross-entropy method or model-based RL. It covers its 11 recorded
+  lectures, of the 24 its site schedules.
+  Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-princeton-rob-345/main/INDEX.md) ·
+  [Lecture 7](https://raw.githubusercontent.com/chaimantec/cairn-kb-princeton-rob-345/main/wiki/07-stability-and-pd-control.md) ·
+  [Feedback control](https://raw.githubusercontent.com/chaimantec/cairn-kb-princeton-rob-345/main/wiki/feedback-control.md) ·
+  [Trajectory optimization](https://raw.githubusercontent.com/chaimantec/cairn-kb-princeton-rob-345/main/wiki/trajectory-optimization.md)

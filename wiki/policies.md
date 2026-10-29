@@ -98,6 +98,16 @@ starting with a larger $\epsilon$ and lowering it during training. **Boltzmann e
 actions with probability proportional to $\exp(Q_\phi(\mathbf{s}_ t, \mathbf{a}_ t))$, more often
 the higher their Q-value. The policy deployed at the end is the greedy one (slide 15).
 
+## A planner as a "policy"
+
+Lecture 11's planning methods learn no policy at all. A dynamics model and a reward model are learned,
+and at every state the agent optimizes a sequence of actions against them and executes the result
+(slide 12, ≈28:46–29:32). Finn puts "policy" in quotes for this: it maps a state to an action, or to
+several future actions, but through an iterative optimization process rather than a compact network or
+closed form, and nothing but the two models' parameters is stored (≈39:35–41:08). It costs compute at
+every step, in real time. Distilling the planner's actions into a network turns it into a policy in the
+usual sense (slide 25, ≈1:02:51). See [planning with a learned model](planning-with-models.md).
+
 ## Initializing a policy for online RL
 
 An online RL algorithm starts by initializing the policy, as when training any neural network:
@@ -120,3 +130,5 @@ See [policy gradients](policy-gradients.md).
 - [Lecture 6 — Q-Learning](06-q-learning.md#what-data-to-collect-epsilon-greedy-and-boltzmann-exploration):
   the deterministic greedy policy defined by a Q-function, and the epsilon-greedy and Boltzmann
   exploration policies built around it.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md#approach-1a-planning-by-backpropagation): a
+  planner as a "policy" in quotes, and distilling it into a network.

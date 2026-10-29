@@ -334,7 +334,7 @@ Three questions follow.
 - **Why not learn to predict future states instead?** With a very small state space one could
   store things directly. Training a network to predict future states from current states and
   actions is what model-based approaches do, which the course covers in a few weeks
-  (≈37:50–38:35).
+  (≈37:50–38:35); see [Lecture 11](11-model-based-rl.md) and [model-based RL](model-based-rl.md).
 - **Is a new network trained for every policy gradient step?** No. Unlike the policy gradient,
   the gradient steps here fit the value function and do not change the policy, so many gradient
   steps can be taken on this objective without recollecting data (≈40:07).

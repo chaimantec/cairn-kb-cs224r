@@ -69,7 +69,9 @@ From slides 11–12:
   Substantial use of AI tools (e.g. ChatGPT, Cursor) is not allowed for homework or for parts of
   the default project.
 
-Homework due dates and links are in [`sources.md`](../sources.md#assignments-and-project). The
+Lecture 11's reminders put Homework 3 due Friday, May 16, and the project milestone due Friday,
+May 23 (Lecture 11, slides 2 and 38). Homework due dates and links are in
+[`sources.md`](../sources.md#assignments-and-project). The
 poster session was Wednesday, June 4, and the final report was due Monday, June 9 (site).
 
 ## Advice from the course
@@ -91,3 +93,5 @@ at 1:30 in Gates B1.
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): slides 3–15 and 45.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md#not-in-the-recording-reminders-and-next-time):
+  the Homework 3 and milestone dates.

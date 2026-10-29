@@ -9,7 +9,7 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–10 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–11 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
@@ -17,11 +17,12 @@ complementary to the more theoretical CS234.
 > implicit Q-learning), Lecture 8 (conservative Q-learning, and reward learning from goal
 > classifiers and from human preferences, including RL from human feedback), Lecture 9 (a guest
 > lecture on RL for language models: instruction finetuning, RLHF and direct preference
-> optimization) and Lecture 10 (a guest lecture on RL for LLM reasoning: rejection finetuning,
-> per-step credit assignment, offline and online RL, and thinking models): their edited
-> transcripts, their slide decks as text, 173 of their slides as images, and the topic pages they
-> start. **It cannot answer questions about the technical content of Lectures 11–19** (model-based
-> RL onward, and the Q-learning TA session). For
+> optimization), Lecture 10 (a guest lecture on RL for LLM reasoning: rejection finetuning,
+> per-step credit assignment, offline and online RL, and thinking models) and Lecture 11 (model-based
+> RL: learning dynamics models, planning by backpropagation and by sampling, model predictive control,
+> and a dexterous-manipulation case study): their edited transcripts, their slide decks as text, 190
+> of their slides as images, and the topic pages they start. **It cannot answer questions about the
+> technical content of Lectures 12–19** (multi-task RL onward, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
@@ -59,13 +60,17 @@ complementary to the more theoretical CS234.
   and then slide 32; slides 28–31 and 33–41 (thinking models: the formulation, meta strategies,
   response length, test-time scaling, leaderboard results, open questions) are only in the slide
   file. Its result charts on slides 10, 19 and 23 hold only the first frame of an animation, so
-  their results come from what the lecturer says.
+  their results come from what the lecturer says. Lecture 11's recording covers slides 4–25 and
+  32–36: Finn leaves model-based policy optimization for the next lecture, so slides 26–30 (its
+  augmented roll-outs and full algorithm, when to use model-based RL, other kinds of models) and the
+  reminders (slides 2, 37–38) are only in the slide file. Lecture 12's deck opens with its own
+  version of those slides.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9 and 10 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
-3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9 and 27 of
-Lecture 10 rendered as pictures, each shown under its
+Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 and 11 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9, 27 of
+Lecture 10 and 17 of Lecture 11 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -75,9 +80,10 @@ Lecture 10 rendered as pictures, each shown under its
 [`raw/slides/07-offline-rl.md`](raw/slides/07-offline-rl.md),
 [`raw/slides/08-reward-learning.md`](raw/slides/08-reward-learning.md),
 [`raw/slides/09-rl-for-llms.md`](raw/slides/09-rl-for-llms.md),
-[`raw/slides/10-rl-for-reasoning.md`](raw/slides/10-rl-for-reasoning.md)) and, where a wiki page cites that
+[`raw/slides/10-rl-for-reasoning.md`](raw/slides/10-rl-for-reasoning.md),
+[`raw/slides/11-model-based-rl.md`](raw/slides/11-model-based-rl.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these ten has one: the slide file's header lists which do.
+these eleven has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -213,6 +219,22 @@ these ten has one: the slide file's header lists which do.
   thinking trace, the compute-constrained objective, meta strategies, longer responses, test-time
   scaling, the leaderboards and the open questions.
 
+- [Lecture 11 — Model-Based RL](wiki/11-model-based-rl.md): the recap that maps every algorithm so
+  far (offline and online, on- and off-policy, actor, critic or both); the key idea of learning a
+  simulator (physics, action-conditioned video prediction with Veo 2 and Sora, finance, games); the
+  notional learned-simulator algorithm and what goes wrong (data coverage and the maze, the Sora
+  cube-stacking video, model inaccuracies); learning a dynamics model when it is known, partly known
+  or unknown, in image space or a latent space, with a reward model; planning by backpropagating
+  rewards into actions, with its chain rule, the corrected sign of its update and the questions on
+  it; gradient-based against sampling-based optimization, random sampling and the cross-entropy
+  method, with the questions on finite differences, the "policy" in quotes and planning latency;
+  random shooting and CEM as planners; the cliff and the data distribution mismatch, fixed by
+  refitting on executed data; open loop against closed loop and model predictive control, with
+  warm-starting and how often to replan; the pros and cons of planning; distilling a planner and
+  planning with a terminal value function; model-based policy optimization, when to use a model and
+  other kinds of models (slides only); and the PDDM case study on a 24-joint robot hand (ensembles,
+  a modified CEM, simulated results and ablations, Baoding balls on a real hand in about four hours).
+
 ## Topic pages
 
 - [MDPs and RL notation](wiki/mdp-and-notation.md): a table of the course's symbols (state,
@@ -226,11 +248,14 @@ these ten has one: the slide file's header lists which do.
   learned rewards, preference pairs, the sigmoid, prompts and responses) and for preference
   optimization (prompts and completions, the reward model, the pretrained and RL models, winning and
   losing completions, the KL weight and the partition function), and for RL for LLM reasoning (the
-  reasoning MDP, rollout policies, the Q-value and advantage of a step, the compute budget).
+  reasoning MDP, rollout policies, the Q-value and advantage of a step, the compute budget), and for
+  model-based RL (dynamics models, planning horizons, sampled action sequences, model-based policy
+  optimization).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
-  policy with the epsilon-greedy and Boltzmann exploration policies built around it.
+  policy with the epsilon-greedy and Boltzmann exploration policies built around it, and Lecture 11's
+  planner as a "policy" in quotes.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
@@ -243,7 +268,7 @@ these ten has one: the slide file's header lists which do.
   Lecture 5's recursive form in terms of the next Q-value), why the advantage can be estimated from V
   alone, why a policy comes out of Q but not out of V, the drum-practice and Go examples, and Lecture
   7's offline use of the behavior policy's advantage, and Lecture 10's Q-value and advantage of a
-  step in a language model's solution.
+  step in a language model's solution, and Lecture 11's terminal value function for planning.
 - [Actor-critic methods](wiki/actor-critic.md): the method as a whole: from the policy gradient's
   reward to go to the advantage, the critic as a learned value function, the five-step algorithm and
   the names actor and critic, and the off-policy versions Lecture 5 teaches (multiple gradient steps
@@ -277,7 +302,8 @@ these ten has one: the slide file's header lists which do.
   weighted by reward; imitation learning as initialization), imitation as an offline RL baseline
   (filtered behavior cloning, advantage weighting, why it cannot stitch), Lecture 8's case for
   learning a reward instead, and instruction finetuning as the supervised stage of training a chat
-  model (Lecture 9), and rejection finetuning, spurious steps and causal confusion (Lecture 10).
+  model (Lecture 9), and rejection finetuning, spurious steps and causal confusion (Lecture 10), and
+  distilling a planner's actions into a policy (Lecture 11).
 - [Expressive policy distributions](wiki/expressive-policy-distributions.md): why a policy needs
   more than a mean; categorical, Gaussian, Gaussian-mixture, discretized autoregressive and
   diffusion policies, what each outputs and how each is trained; why a bigger network does not
@@ -289,7 +315,8 @@ these ten has one: the slide file's header lists which do.
   Q-learning is off-policy while its n-step targets are not; and Lecture 7's offline RL, why it is
   worth it and why off-policy methods fail on fixed data; and Lecture 9's contrast between RLHF's
   online sampling and DPO's fixed preference data; and Lecture 10's imitation, offline and online RL
-  for reasoning, compared by data efficiency.
+  for reasoning, compared by data efficiency; and Lecture 11's map of every algorithm so far, and why
+  planning with a model is off-policy.
 - [Policy gradients](wiki/policy-gradients.md): the method as a whole, from the online loop and
   the derivation to REINFORCE, the reading as reward-weighted imitation, its three weaknesses
   (high variance, sensitivity to reward scale, need for dense rewards and large batches) and the
@@ -305,7 +332,8 @@ these ten has one: the slide file's header lists which do.
   actor-critic (with PPO and SAC), value-based (Q-learning, DQN) and model-based methods, which
   lecture of the schedule covers each, how the first four relate, Finn's advice on when to use PPO,
   DQN or SAC and on which offline RL algorithm to use, and the trade-offs (data cost, supervision, stability, action space, dynamics) that
-  explain why RL has so many algorithms, with pointers to Lectures 9 and 10's RL for language models.
+  explain why RL has so many algorithms, with pointers to Lectures 9 and 10's RL for language models,
+  and Lecture 11's map of the families so far and its answer to when to use a model.
 - [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
@@ -340,7 +368,7 @@ these ten has one: the slide file's header lists which do.
   balancing (and why mislabelled successes are tolerable), the GAN connection and full reward
   functions, the self-improving robot, the trade-offs, other forms of feedback, agents that set
   their own goals, Lecture 9's over-optimized reward models, and Lecture 10's process reward models
-  and verifiers.
+  and verifiers, and Lecture 11's reward model for planning.
 - [Learning rewards from preferences](wiki/preference-learning.md): why comparing trajectories is
   easier than scoring them, the reward model and its sigmoid log-likelihood objective, partial
   roll-outs and the missing margin, the complete algorithm over ranked batches and in the loop of RL,
@@ -373,12 +401,24 @@ these ten has one: the slide file's header lists which do.
   policy, quality against diversity); rollouts against a learned model (process reward models,
   process advantage verifiers); its three uses; and its relation to advantage-weighted regression,
   stitching and RLHF's reward models (Lecture 10).
+- [Model-based RL](wiki/model-based-rl.md): the fifth algorithm family as a whole: learning a
+  simulator and what goes wrong (coverage, domain dependence, model errors), learning a dynamics
+  model (known, partly known or unknown; image or latent space; a reward model; ensembles), the two
+  ways to use one (planning, and model-based policy optimization's augmented roll-outs), when a model
+  is worth having, other kinds of models, and how it relates to the other families (Lecture 11).
+- [Planning with a learned model](wiki/planning-with-models.md): the planning objective and the
+  planner as a "policy"; planning by backpropagation, with the gradient-ascent update; random shooting
+  and the cross-entropy method; gradients against samples; refitting the model on the planner's own
+  data (the cliff); open loop, closed loop and model predictive control, with warm-starting,
+  replanning frequency and latency; the limits of planning, distillation and a terminal value
+  function; and the case study's modified CEM (Lecture 11).
 
 ## Course pages
 
 - [Course logistics](wiki/course-logistics.md): staff and guest lecturers, prerequisites, the four
   homeworks and their topics, grading, the default and custom final projects, late days, the AI
-  tools policy, and the first week's steps, from Lecture 1's slides and the course site.
+  tools policy, and the first week's steps, from Lecture 1's slides and the course site, with
+  Lecture 11's Homework 3 and milestone dates.
 
 ## Raw materials
 
@@ -392,7 +432,8 @@ these ten has one: the slide file's header lists which do.
 - [`LICENSE.md`](LICENSE.md) — what may be reused, and the attribution of every image.
 - [`SEE_ALSO.md`](SEE_ALSO.md) — related knowledge bases (CS224N, whose post-training lecture is an
   earlier version of Lecture 9's deck; CS336, whose post-training lectures cover RLHF and RL for
-  reasoning in practice; and CS329A, on test-time compute, verifiers and RL for reasoning models),
+  reasoning in practice; CS329A, on test-time compute, verifiers and RL for reasoning models; and
+  Princeton ROB 345, on trajectory optimization and model predictive control with known dynamics),
   with the repo URL to pass as `kb`.
 
 Slide and handout PDFs are **not** committed to this repo; [`sources.md`](sources.md) has the

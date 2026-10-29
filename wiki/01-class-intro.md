@@ -449,7 +449,8 @@ The course's algorithms all target the expected-reward objective (slide 41, ≈4
 4. **Value-based** methods estimate the value of the *optimal* policy and use it to back out a
    good policy (Lecture 6; see [Q-learning](q-learning.md)).
 5. **Model-based** methods learn to model the dynamics of the world, predicting the future, and
-   use the model for planning or to improve the policy.
+   use the model for planning or to improve the policy (Lecture 11; see
+   [model-based RL](model-based-rl.md)).
 
 Supervised learning has one workhorse, gradient descent, which is simple and works. RL has many
 algorithms because they make different trade-offs and thrive under different assumptions

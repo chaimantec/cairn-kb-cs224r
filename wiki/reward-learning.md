@@ -162,6 +162,16 @@ estimated by rollouts and uses it as a dense reward in online RL, 5–6x as samp
 outcome reward alone (slides 25–27, ≈1:03:52–1:06:56). See [process rewards and per-step
 credit](process-rewards.md).
 
+## A reward model for planning
+
+Model-based RL needs the reward as well as the dynamics. "Note: Often also need to learn a reward
+model!" (Lecture 11, slide 10): to use a learned model to see into the future, the agent has to predict
+not only the future states but the rewards they lead to (≈18:36). A planner that backpropagates through
+the model trains a reward function with the techniques of this page, unless the reward is known, such
+as forward velocity for learning to walk or the distance to a goal (≈27:13–28:00). And like a policy
+trained on a learned reward, the planner exploits the reward model's errors along with the dynamics
+model's (≈28:00–28:46). See [model-based RL](model-based-rl.md).
+
 ## Where this appears
 
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the whole topic, with the student questions.
@@ -174,3 +184,5 @@ credit](process-rewards.md).
   negatives fix mirrors.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#dense-rewards-process-advantage-verifiers):
   process reward models and process advantage verifiers for reasoning.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md#how-to-learn-a-dynamics-model): the reward model
+  a planner needs beside its dynamics model.

@@ -695,3 +695,4 @@ title.
   GRPO.
 - [Imitation learning](imitation-learning.md): SFT and RFT as imitation, and causal confusion.
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md): the guest lecture before, on preference optimization.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md): the next lecture.

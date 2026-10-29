@@ -104,6 +104,29 @@ finetuning about 2x supervised finetuning (≈24:37), offline per-step DPO about
 online RL with dense per-step rewards 5–6x as sample-efficient as online RL with the outcome reward
 alone (slide 27, ≈1:06:56). See [RL for LLM reasoning](llm-reasoning.md).
 
+## The whole map so far
+
+Lecture 11 opens with one slide that places every algorithm covered so far on these two lines (Lecture
+11, slide 4, ≈0:05–4:36). **Offline**, with "No policy collection", holds offline RL: methods that
+constrain the policy to actions in the data (AWR, AWAC, IQL) and CQL, which constrains it implicitly
+through conservatism. **Online**, which "Involves policy data collection", holds off-policy RL, which
+"Can reuse data from other policies", either from a replay buffer (DQN, SAC) or through multiple
+gradient steps on a batch (PPO, importance sampling), and on-policy RL, which can "Only use data from
+curr. policy" (REINFORCE, the vanilla policy gradient). Imitation learning runs across the top,
+offline as behavior cloning and online as DAgger, because its assumptions differ: it "Requires expert
+data. Doesn't need reward.", and it cannot outperform the average behavior in its data (≈3:51). An
+arrow along the bottom says that moving right "Requires more online data", and online data is usually
+the more expensive kind (≈3:06).
+
+![Lecture 11, slide 4 — Offline vs. online algorithms](../raw/images/11-model-based-rl/slide-4.png)
+
+*Lecture 11, slide 4 — the course's algorithms on one page: offline at left, online at right, imitation learning across the top, and the colour of each name saying whether it learns an actor, a critic or both. [Deck](https://cs224r.stanford.edu/spring_2025/slides/11_cs224r_mbrl_2025.pdf)*
+
+Model-based RL "can actually be applied to all of the different classes" on that map (≈4:36). Planning
+with a learned model is off-policy: the model can be fitted to data from any policy, and a fairly broad
+data-collecting policy makes the model accurate in more places (≈59:47–1:00:33). See
+[model-based RL](model-based-rl.md).
+
 ## Where this appears
 
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#summary-of-part-1-offline-and-reward-free):
@@ -122,3 +145,5 @@ alone (slide 27, ≈1:06:56). See [RL for LLM reasoning](llm-reasoning.md).
   DPO's fixed preference data.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#the-plan-classical-techniques-then-thinking-models):
   imitation, offline RL and online RL for math reasoning.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md#recap-where-the-courses-algorithms-sit): the map
+  of every algorithm so far, and why planning with a model is off-policy.

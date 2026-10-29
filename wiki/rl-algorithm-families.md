@@ -11,7 +11,7 @@ Lecture 1 sorts them into five families (slide 41, ≈49:20–50:53).
 | Policy gradients | directly differentiate the objective | 3; see [policy gradients](policy-gradients.md) |
 | Actor-critic | estimate the value of the current policy and use it to make the policy better | 4, 5; see [actor-critic methods](actor-critic.md) |
 | Value-based | estimate the value of the optimal policy | 6; see [Q-learning](q-learning.md) |
-| Model-based | learn to model the dynamics, and use it for planning or policy improvement | 11 |
+| Model-based | learn to model the dynamics, and use it for planning or policy improvement | 11; see [model-based RL](model-based-rl.md) |
 
 The last column comes from the [course schedule](../sources.md#lectures), not from Lecture 1;
 the schedule also has lectures on offline RL, reward learning, RL for language models,
@@ -21,7 +21,7 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–10.** Imitation learning, policy gradients,
+**This knowledge base so far covers Lectures 1–11.** Imitation learning, policy gradients,
 actor-critic methods and value-based methods have their own pages,
 [imitation learning](imitation-learning.md), [policy gradients](policy-gradients.md),
 [actor-critic methods](actor-critic.md) and [Q-learning](q-learning.md), and Lecture 7's offline
@@ -32,7 +32,8 @@ comes from has [reward learning](reward-learning.md) and
 [instruction finetuning](instruction-finetuning.md), [RL from human feedback](rlhf.md) and
 [direct preference optimization](direct-preference-optimization.md); Lecture 10's RL for LLM reasoning has
 [RL for LLM reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-rewards.md);
-model-based methods do not yet. Lecture 2 adds
+and Lecture 11's model-based methods have [model-based RL](model-based-rl.md) and
+[planning with a learned model](planning-with-models.md). Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -82,6 +83,17 @@ support, and will probably work better, especially with a broader dataset; conse
 "just one hyperparameter" (slide only). For offline pre-training followed by online fine-tuning,
 implicit Q-learning "seems most performant". See [offline RL](offline-rl.md#which-to-use).
 
+Lecture 11 turns to the fifth family with a recap that puts the first four, and offline RL, on one map
+(slide 4, ≈0:05–4:36): policy gradient methods learn only an actor (REINFORCE), actor-critic methods
+both (PPO, SAC), and Q-learning methods only a critic (DQN). Finn notes that PPO is often called a
+policy gradient method, and this class calls it actor-critic to avoid confusion (≈2:21). Model-based RL
+"can actually be applied to all of the different classes" of method (≈4:36). It learns a dynamics model
+and plans against it, by backpropagation or by sampling with the cross-entropy method, replanning after
+every action in model predictive control, or uses the model to generate data for a model-free method
+(Lecture 11, slides 12–28). Slide 29 answers when to use it: "Whether to use a model depends on how hard
+it is to learn!", which is the last trade-off below. See [model-based RL](model-based-rl.md) and
+[offline and online algorithms](offline-and-online.md#the-whole-map-so-far).
+
 ## Why so many algorithms?
 
 Supervised learning has gradient descent, which is simple and works. RL has many algorithms
@@ -96,7 +108,8 @@ because they make different trade-offs and thrive under different assumptions (s
   data, there may be time to tune hyperparameters.
 - **What does the action space look like?** How high-dimensional is it? Is it continuous or
   discrete?
-- **Is it easy to learn the dynamics model?**
+- **Is it easy to learn the dynamics model?** Lecture 11's answer to when a model is worth having
+  turns on exactly this (slide 29); see [model-based RL](model-based-rl.md#when-to-use-a-model).
 
 The lecture says the course will return to which algorithm suits which setting in its later
 parts.
@@ -120,3 +133,5 @@ parts.
   DPO, which reaches the same objective with a classification loss.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): imitation, offline RL and online
   RL for math reasoning, and how thinking models are trained.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md): the map of the families so far, and the fifth
+  family in depth.

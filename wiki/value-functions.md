@@ -142,6 +142,17 @@ of the state before a step is the Q-value of the step before it, so the advantag
 difference of consecutive Q-values (slide 17, ≈40:47). See [process rewards and per-step
 credit](process-rewards.md).
 
+### Planning: a value at the end of the horizon
+
+Lecture 11 uses a value function to extend planning with a learned model past its horizon. A planner
+that maximizes the sum of rewards over the next $H$ steps can only see that far, and planning further
+means optimizing ever longer, higher-dimensional action sequences. Instead it can maximize the sum of
+rewards over the next $H$ steps plus an estimate of the value of the state reached after those $H$
+actions (Lecture 11, slide 25, "Plan with terminal value function", ≈1:03:36–1:04:23). Within the horizon
+the model looks ahead; past it, the value function says whether the state is good or bad. That combines
+planning with value-based RL, at the cost of learning both a model and a value function (≈1:04:23–1:05:55).
+See [planning with a learned model](planning-with-models.md#limits-and-two-ways-past-them).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#how-good-is-a-policy-value-and-q-functions): the
@@ -158,3 +169,5 @@ credit](process-rewards.md).
   expectile-fitted value function.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#the-q-value-of-a-step): the Q-value
   and advantage of each step of a solution, under a rollout policy.
+- [Lecture 11 — Model-Based RL](11-model-based-rl.md#training-a-policy-and-longer-horizons): a terminal
+  value function at the end of a planning horizon.
