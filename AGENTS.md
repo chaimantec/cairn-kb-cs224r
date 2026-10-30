@@ -122,7 +122,11 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 - Describe a photographed person by the name the slide prints, never by apparent gender; tell the
   transcriber so.
 - A slide holding a video holds one frame. What the video showed comes from the transcript,
-  written into the slide entry by the parent with its timestamp.
+  written into the slide entry by the parent with its timestamp. A video's frame may carry no player chrome, so a
+  transcriber's "no video frames" is checked against the transcript ("watching that again", "this is what it
+  looks like") at each photograph or screenshot slide.
+- Tell the transcriber to give colours in prose ("in blue"), never as inline tags (`[blue]…[/blue]`):
+  tags inside a printed phrase break every verbatim quotation of it.
 - An animated chart exports as its first frame: a few points on empty axes. Say so in the slide
   entry and the image caption, and take the result from what the lecturer says.
 
@@ -168,6 +172,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 10 RL for LLM Reasoning | 27 of 41 pages | the next-token training diagram, the data-stock chart and robot datasets, the reasoning MDP, the three data axes, the first frames of the animated result charts (10, 19, 23), the RFT-scaling chart, the spurious-steps picture, the credit, rollout, Q-value and advantage slides, the filtering and DPO-pair diagrams, the online-RL and PAV slides, the dense-reward and hard-question charts, the compute-constrained objective, the meta-strategy and Kimi length charts, the test-time scaling diagram, the leaderboards, the open questions |
 | 11 Model-Based RL | 17 of 38 pages | the recap map of offline and online algorithms, the Veo 2 and Sora stills, the notional algorithm with its maze and Sora frame, the backpropagation and sampling planning chains, the gradient-versus-sampling plots with CEM, the cliff photographs and the fixed loop, the open/closed-loop diagram, the MPC slide with its car, the MBPO roll-out diagram, the case study's setup, simulated charts, ablations and real-hand chart |
 | 12 Multi-Task RL | 9 of 29 pages | the model-based policy optimization roll-outs, the task-distribution examples, the multi-task RL loop, the BC-Z and OpenVLA architectures, the two π0.5 video frames, the hockey relabeling example, the HER task renderings and chart |
+| 13 Meta RL | 19 of 39 pages | the multi-task fan recap, the espresso photograph, the Braque and Cezanne paintings and the few-shot framing, the maze meta-train and meta-test panels, the task-distribution examples, the black-box chain and its unrolled algorithm, the three architectures, the SNAIL maze video frames, the test-time compute chart, the multi-task digression, the inferred-task chain, the PEARL charts, the hallway and kitchen photographs, the coupling diagram, the posterior-sampling and alternative-exploration panels |
 
 ## Rebuilding
 

@@ -90,6 +90,11 @@ but a few seconds of history recovers that, and the history then serves as the s
 Conversely, a sensor that very occasionally fails is often still treated as giving the state,
 because adding a lot of history has real costs (≈32:24–33:12).
 
+Lecture 13 adds a special kind of POMDP. In meta-RL the task is not part of the state, so the agent
+must infer it from experience; the only unobserved thing is the task, and the hidden state is the
+observation together with the task identifier (Lecture 13, slide 25, ≈46:52–48:25). See
+[meta-RL](meta-rl.md).
+
 ## Notation for learning from demonstrations
 
 Lecture 2 adds a few symbols for [imitation learning](imitation-learning.md).
@@ -316,6 +321,25 @@ Lecture 12; see [multi-task RL](multi-task-rl.md) and [hindsight relabeling](hin
   copy with new rewards $r'_ t$, and $\mathbf{s}_ T$ a trajectory's last state used as its goal (slides
   25–26). Slide 26 drops the bar from $\mathbf{s}_ t$.
 
+## Notation for meta-RL
+
+Lecture 13; see [meta-RL](meta-rl.md).
+
+- $\mathcal{T}_ i$ is a training task, an MDP as in multi-task RL, and $\mathcal{T}_ j$ or
+  $\mathcal{T}_ {\text{test}}$ a new task to adapt to (slides 13, 17–18).
+- $\pi^{\text{exp}}$ is the exploration policy that collects a small training set of experience in a task,
+  and $\pi^{\text{task}}$ the adapted policy, $\mathbf{a} \sim \pi^{\text{task}}(\cdot \mid \mathbf{s}, D_{\text{train}})$
+  (slides 10 and 14); the two may share parameters. The deck writes the training set as
+  $\mathscr{D}_ {\text{tr}}$, $D_{\text{train}}$, $\mathcal{D}_ {\text{train}}$ or, for task $i$,
+  $\mathscr{D}_ i^{\text{tr}}$, on different slides.
+- $k$ counts the roll-outs (episodic variant) or time steps (online variant) in the training set
+  (slide 14), and N the episodes a policy is rolled out for with memory (slides 17–18), which Finn
+  calls $n$. Slides 17–18 print $a$ and $s$ non-bold.
+- $\hat{\mathbf{z}}_ i$ is the policy's inferred estimate of the task identifier (slide 25), and
+  $\mathbf{z}$ a latent task variable with a prior $p(\mathbf{z})$ and a posterior
+  $q(\mathbf{z} \mid \mathscr{D}_ {\text{tr}})$ (slide 35), written $q_\phi(\mathbf{z} \mid \mathbf{c})$ with a
+  context $\mathbf{c}$ in PEARL's diagram (slide 19).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -342,3 +366,5 @@ Lecture 12; see [multi-task RL](multi-task-rl.md) and [hindsight relabeling](hin
   horizons, sampled action sequences and model-based policy optimization.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): the notation for tasks, task identifiers,
   goal-conditioned rewards and relabeled data.
+- [Lecture 13 — Meta RL](13-meta-rl.md): the notation for exploration and task policies, training sets
+  of experience, inferred task variables, and meta-RL as a POMDP.

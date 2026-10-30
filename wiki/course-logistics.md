@@ -74,7 +74,11 @@ May 23 (Lecture 11, slides 2 and 38); Lecture 12 repeats them (Lecture 12, slide
 hindsight relabeling is "Part of homework 4!" (Lecture 12, slide 3): Homework 4's handout, due Friday,
 May 30, has students make a Deep Q-Network goal-conditioned and implement Hindsight Experience Replay on
 top of it, before a second part on meta-RL. See [hindsight relabeling](hindsight-relabeling.md). Homework due dates and links are in
-[`sources.md`](../sources.md#assignments-and-project). The
+[`sources.md`](../sources.md#assignments-and-project). Lecture 13's reminders repeat "Homework 3 due
+**Friday**" and "Project milestone due **next Friday**", and announce "More evening office hours!" "(Andy
+and Marcel moving to evening times)" (Lecture 13, slides 2 and 39). Its plan brackets the meta-RL problem
+statement, black-box meta-RL methods and the next lecture's exploration as "part of HW4" (slides 5, 15
+and 38). See [meta-RL](meta-rl.md). The
 poster session was Wednesday, June 4, and the final report was due Monday, June 9 (site).
 
 ## Advice from the course
@@ -100,3 +104,5 @@ at 1:30 in Gates B1.
   the Homework 3 and milestone dates.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#not-in-the-recording-the-rest-of-goal-conditioned-relabeling-and-next-time):
   the same dates, and hindsight relabeling in Homework 4.
+- [Lecture 13 — Meta RL](13-meta-rl.md#not-in-the-recording-the-plan-next-time-and-reminders): the
+  reminders again, the evening office hours, and meta-RL in Homework 4.

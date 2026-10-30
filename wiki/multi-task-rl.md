@@ -136,11 +136,25 @@ adds over imitation is the chance to **share data across tasks**: data collected
 may be useful for another, but reusing it "Would require relabeling the data" with the other task's
 identifier and reward. That is [hindsight relabeling](hindsight-relabeling.md).
 
+## Meta-RL: experience as the task identifier
+
+Lecture 13 opens by recalling this lecture's aggregated MDP, with the warning "This is going to be a bit
+different for meta-RL!" (Lecture 13, slide 3, ≈0:50). A meta-RL policy is not told its task; it reads its
+own experience, which can be viewed as a task identifier, so meta-RL looks like multi-task learning in
+which the data is the identifier, though that identifier changes within a task (slide 23, ≈41:31–42:16).
+Where a multi-task policy with a structured prompt can transfer zero-shot, a meta-RL policy adapts k-shot,
+from k episodes or time steps (slides 7 and 23, ≈6:59, ≈43:03). An index would not do as the identifier,
+since a policy told "task 100" at test time cannot generalize to it, whereas experience can (≈44:34–46:07).
+And because the task is not in the state, there is no aggregated MDP: meta-RL is a partially observed MDP
+in which only the task is hidden (slide 25, ≈46:52–48:25). See [meta-RL](meta-rl.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): multi-task RL and meta-RL among the course's topics and
   open problems.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): the whole topic, with the examples and questions.
 - [Hindsight relabeling](hindsight-relabeling.md): sharing data across tasks, and goal-conditioned RL.
+- [Lecture 13 — Meta RL](13-meta-rl.md#experience-as-a-task-identifier): meta-RL against multi-task RL,
+  and the recap of this lecture.
 - [MDPs and notation](mdp-and-notation.md#notation-for-multi-task-rl): the notation for tasks and task
   identifiers.

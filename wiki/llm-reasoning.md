@@ -141,6 +141,15 @@ section](10-rl-for-reasoning.md#from-the-slides-only).
 
 *Lecture 10, slide 35 — four cognitive behaviors, and their counts over RL for two base models: one develops verification and backtracking, the other shows none and does not improve. [Deck](https://cs224r.stanford.edu/spring_2025/slides/10_cs224r-rl_for_reasoning_lecture.pdf)*
 
+Lecture 13 presents this setting as meta-RL (Lecture 13, slide 22, ≈39:13–41:31). Solving a math
+problem is itself an MDP over strategies, such as guess and check or eliminating terms, whose best choice
+is not known in advance. DeepSeek R1 thinks for a while on a hard problem but also thinks through
+"2+2=?" before giving a step-by-step explanation, which is somewhat wasteful. Bringing test-time compute
+into training as a meta-RL problem encourages the model to answer easy problems quickly and to explore
+on hard ones as much as it needs; the slide's paper (MRT, Qu et al.) reports higher success on Math 500
+with the same number of tokens, and the same accuracy with 1.6x fewer tokens than GRPO. See
+[meta-RL](meta-rl.md).
+
 ## Where this appears
 
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): the whole topic, with the student
@@ -152,3 +161,5 @@ section](10-rl-for-reasoning.md#from-the-slides-only).
   imitation, and causal confusion.
 - [Offline RL](offline-rl.md): the offline setting per-step DPO works in.
 - [RL from human feedback](rlhf.md): the reward-model pipeline that process rewards extend to steps.
+- [Lecture 13 — Meta RL](13-meta-rl.md#example-2-meta-rl-for-test-time-compute): optimizing
+  test-time compute as a meta-RL problem.

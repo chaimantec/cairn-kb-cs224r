@@ -21,7 +21,7 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–12.** Imitation learning, policy gradients,
+**This knowledge base so far covers Lectures 1–13.** Imitation learning, policy gradients,
 actor-critic methods and value-based methods have their own pages,
 [imitation learning](imitation-learning.md), [policy gradients](policy-gradients.md),
 [actor-critic methods](actor-critic.md) and [Q-learning](q-learning.md), and Lecture 7's offline
@@ -33,8 +33,10 @@ comes from has [reward learning](reward-learning.md) and
 [direct preference optimization](direct-preference-optimization.md); Lecture 10's RL for LLM reasoning has
 [RL for LLM reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-rewards.md);
 Lecture 11's model-based methods have [model-based RL](model-based-rl.md) and
-[planning with a learned model](planning-with-models.md); and Lecture 12's multi-task RL has
-[multi-task RL](multi-task-rl.md) and [hindsight relabeling](hindsight-relabeling.md). Lecture 2 adds
+[planning with a learned model](planning-with-models.md); Lecture 12's multi-task RL has
+[multi-task RL](multi-task-rl.md) and [hindsight relabeling](hindsight-relabeling.md); and Lecture 13's
+meta-RL, which trains any of these optimizers inside a policy that learns in context, has
+[meta-RL](meta-rl.md). Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -138,3 +140,5 @@ parts.
   family in depth.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): model-based policy optimization, which feeds a
   model's synthetic data to any model-free method, and when to use a model.
+- [Lecture 13 — Meta RL](13-meta-rl.md): black-box meta-RL, which inherits its sample efficiency from
+  whichever RL optimizer trains it.

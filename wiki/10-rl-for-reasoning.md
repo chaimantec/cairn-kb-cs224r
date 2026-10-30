@@ -604,7 +604,9 @@ efficiency over imitation, and online RL with a dense advantage reward improves 
 
 **Part 2's papers** (slide 30): DeepSeek-R1 (2025), Kimi K1.5, and, optionally, "Optimizing
 Test-Time Compute requires Solving a Meta-RL Problem" (Setlur, Qu, Yang, Zhang, Smith, Kumar, CMU MLD
-Blog, 2025).
+Blog, 2025). [Lecture 13](13-meta-rl.md#example-2-meta-rl-for-test-time-compute) presents optimizing
+test-time compute as a meta-RL problem, citing a paper by several of the same authors; see
+[meta-RL](meta-rl.md).
 
 **A thinking trace** (slide 31), from Marjanović et al.'s study of DeepSeek-R1 (the footer prints the
 title as "DeepSeek-R1 Thoughtolgy"). For a word problem about letters, the model's text between

@@ -579,7 +579,7 @@ HER curves rise to about 95% by epoch 60. The values are read from the chart by 
 
 Slide 28 repeats the plan. Slide 29 repeats slide 2's reminders, "Homework 3 due next Friday, May 16"
 and "Project milestone due Friday, May 23", and announces next time: "Can we quickly adapt to new
-tasks?" "(e.g. in-context learning for RL)". That is the subject of Lecture 13, on meta-RL.
+tasks?" "(e.g. in-context learning for RL)". That is the subject of [Lecture 13](13-meta-rl.md), on [meta-RL](meta-rl.md).
 
 ## Summary
 
@@ -616,3 +616,5 @@ learner. With goals, relabeling with the reached state turns failures into succe
 - [Instruction finetuning](instruction-finetuning.md): supervised fine-tuning, which this lecture reads
   as multi-task imitation learning with prompts as tasks.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md): the previous lecture.
+- [Lecture 13 — Meta RL](13-meta-rl.md): the next lecture, which opens with a recap of multi-task and
+  goal-conditioned RL.

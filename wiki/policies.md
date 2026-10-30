@@ -119,6 +119,20 @@ video into an embedding that conditions the layers of its vision network, and mo
 OpenVLA pass the instruction as a prompt to a fine-tuned language model that also reads the image (slides
 19–20, ≈47:44–51:37). See [multi-task RL](multi-task-rl.md).
 
+## Policies that learn in context
+
+The black-box meta-RL policy of Lecture 13 is a sequence model whose memory has a different job: it reads
+all of its experience in the current task, each state together with the previous reward and possibly the
+previous action, and keeps its hidden state **across episodes** of the same task, cutting it only when a
+new task begins (Lecture 13, slides 16–17, ≈20:45–24:34, ≈27:43). Written as a policy that conditions
+on a small training set of experience $D_{\text{train}}$,
+$\mathbf{a} \sim \pi^{\text{task}}(\cdot \mid \mathbf{s}, D_{\text{train}})$ (slide 14), it adapts to a
+new task without any gradient step. Its inputs differ from a standard recurrent policy's in that the
+reward is one of them, so a reward is needed even at test time (≈22:16), and past actions are worth
+passing in when the policy is stochastic, since its sampled actions are not otherwise in its memory
+(≈23:02). Such a policy can be read as a multi-task policy whose task identifier is its own experience
+(slide 23, ≈42:16). See [meta-RL](meta-rl.md).
+
 ## Initializing a policy for online RL
 
 An online RL algorithm starts by initializing the policy, as when training any neural network:
@@ -145,3 +159,5 @@ See [policy gradients](policy-gradients.md).
   planner as a "policy" in quotes, and distilling it into a network.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#conditioning-on-the-task-in-practice): policies
   conditioned on a task identifier, and the architectures that take one.
+- [Lecture 13 — Meta RL](13-meta-rl.md#black-box-meta-rl): sequence-model policies conditioned on their
+  own experience, with memory across episodes.

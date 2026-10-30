@@ -9,7 +9,7 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–12 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–13 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
@@ -20,10 +20,11 @@ complementary to the more theoretical CS234.
 > optimization), Lecture 10 (a guest lecture on RL for LLM reasoning: rejection finetuning,
 > per-step credit assignment, offline and online RL, and thinking models), Lecture 11 (model-based
 > RL: learning dynamics models, planning by backpropagation and by sampling, model predictive control,
-> and a dexterous-manipulation case study) and Lecture 12 (model-based policy optimization and when to
-> use a model; multi-task imitation and RL, goal-conditioned RL and hindsight relabeling): their edited
-> transcripts, their slide decks as text, 199 of their slides as images, and the topic pages they
-> start. **It cannot answer questions about the technical content of Lectures 13–19** (meta-RL
+> and a dexterous-manipulation case study), Lecture 12 (model-based policy optimization and when to
+> use a model; multi-task imitation and RL, goal-conditioned RL and hindsight relabeling) and Lecture 13
+> (meta-RL: the problem statement, black-box methods and the challenge of learning to explore): their
+> edited transcripts, their slide decks as text, 218 of their slides as images, and the topic pages they
+> start. **It cannot answer questions about the technical content of Lectures 14–19** (exploration
 > onward, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
@@ -70,13 +71,16 @@ complementary to the more theoretical CS234.
   of slide 26, then ends at about 1:10:21: the rest of goal-conditioned relabeling (relabeling with the
   last state, slide 26), the simulated-manipulation results (slide 27), the closing plan and next time
   (28–29) and slide 2's reminders are only in the slide file. Its slide 24 prints "task 2 ID" where
-  Finn says the passing task, task 1, is meant.
+  Finn says the passing task, task 1, is meant. Lecture 13's recording covers slides 3–37 and ends on
+  slide 37's summary; slide 2's reminders and the closing plan, next time and reminders (38–39) are only
+  in the slide file. Its slide 20 holds frames of two maze videos, whose content comes from what Finn
+  says, and Finn writes the black-box algorithm on a board the recording does not show.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 and 12 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 and 13 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
 3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9, 27 of
-Lecture 10, 17 of Lecture 11 and 9 of Lecture 12 rendered as pictures, each shown under its
+Lecture 10, 17 of Lecture 11, 9 of Lecture 12 and 19 of Lecture 13 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -88,9 +92,10 @@ Lecture 10, 17 of Lecture 11 and 9 of Lecture 12 rendered as pictures, each show
 [`raw/slides/09-rl-for-llms.md`](raw/slides/09-rl-for-llms.md),
 [`raw/slides/10-rl-for-reasoning.md`](raw/slides/10-rl-for-reasoning.md),
 [`raw/slides/11-model-based-rl.md`](raw/slides/11-model-based-rl.md),
-[`raw/slides/12-multi-task-rl.md`](raw/slides/12-multi-task-rl.md)) and, where a wiki page cites that
+[`raw/slides/12-multi-task-rl.md`](raw/slides/12-multi-task-rl.md),
+[`raw/slides/13-meta-rl.md`](raw/slides/13-meta-rl.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these twelve has one: the slide file's header lists which do.
+these thirteen has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -257,6 +262,21 @@ these twelve has one: the slide file's header lists which do.
   algorithm, which task to relabel for, and when relabeling applies (same dynamics, a computable reward,
   an off-policy learner, with Finn's correction on importance weights); and goal-conditioned
   relabeling, with the last state as goal and the HER results (slides only past ≈1:10:21).
+- [Lecture 13 — Meta RL](wiki/13-meta-rl.md): learning a new task from a few episodes of experience.
+  The recap of multi-task and goal-conditioned RL; why meta-RL (the espresso machine, not starting from
+  scratch); forward, multi-task and meta-learning transfer, zero-shot against few-shot; few-shot learning
+  outside RL (Braque or Cezanne, in-context learning in GPT-3); the maze-navigation example, the
+  exploration-exploitation trade-off and the key assumption of a shared task distribution; task
+  distributions (mazes, terrains, manipulation, dialog users); the formal setting, a task as an MDP, and
+  the episodic and online variants with exploration and task policies; black-box meta-RL, a sequence
+  model fed states, rewards and actions with memory across episodes, and how it differs from a recurrent
+  policy; the algorithm and its meta-test, with the questions on new episodes and initial states; RNN,
+  attention-and-convolution and feedforward-and-average architectures; SNAIL's maze videos and table; meta-RL
+  for test-time compute (DeepSeek R1 on 2+2, MRT against GRPO on Math 500); experience as a task
+  identifier and meta-RL as a POMDP; off-policy meta-training (PEARL against RL², ProMP and MAML) and
+  per-task trajectory buffers; the black-box pros and cons; and exploration: end-to-end training, the
+  hallway and kitchen examples, the coupling problem, posterior sampling and when it fails, intrinsic
+  rewards, and task dynamics and reward prediction.
 
 ## Topic pages
 
@@ -274,12 +294,15 @@ these twelve has one: the slide file's header lists which do.
   reasoning MDP, rollout policies, the Q-value and advantage of a step, the compute budget), and for
   model-based RL (dynamics models, planning horizons, sampled action sequences, model-based policy
   optimization), and for multi-task RL (tasks as MDPs, task identifiers, the original state with a
-  bar, goal-conditioned rewards, relabeled data).
+  bar, goal-conditioned rewards, relabeled data), and for meta-RL (exploration and task policies,
+  training sets of experience, inferred task variables), with Lecture 13's POMDP in which only the task is
+  hidden.
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
   policy with the epsilon-greedy and Boltzmann exploration policies built around it, and Lecture 11's
-  planner as a "policy" in quotes, and Lecture 12's task-conditioned policies and their architectures.
+  planner as a "policy" in quotes, and Lecture 12's task-conditioned policies and their architectures,
+  and Lecture 13's sequence-model policies that learn in context, with memory across episodes.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
@@ -312,7 +335,8 @@ these twelve has one: the slide file's header lists which do.
   remaining state-distribution problem, soft actor-critic, and its efficiency against PPO's
   stability; and the buffer in Q-learning, with how it is managed (first in, first out,
   pre-populating, asynchronous collection); and what goes wrong when the buffer is a fixed offline
-  dataset; and Lecture 12's per-task buffers and buffers holding relabeled data.
+  dataset; and Lecture 12's per-task buffers and buffers holding relabeled data; and Lecture 13's buffers of
+  whole trajectories per task for off-policy meta-RL.
 - [Policy evaluation](wiki/policy-evaluation.md): fitting a value network by Monte Carlo
   estimation, bootstrapping (temporal difference learning) or n-step returns; the shared
   regression; the worked example where they disagree; bias versus variance; discounted targets;
@@ -342,7 +366,8 @@ these twelve has one: the slide file's header lists which do.
   online sampling and DPO's fixed preference data; and Lecture 10's imitation, offline and online RL
   for reasoning, compared by data efficiency; and Lecture 11's map of every algorithm so far, and why
   planning with a model is off-policy; and Lecture 12's offline and online versions of model-based policy
-  optimization, and why relabeled data is off-policy.
+  optimization, and why relabeled data is off-policy; and Lecture 13's off-policy against on-policy
+  meta-training.
 - [Policy gradients](wiki/policy-gradients.md): the method as a whole, from the online loop and
   the derivation to REINFORCE, the reading as reward-weighted imitation, its three weaknesses
   (high variance, sensitivity to reward scale, need for dense rewards and large batches) and the
@@ -361,7 +386,8 @@ these twelve has one: the slide file's header lists which do.
   DQN or SAC and on which offline RL algorithm to use, and the trade-offs (data cost, supervision, stability, action space, dynamics) that
   explain why RL has so many algorithms, with pointers to Lectures 9 and 10's RL for language models,
   and Lecture 11's map of the families so far and its answer to when to use a model, and Lecture 12's
-  model-based policy optimization.
+  model-based policy optimization, and Lecture 13's meta-RL, which inherits its sample efficiency from
+  its RL optimizer.
 - [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
@@ -424,7 +450,8 @@ these twelve has one: the slide file's header lists which do.
   MDP with deterministic dynamics, the three data axes, rejection finetuning and why it stops
   working (spurious steps), the three uses of per-step advantages (filtering, per-step DPO, process
   advantage verifiers as a dense reward), online RL with an outcome reward and GRPO, and how
-  thinking models such as DeepSeek-R1 are trained, with test-time scaling from the slides.
+  thinking models such as DeepSeek-R1 are trained, with test-time scaling from the slides, and Lecture
+  13's view of optimizing test-time compute as a meta-RL problem.
 - [Process rewards and per-step credit](wiki/process-rewards.md): the Q-value of a step of a
   solution under a rollout policy, estimated by rollouts from each prefix; the advantage as one
   Q-value minus the previous one, with a worked example; choosing the rollout policy (a different
@@ -448,19 +475,28 @@ these twelve has one: the slide file's header lists which do.
   structure, generalists), a task as an MDP and what varies across tasks, task identifiers, the task as
   part of the state and goal-conditioned RL, multi-task imitation learning with stratified sampling,
   feeding the task to a network (BC-Z, OpenVLA, prompts), one policy against many, and conditioning the
-  policy and Q-function in multi-task RL (Lecture 12).
+  policy and Q-function in multi-task RL (Lecture 12), and how meta-RL differs, with experience as the
+  task identifier and no aggregated MDP (Lecture 13).
 - [Hindsight relabeling](wiki/hindsight-relabeling.md): sharing data across tasks by storing experience
   again under another task's identifier and reward (hindsight experience replay, HER): the hockey
   example, the algorithm, which task to relabel for, the conditions (same state and action spaces and
   dynamics, a computable reward, an off-policy learner) and importance weights, and goal-conditioned
   relabeling with the last state as goal, with the HER paper's results and Homework 4 (Lecture 12).
+- [Meta-RL](wiki/meta-rl.md): learning a new task from a few episodes by training across a task
+  distribution (Lecture 13): the three kinds of transfer and few-shot learning, the key assumption, the
+  formal setting with episodic and online variants, black-box meta-RL (the sequence-model policy, its
+  four-step algorithm, architectures and why off-policy meta-training is faster), experience as a task
+  identifier, meta-RL as a POMDP, the maze, test-time compute and continuous-control examples, and
+  exploration: why end-to-end training is hard (the coupling problem) and the alternatives (posterior
+  sampling, intrinsic rewards, task dynamics and reward prediction).
 
 ## Course pages
 
 - [Course logistics](wiki/course-logistics.md): staff and guest lecturers, prerequisites, the four
   homeworks and their topics, grading, the default and custom final projects, late days, the AI
   tools policy, and the first week's steps, from Lecture 1's slides and the course site, with
-  Lecture 11's and 12's Homework 3 and milestone dates, and hindsight relabeling in Homework 4.
+  Lecture 11's, 12's and 13's Homework 3 and milestone dates, hindsight relabeling in Homework 4, and
+  Lecture 13's evening office hours and meta-RL in Homework 4.
 
 ## Raw materials
 

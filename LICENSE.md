@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–12 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–13 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -343,3 +343,31 @@ no licence notice.
 Not rendered from this deck: slide 5, a build step whose content slide 6 shows; equation, algorithm and
 labelled-formula slides whose arrows, highlights, colours and labels are transcribed (7, 9, 13, 15, 16,
 18, 23, 25, 26); and the title, reminder, agenda and text slides (1, 2, 3, 4, 8, 10, 11, 12, 28, 29).
+
+### Lecture 13 — Meta RL
+
+Deck: [13_cs224r_metarl_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/13_cs224r_metarl_2025.pdf),
+given by Chelsea Finn. Rendered: 19 slides, in `raw/images/13-meta-rl/`. The deck's text layer has
+no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 6 | A photograph of an espresso machine pouring into a cup held by hand, no source printed. |
+| 8, 9 | Reproductions of paintings labelled "Braque" and "Cezanne" (Georges Braque and Paul Cézanne), no source printed; slide 9 also an in-context learning prompt, no source printed (Finn says it is probably from GPT-3, ≈10:48). |
+| 11, 12 | Maze diagrams with exploration trajectories, "diagram adapted from Duan et al. '17" (slide 11's footer); on slide 12, photographs of a small legged robot on three floor surfaces, a grid of 50 simulated robot-arm manipulation tasks, and clip-art speech bubbles and silhouettes, no source printed. |
+| 19 | The architecture figures of the papers the slide cites: Duan et al., "RL²: Fast Reinforcement Learning via Slow Reinforcement Learning", 2017 (with Wang et al., "Learning to Reinforcement Learn", CogSci 2017); Mishra et al., "A Simple Neural Attentive Meta-Learner", ICLR 2018; Rakelly et al., "Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables", ICML 2019. |
+| 20 | Video frames and maze layouts from Mishra et al., "A Simple Neural Attentive Meta-Learner", ICLR 2018, which the slide cites. |
+| 22 | DeepSeek R1 output excerpts and the Math 500 chart from the paper the slide cites, Qu et al., "Optimizing Test-Time Compute via Meta Reinforcement Finetuning" (venue printed as ICML 2019). |
+| 23 | A photograph of a robot gripper stacking bricks and a simulated two-legged walker, no source printed. |
+| 26 | Simulation stills and learning-curve charts from the paper the slide cites, Rakelly et al., "Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables", ICML 2019. |
+| 30 | Three photographs of a hallway, a cartoon robot and document clip-art, no source printed. |
+| 32 | Six photographs of kitchens, no source printed. |
+| 33 | Egg and chicken emoji; the slide cites Liu et al., "Decoupling Exploration and Exploitation for Meta-Reinforcement Learning without Sacrifices", ICML 2021. |
+| 35 | Three trajectory panels from PEARL (Rakelly et al., ICML '19), which the slide cites. |
+| 36 | A trajectory panel; the slide cites MAME (Gurumurthy, Kumar, Sycara, CoRL '19) and MetaCURE (Zhang et al., '20) and does not say which the panel comes from. |
+| 3, 16, 17, 25 | No third-party content identified: the deck's own diagrams. |
+
+Not rendered from this deck: build steps whose figure a rendered slide shows (10, 24); slide 21's table,
+transcribed cell by cell; the episodic and online diagram and the slides that repeat the chains of slides
+16 and 17 beside text (14, 27, 31, 34); equation and text slides (4, 7, 13, 18, 29, 37); and the title,
+reminder, agenda and divider slides (1, 2, 5, 15, 28, 38, 39).

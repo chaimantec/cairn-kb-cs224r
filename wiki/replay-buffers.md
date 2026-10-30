@@ -166,6 +166,16 @@ reward, either in a shared buffer or in the other task's (≈1:01:40–1:02:26).
 by construction, so it needs an off-policy learner (≈1:07:50–1:08:35). See
 [hindsight relabeling](hindsight-relabeling.md).
 
+## Buffers of whole trajectories for meta-RL
+
+A meta-RL policy with memory needs its history as input, so its buffer stores full trajectories
+together rather than single transitions: each entry is a sequence of episodes from one MDP, with its
+states, actions and rewards, and often each task has its own buffer so a task can be sampled and its
+reward optimized (Lecture 13, slide 17, ≈51:34–52:21). An off-policy base learner with such a buffer,
+as in PEARL, which uses SAC, meta-trains much more data efficiently than on-policy ones, though adapting
+to a new task at test time is equally fast either way (slides 19 and 26, ≈50:00–51:34). See
+[meta-RL](meta-rl.md).
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-2-replay-buffers):
@@ -181,3 +191,5 @@ by construction, so it needs an off-policy learner (≈1:07:50–1:08:35). See
   requirement recalled, and what goes wrong when the buffer is a fixed dataset.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#multi-task-rl-and-sharing-data-across-tasks):
   per-task replay buffers, and buffers holding relabeled data.
+- [Lecture 13 — Meta RL](13-meta-rl.md#example-3-off-policy-meta-rl): buffers of whole trajectories per
+  task, and off-policy meta-training.

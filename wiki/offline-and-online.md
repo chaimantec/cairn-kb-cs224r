@@ -144,6 +144,14 @@ conditioned on $\mathbf{z}_ j$ the policy might have done something different. S
 off-policy data, and updating the policy on it needs an off-policy algorithm (Lecture 12,
 slide 25, ≈1:07:50–1:08:35). See [hindsight relabeling](hindsight-relabeling.md).
 
+## On- and off-policy meta-training
+
+A meta-RL policy inherits its sample efficiency from the RL optimizer that trains it (Lecture 13,
+slide 27). The first meta-RL methods used on-policy optimizers such as TRPO, A3C or PPO; with an
+off-policy optimizer and a replay buffer, meta-training is much more data efficient, while adaptation
+to a new task at test time is about as efficient either way (slide 26, ≈49:13–51:34). See
+[meta-RL](meta-rl.md).
+
 ## Where this appears
 
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#summary-of-part-1-offline-and-reward-free):
@@ -166,3 +174,5 @@ slide 25, ≈1:07:50–1:08:35). See [hindsight relabeling](hindsight-relabeling
   of every algorithm so far, and why planning with a model is off-policy.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#when-relabeling-applies): offline and online versions
   of model-based policy optimization, and why relabeled data needs an off-policy method.
+- [Lecture 13 — Meta RL](13-meta-rl.md#example-3-off-policy-meta-rl): off-policy against on-policy
+  meta-training.
