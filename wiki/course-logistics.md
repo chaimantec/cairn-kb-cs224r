@@ -78,7 +78,10 @@ top of it, before a second part on meta-RL. See [hindsight relabeling](hindsight
 **Friday**" and "Project milestone due **next Friday**", and announce "More evening office hours!" "(Andy
 and Marcel moving to evening times)" (Lecture 13, slides 2 and 39). Its plan brackets the meta-RL problem
 statement, black-box meta-RL methods and the next lecture's exploration as "part of HW4" (slides 5, 15
-and 38). See [meta-RL](meta-rl.md). The
+and 38). See [meta-RL](meta-rl.md). Lecture 14, on Friday, May 16, reminds students "Homework 3 due
+**tonight**", "(and HW4 out today)" and "Project milestone due **next Friday**" (Lecture 14, slides 2 and
+34), and marks "Efficiently Meta-Learning Optimal Exploration" as "Part of HW 4" (slide 3): students
+implement its DREAM algorithm in Homework 4 (≈1:04:26). See [exploration](exploration.md). The
 poster session was Wednesday, June 4, and the final report was due Monday, June 9 (site).
 
 ## Advice from the course
@@ -106,3 +109,5 @@ at 1:30 in Gates B1.
   the same dates, and hindsight relabeling in Homework 4.
 - [Lecture 13 — Meta RL](13-meta-rl.md#not-in-the-recording-the-plan-next-time-and-reminders): the
   reminders again, the evening office hours, and meta-RL in Homework 4.
+- [Lecture 14 — Exploration](14-exploration.md#not-in-the-recording-the-plan-and-reminders): Homework 3
+  due, Homework 4 out, the milestone, and DREAM in Homework 4.

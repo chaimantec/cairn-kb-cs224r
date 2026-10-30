@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–13 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–14 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -371,3 +371,27 @@ Not rendered from this deck: build steps whose figure a rendered slide shows (10
 transcribed cell by cell; the episodic and online diagram and the slides that repeat the chains of slides
 16 and 17 beside text (14, 27, 31, 34); equation and text slides (4, 7, 13, 18, 29, 37); and the title,
 reminder, agenda and divider slides (1, 2, 5, 15, 28, 38, 39).
+
+### Lecture 14 — Exploration
+
+Deck: [14_cs224r_exploration_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/14_cs224r_exploration_2025.pdf),
+given by Chelsea Finn. Rendered: 18 slides, in `raw/images/14-exploration/`. The deck's text layer has
+no licence notice. Slides 4–10 print "Slide adapted from Sergey Levine", and slide 8's examples are
+credited to David Silver's lecture notes.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 4 | Frames of the Atari games Breakout and Montezuma's Revenge, no source printed beyond "Slide adapted from Sergey Levine". |
+| 6 | A photograph of playing cards, no source printed. |
+| 15 | Five photographs of kitchens, and a screenshot of a language model's reasoning on an inequality problem, no source printed. |
+| 16, 20, 22 | Egg, chicken and hatching-chick emoji; the slides cite Liu, Raghunathan, Liang, Finn, "Decoupling Exploration and Exploitation for Meta-Reinforcement Learning without Sacrifices", ICML 2021. |
+| 17 | A trajectory panel, the one Lecture 13's slide 36 shows; the slide cites PEARL (Rakelly et al., ICML '19), MAME (Gurumurthy, Kumar, Sycara, CoRL '19) and MetaCURE (Zhang et al., '20) and does not say which the panel comes from. |
+| 24, 25, 26, 27 | The sample-complexity chart, the 3D navigation environment, the learning-curve chart and the video frames of Liu et al., ICML 2021, which the slides cite. |
+| 30 | A text readout of Code.org's Bounce assignment and a rendering of a student's Breakout program from CS106A, no source printed. |
+| 31 | Frames from Liu, Stephan, Nie, Piech, Brunskill, Finn, "Giving Feedback on Interactive Student Programs via Meta-Exploration", NeurIPS 2022, which the slide cites. |
+| 32 | A grading-interface screenshot and two results tables from Liu et al., "A Fast and Accurate Machine Learning Autograder for the Breakout Assignment", SIGCSE 2024, which the slide cites. |
+| 9, 10, 11, 19 | No third-party content identified: the deck's own diagrams and annotated equations (9 and 10 adapted from Sergey Levine's slides). |
+
+Not rendered from this deck: slide 5, whose only image is slide 4's Montezuma's Revenge frame; equation and
+text slides whose content is transcribed exactly (7, 8, 13, 18, 21, 23, 28); and the title, reminder,
+agenda and divider slides (1, 2, 3, 12, 14, 29, 33, 34).

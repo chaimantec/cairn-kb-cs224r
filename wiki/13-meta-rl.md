@@ -683,7 +683,8 @@ when exploration is easy this is not a problem, since only exploitation has to b
 
 ## Alternative exploration strategies
 
-There are a couple of solutions; one is discussed today and more on Friday, without complete detail on
+There are a couple of solutions; one is discussed today and more on Friday (see
+[Lecture 14](14-exploration.md#exploring-at-test-time-meta-rl-revisited)), without complete detail on
 how they work (≈1:02:20). The second solution (slide 35's "Solution #2: Leverage Alternative
 Exploration Strategies") is, instead of optimizing only for end-to-end reward, to add auxiliary
 exploration objectives that encourage the agent to figure out something more meaningful about the task.
@@ -787,3 +788,5 @@ suboptimal, as when posterior sampling walks every long hallway instead of readi
 - [RL for LLM reasoning](llm-reasoning.md): test-time compute and thinking models, the setting of
   example 2.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): the previous lecture.
+- [Lecture 14 — Exploration](14-exploration.md): the next lecture, which returns to learning to explore
+  and presents DREAM, decoupling exploration from execution.

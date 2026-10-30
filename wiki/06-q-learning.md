@@ -683,3 +683,5 @@ LLMs. Offline RL is [Lecture 7](07-offline-rl.md).
   algorithm this lecture starts from.
 - [Lecture 7 — Offline RL](07-offline-rl.md): the next lecture, which runs off-policy methods on a fixed
   dataset and shows why that fails.
+- [Exploration](exploration.md): exploration as a topic, from this lecture's epsilon-greedy to Lecture 14's
+  bandit strategies and learned exploration.

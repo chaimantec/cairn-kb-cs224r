@@ -4,9 +4,8 @@ Meta-reinforcement learning trains an agent on many related tasks so that it can
 from a small amount of experience: a few episodes, or a few time steps. It is the RL counterpart of
 few-shot and in-context learning, with one difference that shapes everything else: the agent has to
 collect that small amount of experience itself, by exploring. [Lecture 13](13-meta-rl.md) teaches the
-problem statement, black-box methods and the exploration challenge. The course's next lecture,
-"Exploration", which the slides say covers exploration and meta-exploration, is not yet in this
-knowledge base.
+problem statement, black-box methods and the exploration challenge, and [Lecture 14](14-exploration.md)
+returns to exploration with DREAM, which decouples learning to explore from learning to do the task.
 
 ## The problem: learning a new task quickly
 
@@ -192,9 +191,42 @@ objectives instead of relying on end-to-end reward alone (slides 35–37, ≈1:0
 These alternatives are "+ easy to optimize" and "+ many based on principled strategies", but "--
 suboptimal by arbitrarily large amount in some environments" (slide 37, ≈1:08:35).
 
+## Decoupling exploration and execution: DREAM
+
+Lecture 14 asks whether the chicken-and-egg problem can be avoided "*without* sacrificing optimality"
+(Lecture 14, slide 18, ≈38:01). Its answer starts from task dynamics and reward prediction, but instead of
+a full dynamics and reward model it labels each training task with an identifier $\mu_i$ and trains two
+policies (slide 19, ≈39:36–44:13). An **execution policy** $\pi^{\mathrm{exec}}(\mathbf{a} \mid \mathbf{s}, \mu_i)$ is
+given the identifier, so learning it is just multi-task RL and does not depend on exploration. An
+**exploration policy** $\pi^{\exp}(\mathbf{a} \mid \mathbf{s})$ is rewarded for collecting experience from which a
+model $q(\mu \mid \mathscr{D}_ {\mathrm{tr}})$ can identify the task. At meta-test time the agent explores, infers the
+task, then performs it. A one-hot identifier may not generalize to new tasks, so DREAM replaces it with a
+**bottlenecked representation** $z_i$: the encoder $F(z_i \mid \mu_i)$ and the execution policy maximize
+reward minus a KL divergence to the unit Gaussian, a variational information bottleneck that keeps only
+task-relevant information, and the exploration policy is rewarded at each step with its information gain
+about $z_i$, the drop in a model's prediction error (slides 20–23, ≈44:13–1:04:26).
+
+![Lecture 14, slide 26 — Quantitative Comparison](../raw/images/14-exploration/slide-26.jpg)
+
+*Lecture 14, slide 26 — on sparse-reward 3D navigation, DREAM (blue) approaches the optimal return of 1.0 while the end-to-end methods RL², IMPORT and VariBAD stay at zero and the PEARL upper bound sits near 0.17. [Deck](https://cs224r.stanford.edu/spring_2025/slides/14_cs224r_exploration_2025.pdf)*
+
+DREAM is consistent with end-to-end optimization under mild assumptions, needs $\mathcal{O}(|\mathcal{A}| \log |\mathcal{A}|)$
+samples on a bandit-like problem where $\text{RL}^2$ needs $\Omega(|\mathcal{A}|^2 \log |\mathcal{A}|)$, with
+$|\mathcal{A}|$ the number of arms (slide 24), and reaches near-optimal reward on a sparse-reward
+navigation task where end-to-end methods perform poorly "due to **coupling**" (slides 25–26,
+≈1:06:44–1:07:29). Slide 28 compares the three approaches: end to end leads to the optimal strategy in
+principle but is hard to optimize when exploration is hard; alternative strategies are easy to optimize
+but can be arbitrarily suboptimal; decoupled exploration and execution is optimal in principle and easy to
+optimize in practice, but "requires task identifier". DREAM is part of Homework 4. See
+[exploration](exploration.md#learning-to-explore-meta-rl) and
+[Lecture 14](14-exploration.md#solution-30-explore-to-identify-the-task).
+
 ## Where this appears
 
 - [Lecture 13 — Meta RL](13-meta-rl.md): the whole topic, with the examples and the questions.
+- [Lecture 14 — Exploration](14-exploration.md#exploring-at-test-time-meta-rl-revisited): exploring at
+  test time, and DREAM's decoupled exploration and execution, with its theory and experiments.
+- [Exploration](exploration.md): exploration outside meta-RL, from bandits to large MDPs.
 - [Lecture 1 — Class Intro](01-class-intro.md): meta-RL among the course's topics and open problems.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): its slides list "Optimizing Test-Time
   Compute requires Solving a Meta-RL Problem" among the readings on thinking models.

@@ -29,7 +29,8 @@ every build follows, and each lesson in general form, are in
 | 10 RL for LLM Reasoning | [Run 10](#run-10--lecture-10-rl-for-llm-reasoning) (2026-10-29) |
 | 11 Model-Based RL | [Run 11](#run-11--lecture-11-model-based-rl) (2026-10-29); [Run 12](#run-12--lecture-12-multi-task-rl) (2026-10-30, pointers to Lecture 12's teaching of the deferred slides) |
 | 12 Multi-Task RL | [Run 12](#run-12--lecture-12-multi-task-rl) (2026-10-30) |
-| 13 Meta RL | [Run 13](#run-13--lecture-13-meta-rl) (2026-10-31) |
+| 13 Meta RL | [Run 13](#run-13--lecture-13-meta-rl) (2026-10-31); [Run 14](#run-14--lecture-14-exploration) (2026-10-31, forward links to Lecture 14) |
+| 14 Exploration | [Run 14](#run-14--lecture-14-exploration) (2026-10-31) |
 
 ## Runs
 

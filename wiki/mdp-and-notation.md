@@ -340,6 +340,27 @@ Lecture 13; see [meta-RL](meta-rl.md).
   $q(\mathbf{z} \mid \mathscr{D}_ {\text{tr}})$ (slide 35), written $q_\phi(\mathbf{z} \mid \mathbf{c})$ with a
   context $\mathbf{c}$ in PEARL's diagram (slide 19).
 
+## Notation for exploration
+
+Lecture 14; see [exploration](exploration.md).
+
+- A multi-armed bandit has actions (arms) $a_i$ and no state; $T$ counts episodes, each a single time step,
+  and $a_ t$ is the action taken in episode $t$. $a^\star$ is the best action and $\mathrm{Reg}(T)$ the regret
+  after $T$ episodes (slide 10).
+- $\bar{r}_ a$ is the average reward observed for action $a$, $\sigma_ a$ a variance estimate of it and $C$ a
+  constant in UCB's bonus; $\psi_i$ are the unknown parameters of arm $i$'s reward distribution
+  $p_{\psi_i}(r)$, and $\hat{p}(\psi_1, \ldots, \psi_n)$ the beliefs about them in posterior sampling (slide 11).
+- $\mu$ or $\mu_i$ is a task identifier, $\pi^{\exp}$ the exploration policy and $\pi^{\mathrm{exec}}$ the
+  execution policy; $q(\mu \mid \mathscr{D}_ {\mathrm{tr}})$ identifies the task from the collected experience
+  $\mathscr{D}_ {\mathrm{tr}}$, and $\hat{\mu}$ is its estimate (slide 19).
+- $z_i$ is the bottlenecked task representation, $F(z_i \mid \mu_i)$ the encoder's distribution over it,
+  $\epsilon \sim \mathcal{N}(0, I)$ the added noise and $\bar{\mathbf{z}} = \mathbf{z} + \epsilon$ the noisy representation
+  (slides 21–22). The slides print the KL penalty's unit Gaussian as $\mathcal{N}(0, 1)$; Finn corrects it to
+  $\mathcal{N}(0, I)$, since $z$ is a vector (≈55:52).
+- $r_t$ is the exploration policy's reward at step $t$, $\tau_{1:t}$ the trajectory up to $t$, and
+  $\mathrm{MI}(z; \tau)$ the mutual information between $z$ and an exploration episode $\tau$ (slides 20 and
+  23). $|\mathcal{A}|$ is the number of arms in slide 24's analysis.
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -368,3 +389,5 @@ Lecture 13; see [meta-RL](meta-rl.md).
   goal-conditioned rewards and relabeled data.
 - [Lecture 13 — Meta RL](13-meta-rl.md): the notation for exploration and task policies, training sets
   of experience, inferred task variables, and meta-RL as a POMDP.
+- [Lecture 14 — Exploration](14-exploration.md): the notation for bandits, regret, task identifiers,
+  bottlenecked task representations and exploration rewards.

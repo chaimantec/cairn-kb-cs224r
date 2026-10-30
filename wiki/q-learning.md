@@ -74,7 +74,10 @@ exploration policy (slide 14):
   (≈31:51–32:37).
 
 Epsilon-greedy is a lot more common with discrete actions, and the Boltzmann form a bit more common
-with continuous ones (≈32:37–33:23). See [policies](policies.md).
+with continuous ones (≈32:37–33:23). See [policies](policies.md). Lecture 14 returns to epsilon-greedy
+in a bandit game, where a constant $\epsilon$ keeps taking random actions long after the agent knows which
+are good, and compares it with UCB and posterior sampling (Lecture 14, ≈29:34–31:54); see
+[exploration](exploration.md).
 
 ## The full algorithm
 
@@ -189,3 +192,5 @@ its LinkedIn application adds the CQL terms to a double DQN objective (Lecture 7
   target recalled, and why coverage fails offline; conservative Q-learning from the slides.
 - [Lecture 8 — Reward Learning](08-reward-learning.md#conservative-q-learning-cql): conservative
   Q-learning taught aloud, and its double DQN application.
+- [Lecture 14 — Exploration](14-exploration.md#the-exploration-game): epsilon-greedy against greedy, UCB
+  and posterior sampling in a bandit game, and why its $\epsilon$ is usually lowered over time.

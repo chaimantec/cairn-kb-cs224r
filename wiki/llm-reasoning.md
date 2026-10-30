@@ -163,3 +163,5 @@ with the same number of tokens, and the same accuracy with 1.6x fewer tokens tha
 - [RL from human feedback](rlhf.md): the reward-model pipeline that process rewards extend to steps.
 - [Lecture 13 — Meta RL](13-meta-rl.md#example-2-meta-rl-for-test-time-compute): optimizing
   test-time compute as a meta-RL problem.
+- [Lecture 14 — Exploration](14-exploration.md#exploration-in-robotics-and-language-models): why RL for
+  language models needs a strong base model to explore from, and reasoning as exploring at test time.

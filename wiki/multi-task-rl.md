@@ -148,6 +148,14 @@ since a policy told "task 100" at test time cannot generalize to it, whereas exp
 And because the task is not in the state, there is no aggregated MDP: meta-RL is a partially observed MDP
 in which only the task is hidden (slide 25, ≈46:52–48:25). See [meta-RL](meta-rl.md).
 
+Lecture 14 brings multi-task RL back inside meta-RL. Its DREAM algorithm trains an execution policy that
+is given each training task's identifier, $\pi^{\mathrm{exec}}(\mathbf{a} \mid \mathbf{s}, \mu_i)$, which "is just
+multi-task learning, or multi-task reinforcement learning" and can be trained by optimizing reward
+without relying on exploration (Lecture 14, slide 19, ≈41:09–41:55). A separately trained exploration
+policy then learns to collect the experience that identifies the task, through a bottlenecked task
+representation that generalizes better than a one-hot index (slides 20–23). See
+[exploration](exploration.md#learning-to-explore-meta-rl).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): multi-task RL and meta-RL among the course's topics and
@@ -158,3 +166,5 @@ in which only the task is hidden (slide 25, ≈46:52–48:25). See [meta-RL](met
   and the recap of this lecture.
 - [MDPs and notation](mdp-and-notation.md#notation-for-multi-task-rl): the notation for tasks and task
   identifiers.
+- [Lecture 14 — Exploration](14-exploration.md#solution-30-explore-to-identify-the-task): DREAM's
+  ID-conditioned execution policy, trained as multi-task RL.

@@ -9,7 +9,7 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–13 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–14 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
@@ -21,11 +21,12 @@ complementary to the more theoretical CS234.
 > per-step credit assignment, offline and online RL, and thinking models), Lecture 11 (model-based
 > RL: learning dynamics models, planning by backpropagation and by sampling, model predictive control,
 > and a dexterous-manipulation case study), Lecture 12 (model-based policy optimization and when to
-> use a model; multi-task imitation and RL, goal-conditioned RL and hindsight relabeling) and Lecture 13
-> (meta-RL: the problem statement, black-box methods and the challenge of learning to explore): their
-> edited transcripts, their slide decks as text, 218 of their slides as images, and the topic pages they
-> start. **It cannot answer questions about the technical content of Lectures 14–19** (exploration
-> onward, and the Q-learning TA session). For
+> use a model; multi-task imitation and RL, goal-conditioned RL and hindsight relabeling), Lecture 13
+> (meta-RL: the problem statement, black-box methods and the challenge of learning to explore) and
+> Lecture 14 (exploration: regret and bandit strategies, exploration in large MDPs, and DREAM's decoupled
+> exploration and execution in meta-RL): their edited transcripts, their slide decks as text, 236 of
+> their slides as images, and the topic pages they start. **It cannot answer questions about the
+> technical content of Lectures 15–19** (hierarchical RL onward, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
@@ -74,13 +75,19 @@ complementary to the more theoretical CS234.
   Finn says the passing task, task 1, is meant. Lecture 13's recording covers slides 3–37 and ends on
   slide 37's summary; slide 2's reminders and the closing plan, next time and reminders (38–39) are only
   in the slide file. Its slide 20 holds frames of two maze videos, whose content comes from what Finn
-  says, and Finn writes the black-box algorithm on a board the recording does not show.
+  says, and Finn writes the black-box algorithm on a board the recording does not show. Lecture 14's
+  recording covers slides 3–32 and ends on slide 32's grading results; slide 2's reminders and the
+  closing plan and reminders (33–34) are only in the slide file. Its slide 12 prints only "Exploration
+  game": the drug-trial game the class plays runs on a website, described from the transcript on the
+  lecture page. Finn's regret curves and the bottleneck and DREAM derivations are drawn where the
+  recording does not show them, and slides 21–23 print the unit Gaussian as N(0, 1) where Finn says
+  the identity is meant. Slides 27, 30 and 31 hold frames of videos.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 and 13 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 and 14 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
 3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9, 27 of
-Lecture 10, 17 of Lecture 11, 9 of Lecture 12 and 19 of Lecture 13 rendered as pictures, each shown under its
+Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13 and 18 of Lecture 14 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -93,9 +100,10 @@ Lecture 10, 17 of Lecture 11, 9 of Lecture 12 and 19 of Lecture 13 rendered as p
 [`raw/slides/10-rl-for-reasoning.md`](raw/slides/10-rl-for-reasoning.md),
 [`raw/slides/11-model-based-rl.md`](raw/slides/11-model-based-rl.md),
 [`raw/slides/12-multi-task-rl.md`](raw/slides/12-multi-task-rl.md),
-[`raw/slides/13-meta-rl.md`](raw/slides/13-meta-rl.md)) and, where a wiki page cites that
+[`raw/slides/13-meta-rl.md`](raw/slides/13-meta-rl.md),
+[`raw/slides/14-exploration.md`](raw/slides/14-exploration.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these thirteen has one: the slide file's header lists which do.
+these fourteen has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -277,6 +285,20 @@ these thirteen has one: the slide file's header lists which do.
   per-task trajectory buffers; the black-box pros and cons; and exploration: end-to-end training, the
   hallway and kitchen examples, the coupling problem, posterior sampling and when it fails, intrinsic
   rewards, and task dynamics and reward prediction.
+- [Lecture 14 — Exploration](wiki/14-exploration.md): exploration and learning to explore. Why
+  Montezuma's Revenge is hard and Breakout is not; the card game Mao; exploration against exploitation
+  (restaurants, ads, oil drilling); the tractable-to-intractable range of problems and multi-armed
+  bandits; regret, its formula and Finn's regret curves (linear against sublinear), with the questions on
+  them; optimism under uncertainty (UCB) and probability matching (posterior sampling); the drug-trial
+  exploration game and its comparison of greedy, epsilon-greedy, UCB and posterior sampling; why
+  exploration from scratch in large MDPs is intractable and demonstrations, base models and shaped
+  rewards stand in for it; exploring at test time in meta-RL, the coupling problem and the alternative
+  strategies recapped; explore-to-identify-the-task (Idea 3.0) and its meta-test; DREAM's bottlenecked
+  task representation, the variational information bottleneck and its questions, the execution
+  objective (with Finn's correction of N(0, 1) to the identity), the per-step information-gain reward
+  for exploration, its sample-complexity analysis against RL² and the 3D navigation results; the three
+  ways to learn to explore compared; and exploring students' Bounce and Breakout programs to find bugs,
+  with CS106A's 44% faster and 6% more accurate grading.
 
 ## Topic pages
 
@@ -296,7 +318,8 @@ these thirteen has one: the slide file's header lists which do.
   optimization), and for multi-task RL (tasks as MDPs, task identifiers, the original state with a
   bar, goal-conditioned rewards, relabeled data), and for meta-RL (exploration and task policies,
   training sets of experience, inferred task variables), with Lecture 13's POMDP in which only the task is
-  hidden.
+  hidden, and for exploration (bandits, regret, UCB and posterior sampling, task identifiers, bottlenecked
+  task representations and exploration rewards, Lecture 14).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
@@ -387,13 +410,14 @@ these thirteen has one: the slide file's header lists which do.
   explain why RL has so many algorithms, with pointers to Lectures 9 and 10's RL for language models,
   and Lecture 11's map of the families so far and its answer to when to use a model, and Lecture 12's
   model-based policy optimization, and Lecture 13's meta-RL, which inherits its sample efficiency from
-  its RL optimizer.
+  its RL optimizer, and Lecture 14's exploration.
 - [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
   the three tricks (target networks and DQN, double Q-learning against overestimation, n-step
   returns and their on-policy catch), continuous actions, when to use it, why its coverage
-  fails offline, and the conservative Q-learning remedy.
+  fails offline, and the conservative Q-learning remedy, with Lecture 14's bandit game on why
+  epsilon-greedy's epsilon is lowered.
 - [Bellman equations](wiki/bellman-equations.md): the Bellman equation for any policy's Q-function
   and how it lets a Q-function be fitted from other policies' data, the Bellman optimality equation
   for the optimal policy and how Q-learning uses it, the names, the value-function versions, why
@@ -476,7 +500,8 @@ these thirteen has one: the slide file's header lists which do.
   part of the state and goal-conditioned RL, multi-task imitation learning with stratified sampling,
   feeding the task to a network (BC-Z, OpenVLA, prompts), one policy against many, and conditioning the
   policy and Q-function in multi-task RL (Lecture 12), and how meta-RL differs, with experience as the
-  task identifier and no aggregated MDP (Lecture 13).
+  task identifier and no aggregated MDP (Lecture 13), and DREAM's ID-conditioned execution policy,
+  trained as multi-task RL (Lecture 14).
 - [Hindsight relabeling](wiki/hindsight-relabeling.md): sharing data across tasks by storing experience
   again under another task's identifier and reward (hindsight experience replay, HER): the hockey
   example, the algorithm, which task to relabel for, the conditions (same state and action spaces and
@@ -488,15 +513,23 @@ these thirteen has one: the slide file's header lists which do.
   four-step algorithm, architectures and why off-policy meta-training is faster), experience as a task
   identifier, meta-RL as a POMDP, the maze, test-time compute and continuous-control examples, and
   exploration: why end-to-end training is hard (the coupling problem) and the alternatives (posterior
-  sampling, intrinsic rewards, task dynamics and reward prediction).
+  sampling, intrinsic rewards, task dynamics and reward prediction), and DREAM, which decouples
+  exploration from execution with a bottlenecked task representation, with its theory and results
+  (Lecture 14).
+- [Exploration](wiki/exploration.md): why exploration is hard (Montezuma's Revenge, Mao) and the
+  exploration-exploitation trade-off; epsilon-greedy and Boltzmann exploration (Lecture 6); bandits,
+  regret, UCB and posterior sampling, with the drug-trial game's comparison; why large MDPs explore from
+  demonstrations, base models and shaped rewards instead of from scratch; and learning to explore in
+  meta-RL, from the coupling problem to DREAM (Lectures 13–14).
 
 ## Course pages
 
 - [Course logistics](wiki/course-logistics.md): staff and guest lecturers, prerequisites, the four
   homeworks and their topics, grading, the default and custom final projects, late days, the AI
   tools policy, and the first week's steps, from Lecture 1's slides and the course site, with
-  Lecture 11's, 12's and 13's Homework 3 and milestone dates, hindsight relabeling in Homework 4, and
-  Lecture 13's evening office hours and meta-RL in Homework 4.
+  Lecture 11's, 12's and 13's Homework 3 and milestone dates, hindsight relabeling in Homework 4,
+  Lecture 13's evening office hours and meta-RL in Homework 4, and Lecture 14's reminders (Homework 3
+  due, Homework 4 out) and DREAM in Homework 4.
 
 ## Raw materials
 

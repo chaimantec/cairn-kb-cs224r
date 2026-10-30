@@ -92,7 +92,9 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   repeated student question. A restoration that depends on context (a common word that is
   also a benchmark or a name) applies only at the timestamps the glossary gives: check the
   agent's other uses of it. When the target is one of several identical words in a paragraph, quote the
-  words around it, and check where the agent put it.
+  words around it, and check where the agent put it. Put the KB's standing spellings (multi-task, meta-RL,
+  epsilon-greedy) in every glossary: an agent leaves an unlisted variant as captioned, and a wiki quotation
+  of that passage then fails.
 - Only the lecturer is audible. Student turns are marked `*[Student question, inaudible]*` /
   `*[Student answer, inaudible]*` before the lecturer's restatement.
 - The verbatim captions stay on disk in `raw/transcripts/original/` and are **not
@@ -124,7 +126,9 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 - A slide holding a video holds one frame. What the video showed comes from the transcript,
   written into the slide entry by the parent with its timestamp. A video's frame may carry no player chrome, so a
   transcriber's "no video frames" is checked against the transcript ("watching that again", "this is what it
-  looks like") at each photograph or screenshot slide.
+  looks like") at each photograph or screenshot slide, and a transcriber's "may be a video frame" is checked
+  the same way, then kept or removed. A slide that launches a live demo (a web game) holds none of it:
+  describe the demo under that slide from the transcript, as for a video.
 - Tell the transcriber to give colours in prose ("in blue"), never as inline tags (`[blue]…[/blue]`):
   tags inside a printed phrase break every verbatim quotation of it.
 - An animated chart exports as its first frame: a few points on empty axes. Say so in the slide
@@ -173,6 +177,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 11 Model-Based RL | 17 of 38 pages | the recap map of offline and online algorithms, the Veo 2 and Sora stills, the notional algorithm with its maze and Sora frame, the backpropagation and sampling planning chains, the gradient-versus-sampling plots with CEM, the cliff photographs and the fixed loop, the open/closed-loop diagram, the MPC slide with its car, the MBPO roll-out diagram, the case study's setup, simulated charts, ablations and real-hand chart |
 | 12 Multi-Task RL | 9 of 29 pages | the model-based policy optimization roll-outs, the task-distribution examples, the multi-task RL loop, the BC-Z and OpenVLA architectures, the two π0.5 video frames, the hockey relabeling example, the HER task renderings and chart |
 | 13 Meta RL | 19 of 39 pages | the multi-task fan recap, the espresso photograph, the Braque and Cezanne paintings and the few-shot framing, the maze meta-train and meta-test panels, the task-distribution examples, the black-box chain and its unrolled algorithm, the three architectures, the SNAIL maze video frames, the test-time compute chart, the multi-task digression, the inferred-task chain, the PEARL charts, the hallway and kitchen photographs, the coupling diagram, the posterior-sampling and alternative-exploration panels |
+| 14 Exploration | 18 of 34 pages | the Breakout and Montezuma frames, the Mao cards, the tractability spectrum, the regret and bandit-strategy slides, the kitchen and reasoning examples, the coupling cycle, the alternative strategies' trajectory panel, the Idea 3.0 boxes, the DREAM diagrams and objective, the sample-complexity and navigation charts, the navigation and video frames, the Bounce and Breakout frames and the grading results |
 
 ## Rebuilding
 

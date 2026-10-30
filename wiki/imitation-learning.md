@@ -271,3 +271,5 @@ on the expert data, but it is simple and easy to scale to large datasets (≈52:
   learning's place on the map of algorithms, and distilling a planner's actions into a policy.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#multi-task-imitation-learning): multi-task imitation
   learning, stratified sampling, and conditioning architectures from BC-Z to OpenVLA.
+- [Lecture 14 — Exploration](14-exploration.md#exploration-in-robotics-and-language-models): why
+  exploration in large MDPs starts from demonstrations, or base models pretrained on them.
