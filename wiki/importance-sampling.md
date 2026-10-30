@@ -86,6 +86,16 @@ come from the policy that collected the data rather than the one being estimated
 weighted by importance weights to correct for that. The lecture does not develop it, and notes that
 most commonly the problem is simply ignored. See [Q-learning](q-learning.md#making-it-work-three-tricks).
 
+## For relabeled multi-task data
+
+Hindsight relabeling stores data collected by the policy conditioned on one task's identifier
+$\mathbf{z}_ i$ under another task's, $\mathbf{z}_ j$, so the data is off-policy for the task it is used
+for (Lecture 12, ≈1:08:35). Asked whether importance weights would then require storing which policy
+collected the data, Finn first agrees, then reconsiders: because the relabeled data is as if collected
+using $\mathbf{z}_ j$, one would use $\mathbf{z}_ j$, not $\mathbf{z}_ i$, as the old policy, so "you don't
+need to store which policy it came from" (≈1:08:35–1:09:21). Slide 25 asks only for "an off-policy
+algorithm*", with an asterisk the page does not explain. See [hindsight relabeling](hindsight-relabeling.md).
+
 ## Where this appears
 
 - [Lecture 3 — Policy Gradients](03-policy-gradients.md#importance-sampling): the technique and the
@@ -97,3 +107,5 @@ most commonly the problem is simply ignored. See [Q-learning](q-learning.md#maki
   importance weights for multiple gradient steps, the surrogate objective, and clipping them in PPO.
 - [Lecture 6 — Q-Learning](06-q-learning.md#trick-3-n-step-returns): importance sampling as one fix
   for off-policy n-step targets.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#when-relabeling-applies): importance weights for
+  relabeled data.

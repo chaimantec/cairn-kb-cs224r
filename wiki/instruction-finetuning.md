@@ -37,7 +37,10 @@ The model is trained to predict the answer conditioned on the instruction, for e
 
 Lecture 8 describes the same stage as supervised fine-tuning on higher-quality prompt and response
 pairs, and calls it basically imitation learning (Lecture 8, slide 29, ≈58:52–59:38); see
-[imitation learning](imitation-learning.md).
+[imitation learning](imitation-learning.md). Lecture 12 adds that, since a language model's natural task
+descriptor is its prompt, all of its supervised fine-tuning can be seen as multi-task imitation learning,
+with different prompts as different tasks (Lecture 12, slide 20, ≈50:51); see
+[multi-task RL](multi-task-rl.md).
 
 ## Bigger models gain more
 
@@ -101,3 +104,5 @@ line, and Alpaca with PPO in a detailed, well-formatted list (slide 88, ≈54:20
 - [RL from human feedback](rlhf.md): the pipeline it starts.
 - [Imitation learning](imitation-learning.md): the supervised learning from demonstrations it
   resembles.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#conditioning-on-the-task-in-practice): supervised
+  fine-tuning read as multi-task imitation learning, with prompts as task identifiers.

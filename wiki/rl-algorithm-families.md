@@ -11,7 +11,7 @@ Lecture 1 sorts them into five families (slide 41, ≈49:20–50:53).
 | Policy gradients | directly differentiate the objective | 3; see [policy gradients](policy-gradients.md) |
 | Actor-critic | estimate the value of the current policy and use it to make the policy better | 4, 5; see [actor-critic methods](actor-critic.md) |
 | Value-based | estimate the value of the optimal policy | 6; see [Q-learning](q-learning.md) |
-| Model-based | learn to model the dynamics, and use it for planning or policy improvement | 11; see [model-based RL](model-based-rl.md) |
+| Model-based | learn to model the dynamics, and use it for planning or policy improvement | 11, 12; see [model-based RL](model-based-rl.md) |
 
 The last column comes from the [course schedule](../sources.md#lectures), not from Lecture 1;
 the schedule also has lectures on offline RL, reward learning, RL for language models,
@@ -21,7 +21,7 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–11.** Imitation learning, policy gradients,
+**This knowledge base so far covers Lectures 1–12.** Imitation learning, policy gradients,
 actor-critic methods and value-based methods have their own pages,
 [imitation learning](imitation-learning.md), [policy gradients](policy-gradients.md),
 [actor-critic methods](actor-critic.md) and [Q-learning](q-learning.md), and Lecture 7's offline
@@ -32,8 +32,9 @@ comes from has [reward learning](reward-learning.md) and
 [instruction finetuning](instruction-finetuning.md), [RL from human feedback](rlhf.md) and
 [direct preference optimization](direct-preference-optimization.md); Lecture 10's RL for LLM reasoning has
 [RL for LLM reasoning](llm-reasoning.md) and [process rewards and per-step credit](process-rewards.md);
-and Lecture 11's model-based methods have [model-based RL](model-based-rl.md) and
-[planning with a learned model](planning-with-models.md). Lecture 2 adds
+Lecture 11's model-based methods have [model-based RL](model-based-rl.md) and
+[planning with a learned model](planning-with-models.md); and Lecture 12's multi-task RL has
+[multi-task RL](multi-task-rl.md) and [hindsight relabeling](hindsight-relabeling.md). Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -135,3 +136,5 @@ parts.
   RL for math reasoning, and how thinking models are trained.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md): the map of the families so far, and the fifth
   family in depth.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): model-based policy optimization, which feeds a
+  model's synthetic data to any model-free method, and when to use a model.

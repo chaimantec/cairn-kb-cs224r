@@ -235,6 +235,20 @@ actions taken by planner)", makes acting a single forward pass through a network
 still come from short-horizon planning, so the policy is "still limited to short-horizon problems"
 (slide 25). See [planning with a learned model](planning-with-models.md).
 
+## Multi-task imitation learning
+
+With demonstrations $\mathcal{D}_ i$ for each of several tasks, one policy can imitate them all, told
+which task to do by a task identifier $\mathbf{z}_ i$. Writing the single-task objective
+$\min_ \theta -E_ {(\mathbf{s}, \mathbf{a}) \sim \mathcal{D}} \log \pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a
+loss $\mathcal{L}(\theta, \mathcal{D})$, the multi-task version minimizes
+$\sum_ i \mathcal{L}(\theta, \mathcal{D}_ i)$ over one set of parameters (Lecture 12, slide 18,
+≈44:40–46:11). Building each minibatch with data from every task, **stratified sampling**, keeps the
+gradient from swinging between very different tasks, and per-task normalization of states and actions
+helps too (≈46:11–47:44). A language model's supervised fine-tuning on many prompts can be read the same
+way, with each prompt a task (≈50:51). Against multi-task RL, imitation cannot use a reward to improve
+on the expert data, but it is simple and easy to scale to large datasets (≈52:26–53:11). See
+[multi-task RL](multi-task-rl.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
@@ -255,3 +269,5 @@ still come from short-horizon planning, so the policy is "still limited to short
   finetuning and rejection finetuning on math solutions, spurious steps and causal confusion.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md#training-a-policy-and-longer-horizons): imitation
   learning's place on the map of algorithms, and distilling a planner's actions into a policy.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#multi-task-imitation-learning): multi-task imitation
+  learning, stratified sampling, and conditioning architectures from BC-Z to OpenVLA.

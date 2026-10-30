@@ -30,8 +30,8 @@ slide 25, at ≈1:06:40, Finn says "I think I might cover this second approach o
 the case study. So model-based policy optimization (slides 26–30), when to use model-based RL (slide
 29) and other kinds of models (slide 30) are not taught aloud; the
 [section on them](#not-in-the-recording-model-based-policy-optimization) gives them from the
-[slide file](../raw/slides/11-model-based-rl.md). Lecture 12's deck opens with its own version of
-those slides.
+[slide file](../raw/slides/11-model-based-rl.md), and [Lecture 12](12-multi-task-rl.md#model-based-policy-optimization-synthetic-data-from-a-model) teaches
+them aloud from its own version of those slides, at the start of its deck.
 
 Finn works several things on a board the recording does not show: a latent-state model with an
 encoder (≈15:23–17:49), the gradient-based planning algorithm with its chain rule and update
@@ -559,8 +559,9 @@ for Friday (≈1:06:40).
 ## Not in the recording: model-based policy optimization
 
 The rest of the "data generation" section is only in the
-[slide file](../raw/slides/11-model-based-rl.md); Lecture 12's deck opens with its own version of these
-slides. Slide 25's second solution is to "Augment model-free RL methods with data from model", and it
+[slide file](../raw/slides/11-model-based-rl.md). [Lecture 12](12-multi-task-rl.md#model-based-policy-optimization-synthetic-data-from-a-model) teaches
+them aloud from its own version of these slides, with students' questions on convergence, rewards,
+compute and stability. Slide 25's second solution is to "Augment model-free RL methods with data from model", and it
 says "Let's focus on #2".
 
 The key idea is to "augment data with model-simulated roll-outs" (slides 26–28). Given a real trajectory
@@ -701,7 +702,8 @@ time, but is expensive at test time and limited to short horizons; distilling th
 fixes the first, and a terminal value function extends the second. The case study showed a model-based
 planner, with an ensemble of models and a modified cross-entropy method, learning dexterous manipulation
 with far less data than model-free methods. The second way to use a model, generating data for
-model-free RL, is in the slides and is left for Friday (≈1:06:40).
+model-free RL, is in the slides and is left for Friday (≈1:06:40); [Lecture 12](12-multi-task-rl.md#model-based-policy-optimization-synthetic-data-from-a-model)
+teaches it.
 
 ## Not in the recording: reminders and next time
 
@@ -727,3 +729,5 @@ multiple tasks and goals (≈1:12:52). See [course logistics](course-logistics.m
 - [Replay buffers and soft actor-critic](replay-buffers.md): SAC, one of the case study's model-free
   baselines.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): the previous lecture.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): the next lecture, which opens by teaching model-based
+  policy optimization and when to use model-based RL aloud.

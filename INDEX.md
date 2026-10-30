@@ -9,7 +9,7 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–11 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–12 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
@@ -18,11 +18,13 @@ complementary to the more theoretical CS234.
 > classifiers and from human preferences, including RL from human feedback), Lecture 9 (a guest
 > lecture on RL for language models: instruction finetuning, RLHF and direct preference
 > optimization), Lecture 10 (a guest lecture on RL for LLM reasoning: rejection finetuning,
-> per-step credit assignment, offline and online RL, and thinking models) and Lecture 11 (model-based
+> per-step credit assignment, offline and online RL, and thinking models), Lecture 11 (model-based
 > RL: learning dynamics models, planning by backpropagation and by sampling, model predictive control,
-> and a dexterous-manipulation case study): their edited transcripts, their slide decks as text, 190
-> of their slides as images, and the topic pages they start. **It cannot answer questions about the
-> technical content of Lectures 12–19** (multi-task RL onward, and the Q-learning TA session). For
+> and a dexterous-manipulation case study) and Lecture 12 (model-based policy optimization and when to
+> use a model; multi-task imitation and RL, goal-conditioned RL and hindsight relabeling): their edited
+> transcripts, their slide decks as text, 199 of their slides as images, and the topic pages they
+> start. **It cannot answer questions about the technical content of Lectures 13–19** (meta-RL
+> onward, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
@@ -63,14 +65,18 @@ complementary to the more theoretical CS234.
   their results come from what the lecturer says. Lecture 11's recording covers slides 4–25 and
   32–36: Finn leaves model-based policy optimization for the next lecture, so slides 26–30 (its
   augmented roll-outs and full algorithm, when to use model-based RL, other kinds of models) and the
-  reminders (slides 2, 37–38) are only in the slide file. Lecture 12's deck opens with its own
-  version of those slides.
+  reminders (slides 2, 37–38) are only in Lecture 11's slide file; Lecture 12 teaches that material
+  aloud from its own version of those slides. Lecture 12's recording covers slides 3–25 and the start
+  of slide 26, then ends at about 1:10:21: the rest of goal-conditioned relabeling (relabeling with the
+  last state, slide 26), the simulated-manipulation results (slide 27), the closing plan and next time
+  (28–29) and slide 2's reminders are only in the slide file. Its slide 24 prints "task 2 ID" where
+  Finn says the passing task, task 1, is meant.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 and 11 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 and 12 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
 3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9, 27 of
-Lecture 10 and 17 of Lecture 11 rendered as pictures, each shown under its
+Lecture 10, 17 of Lecture 11 and 9 of Lecture 12 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -81,9 +87,10 @@ Lecture 10 and 17 of Lecture 11 rendered as pictures, each shown under its
 [`raw/slides/08-reward-learning.md`](raw/slides/08-reward-learning.md),
 [`raw/slides/09-rl-for-llms.md`](raw/slides/09-rl-for-llms.md),
 [`raw/slides/10-rl-for-reasoning.md`](raw/slides/10-rl-for-reasoning.md),
-[`raw/slides/11-model-based-rl.md`](raw/slides/11-model-based-rl.md)) and, where a wiki page cites that
+[`raw/slides/11-model-based-rl.md`](raw/slides/11-model-based-rl.md),
+[`raw/slides/12-multi-task-rl.md`](raw/slides/12-multi-task-rl.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these eleven has one: the slide file's header lists which do.
+these twelve has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -234,6 +241,22 @@ these eleven has one: the slide file's header lists which do.
   planning with a terminal value function; model-based policy optimization, when to use a model and
   other kinds of models (slides only); and the PDDM case study on a 24-joint robot hand (ensembles,
   a modified CEM, simulated results and ablations, Baoding balls on a real hand in about four hours).
+- [Lecture 12 — Multi-Task RL](wiki/12-multi-task-rl.md): the end of model-based RL and the start of
+  multi-task learning. The recap of planning; model-based policy optimization, which trains a policy on
+  short synthetic roll-outs branching off every real state, with the students' ideas for augmenting a
+  trajectory, the full algorithm and the questions on convergence, rewards, compute, stability,
+  hyperparameters and offline versions; when to use model-based RL (the maze against pouring water,
+  robotics with compact states against images); other kinds of models (inverse, multi-step inverse,
+  action-free prediction). Then what multi-task RL is and why (data efficiency, shared structure,
+  generalists); a task as an MDP, with recommendation, character-animation, garment and multi-robot
+  examples; task identifiers and the task as part of the state; goal-conditioned RL and its
+  negative-distance reward; multi-task imitation learning with stratified sampling; conditioning
+  architectures (BC-Z's language and video encoders, OpenVLA's prompt); the towel and kitchen videos
+  and the questions on per-task policies, hierarchy, long horizons and vision tasks; multi-task RL and
+  sharing data across tasks; hindsight relabeling with the hockey example (and slide 24's typo), the
+  algorithm, which task to relabel for, and when relabeling applies (same dynamics, a computable reward,
+  an off-policy learner, with Finn's correction on importance weights); and goal-conditioned
+  relabeling, with the last state as goal and the HER results (slides only past ≈1:10:21).
 
 ## Topic pages
 
@@ -250,12 +273,13 @@ these eleven has one: the slide file's header lists which do.
   losing completions, the KL weight and the partition function), and for RL for LLM reasoning (the
   reasoning MDP, rollout policies, the Q-value and advantage of a step, the compute budget), and for
   model-based RL (dynamics models, planning horizons, sampled action sequences, model-based policy
-  optimization).
+  optimization), and for multi-task RL (tasks as MDPs, task identifiers, the original state with a
+  bar, goal-conditioned rewards, relabeled data).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
   policy with the epsilon-greedy and Boltzmann exploration policies built around it, and Lecture 11's
-  planner as a "policy" in quotes.
+  planner as a "policy" in quotes, and Lecture 12's task-conditioned policies and their architectures.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
@@ -288,7 +312,7 @@ these eleven has one: the slide file's header lists which do.
   remaining state-distribution problem, soft actor-critic, and its efficiency against PPO's
   stability; and the buffer in Q-learning, with how it is managed (first in, first out,
   pre-populating, asynchronous collection); and what goes wrong when the buffer is a fixed offline
-  dataset.
+  dataset; and Lecture 12's per-task buffers and buffers holding relabeled data.
 - [Policy evaluation](wiki/policy-evaluation.md): fitting a value network by Monte Carlo
   estimation, bootstrapping (temporal difference learning) or n-step returns; the shared
   regression; the worked example where they disagree; bias versus variance; discounted targets;
@@ -303,7 +327,8 @@ these eleven has one: the slide file's header lists which do.
   (filtered behavior cloning, advantage weighting, why it cannot stitch), Lecture 8's case for
   learning a reward instead, and instruction finetuning as the supervised stage of training a chat
   model (Lecture 9), and rejection finetuning, spurious steps and causal confusion (Lecture 10), and
-  distilling a planner's actions into a policy (Lecture 11).
+  distilling a planner's actions into a policy (Lecture 11), and multi-task imitation learning with
+  stratified sampling (Lecture 12).
 - [Expressive policy distributions](wiki/expressive-policy-distributions.md): why a policy needs
   more than a mean; categorical, Gaussian, Gaussian-mixture, discretized autoregressive and
   diffusion policies, what each outputs and how each is trained; why a bigger network does not
@@ -316,7 +341,8 @@ these eleven has one: the slide file's header lists which do.
   worth it and why off-policy methods fail on fixed data; and Lecture 9's contrast between RLHF's
   online sampling and DPO's fixed preference data; and Lecture 10's imitation, offline and online RL
   for reasoning, compared by data efficiency; and Lecture 11's map of every algorithm so far, and why
-  planning with a model is off-policy.
+  planning with a model is off-policy; and Lecture 12's offline and online versions of model-based policy
+  optimization, and why relabeled data is off-policy.
 - [Policy gradients](wiki/policy-gradients.md): the method as a whole, from the online loop and
   the derivation to REINFORCE, the reading as reward-weighted imitation, its three weaknesses
   (high variance, sensitivity to reward scale, need for dense rewards and large batches) and the
@@ -327,13 +353,15 @@ these eleven has one: the slide file's header lists which do.
   distribution with samples from a proposal distribution, its catches (support, similarity), and
   how it makes the policy gradient off-policy, including why per-trajectory ratios explode, and
   its use in off-policy actor-critic: the surrogate objective, why the ratio invites overfitting,
-  and PPO's clipping; and Lecture 6's mention of it as a fix for off-policy n-step targets.
+  and PPO's clipping; and Lecture 6's mention of it as a fix for off-policy n-step targets; and Lecture
+  12's remark on importance weights for relabeled multi-task data.
 - [RL algorithm families](wiki/rl-algorithm-families.md): imitation learning, policy gradients,
   actor-critic (with PPO and SAC), value-based (Q-learning, DQN) and model-based methods, which
   lecture of the schedule covers each, how the first four relate, Finn's advice on when to use PPO,
   DQN or SAC and on which offline RL algorithm to use, and the trade-offs (data cost, supervision, stability, action space, dynamics) that
   explain why RL has so many algorithms, with pointers to Lectures 9 and 10's RL for language models,
-  and Lecture 11's map of the families so far and its answer to when to use a model.
+  and Lecture 11's map of the families so far and its answer to when to use a model, and Lecture 12's
+  model-based policy optimization.
 - [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
@@ -368,7 +396,8 @@ these eleven has one: the slide file's header lists which do.
   balancing (and why mislabelled successes are tolerable), the GAN connection and full reward
   functions, the self-improving robot, the trade-offs, other forms of feedback, agents that set
   their own goals, Lecture 9's over-optimized reward models, and Lecture 10's process reward models
-  and verifiers, and Lecture 11's reward model for planning.
+  and verifiers, and Lecture 11's reward model for planning, and Lecture 12's rewards for synthetic and
+  relabeled data.
 - [Learning rewards from preferences](wiki/preference-learning.md): why comparing trajectories is
   easier than scoring them, the reward model and its sigmoid log-likelihood objective, partial
   roll-outs and the missing margin, the complete algorithm over ranked batches and in the loop of RL,
@@ -378,7 +407,8 @@ these eleven has one: the slide file's header lists which do.
 - [Instruction finetuning](wiki/instruction-finetuning.md): why a pretrained language model is not
   an assistant, finetuning on (instruction, output) pairs across many tasks, Flan-T5's result that
   bigger models gain more, format versus knowledge, the limitations that motivate learning from
-  preferences, and its place in InstructGPT and ChatGPT (Lecture 9).
+  preferences, and its place in InstructGPT and ChatGPT (Lecture 9), and Lecture 12's reading of
+  supervised fine-tuning as multi-task imitation learning with prompts as tasks.
 - [RL from human feedback (RLHF)](wiki/rlhf.md): optimizing a language model for human preferences,
   the three-step pipeline, the Bradley-Terry reward model and why comparisons beat scores, reward-model
   accuracy, the RL step and why it is RL (discrete tokens), the KL penalty, what it achieves, and its
@@ -404,21 +434,33 @@ these eleven has one: the slide file's header lists which do.
 - [Model-based RL](wiki/model-based-rl.md): the fifth algorithm family as a whole: learning a
   simulator and what goes wrong (coverage, domain dependence, model errors), learning a dynamics
   model (known, partly known or unknown; image or latent space; a reward model; ensembles), the two
-  ways to use one (planning, and model-based policy optimization's augmented roll-outs), when a model
-  is worth having, other kinds of models, and how it relates to the other families (Lecture 11).
+  ways to use one (planning, and model-based policy optimization's augmented roll-outs, with its
+  algorithm and trade-offs as Lecture 12 teaches them), when a model is worth having (Lecture 12's maze
+  and pouring examples, and robotics), other kinds of models, and how it relates to the other families
+  (Lectures 11 and 12).
 - [Planning with a learned model](wiki/planning-with-models.md): the planning objective and the
   planner as a "policy"; planning by backpropagation, with the gradient-ascent update; random shooting
   and the cross-entropy method; gradients against samples; refitting the model on the planner's own
   data (the cliff); open loop, closed loop and model predictive control, with warm-starting,
   replanning frequency and latency; the limits of planning, distillation and a terminal value
   function; and the case study's modified CEM (Lecture 11).
+- [Multi-task RL](wiki/multi-task-rl.md): one policy for many tasks: why (data efficiency, shared
+  structure, generalists), a task as an MDP and what varies across tasks, task identifiers, the task as
+  part of the state and goal-conditioned RL, multi-task imitation learning with stratified sampling,
+  feeding the task to a network (BC-Z, OpenVLA, prompts), one policy against many, and conditioning the
+  policy and Q-function in multi-task RL (Lecture 12).
+- [Hindsight relabeling](wiki/hindsight-relabeling.md): sharing data across tasks by storing experience
+  again under another task's identifier and reward (hindsight experience replay, HER): the hockey
+  example, the algorithm, which task to relabel for, the conditions (same state and action spaces and
+  dynamics, a computable reward, an off-policy learner) and importance weights, and goal-conditioned
+  relabeling with the last state as goal, with the HER paper's results and Homework 4 (Lecture 12).
 
 ## Course pages
 
 - [Course logistics](wiki/course-logistics.md): staff and guest lecturers, prerequisites, the four
   homeworks and their topics, grading, the default and custom final projects, late days, the AI
   tools policy, and the first week's steps, from Lecture 1's slides and the course site, with
-  Lecture 11's Homework 3 and milestone dates.
+  Lecture 11's and 12's Homework 3 and milestone dates, and hindsight relabeling in Homework 4.
 
 ## Raw materials
 

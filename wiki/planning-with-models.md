@@ -158,3 +158,5 @@ because it never hones in on good actions (slide 34, ≈1:10:35–1:11:21).
 - [Model-based RL](model-based-rl.md): learning the model planning uses, and the other way to use it.
 - [Value functions](value-functions.md): the terminal value function at the end of the horizon.
 - [Imitation learning](imitation-learning.md): training a policy to match a planner's actions.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#recap-planning-with-learned-models): planning
+  recapped, and the second way to use a model, training a policy on synthetic roll-outs.

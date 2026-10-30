@@ -108,7 +108,10 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   say so in the slide file.
 - The map script reads only one corner, and these decks also print the number at bottom centre or
   bottom right. When it reports pages unnumbered, read the raw spans of those pages before
-  calling a label inferred.
+  calling a label inferred. It can also take a digit in a page's content for the page number and
+  report gaps that do not exist. `extract_slide_images.py` resolves slides through the same map, so
+  when the spans show the map is wrong, render by page index (its `render()` takes a 1-based page)
+  and check the printed number on one render.
 - Transcription is delegated to a Sonnet subagent, reading contiguous ranges of at most 15
   pages and appending as it goes; `--verify` must pass. Then the Opus parent spot-checks six
   figure slides from the 1400px renders (~1.5k tokens each, cross-model with the transcriber),
@@ -164,6 +167,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 9 RL for LLMs | 24 of 57 pages | the scale chart and AI 2027 screenshot, the assistant start screens, the Khan Academy graph, the pretrain/finetune diagrams, the FLAN-T5 diagram and Flan-T5 table, the crossed-out LM outputs, the InstructGPT pipeline (twice), the REINFORCE, Bradley-Terry, KL-penalty and DPO equation slides, the RLHF summary chart, the PPO-RLHF pipeline, the DPO win-rate bars, the Open LLM Leaderboard, the boat-race still, the over-optimization chart, the STaR loop, the PRISM and FSPO figures |
 | 10 RL for LLM Reasoning | 27 of 41 pages | the next-token training diagram, the data-stock chart and robot datasets, the reasoning MDP, the three data axes, the first frames of the animated result charts (10, 19, 23), the RFT-scaling chart, the spurious-steps picture, the credit, rollout, Q-value and advantage slides, the filtering and DPO-pair diagrams, the online-RL and PAV slides, the dense-reward and hard-question charts, the compute-constrained objective, the meta-strategy and Kimi length charts, the test-time scaling diagram, the leaderboards, the open questions |
 | 11 Model-Based RL | 17 of 38 pages | the recap map of offline and online algorithms, the Veo 2 and Sora stills, the notional algorithm with its maze and Sora frame, the backpropagation and sampling planning chains, the gradient-versus-sampling plots with CEM, the cliff photographs and the fixed loop, the open/closed-loop diagram, the MPC slide with its car, the MBPO roll-out diagram, the case study's setup, simulated charts, ablations and real-hand chart |
+| 12 Multi-Task RL | 9 of 29 pages | the model-based policy optimization roll-outs, the task-distribution examples, the multi-task RL loop, the BC-Z and OpenVLA architectures, the two π0.5 video frames, the hockey relabeling example, the HER task renderings and chart |
 
 ## Rebuilding
 

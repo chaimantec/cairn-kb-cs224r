@@ -108,6 +108,17 @@ closed form, and nothing but the two models' parameters is stored (≈39:35–41
 every step, in real time. Distilling the planner's actions into a network turns it into a policy in the
 usual sense (slide 25, ≈1:02:51). See [planning with a learned model](planning-with-models.md).
 
+## Task-conditioned policies
+
+A multi-task policy takes the task as an input as well as the state,
+$\pi_\theta(\mathbf{a} \mid \bar{\mathbf{s}}, \mathbf{z}_ i)$, where $\bar{\mathbf{s}}$ is the original
+state and $\mathbf{z}_ i$ a task identifier: an index, a language description, a video, or a goal state
+(Lecture 12, slides 15–17 and 23). The input is then inherently multimodal, an image beside a string or a
+one-hot vector, so the architecture has to combine them: BC-Z encodes a language instruction or a human
+video into an embedding that conditions the layers of its vision network, and modern policies such as
+OpenVLA pass the instruction as a prompt to a fine-tuned language model that also reads the image (slides
+19–20, ≈47:44–51:37). See [multi-task RL](multi-task-rl.md).
+
 ## Initializing a policy for online RL
 
 An online RL algorithm starts by initializing the policy, as when training any neural network:
@@ -132,3 +143,5 @@ See [policy gradients](policy-gradients.md).
   exploration policies built around it.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md#approach-1a-planning-by-backpropagation): a
   planner as a "policy" in quotes, and distilling it into a network.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#conditioning-on-the-task-in-practice): policies
+  conditioned on a task identifier, and the architectures that take one.

@@ -156,6 +156,16 @@ A fixed offline dataset never does, and running soft actor-critic on one lets th
 critic on actions the data does not contain, overestimating their Q-values (slides 10–11). That failure
 is the starting point of [offline RL](offline-rl.md).
 
+## Relabeled data for other tasks
+
+In multi-task RL with a discrete set of tasks, it can help to keep a replay buffer per task, especially
+to balance the sampling of each batch across tasks (Lecture 12, slide 23, ≈57:47). A buffer can also
+hold data that no policy collected for the task it is labeled with: **hindsight relabeling** stores an
+experience under its original task and again under another task, with that task's identifier and
+reward, either in a shared buffer or in the other task's (≈1:01:40–1:02:26). Relabeled data is off-policy
+by construction, so it needs an off-policy learner (≈1:07:50–1:08:35). See
+[hindsight relabeling](hindsight-relabeling.md).
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-2-replay-buffers):
@@ -169,3 +179,5 @@ is the starting point of [offline RL](offline-rl.md).
 - [Offline and online algorithms](offline-and-online.md): on-policy and off-policy.
 - [Lecture 7 — Offline RL](07-offline-rl.md#can-we-just-use-off-policy-algorithms): the coverage
   requirement recalled, and what goes wrong when the buffer is a fixed dataset.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#multi-task-rl-and-sharing-data-across-tasks):
+  per-task replay buffers, and buffers holding relabeled data.

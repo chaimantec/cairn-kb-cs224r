@@ -172,6 +172,14 @@ as forward velocity for learning to walk or the distance to a goal (≈27:13–2
 trained on a learned reward, the planner exploits the reward model's errors along with the dynamics
 model's (≈28:00–28:46). See [model-based RL](model-based-rl.md).
 
+Training a policy on a model's synthetic roll-outs needs rewards for them too, so it only makes sense
+with an estimate of the reward function: its form may be known, or a reward function may have been
+learned, and otherwise the model, or a separate one, learns the reward by supervised learning (Lecture
+12, ≈11:37–12:22, ≈14:40). Rewards are generally easier to predict than future states, though a reward
+learned from fewer labeled data can still be the less accurate of the two (≈26:12–27:00). Hindsight
+relabeling has the same need: data relabeled for another task needs that task's reward, so its form
+must be known or learned (≈1:09:21). See [hindsight relabeling](hindsight-relabeling.md).
+
 ## Where this appears
 
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the whole topic, with the student questions.
@@ -186,3 +194,5 @@ model's (≈28:00–28:46). See [model-based RL](model-based-rl.md).
   process reward models and process advantage verifiers for reasoning.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md#how-to-learn-a-dynamics-model): the reward model
   a planner needs beside its dynamics model.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#model-based-policy-optimization-synthetic-data-from-a-model):
+  rewards for synthetic data, and for relabeled data.

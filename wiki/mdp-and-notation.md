@@ -291,6 +291,30 @@ Lecture 11; see [model-based RL](model-based-rl.md) and
   $p_\theta(s' \mid s, a)$ the model, $D_ {env}$ the real data and $D_ {model}$ the synthetic roll-outs.
 - On the board, $\mathbf{z}_ t$ is a learned low-dimensional representation of an image state
   $\mathbf{s}_ t$ (≈17:02).
+- Lecture 12's version of the model-based policy optimization slide (Lecture 12, slide 7) switches
+  letters again: $\pi_\theta$ is the policy, $p_\psi(s' \mid s, a)$ the model and $Q_\phi$ the critic,
+  with the same $D_ {env}$ and $D_ {model}$. On the board Finn calls the generated data D gen (≈9:20).
+
+## Notation for multi-task RL
+
+Lecture 12; see [multi-task RL](multi-task-rl.md) and [hindsight relabeling](hindsight-relabeling.md).
+
+- A task is an MDP,
+  $\mathcal{T}_ i \triangleq \lbrace \mathcal{S}_ i, \mathcal{A}_ i, p_i(\mathbf{s}_ 1), p_i(\mathbf{s}' \mid \mathbf{s}, \mathbf{a}), r_i(\mathbf{s}, \mathbf{a}) \rbrace$,
+  each piece indexed by the task $i$ (slide 13).
+- $\mathbf{z}_ i$ is the task identifier: an index, a language description or a video (slide 15), or a
+  goal state $\mathbf{z}_ i = \mathbf{s}_ g$ in goal-conditioned RL (slide 17).
+- $\bar{\mathbf{s}}$ is the original state, and $\mathbf{s} = (\bar{\mathbf{s}}, \mathbf{z}_ i)$ the state
+  with the task identifier folded in (slides 16–17). The task-conditioned policy and critic are
+  $\pi_\theta(\mathbf{a} \mid \bar{\mathbf{s}}, \mathbf{z}_ i)$ and $Q_\phi(\bar{\mathbf{s}}, \mathbf{a}, \mathbf{z}_ i)$
+  (slide 23).
+- $d$ is a distance function, and the goal-conditioned reward is
+  $r(\bar{\mathbf{s}}, \mathbf{s}_ g) = -d(\bar{\mathbf{s}}, \mathbf{s}_ g)$ (slide 17).
+- $\mathcal{D}_ i$ is task $i$'s demonstrations, and $\mathcal{L}(\theta, \mathcal{D})$ the imitation
+  loss; the multi-task sum on slide 18 runs to $T$, the number of tasks, where Finn speaks of $n$ tasks.
+- In relabeling, $\mathcal{D}_ k$ is the data collected in iteration $k$, $\mathcal{D}'_ k$ its relabeled
+  copy with new rewards $r'_ t$, and $\mathbf{s}_ T$ a trajectory's last state used as its goal (slides
+  25–26). Slide 26 drops the bar from $\mathbf{s}_ t$.
 
 ## Where this appears
 
@@ -316,3 +340,5 @@ Lecture 11; see [model-based RL](model-based-rl.md) and
   MDP, rollout policies, the Q-values and advantages of steps, and the thinking-model objective.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md): the notation for dynamics models, planning
   horizons, sampled action sequences and model-based policy optimization.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): the notation for tasks, task identifiers,
+  goal-conditioned rewards and relabeled data.

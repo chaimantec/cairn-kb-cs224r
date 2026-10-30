@@ -4,7 +4,9 @@ The fifth of the course's algorithm families: learn a model of the dynamics, a "
 predicts what happens next, and use it to choose actions or to train a policy. Lecture 1 names the
 family, saying that model-based methods "learn to model the dynamics, and use it for planning or
 policy improvement" (Lecture 1, slide 41). [Lecture 11](11-model-based-rl.md) teaches it. This page
-collects the idea, how a model is learned, the two ways to use one, and when a model is worth having.
+collects the idea, how a model is learned, the two ways to use one, and when a model is worth having;
+[Lecture 12](12-multi-task-rl.md) finishes the family with the second way to use a model and when to
+use one.
 For the planning algorithms themselves, see [planning with a learned model](planning-with-models.md).
 
 ## The idea: learn a simulator
@@ -94,27 +96,41 @@ but it is compute intensive at test time and practical only for short horizons, 
 and a terminal value function lets planning reach past its horizon (slide 25, ≈1:02:51–1:05:09). All of
 this is on [planning with a learned model](planning-with-models.md).
 
-**Data generation** uses the model to make extra training data for a model-free method. Lecture 11
-leaves it for the next lecture (≈1:06:40), so it is in the slides only. The key idea of model-based policy optimization is to
-"augment data with model-simulated roll-outs" (slides 26–28). Full trajectories from the initial
+**Data generation** uses the model to make extra training data for a model-free method, which trains
+the policy. Lecture 11 leaves it for the next lecture (≈1:06:40), and
+[Lecture 12](12-multi-task-rl.md#model-based-policy-optimization-synthetic-data-from-a-model) teaches it
+from a revised version of the same slides. The key idea of model-based policy optimization is to
+"augment data with model-simulated roll-outs" (Lecture 12, slide 5). Full trajectories from the initial
 states are a poor choice, because the "model may not be accurate for long horizons"; short trajectories
 from the initial states "may not get good coverage of later states"; so the roll-outs are **partial
-trajectories from all states in the data**, short branches off every real state (slide 27).
+trajectories from all states in the data**, short branches off every real state (slide 6). Students
+reach the same idea when Finn asks how to augment a real trajectory: start from its last state, or from
+anywhere in the middle; and because the model cannot be trusted far ahead, keeping the roll-outs short is
+often what works well in practice (Lecture 12, ≈3:57–6:13).
 
-![Lecture 11, slide 27 — Model-based policy optimization, augmented roll-outs](../raw/images/11-model-based-rl/slide-27.png)
+![Lecture 12, slide 6 — Model-based policy optimization](../raw/images/12-multi-task-rl/slide-6.png)
 
-*Lecture 11, slide 27 — short model roll-outs, the pink dots, branch off states all along a real trajectory. [Deck](https://cs224r.stanford.edu/spring_2025/slides/11_cs224r_mbrl_2025.pdf)*
+*Lecture 12, slide 6 — the pink branches are model roll-outs, each about two steps long, starting from real states along the trajectory rather than from its start. [Deck](https://cs224r.stanford.edu/spring_2025/slides/12_cs224r_mtrl_gcrl_2025.pdf)*
 
-The full algorithm (slide 28, in the slide's notation, where $\pi_\phi$ is the policy and $p_\theta$ the
-model) collects data with the current policy into $D_ {env}$; updates the model
-$p_\theta(s' \mid s, a)$ on $D_ {env}$; collects synthetic roll-outs with $\pi_\phi$ in the model from
-states in $D_ {env}$ into $D_ {model}$; updates the policy (and a critic $Q$) on $D_ {model}$; and
-repeats. Any model-free RL method can do step 4, which can also use $D_ {env}$. Lecture 12's deck opens
-with its own version of these slides.
+The full algorithm (Lecture 12, slide 7, in the slide's notation, where $\pi_\theta$ is the policy,
+$p_\psi$ the model and $Q_\phi$ a critic) collects data with the current policy into $D_ {env}$; updates
+the model $p_\psi(s' \mid s, a)$ on $D_ {env}$; collects short synthetic roll-outs with $\pi_\theta$ in
+the model from states in $D_ {env}$ into $D_ {model}$; updates the policy (and the critic) on
+$D_ {env} \cup D_ {model}$; and repeats. Lecture 11's version of the slide (slide 28) names the policy
+$\pi_\phi$ and the model $p_\theta$, and updates on $D_ {model}$, noting that it "could additionally use
+$D_ {env}$". Any model-free RL method can do step 4, even an on-policy one, as long as the policy being
+updated is the one that generated the synthetic data; some methods update on the model's data alone
+(Lecture 12, ≈13:54–14:40). It needs a reward for the synthetic data, known, or learned by the model or a
+separate model with supervised learning (≈11:37–12:22). It trades data in the environment for compute
+during training, which is often favorable when real data is unsafe or expensive to collect, and unlike
+planning it costs nothing extra at test time, because the policy is what runs (≈12:22–13:08). It runs
+online as written, but also has completely offline versions, and is on-policy or off-policy according to
+the policy-update algorithm: "Generally models are very flexible" (≈20:03–21:34).
 
 ## When to use a model
 
-Slide 29 of Lecture 11 (not discussed aloud) weighs "Big upsides and big downsides". A model is
+Lecture 12 teaches this aloud from slide 8 (≈16:13–19:18), which is Lecture 11's slide 29, not
+discussed in that recording. It weighs "Big upsides and big downsides". A model is
 "Immensely useful, far more data efficient if model is easy to learn"; it "can be trained on data without
 reward labels (fully self-supervised)"; and it "is somewhat task-agnostic (can sometimes be transferred
 across rewards)". But "Models don't optimize for task performance", are "Sometimes harder to learn than
@@ -122,6 +138,18 @@ a policy", and are "Another thing to train, more hyperparameters, more compute i
 "Whether to use a model depends on how hard it is to learn!" That is the last of the trade-offs Lecture
 1 lists for choosing an algorithm, "Is it easy to learn the dynamics model?" (Lecture 1, slide 42); see
 [RL algorithm families](rl-algorithm-families.md#why-so-many-algorithms).
+
+Finn expands each point in Lecture 12. Anticipating future states as an outcome of one's actions "seems
+like a fairly fundamental thing" for a model to have (≈17:00). A model can use data without rewards that a
+model-free method cannot, which matters when there is a lot of data without rewards and a little with
+them (≈17:00–17:46). But with image observations the model spends its effort on details such as the
+color of the sky, which is not what a good policy needs (≈17:46–18:32). How hard a model is relative to
+a policy is "extremely domain dependent": in a maze the model is easy and the policy complicated, while
+for pouring water from a cup already in hand the policy may be a turn of the wrist and the model involves
+fluid dynamics (≈21:34–23:06). In robotics, model-based RL has been a lot more successful with compact
+states, such as joint and object positions, as for blind legged walking or the Baoding-ball hand, than
+with high-dimensional images, though Finn can see that changing as video generative models improve
+(≈23:06–24:38).
 
 The case study gives the upside in numbers. On a simulated handwriting task, Finn puts the model-based
 method at maybe on the order of 100,000 time steps of data against around half a million for the
@@ -138,6 +166,12 @@ $p(\mathbf{a}_ t \mid \mathbf{s}_ t, \mathbf{s}_ {t+n})$ or $p(\mathbf{a}_ {t:t+
 future prediction without actions, $p(\mathbf{s}_ {t+1:t+n} \mid \mathbf{s}_ t)$; video interpolation,
 $p(\mathbf{s}_ {t+1:t+n} \mid \mathbf{s}_ t, \mathbf{s}_ {t+n+1})$; and the transition distribution
 $p(\mathbf{s}_ t, \mathbf{a}_ t, \mathbf{s}_ {t+1})$.
+
+Lecture 12 discusses the same list (slide 9, ≈24:38–26:12). The inverse models look closer to a policy,
+except that they take a future state as input as well as the current one, and like future prediction
+without actions, which asks what the affordances of an environment are, they can be learned from data
+without rewards: they learn about the environment rather than the task at hand. There is a lot of
+research on such models.
 
 ## Relation to the other families
 
@@ -158,6 +192,8 @@ feeds a model-free method such as SAC, one of the case study's baselines; see
   family named, and whether the dynamics model is easy to learn as a reason to choose an algorithm.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md): the whole family, its planning methods and the
   dexterous-manipulation case study.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#model-based-policy-optimization-synthetic-data-from-a-model):
+  model-based policy optimization taught aloud, when to use a model, and other kinds of models.
 - [Planning with a learned model](planning-with-models.md): gradient-based and sampling-based planning
   and model predictive control.
 - [RL algorithm families](rl-algorithm-families.md): model-based methods among the course's algorithms.

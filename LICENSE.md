@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–11 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–12 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -322,3 +322,24 @@ Not rendered from this deck: slide 5, an agenda whose video frame of the robot h
 slide 36; the build steps 14, 15 and 26; slide 32, the case-study paper's title block, transcribed in
 full; text, equation and algorithm slides (10, 16, 23, 25, 28, 29, 30); and the title, divider, agenda
 and reminder slides (1, 2, 3, 9, 11, 24, 31, 37, 38).
+
+### Lecture 12 — Multi-Task RL
+
+Deck: [12_cs224r_mtrl_gcrl_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/12_cs224r_mtrl_gcrl_2025.pdf),
+given by Chelsea Finn. Rendered: 9 slides, in `raw/images/12-multi-task-rl/`. The deck's text layer has
+no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 14 | Character-animation filmstrips (Spinkick, Cartwheel, Backflip, Run), a garment-dressing simulation and photographs of three robot arms, no source printed. |
+| 17 | A drawing of a convolutional image-classifier network and a picture of the Earth, no source printed, in the deck's own policy-and-environment loop. |
+| 19 | The architecture figure, photographs and equation of the paper the slide cites, Jang et al., "BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning", CoRL 2021. |
+| 20 | The architecture figure and photographs of the paper the slide cites, Kim et al., "OpenVLA: An Open-Source Vision-Language-Action Model", CoRL 2024. |
+| 21, 22 | Video frames of a mobile robot in a kitchen, with the π logo, from the work slide 21 cites, Pi Team et al., "π0.5: A Vision-Language-Action Model with Open-World Generalization", arXiv 2025. |
+| 24 | Clip-art silhouettes of ice-hockey players and a net, no source printed. |
+| 27 | The task renderings (the paper's Figure 2) and the success-rate chart of Andrychowicz et al., "Hindsight Experience Replay", NeurIPS 2017, which the slide cites. |
+| 6 | No third-party content identified: the deck's own roll-out diagram. |
+
+Not rendered from this deck: slide 5, a build step whose content slide 6 shows; equation, algorithm and
+labelled-formula slides whose arrows, highlights, colours and labels are transcribed (7, 9, 13, 15, 16,
+18, 23, 25, 26); and the title, reminder, agenda and text slides (1, 2, 3, 4, 8, 10, 11, 12, 28, 29).

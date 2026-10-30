@@ -127,6 +127,23 @@ with a learned model is off-policy: the model can be fitted to data from any pol
 data-collecting policy makes the model accurate in more places (≈59:47–1:00:33). See
 [model-based RL](model-based-rl.md).
 
+Lecture 12 makes the same point about model-based policy optimization, which trains a policy on
+synthetic roll-outs from a model (Lecture 12, slide 7). As written it is online, collecting real data
+and refitting the model each iteration; a completely offline version augments a fixed prior dataset with
+the model, trains a policy and stops. Whether it is on-policy or off-policy depends on whether each
+policy update uses only the current iteration's real and generated data or earlier iterations' too, which
+depends on the policy-update algorithm: "Generally models are very flexible" (≈20:03–21:34). Even an
+on-policy learner works, as long as the policy being updated is the one that generated the synthetic
+data through the model (≈13:54).
+
+## Relabeled data is off-policy
+
+In multi-task RL, hindsight relabeling stores an experience collected for task $i$ again under task $j$.
+The action in it was taken by the policy conditioned on task $i$'s identifier $\mathbf{z}_ i$, and
+conditioned on $\mathbf{z}_ j$ the policy might have done something different. So relabeled data is
+off-policy data, and updating the policy on it needs an off-policy algorithm (Lecture 12,
+slide 25, ≈1:07:50–1:08:35). See [hindsight relabeling](hindsight-relabeling.md).
+
 ## Where this appears
 
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#summary-of-part-1-offline-and-reward-free):
@@ -147,3 +164,5 @@ data-collecting policy makes the model accurate in more places (≈59:47–1:00:
   imitation, offline RL and online RL for math reasoning.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md#recap-where-the-courses-algorithms-sit): the map
   of every algorithm so far, and why planning with a model is off-policy.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#when-relabeling-applies): offline and online versions
+  of model-based policy optimization, and why relabeled data needs an off-policy method.

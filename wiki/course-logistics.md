@@ -70,7 +70,10 @@ From slides 11–12:
   the default project.
 
 Lecture 11's reminders put Homework 3 due Friday, May 16, and the project milestone due Friday,
-May 23 (Lecture 11, slides 2 and 38). Homework due dates and links are in
+May 23 (Lecture 11, slides 2 and 38); Lecture 12 repeats them (Lecture 12, slides 2 and 29). Lecture 12's
+hindsight relabeling is "Part of homework 4!" (Lecture 12, slide 3): Homework 4's handout, due Friday,
+May 30, has students make a Deep Q-Network goal-conditioned and implement Hindsight Experience Replay on
+top of it, before a second part on meta-RL. See [hindsight relabeling](hindsight-relabeling.md). Homework due dates and links are in
 [`sources.md`](../sources.md#assignments-and-project). The
 poster session was Wednesday, June 4, and the final report was due Monday, June 9 (site).
 
@@ -95,3 +98,5 @@ at 1:30 in Gates B1.
 - [Lecture 1 — Class Intro](01-class-intro.md): slides 3–15 and 45.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md#not-in-the-recording-reminders-and-next-time):
   the Homework 3 and milestone dates.
+- [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#not-in-the-recording-the-rest-of-goal-conditioned-relabeling-and-next-time):
+  the same dates, and hindsight relabeling in Homework 4.

@@ -173,7 +173,7 @@ the ability to improve with practice, visible.
 topic that addresses it. How does a robot learn to represent what is good or bad for the task?
 (reward learning). How can an agent generalize to many scenarios, at scale? (offline RL, which
 leverages large and diverse datasets; multi-task RL and meta-RL, which transfer from other tasks
-and goals). Can RL learn long-horizon tasks like cooking a meal or, Finn adds, solving a really
+and goals; see [multi-task RL](multi-task-rl.md)). Can RL learn long-horizon tasks like cooking a meal or, Finn adds, solving a really
 hard math problem? (hierarchy and reasoning). Can robots practice fully autonomously?
 (reset-free RL).
 
