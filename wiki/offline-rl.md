@@ -71,6 +71,11 @@ action coverage; see [replay buffers and soft actor-critic](replay-buffers.md).
 
 Mitigating this overestimation is, in slide 12's words, "the **core goal** of offline RL methods".
 
+One way to mitigate it, from the Q-learning tutorial (Lecture 19, slide 30, ≈48:19–49:49), is a large
+ensemble of critics with a min reduction, which learns an underestimate of the Q-value. Online, two critics
+are enough; offline, where errors from leaving the support of the data's states or actions propagate even
+more, methods such as SAC-N and EDAC increase the ensemble size.
+
 ## Why not just imitate?
 
 [Imitation learning](imitation-learning.md) avoids OOD actions implicitly, because it only supervises
@@ -88,6 +93,10 @@ offline data may not be optimal. Offline RL can do better in two ways (slide 14,
 
 The trajectories need not share an exact state. Neural networks give similar states similar outputs,
 so stitching works across states that are close, more so with more data (≈36:29–37:16).
+
+The Q-learning tutorial (Lecture 19) uses the same idea to explain why dynamic programming is worth it:
+from trajectories A to B and C to D in a maze, one-step backups can find the path from A to D (slide 24,
+≈32:05–32:51; see [Lecture 19](19-q-learning-tutorial.md#why-dynamic-programming-stitching)).
 
 ## The approaches
 
@@ -182,3 +191,5 @@ reasoning](llm-reasoning.md).
 - [Lecture 18 — Frontiers](18-frontiers.md#evaluating-generalist-systems): no reliable offline metric for
   evaluating a policy, the open question of offline metrics that rule out bad models, and prior data used
   without pre-trained weights.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#critic-ensembles-and-double-q-learning):
+  stitching as a reason for dynamic programming, and larger critic ensembles (SAC-N, EDAC) offline.

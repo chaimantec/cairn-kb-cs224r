@@ -4,7 +4,8 @@ Q-learning is the course's value-based method: it learns a Q-function and acts g
 without a policy network or a policy gradient. Lecture 1 names the family, methods that "estimate
 the value of the optimal policy" and back a good policy out of it (slide 41). Lecture 6 derives the
 algorithm, from an actor-critic method to Q-learning, and then shows the three tricks that make it
-work in practice: target networks, which give DQN, double Q-learning and n-step returns. Symbols are
+work in practice: target networks, which give DQN, double Q-learning and n-step returns. Lecture 19, a
+TA session, reviews it on a grid world and adds the practical details that keep it stable. Symbols are
 as on [MDPs and RL notation](mdp-and-notation.md).
 
 ## From a Q-function to a policy
@@ -150,6 +151,40 @@ used anyway, since it very often helps; alternatively choose $N$ dynamically to 
 follows the current policy, or use [importance sampling](importance-sampling.md) (slide 25,
 ≈56:33–57:19).
 
+## Worked through in the tutorial (Lecture 19)
+
+The Q-learning TA session (Lecture 19) starts from the tabular case. It runs **Q-value iteration**,
+$Q^{\ast}_ {k+1}$ computed from $Q^{\ast}_ k$ with the max of the Bellman equation, on a 4-by-3 grid world
+with discount 0.9: from all zeros, the terminal rewards of $+1$ and $-1$ spread one step per iteration
+until the values converge to $Q^\ast$, whose argmax is the deterministic optimal policy (Lecture 19,
+slides 6–13, ≈4:41–12:26). See [Bellman equations](bellman-equations.md#iterating-the-bellman-equation).
+
+With a network, the target's Q-function is the same as the one being trained, which makes
+optimization very difficult when gradients propagate through both (Lecture 19, slide 26,
+≈32:51–33:38). The tutorial separates two fixes. A **semi-gradient** stops the gradient through the
+target but keeps the same parameters; a **target network** uses a separate set of weights $w'$, updated
+from the current weights $w$ either by a **hard** copy at a fixed frequency, as in DQN, or by a **soft**
+Polyak average, $w' \leftarrow \tau \cdot w + (1 - \tau) \cdot w'$, at every step (≈34:24, 36:42).
+Two more techniques deal with large TD gradients (slide 27, ≈38:14–39:47): **gradient clipping**, and
+the **Huber loss**, which behaves like an L2 loss near the target and like an L1 loss, unaffected by
+outliers, further away.
+
+On **overestimation** the tutorial gives the argument behind Lecture 6's observation (slide 29,
+≈42:06–46:47). If the learned Q-function is the true one plus noise $Y^{\hat{a}}_ {s'}$ with zero mean for
+every action, the error after one backup,
+$Z_s = \gamma \left( \max_{\hat{a}} Q^{\text{approx}}(s', \hat{a}) - \max_{\hat{a}} Q^{\text{target}}(s', \hat{a}) \right)$,
+often has a positive mean, and repeated dynamic programming propagates it through the state space.
+The fix it presents is a **critic ensemble** with a min reduction: networks initialized differently
+make different errors, and the minimum over them gives an underestimate (slide 30, ≈47:33–48:19). Two
+critics, as in double Q-learning, are enough online; offline methods such as SAC-N and EDAC use more
+(≈49:04–49:49). The session's DQN pseudocode, with its hard target update every $C$ steps, is on
+slide 33, which the recording does not reach (see
+[Lecture 19](19-q-learning-tutorial.md#not-in-the-recording-the-homework-algorithms)).
+
+![Lecture 19, slide 31 — Q-Learning vs Double Q-Learning](../raw/images/19-q-learning-tutorial/slide-31.jpg)
+
+*Lecture 19, slide 31 — the max over noisy estimates (middle) sits above the true value almost everywhere, so its error (orange, right) is positive; the double-Q estimate (blue) stays near zero. [Deck](https://cs224r.stanford.edu/spring_2025/slides/section_q_learning_tutorial.pdf)*
+
 ## Continuous actions
 
 The max is easiest over a discrete set of actions (Lecture 6, ≈14:05–15:40). With continuous
@@ -194,3 +229,6 @@ its LinkedIn application adds the CQL terms to a double DQN objective (Lecture 7
   Q-learning taught aloud, and its double DQN application.
 - [Lecture 14 — Exploration](14-exploration.md#the-exploration-game): epsilon-greedy against greedy, UCB
   and posterior sampling in a bandit game, and why its $\epsilon$ is usually lowered over time.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md): Q-value iteration on a
+  grid world, semi-gradients and hard or Polyak target updates, gradient clipping and the Huber loss, the
+  overestimation argument, critic ensembles, and the homework's DQN pseudocode.

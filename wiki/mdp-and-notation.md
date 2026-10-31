@@ -411,6 +411,26 @@ Lecture 17's guest deck uses its own symbols, which this KB follows when describ
   Rotation, Work, Ground Impact, and so on); the slide defines none of their symbols, and a superscript $t$
   marks the time step.
 
+## Notation in the Q-learning tutorial
+
+Lecture 19's deck writes states and actions in plain type, and mixes notations; this KB follows it when
+describing the session. See [Lecture 19](19-q-learning-tutorial.md).
+
+- $s_t$, $a_t$ are plain where the course writes $\mathbf{s}_ t$, $\mathbf{a}_ t$; slide 5 and slide 14's
+  formula use the bold forms. Slide 20 writes the conditioning state as a capital $S_t$, the expectation
+  as $E_\pi$ and the return as $\mathcal{R}_ t$.
+- $Q^\ast_ k$ is the $k$-th iterate of Q-value iteration, with $Q_0 = 0$ (slides 6–12); $V^\ast$, $Q^\ast$,
+  $\pi^\ast$ and $A^\ast$ are the optimal value, Q-function, policy and advantage (slides 13–15).
+- $V^\pi_\phi$ and $Q^\pi_\phi$ are networks with parameters $\phi$; the discrete Q-network outputs
+  $Q^\pi_\phi(s_t, a_1) \ldots Q^\pi_\phi(s_t, a_m)$ for $m$ actions (slide 18).
+- $Q_\theta$ is the Q-network being trained and $Q_{\text{target}}$ the target network; in the update rules
+  their weights are $w$ and $w'$, with $\tau$ the Polyak coefficient, $n$ the update count and $N$ the
+  hard-update period (slide 26).
+- $Q^{\text{approx}}$ and $Q^{\text{target}}$ are the learned and true Q-functions, $Y^{\hat{a}}_ {s'}$ the
+  noise in the learned one and $Z_s$ the resulting error after one backup (slide 29).
+- In the homework pseudocode, $\mathcal{D}$ is the replay buffer, $C$ DQN's target update frequency, and
+  $\lambda_Q$, $\lambda_\pi$ soft actor-critic's critic and actor step sizes (slides 33–34).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -447,3 +467,5 @@ Lecture 17's guest deck uses its own symbols, which this KB follows when describ
   state distributions, forward and backward policies and rewards, proposed tasks, and the lifetime.
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md): the guest deck's notation for states,
   actions, extrinsics and the vision policy's inputs.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md): the tutorial deck's plain
+  notation, Q-value iterates, target-network weights and the overestimation noise terms.

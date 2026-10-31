@@ -95,8 +95,10 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   words around it, and check where the agent put it. Put the KB's standing spellings (multi-task, meta-RL,
   epsilon-greedy) in every glossary: an agent leaves an unlisted variant as captioned, and a wiki quotation
   of that passage then fails.
-- Only the lecturer is audible. Student turns are marked `*[Student question, inaudible]*` /
-  `*[Student answer, inaudible]*` before the lecturer's restatement.
+- Usually only the lecturer is audible. Student turns are marked `*[Student question, inaudible]*` /
+  `*[Student answer, inaudible]*` before the lecturer's restatement. Where the captions do carry a
+  student's words (a `>>` speaker change followed by a question), keep them in quotation marks after
+  `*[Student question]*`, and say in `INDEX.md` which lectures this applies to.
 - The verbatim captions stay on disk in `raw/transcripts/original/` and are **not
   committed** (no licence; a full caption copy is the weakest thing to publish).
 - Recordings can skip slides (Lecture 1's skips its logistics slides). Say so in the slide
@@ -186,6 +188,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 16 RL for Robots: Autonomous Learning | 25 of 46 pages | the trial-and-error and reset-loop diagrams, the continual-world examples and real-robot reset videos, the autonomous-RL definition and evaluation slides, the Fish chart, the drift and collapse diagram, the forward-backward and MEDAL algorithms, the EARL charts, the real-robot time-lapses, the coffee task graph, the dexterous-hand, legged and wrench videos, the SOAR frame, the napkin-folding frame, the door-key video, the single-life comparison and walker videos, the RMA and VLM-guided legged robots |
 | 17 Advancing Robot Intelligence | 39 of 79 pages | the one-policy grid of outdoor videos, RMA's training, deployment, two-phase and test-time diagrams, indoor video frames and grid, the with-and-without-adaptation splits, the gait, torque and extrinsics plots, the perception collage, the terrain-map figures, the vision deployment frame, the two-phase vision diagrams, terrains and simulated policy, the stairs and robot-size figures, emergent footstep planning, map-free grid and live demos, the in-hand rotation frame, objects and contact plots, the Bristol demos, the drones, the humanoid frames and the Epic Kitchens grid |
 | 18 Frontiers | 15 of 53 pages | the Sharma & Tong preference chart, the robot-folded shirts, the recommendation paper, the playroom, the RLPD AntMaze chart, the Veo frames, the batch-online bar chart, the labelling headlines, the cyclist, the sugar-bowl chat and doctors quotation, the calibration plots, the HIL-SERL photos and table, the GPT-4o screenshot, the AlphaFold example, the internship robots and video-model frames |
+| 19 Q-Learning Tutorial | 21 of 35 pages | the agent-environment loop, the grid world and its policy map, the V/Q trajectory fans, the six Q-value-iteration builds, the optimal V/Q/policy and advantage grids, Q-star against a suboptimal policy, the value and Q networks, the robot Q-value plot and game action values, the backup diagrams and n-step chains, the stitching maze, gradient clipping and the Huber loss, the replay-buffer drawing, the ensemble diagram, the double Q-learning figure |
 
 ## Rebuilding
 

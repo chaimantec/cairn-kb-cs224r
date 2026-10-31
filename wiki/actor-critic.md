@@ -166,3 +166,6 @@ Advantage-weighted actor-critic (AWAC) is one of them (slide 20). See [offline R
   from actor-critic to critic only.
 - [Lecture 7 — Offline RL](07-offline-rl.md#can-we-just-use-off-policy-algorithms): why off-policy
   actor-critic fails on a fixed dataset, and the advantage-weighted actor-critic that replaces it.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#q-star-against-q-pi):
+  a critic conditioned on the current policy for one step of improvement, and the homework's soft
+  actor-critic pseudocode without the entropy term (slides only).

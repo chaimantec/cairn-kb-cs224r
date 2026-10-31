@@ -107,6 +107,20 @@ is the expected outcome given the board state and the policy being run. A better
 higher value, and so does a board state where things look good for that policy, so the value
 depends on both. A Q-function considers a particular move first and then runs the policy.
 
+The Q-learning tutorial (Lecture 19) computes all four objects for a 4-by-3 grid world with a
+$+1$ goal, a $-1$ lava cell and discount 0.9 (slides 13–14, ≈10:54–16:15). $V^\ast$ is 1.0 at the goal and
+falls by a factor of 0.9 per step away from it (0.9, then 0.81, printed 0.8), except in the lava, at
+$-1$. $Q^\ast$ gives one value per action in each cell, and the optimal policy is its argmax, which is
+deterministic for an MDP without partial observability. $A^\ast$ is zero on the optimal policy's
+actions and negative on every other, most of all on the two moves into the lava ($-1.7$ and $-1.6$).
+Where two actions tie, as going up or right from the start, both have zero advantage, and the
+deterministic policy picks one of them. A suboptimal, stochastic policy beside it has a different
+Q-function, mostly near zero (slide 15, ≈16:15–17:02).
+
+![Lecture 19, slide 13 — Optimal Value, Q-Value, Policy](../raw/images/19-q-learning-tutorial/slide-13.jpg)
+
+*Lecture 19, slide 13 — V-star (one number per cell), Q-star (one per action) and the deterministic optimal policy, whose 1.0 in each cell marks the argmax of Q-star. [Deck](https://cs224r.stanford.edu/spring_2025/slides/section_q_learning_tutorial.pdf)*
+
 ## Where they are used
 
 Two of the [algorithm families](rl-algorithm-families.md) are defined by value functions (Lecture
@@ -174,3 +188,6 @@ See [planning with a learned model](planning-with-models.md#limits-and-two-ways-
 - [Lecture 18 — Frontiers](18-frontiers.md#scaling-up-longer-horizons-and-less-online-data): whether
   value functions can be trained at scale accurately enough for actor-critic updates or Q-learning-style
   action selection, as an open problem for long-horizon RL.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#the-optimal-value-q-value-and-policy):
+  the optimal value, Q-value, policy and advantage computed for a grid world, a suboptimal policy's
+  Q-function, and why a Q-function is worth learning when a policy is all you act with.

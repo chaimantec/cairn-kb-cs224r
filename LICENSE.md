@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–18 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–19 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -501,3 +501,29 @@ Not rendered from this deck: a decorative photograph of an indoor space (31) and
 four green bottles (38), both described in the slide file; the title and section slides (1, 3, 29, 52); the
 agenda and outline slides (4, 9, 11, 13, 16, 20, 24, 28, 33, 41, 45, 49); and the text-only slides (2, 14, 17,
 25, 27, 30, 34–37, 40, 42–44, 46–48, 50, 51, 53).
+
+### Lecture 19 — CS 224R Tutorial: Review of Q-Learning
+
+Deck: [section_q_learning_tutorial.pdf](https://cs224r.stanford.edu/spring_2025/slides/section_q_learning_tutorial.pdf),
+the Q-learning TA session, by Anikait Singh (named on slide 1). Slide 2 reads "Many thanks to Pieter Abbeel,
+David Silver, Aviral Kumar, and Justin Fu!". Rendered: 21 slides, in `raw/images/19-q-learning-tutorial/`. The
+deck's text layer has no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 3 | An agent-environment loop diagram, no source printed. |
+| 4, 7–12 | A cartoon grid world (a robot, a gem marked +1, a -1 explosion, a stone block) and a cartoon of robot hands holding a map of arrows, no source printed. The grid plots beside them are the deck's own. |
+| 5 | The value and Q-function trajectory fans also used on Lecture 6's slide 3, no source printed. |
+| 18 | Diagrams of value and Q networks, no source printed. |
+| 19 | Five frames of a robot opening a door with a plot of its Q-value over time, and four frames of a paddle game with bar charts of action values (panel "b"), no source printed. |
+| 21, 22 | Backup diagrams (Monte Carlo and TD trees; one-step to Monte Carlo chains), no source printed. |
+| 24 | Two maze pictures with labelled trajectories, credited in the footer "Should I Use Offline RL or Imitation Learning?". |
+| 27 | Contour plots of gradient descent with and without gradient clipping, and a plot of the Huber loss against the squared loss, no source printed. |
+| 28 | A drawing of a database cylinder holding transitions, no source printed. |
+| 30 | A diagram of three neural networks feeding an ensemble, no source printed. |
+| 31 | A paper figure with its caption ("Figure 2: Illustration of overestimations during learning. …"); the slide prints no source, and Singh says it is from the double Q-learning paper (≈49:04). |
+
+The rendered slides 13, 14 and 15 are the deck's own grid plots. Not rendered from this deck: the title page (1),
+which carries two game screenshots, no source printed; the outline (2); slides whose only images are equations,
+a table or pseudocode reproduced exactly in the slide file (20, 23, 26, 29, 33, 34); and the text-only slides
+(6, 16, 17, 25, 32, 35).

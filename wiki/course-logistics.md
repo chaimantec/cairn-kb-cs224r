@@ -18,6 +18,9 @@ authoritative. This page records a past offering.
   ([Lecture 10](10-rl-for-reasoning.md)) and Ashish Kumar on
   RL for robots: sim-to-real transfer ([Lecture 17](17-sim-to-real.md), whose title slide reads
   "Advancing Robot Intelligence with Reinforcement Learning").
+- **Teaching assistant Anikait Singh** gave the extra section on Q-learning in week 3
+  ([Lecture 19](19-q-learning-tutorial.md), the catalog's last recording), which Lecture 6's slide 2
+  announces for 1:30 to 2:30 pm that Friday.
 - **Contact** (slide 5): the course website, <https://cs224r.stanford.edu/>; Ed and Gradescope,
   through Canvas; and the staff mailing list, cs224r-staff-spr2425@cs.stanford.edu, which reaches
   the student liaison, course manager, head CA and instructor. OAE letters go to the mailing list
@@ -70,7 +73,9 @@ From slides 11–12:
   Substantial use of AI tools (e.g. ChatGPT, Cursor) is not allowed for homework or for parts of
   the default project.
 
-Lecture 11's reminders put Homework 3 due Friday, May 16, and the project milestone due Friday,
+The Q-learning section's last part, "Q-Learning/Actor Critic Algorithm Walkthrough (Preview of Homework
+2)", prints DQN and soft actor-critic (without the entropy term) as pseudocode; the recording ends before
+it (Lecture 19, slides 2 and 32–34). Lecture 11's reminders put Homework 3 due Friday, May 16, and the project milestone due Friday,
 May 23 (Lecture 11, slides 2 and 38); Lecture 12 repeats them (Lecture 12, slides 2 and 29). Lecture 12's
 hindsight relabeling is "Part of homework 4!" (Lecture 12, slide 3): Homework 4's handout, due Friday,
 May 30, has students make a Deep Q-Network goal-conditioned and implement Hindsight Experience Replay on
@@ -132,3 +137,5 @@ at 1:30 in Gates B1.
 - [Lecture 18 — Frontiers](18-frontiers.md#course-reminders-in-the-slides-only): the last lecture's
   reminders (Homework 4 due, the poster session and the final report), and Finn's advice on how to do
   research.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#not-in-the-recording-the-homework-algorithms):
+  the TA section on Q-learning and its preview of the Homework 2 algorithms.

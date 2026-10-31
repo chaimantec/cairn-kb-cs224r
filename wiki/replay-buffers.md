@@ -142,6 +142,15 @@ asynchronous algorithms, where some threads add data while others update the net
 buffer matters especially, so that no data point gets a thousand gradient steps while another gets
 one.
 
+The Q-learning tutorial (Lecture 19) gives the reasons in its own terms (slide 28, ≈39:47–41:19). The buffer
+stores transitions, tuples of state, action, reward and next state, rather than whole trajectories, so a
+batch can draw from any trajectory in it; that breaks the temporal correlations between consecutive
+samples. Keeping past experience also prevents recency bias, overfitting to the current policy, and
+Q-functions benefit from the wider coverage. The buffer may have a maximum size; typically that is not a
+concern, but when it is, parts of it can be reweighted or thrown out (≈41:19). The session's soft
+actor-critic pseudocode (slide 34, not in the recording) samples its mini-batches from the buffer the same
+way, with two critics and the smaller of their target values in the target.
+
 Lecture 6 closes the course's online methods with advice on choosing among them (slide 27,
 "Chelsea's advice", ≈59:41–1:00:27): SAC and its variants when you care most about data efficiency
 and can accept tuning and less stability, PPO when you care about stability and ease of use rather
@@ -218,3 +227,6 @@ pre-trained output layer may have converged to something fairly deterministic an
   SAC without resets, and the collapse of the buffer's state distribution around the goal.
 - [Lecture 18 — Frontiers](18-frontiers.md#leveraging-prior-data-and-knowledge): prior data loaded into
   the replay buffer without pre-trained weights, which did better on AntMaze.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#replay-buffers):
+  transitions rather than trajectories, temporal correlations and recency bias, the buffer's maximum size,
+  and the homework's soft actor-critic pseudocode.

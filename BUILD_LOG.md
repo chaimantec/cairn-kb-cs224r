@@ -22,7 +22,7 @@ every build follows, and each lesson in general form, are in
 | 3 Policy Gradients | [Run 3](#run-3--lecture-3-policy-gradients) (2026-10-28) |
 | 4 Actor-Critic Methods | [Run 4](#run-4--lecture-4-actor-critic-methods) (2026-10-28) |
 | 5 Off-Policy Actor Critic | [Run 5](#run-5--lecture-5-off-policy-actor-critic) (2026-10-28); [Run 17](#run-17--lecture-17-advancing-robot-intelligence-guest-lecture) (2026-10-31, links to Lecture 17 and the sim-to-real topic); [Run 18](#run-18--lecture-18-frontiers) (2026-10-31, link to Lecture 18) |
-| 6 Q-Learning | [Run 6](#run-6--lecture-6-q-learning) (2026-10-28) |
+| 6 Q-Learning | [Run 6](#run-6--lecture-6-q-learning) (2026-10-28); [Run 19](#run-19--lecture-19-tutorial-session-review-of-q-learning) (2026-11-01, link to Lecture 19) |
 | 7 Offline RL | [Run 7](#run-7--lecture-7-offline-rl) (2026-10-29) |
 | 8 Reward Learning | [Run 8](#run-8--lecture-8-reward-learning) (2026-10-29) |
 | 9 RL for LLMs | [Run 9](#run-9--lecture-9-rl-for-llms) (2026-10-29); [Run 18](#run-18--lecture-18-frontiers) (2026-10-31, link to Lecture 18) |
@@ -35,6 +35,7 @@ every build follows, and each lesson in general form, are in
 | 16 RL for Robots: Autonomous Learning | [Run 16](#run-16--lecture-16-rl-for-robots-autonomous-learning) (2026-10-31); [Run 17](#run-17--lecture-17-advancing-robot-intelligence-guest-lecture) (2026-10-31, forward links to Lecture 17) |
 | 17 Advancing Robot Intelligence | [Run 17](#run-17--lecture-17-advancing-robot-intelligence-guest-lecture) (2026-10-31) |
 | 18 Frontiers | [Run 18](#run-18--lecture-18-frontiers) (2026-10-31) |
+| 19 Tutorial Session: Review of Q-Learning | [Run 19](#run-19--lecture-19-tutorial-session-review-of-q-learning) (2026-11-01) |
 
 ## Runs
 

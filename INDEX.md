@@ -9,8 +9,7 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–18 only, of the 19 recordings in the catalog** (18 lectures and one
-> Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
+> **Coverage: all 19 recordings in the catalog** (18 lectures and one Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
 > Q-learning, n-step returns), Lecture 7 (offline RL: filtered behavior cloning, AWR, AWAC and
@@ -30,12 +29,13 @@ complementary to the more theoretical CS234.
 > and evaluating autonomous RL, forward-backward RL, MEDAL, practising cycles of tasks, and single-life
 > RL), Lecture 17 (a guest lecture on sim-to-real transfer: Rapid Motor Adaptation, legged locomotion
 > from egocentric depth without maps, in-hand rotation and drones, and what is left for humanoids and
-> manipulation) and Lecture 18 (the last lecture: open problems in deep RL, from rewards, prior data, world
+> manipulation), Lecture 18 (the last lecture: open problems in deep RL, from rewards, prior data, world
 > models and scaling to safety, calibration, reliability and evaluation, and Finn's advice on how to do
-> research): their edited transcripts, their slide decks as text, 335 of their slides as images, and the
-> topic pages they start. **It cannot answer questions about the technical content of Lecture 19** (the
-> Q-learning TA session). For that session, point the learner to its slide deck, listed with every other course
-> document in [`sources.md`](sources.md).
+> research), and Lecture 19 (the Q-learning TA session, by Anikait Singh: Q-value iteration on a grid world,
+> the optimal value, Q-value, policy and advantage, Monte Carlo, TD and n-step targets derived on the board,
+> stitching, semi-gradients and target networks, gradient clipping and the Huber loss, replay buffers, and
+> overestimation with critic ensembles): their edited transcripts, their slide decks as text, 356 of their
+> slides as images, and the topic pages they start.
 > Build progress is in [TODO.md](TODO.md).
 
 ## How to read this knowledge base
@@ -44,8 +44,9 @@ complementary to the more theoretical CS234.
   number) or the transcript time (≈M:SS) for every claim, and link to each other.
 - The **transcripts** in `raw/transcripts/` are copy-edited from the YouTube captions:
   punctuated, filler removed, mis-heard terms restored, student turns marked. Read these, not
-  the captions. Only the lecturer is audible, so students' questions appear only as the lecturer
-  repeats them. `[Ed: …]` notes mark restorations and unclear passages.
+  the captions. In Lectures 1–18 only the lecturer is audible, so students' questions appear only as the
+  lecturer repeats them; in Lecture 19 three students' questions are captioned and kept, in quotation
+  marks after `*[Student question]*`. `[Ed: …]` notes mark restorations and unclear passages.
 - The **slide files** in `raw/slides/` hold the full text of every slide, numbered, with every
   figure described in prose. Prefer them for anything written down: equations, numbers,
   citations. Lecture 1's recording leaves out the course-logistics slides (5–6 and 10–15); their
@@ -109,12 +110,18 @@ slide 52's closing thoughts. Slide 2's reminders are not mentioned, so they are 
 the wiki pages, and slide 53's thank-you is not read aloud. Its deck prints no number on slides 40, 52 and 53,
 but every slide's number is its page number. Five student questions (inaudible; Finn restates them) are
 answered where they arise, and slide 39's two image panels are frames of videos Finn describes.
+Lecture 19, the Q-learning TA session given by Anikait Singh, is about 51 minutes and **ends on slide 31**,
+during the discussion of critic ensembles: slides 32–35, the walkthrough of the Homework 2 algorithms with
+DQN and soft actor-critic pseudocode, are only in the slide file and on the lecture page. Its deck prints a
+number only on its title page, so every label is the slide's page position. Two passages are worked on a
+whiteboard the recording does not show (the Monte Carlo, TD and n-step derivation, whose lines slide 20
+prints, and the TD loss). Three student questions are captioned (≈7:47, 10:09, 12:26) and five are inaudible (two of them at ≈41:19).
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 and 18 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+Every lecture, 1 to 19, has images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
 3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9, 27 of
-Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13, 18 of Lecture 14, 20 of Lecture 15, 25 of Lecture 16, 39 of Lecture 17 and 15 of Lecture 18 rendered as pictures, each shown under its
+Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13, 18 of Lecture 14, 20 of Lecture 15, 25 of Lecture 16, 39 of Lecture 17, 15 of Lecture 18 and 21 of Lecture 19 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -132,9 +139,9 @@ Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13, 18 of Lecture 1
 [`raw/slides/15-hierarchical-rl.md`](raw/slides/15-hierarchical-rl.md),
 [`raw/slides/16-autonomous-rl.md`](raw/slides/16-autonomous-rl.md),
 [`raw/slides/17-sim-to-real.md`](raw/slides/17-sim-to-real.md),
-[`raw/slides/18-frontiers.md`](raw/slides/18-frontiers.md)) and, where a wiki page cites that
-slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these eighteen has one: the slide file's header lists which do.
+[`raw/slides/18-frontiers.md`](raw/slides/18-frontiers.md),
+[`raw/slides/19-q-learning-tutorial.md`](raw/slides/19-q-learning-tutorial.md)) and, where a wiki page cites that
+slide, in the passage that cites it. Not every slide has one: each slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -388,6 +395,18 @@ these eighteen has one: the slide file's header lists which do.
   getting things to work; deciding when to pivot, and the question on speed against evaluation; sharing
   research and writer's block; mentorship and confidence; and why now is a good time to do research.
 
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](wiki/19-q-learning-tutorial.md): the Q-learning
+  TA session, by Anikait Singh. The MDP and the value, Q and advantage functions; the Bellman equation and
+  Q-value iteration run iteration by iteration on a grid world, with the students' questions on the
+  difference between the two and on initializing at zero, and the dynamic-programming heuristic; the optimal
+  value, Q-value, policy and advantage of the grid world, why learn more than a policy, and a suboptimal
+  policy's Q-function; value and Q networks for discrete and continuous actions; Monte Carlo, TD and n-step
+  targets derived from the value function's definition on the board, the backup diagrams and the
+  bias-variance table; stitching; semi-gradients, target networks and hard or Polyak updates, and the TD loss;
+  gradient clipping and the Huber loss; replay buffers; the overestimation argument with zero-mean noise; and
+  critic ensembles and double Q-learning. From the slides only: the DQN and soft actor-critic pseudocode of
+  the Homework 2 walkthrough.
+
 ## Topic pages
 
 - [MDPs and RL notation](wiki/mdp-and-notation.md): a table of the course's symbols (state,
@@ -410,7 +429,7 @@ these eighteen has one: the slide file's header lists which do.
   task representations and exploration rewards, Lecture 14), and for hierarchy (high-level and low-level
   policies, goals, the re-query interval, Lecture 15), and for autonomous RL (state distributions, forward
   and backward policies and rewards, proposed tasks, the lifetime, Lecture 16), and for sim-to-real (state,
-  previous action, extrinsics, scandots, depth and the vision policy's estimates, Lecture 17).
+  previous action, extrinsics, scandots, depth and the vision policy's estimates, Lecture 17); and the Q-learning tutorial's plain notation (Lecture 19).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
@@ -418,7 +437,7 @@ these eighteen has one: the slide file's header lists which do.
   planner as a "policy" in quotes, and Lecture 12's task-conditioned policies and their architectures,
   and Lecture 13's sequence-model policies that learn in context, with memory across episodes, and Lecture
   15's two-level hierarchical policies, and Lecture 17's policy that adapts from its recent history of states
-  and actions, with when a longer history lets it exploit the simulator.
+  and actions, with when a longer history lets it exploit the simulator; and Lecture 19's grid-world policy as a map of actions, the deterministic optimal policy and a stochastic suboptimal one.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
@@ -432,13 +451,13 @@ these eighteen has one: the slide file's header lists which do.
   Lecture 5's recursive form in terms of the next Q-value), why the advantage can be estimated from V
   alone, why a policy comes out of Q but not out of V, the drum-practice and Go examples, and Lecture
   7's offline use of the behavior policy's advantage, and Lecture 10's Q-value and advantage of a
-  step in a language model's solution, and Lecture 11's terminal value function for planning, and Lecture 18's open question of value functions accurate enough to optimize policies at scale.
+  step in a language model's solution, and Lecture 11's terminal value function for planning, and Lecture 18's open question of value functions accurate enough to optimize policies at scale; and Lecture 19's grid world, with its optimal value, Q-function, policy and advantage and a suboptimal policy's Q-function.
 - [Actor-critic methods](wiki/actor-critic.md): the method as a whole: from the policy gradient's
   reward to go to the advantage, the critic as a learned value function, the five-step algorithm and
   the names actor and critic, and the off-policy versions Lecture 5 teaches (multiple gradient steps
   leading to PPO, replay buffers leading to soft actor-critic, and the comparison of the two),
   how dropping the actor leads to Q-learning, and why the off-policy version breaks on a fixed
-  offline dataset.
+  offline dataset; and Lecture 19's critic of the current policy for one step of improvement, and the homework's soft actor-critic pseudocode.
 - [Proximal policy optimization (PPO)](wiki/ppo.md): why many gradient steps on one batch overfit
   stale advantages, the surrogate objective, the KL-penalty and clipping remedies, the clipped and
   minimum objective as a lower bound, generalized advantage estimation, the four-step algorithm
@@ -453,13 +472,13 @@ these eighteen has one: the slide file's header lists which do.
   stability; and the buffer in Q-learning, with how it is managed (first in, first out,
   pre-populating, asynchronous collection); and what goes wrong when the buffer is a fixed offline
   dataset; and Lecture 12's per-task buffers and buffers holding relabeled data; and Lecture 13's buffers of
-  whole trajectories per task for off-policy meta-RL; and Lecture 16's SAC without resets and the buffer's state distribution collapsing around the goal; and Lecture 18's prior data loaded into the buffer without pre-trained weights.
+  whole trajectories per task for off-policy meta-RL; and Lecture 16's SAC without resets and the buffer's state distribution collapsing around the goal; and Lecture 18's prior data loaded into the buffer without pre-trained weights; and Lecture 19's reasons for storing transitions (temporal correlations, recency bias), the buffer's maximum size, and the homework's two-critic soft actor-critic.
 - [Policy evaluation](wiki/policy-evaluation.md): fitting a value network by Monte Carlo
   estimation, bootstrapping (temporal difference learning) or n-step returns; the shared
   regression; the worked example where they disagree; bias versus variance; discounted targets;
   Lecture 5's generalized advantage estimation and Q-function fitting from a replay buffer; and
   Lecture 6's policy iteration and n-step Q-learning targets; and Lecture 7's offline versions
-  (Monte Carlo for the behavior policy, bootstrapping on data actions, expectile regression).
+  (Monte Carlo for the behavior policy, bootstrapping on data actions, expectile regression); and Lecture 19's derivation of the Monte Carlo, TD and n-step targets from the value function's definition, with the backup diagrams and the bias-variance table.
 - [Imitation learning](wiki/imitation-learning.md): the problem (demonstrations from an unknown
   expert policy), behavior cloning versions 0 and 1, compounding errors and covariate shift,
   corrective data with DAgger and human-gated DAgger, a table of their trade-offs, how
@@ -515,17 +534,17 @@ these eighteen has one: the slide file's header lists which do.
   the three tricks (target networks and DQN, double Q-learning against overestimation, n-step
   returns and their on-policy catch), continuous actions, when to use it, why its coverage
   fails offline, and the conservative Q-learning remedy, with Lecture 14's bandit game on why
-  epsilon-greedy's epsilon is lowered.
+  epsilon-greedy's epsilon is lowered; and Lecture 19's tutorial: Q-value iteration on a grid world, semi-gradients and hard or Polyak target updates, gradient clipping and the Huber loss, the overestimation argument and critic ensembles.
 - [Bellman equations](wiki/bellman-equations.md): the Bellman equation for any policy's Q-function
   and how it lets a Q-function be fitted from other policies' data, the Bellman optimality equation
   for the optimal policy and how Q-learning uses it, the names, the value-function versions, why
-  the course builds on Q, and Lecture 7's offline target for the behavior policy.
+  the course builds on Q, and Lecture 7's offline target for the behavior policy; and Lecture 19's Q-value iteration, the Bellman equation iterated on a grid world, with the dynamic-programming heuristic.
 - [Offline reinforcement learning](wiki/offline-rl.md): learning from a fixed dataset with no further
   interaction; the behavior policy and distribution shift; why off-policy methods overestimate Q-values
   on out-of-distribution actions; why imitation is not enough (rewards, trajectory stitching); the three
   approaches (filtered or weighted imitation, implicit policy constraints, conservative objectives);
   conservative Q-learning (CQL) in brief, with its LinkedIn application; which algorithm to use;
-  and Lecture 10's offline RL for language reasoning; and Lecture 18's open question of offline metrics for evaluating policies.
+  and Lecture 10's offline RL for language reasoning; and Lecture 18's open question of offline metrics for evaluating policies; and Lecture 19's stitching example and larger critic ensembles (SAC-N, EDAC) offline.
 - [Implicit policy constraint methods](wiki/implicit-policy-constraints.md): filtered behavior cloning,
   advantage-weighted imitation and its KL-constrained reading, advantage-weighted regression (AWR),
   advantage-weighted actor-critic (AWAC), expectile regression and implicit Q-learning (IQL), each
@@ -653,7 +672,7 @@ these eighteen has one: the slide file's header lists which do.
   Lecture 13's evening office hours and meta-RL in Homework 4, and Lecture 14's reminders (Homework 3
   due, Homework 4 out) and DREAM in Homework 4, and Lecture 15's reminders (milestone due Friday, Homework 4
   due next Friday, tips on Ed for the default project), and Lecture 16's reminders (milestone due that night,
-  Homework 4 due next Friday, a guest lecture from Ashish Kumar next), and Lecture 17, that guest lecture, and Lecture 18's reminders (Homework 4 due that day, the poster session next Wednesday, the final report the following Monday with no late days) and advice on doing research.
+  Homework 4 due next Friday, a guest lecture from Ashish Kumar next), and Lecture 17, that guest lecture, and Lecture 18's reminders (Homework 4 due that day, the poster session next Wednesday, the final report the following Monday with no late days) and advice on doing research, and Lecture 19, the TA section on Q-learning and its preview of the Homework 2 algorithms.
 
 ## Raw materials
 

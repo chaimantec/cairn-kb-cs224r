@@ -54,6 +54,22 @@ computed from any transition, which is why Q-learning is off-policy (slide 13, �
 
 *Lecture 6, slide 12 — the Q-learning algorithm with its max target (blue), and the two equations it rests on, colour-matched to the terminology box: the Bellman equation (orange-red) and the Bellman optimality equation (magenta). [Deck](https://cs224r.stanford.edu/spring_2025/slides/06_cs224r_qlearning_2025.pdf)*
 
+## Iterating the Bellman equation
+
+The Q-learning tutorial (Lecture 19) writes the optimal Q-function's Bellman equation with the
+expectation over the next state as a sum over the dynamics, and turns it into **Q-value iteration**
+(slide 6, ≈4:41–5:28):
+
+$$Q^{\ast}_ {k+1}(s,a) = \sum_{s_{t+1}} p(s_{t+1} \mid s_t, a_t)\left(r(s_t, a_t) + \gamma \max_{a_t} Q^{\ast}_ {k}(s_{t+1}, a_{t+1})\right)$$
+
+The slide puts $a_t$ under the max, though the maximization is over the next action $a_{t+1}$.
+Starting from $Q_0 = 0$ everywhere, each iteration propagates the terminal rewards one step further
+back (≈10:09). Asked how this differs from the Bellman equation, Singh says the equation itself has no
+iteration subscript and only states a relation the optimal Q-function satisfies; the subscripts $k$
+and $k + 1$ make it an update (≈7:47–8:33). A heuristic for telling dynamic programming from Monte
+Carlo: "if you see the Q function on both sides of your update" it is dynamic programming, while a Monte
+Carlo update has only rewards on the right (≈8:33).
+
 ## Names, and the value-function versions
 
 The first equation is the Bellman equation, the one used for policy evaluation; the second is the
@@ -80,3 +96,6 @@ action leads to the better next state (Lecture 6, ≈23:24–24:56).
   Bellman optimality equation, the two names, and why Q rather than V.
 - [Lecture 7 — Offline RL](07-offline-rl.md#advantage-weighted-actor-critic-awac): a Q-function for the
   behavior policy, bootstrapped with next actions from the data.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#from-the-bellman-equation-to-q-value-iteration):
+  the Bellman equation as a sum over the dynamics, Q-value iteration on a grid world, and the
+  dynamic-programming heuristic.

@@ -194,3 +194,6 @@ See [policy gradients](policy-gradients.md).
   high-level and low-level policies, and how a hierarchical policy is rolled out.
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#deploying-it-extrinsics-from-the-observation-history):
   a policy that adapts from its recent history of states and actions, and when a longer history hurts.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#the-optimal-value-q-value-and-policy):
+  a policy as a map of actions over a grid world, the deterministic optimal policy as the argmax of
+  $Q^\ast$, and a stochastic suboptimal policy beside it.

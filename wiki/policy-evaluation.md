@@ -124,6 +124,24 @@ informative part of the target. There they have a cost the value-function versio
 summed rewards come from the policy that collected the data, not from the optimal policy being
 estimated, so the target is only correct on-policy. See [Q-learning](q-learning.md).
 
+The Q-learning tutorial (Lecture 19) derives all three targets from the value function's
+definition, on the whiteboard, with slide 20 printing the lines: the expected return; its expansion
+into the discounted sum of rewards, the Monte Carlo estimate; the first reward split off from the
+sum; the rest recognized as $\gamma V^\pi(s_{t+1})$, the TD target; and the n-step form, which keeps
+more rewards before the value (≈21:39–28:59). Monte Carlo uses the whole trajectory, so it has no
+bias; TD substitutes a value function that can be inaccurate, which adds bias, but shortens the
+horizon to one step, which cuts variance (≈25:31–26:17). Slide 23 tabulates it: TD has a bootstrap
+depth of 1 step, high bias and low variance; n-step, N steps and medium for both; Monte Carlo, the
+full episode, low bias and high variance. In tabular settings both approaches should converge to the
+same result, but beyond that they do not (≈30:32). How much the variance matters depends on the
+domain: for language, with almost perfect dynamics and, in math or code reasoning, perfect rewards,
+Monte Carlo roll-outs are common, while agentic and robotic domains bring the variance back
+(≈31:19–32:05).
+
+![Lecture 19, slide 21 — MC vs TD Visualization](../raw/images/19-q-learning-tutorial/slide-21.jpg)
+
+*Lecture 19, slide 21 — Monte Carlo follows one path all the way to a terminal state; the TD backup goes one step and stops at the next state's estimate. [Deck](https://cs224r.stanford.edu/spring_2025/slides/section_q_learning_tutorial.pdf)*
+
 ## Discounting the targets
 
 With very long or infinite episodes, summed rewards, and so the values, can grow without bound. A
@@ -192,3 +210,6 @@ support (slides 21–23, implicit Q-learning). See
 - [Lecture 7 — Offline RL](07-offline-rl.md#recap-three-ways-to-fit-a-value-function): the recap of
   the three regressions, and their offline versions (Monte Carlo for the behavior policy, bootstrapping
   on data actions, expectile regression).
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md#q-learning-as-regression-monte-carlo-td-and-n-step):
+  Monte Carlo, TD and n-step targets derived from the value function's definition, the backup diagrams,
+  and the bias-variance table.

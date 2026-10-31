@@ -659,7 +659,8 @@ The recording begins on the recap and ends on slide 29's first line, so these ar
 the [slide file](../raw/slides/06-q-learning.md). Slide 2's reminders, repeated on slide 29: Homework
 1 is due and Homework 2 is out that day; the course is sending out 100 dollars of AWS credits and a
 form for GPU quota, "Very important" "if you want GPUs, especially for default project"; and there is
-an extra Q-learning section from 1:30 to 2:30 pm. Slide 29 announces the next week: offline RL
+an extra Q-learning section from 1:30 to 2:30 pm. That section's recording is
+[Lecture 19](19-q-learning-tutorial.md). Slide 29 announces the next week: offline RL
 ("can we learn behavior from existing datasets?"), and reward learning with the start of RL for
 LLMs. Offline RL is [Lecture 7](07-offline-rl.md).
 
@@ -685,3 +686,5 @@ LLMs. Offline RL is [Lecture 7](07-offline-rl.md).
   dataset and shows why that fails.
 - [Exploration](exploration.md): exploration as a topic, from this lecture's epsilon-greedy to Lecture 14's
   bandit strategies and learned exploration.
+- [Lecture 19 — Tutorial Session: Review of Q-Learning](19-q-learning-tutorial.md): the TA section that
+  reviews this lecture on a grid world and adds target-network, gradient and overestimation details.
