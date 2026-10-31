@@ -171,3 +171,6 @@ See [planning with a learned model](planning-with-models.md#limits-and-two-ways-
   and advantage of each step of a solution, under a rollout policy.
 - [Lecture 11 — Model-Based RL](11-model-based-rl.md#training-a-policy-and-longer-horizons): a terminal
   value function at the end of a planning horizon.
+- [Lecture 18 — Frontiers](18-frontiers.md#scaling-up-longer-horizons-and-less-online-data): whether
+  value functions can be trained at scale accurately enough for actor-critic updates or Q-learning-style
+  action selection, as an open problem for long-horizon RL.

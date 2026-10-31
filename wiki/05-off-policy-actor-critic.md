@@ -607,7 +607,8 @@ an algorithm based on SAC, seeded with demonstrations (slide 25; Luo, Xu, Wu, Le
 learning (behaviour cloning) gets much lower success rates, and the RL policy is also faster. For
 example, RAM insertion goes from 29% to 100% success and from 8.3 to 4.8 seconds per cycle, after
 1.5 hours of training; the timing belt from 2% to 100%, after 6 hours. The slide file has the whole
-table.
+table. [Lecture 18](18-frontiers.md#hallucinations-human-ai-systems-and-reliability) returns to the same
+table as evidence that RL can reach very high reliability when no person checks the output.
 
 ![Slide 25 — Fully Off-Policy = Can be efficient enough for real-world RL](../raw/images/05-off-policy-actor-critic/slide-25.jpg)
 

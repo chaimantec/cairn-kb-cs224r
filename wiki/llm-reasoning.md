@@ -171,3 +171,5 @@ with the same number of tokens, and the same accuracy with 1.6x fewer tokens tha
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#what-rl-has-achieved-and-what-enabled-it):
   reasoning in LLMs, "Coherent over long horizon", as one of RL's successes, resting on DeepSeek-R1's
   rule-based reward and on rolling models out at scale; and RL exploiting rewards that are not verifiable.
+- [Lecture 18 — Frontiers](18-frontiers.md#domains-without-rewards): math reasoning as a domain with
+  verifiable rewards, scientific reasoning as one without, and reasoning RL's reliance on very online data.

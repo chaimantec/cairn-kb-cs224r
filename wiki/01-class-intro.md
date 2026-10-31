@@ -488,3 +488,5 @@ site also lists it as due Friday, April 18.
 - [RL algorithm families](rl-algorithm-families.md) — the five families and where the course
   covers each.
 - [Course logistics](course-logistics.md) — staff, prerequisites, grading, homework and project.
+- [Lecture 18 — Frontiers](18-frontiers.md) — the course's closing survey of open problems in deep RL,
+  and Finn's advice on how to do research.

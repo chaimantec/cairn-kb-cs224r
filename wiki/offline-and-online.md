@@ -163,6 +163,20 @@ off-policy optimizer and a replay buffer, meta-training is much more data effici
 to a new task at test time is about as efficient either way (slide 26, ≈49:13–51:34). See
 [meta-RL](meta-rl.md).
 
+## Batch online RL, and prior data
+
+Lecture 18 names a setting between the two. Large-scale RL for language models is "fairly short-horizon or
+very online" (Lecture 18, slide 14), and in many applications, such as collecting dialogue with real users or
+data on real robots, it is hard to interleave policy updates with data collection (Lecture 18, slide 15). An
+autonomous driving company would rather collect a large batch over days or a week, update, and repeat: "a
+batch online setting, where you're collecting a batch of online data with one policy, then doing an update and
+repeating" (≈17:51). Because the policy changes only between batches, diverse actions within a batch matter,
+and Dong et al. (2025) found expressive diffusion policies "really, really important" there (≈18:36). Offline
+methods such as DPO also succeed, but on shorter-horizon problems (≈19:22). On prior data, the default is to
+initialize the weights from a pre-trained model and the replay buffer from offline data, yet one method did
+better by loading the buffer without pre-training the weights (Lecture 18, slide 10, ≈8:36). See
+[Lecture 18](18-frontiers.md#scaling-up-longer-horizons-and-less-online-data).
+
 ## Where this appears
 
 - [Lecture 2 — Imitation Learning](02-imitation-learning.md#summary-of-part-1-offline-and-reward-free):
@@ -189,3 +203,6 @@ to a new task at test time is about as efficient either way (slide 26, ≈49:13�
   meta-training.
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#imitation-and-reinforcement-learning-that-work):
   off-policy imitation against on-policy RL, as the guest lecture frames the methods that have worked.
+- [Lecture 18 — Frontiers](18-frontiers.md#scaling-up-longer-horizons-and-less-online-data): batch
+  online RL between the fully online and offline settings, and prior data loaded into the buffer rather than
+  the weights.

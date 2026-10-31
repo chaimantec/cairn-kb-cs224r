@@ -798,3 +798,6 @@ These slides are not discussed aloud; this section is from the
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the lecture before, which introduces RLHF.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): the lecture after, on RL for
   reasoning with verifiable rewards.
+- [Lecture 18 — Frontiers](18-frontiers.md#evaluating-generalist-systems): the same GPT-4o update as an
+  example of how hard RL-trained models are to evaluate, what human preferences reward, and RLHF's effect on
+  calibration.

@@ -217,6 +217,19 @@ lecture, SOAR turns each task a vision-language model proposes into a goal image
 closeness to an image is easier to define than a reward for every task (≈51:06). See
 [autonomous and single-life RL](autonomous-rl.md).
 
+## Domains with no reward to verify
+
+Lecture 18 opens its survey of open problems here. RL has worked where rewards are easy to define and verify,
+as in games, math reasoning and coding, but in many real-world domains "rewards don't exist, *or* very
+delayed" (Lecture 18, slide 5). Finn gives five examples (≈0:51–7:49). Chatbots are trained on human
+preferences, which favour responses that agree with the person and sound confident over true ones (Sharma &
+Tong et al., 2023). Robot rewards are "often binary or hand-shaped" (Lecture 18, slide 6), and even people
+find it hard to score four robot-folded shirts. YouTube's recommendations combine engagement and satisfaction
+with weights that were "manually tuned by a person rather than something that is designed automatically"
+(≈6:18). Scientific reasoning, unlike math, often has no known final answer to check. And humans learn by
+playing with no single task in mind, which raises the question "Can machines optimize for learning?"
+(Lecture 18, slide 8). See [Lecture 18](18-frontiers.md#domains-without-rewards).
+
 ## Where this appears
 
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the whole topic, with the student questions.
@@ -239,3 +252,6 @@ closeness to an image is easier to define than a reward for every task (≈51:06
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#the-reward-function): well-specified,
   programmatic rewards as one of RL's two ingredients, RMA's ten-term locomotion reward, why manipulation
   rewards do not scale, and a general reward model as a hope.
+- [Lecture 18 — Frontiers](18-frontiers.md#domains-without-rewards): domains without a reward to verify,
+  from chatbot preferences to robot shirt folds, hand-tuned recommendation weights, scientific reasoning and
+  optimizing for learning.

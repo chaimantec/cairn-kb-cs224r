@@ -141,6 +141,15 @@ Lecture 7 points to IDQL, a variant of implicit Q-learning for offline RL "that 
 for your policy class", which "also works quite well" (slide 32, ≈1:06:42–1:07:30). See
 [implicit policy constraint methods](implicit-policy-constraints.md).
 
+Lecture 18 adds a reason from data collection. In batch online RL, where a large batch of data is collected
+with one policy before each update, Dong et al. (2025) found that "using more expressive policies like
+diffusion policies was really, really important for effective reinforcement learning in this sort of batch
+online setting" (Lecture 18, ≈18:36). Their average score was 40 for a diffusion policy against 18 for a
+Gaussian one before RL, and 74 against 43 after it (Lecture 18, slide 15). A fully online learner gets
+diverse data anyway because its policy keeps changing, but "in the more batch setting you don't have the
+luxury of changing your policy so frequently" (≈18:36). See
+[Lecture 18](18-frontiers.md#scaling-up-longer-horizons-and-less-online-data).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#aside-why-stochastic-policies): why policies are
@@ -152,3 +161,5 @@ for your policy class", which "also works quite well" (slide 32, ≈1:06:42–1:
 - [Policies](policies.md) and [imitation learning](imitation-learning.md).
 - [Lecture 7 — Offline RL](07-offline-rl.md#which-offline-rl-algorithm-to-use): IDQL, an offline RL
   method with diffusion policies.
+- [Lecture 18 — Frontiers](18-frontiers.md#scaling-up-longer-horizons-and-less-online-data): diffusion
+  policies against Gaussian ones in batch online RL.

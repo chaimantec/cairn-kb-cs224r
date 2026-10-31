@@ -21,7 +21,7 @@ value of the optimal policy to back out a good policy; and model-based methods l
 the future and use that for planning or to improve the policy (≈50:07). The
 [value function and Q-function](value-functions.md) are the "value" these families estimate.
 
-**This knowledge base so far covers Lectures 1–17.** Imitation learning, policy gradients,
+**This knowledge base so far covers Lectures 1–18.** Imitation learning, policy gradients,
 actor-critic methods and value-based methods have their own pages,
 [imitation learning](imitation-learning.md), [policy gradients](policy-gradients.md),
 [actor-critic methods](actor-critic.md) and [Q-learning](q-learning.md), and Lecture 7's offline
@@ -40,7 +40,8 @@ meta-RL, which trains any of these optimizers inside a policy that learns in con
 [exploration](exploration.md); and Lecture 15's question of how to chain subtasks into a long-horizon task
 has [hierarchical RL and imitation](hierarchical-rl.md); and Lecture 16's question of how a robot can learn
 without a person resetting it has [autonomous and single-life RL](autonomous-rl.md); and Lecture 17's question of
-how a policy trained in simulation works on a real robot has [sim-to-real transfer](sim-to-real.md). Lecture 2 adds
+how a policy trained in simulation works on a real robot has [sim-to-real transfer](sim-to-real.md). Lecture 18
+surveys the open problems across them: [Lecture 18 — Frontiers](18-frontiers.md). Lecture 2 adds
 two points about where imitation learning sits. It is fully **offline** and needs no reward
 function, but it may need a great deal of data and gives the policy no way to improve on its own
 from practicing; its summary slide notes that "Many successful methods **combine** imitation
@@ -154,3 +155,5 @@ parts.
   the baseline, forward-backward RL, MEDAL and task cycles, and adapting within a single episode.
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md): why on-policy RL has worked, PPO in
   simulation, a student distilled from a privileged teacher with DAgger, and adaptation in context.
+- [Lecture 18 — Frontiers](18-frontiers.md): open problems across the families: rewards, prior data, world
+  models, value functions at scale and batch online RL, safety, calibration, reliability and evaluation.

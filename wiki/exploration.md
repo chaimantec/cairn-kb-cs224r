@@ -154,6 +154,16 @@ names the goal's colour, it reaches near-optimal returns while end-to-end method
 in Homework 4 (≈1:04:26). Applied to student programs in CS106A, a DREAM exploration policy that probes
 games for bugs made grading 44% faster and 6% more accurate (slides 30–32, ≈1:09:49–1:12:08).
 
+## Open problems: optimizing for learning, and exploring safely
+
+Lecture 18 lists two open problems for exploration. Humans "often learn by rolling around on the floor
+playing with random toys", with no single task, so perhaps algorithms could let machines explore that way,
+"potentially optimizing for learning, potentially optimizing for exploration" (Lecture 18, slide 8, ≈7:03).
+And a system that keeps learning should stay safe while it explores. Finn learned to ride a bike without
+holding the handlebars without ever falling off, and a robot learning a new behavior that way would be
+"fundamentally exploring a new part of the state space while also understanding what might be more risky and
+less risky" (Lecture 18, slide 19, ≈23:12). See [Lecture 18](18-frontiers.md#safety).
+
 ## Where this appears
 
 - [Lecture 14 — Exploration](14-exploration.md): the whole topic, with the game, the questions and the
@@ -169,3 +179,5 @@ games for bugs made grading 44% faster and 6% more accurate (slides 30–32, ≈
   that proposes goals structures exploration in a higher-level goal space.
 - [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#why-it-fails-drift-and-state-distribution-collapse):
   exploration without resets, which can drift far from the good states, and a baseline that seeks novel states.
+- [Lecture 18 — Frontiers](18-frontiers.md#safety): optimizing for learning rather than a task, and
+  exploring new behaviors while remaining safe, as open problems.

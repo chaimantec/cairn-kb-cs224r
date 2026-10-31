@@ -186,6 +186,21 @@ match given actions, as in [imitation learning](imitation-learning.md). Model-ba
 feeds a model-free method such as SAC, one of the case study's baselines; see
 [replay buffers and soft actor-critic](replay-buffers.md).
 
+## Video generation models as world models
+
+Lecture 18 takes up a question Finn is often asked: can video generation models, which clearly know a lot
+about the world, serve as world models for control (Lecture 18, slide 12, ≈10:54–13:58)? Take an
+action-conditioned video model, $\mathbf{s}_ t, \mathbf{a}_ {t:t+h} \rightarrow \mathbf{s}_ {t+1:t+h}$, which
+maps the current image $\mathbf{s}_ t$ and the next $h$ actions to the next frames, trained on demonstrations
+and one policy's roll-outs. A new policy's actions are out of distribution for it, and trained mostly on
+demonstrations, "it will predict a video that corresponds to correctly doing the task even if these actions
+did not lead to a correct outcome" (≈12:27); besides, "even small physical inaccuracies can lead to poor
+performance" (≈12:27). Two possible fixes are data from many more policies, or a model of the future that is
+not conditioned on actions, trained only on demonstrations, whose predicted video a goal-conditioned policy
+then follows, which sidesteps the out-of-distribution action problem (≈13:12–13:58). Finn's own internship
+found the video generation models of the time "really bad", which led to developing a better one (Lecture
+18, slide 39, ≈44:53–46:26). See [Lecture 18](18-frontiers.md#world-models-and-video-generation-models).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many): the
@@ -197,3 +212,5 @@ feeds a model-free method such as SAC, one of the case study's baselines; see
 - [Planning with a learned model](planning-with-models.md): gradient-based and sampling-based planning
   and model predictive control.
 - [RL algorithm families](rl-algorithm-families.md): model-based methods among the course's algorithms.
+- [Lecture 18 — Frontiers](18-frontiers.md#world-models-and-video-generation-models): video generation
+  models as world models, why they mispredict out-of-distribution actions, and two ways around it.

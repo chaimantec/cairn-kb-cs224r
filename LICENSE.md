@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–17 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–18 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -472,3 +472,32 @@ Not rendered from this deck: video frames whose content a rendered slide shows (
 55, 64); the equation list and tables reproduced in the slide file (16, 38, 60); the blank page 46; text
 slides (2, 3, 4, 21, 29, 32, 37, 39, 44, 59, 61, 68, 71, 72, 76, 77, 78, 79); and the title slides (1, 13,
 41).
+
+### Lecture 18 — Frontiers & Open Problems in Deep RL, and How to Do (Deep RL) Research
+
+Deck: [18_cs224r_frontiers_how_to_research.pdf](https://cs224r.stanford.edu/spring_2025/slides/18_cs224r_frontiers_how_to_research.pdf),
+the course's last lecture, given by Chelsea Finn (the deck prints no lecturer name). Rendered: 15 slides, in
+`raw/images/18-frontiers/`. The deck's text layer has no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 5 | A preference chart from Sharma & Tong et al. (2023), which the slide cites, with bold labels and arrows laid over it. |
+| 6 | Four photographs of shirts folded by a robot, no source printed. |
+| 7 | The first page and a figure (a YouTube watch page) of Zhao et al., "Recommending What Video to Watch Next: A Multitask Ranking System" (Google), as printed on the slide. |
+| 8 | A photograph of a playroom with a crawling child, credited "Source: https://youtu.be/8vNxjwt2AqY". |
+| 10 | A chart, "All D4RL AntMaze Tasks", from Ball et al. (2023), which the slide cites. |
+| 12 | Three frames of generated videos, credited "Source: https://deepmind.google/models/veo/". |
+| 15 | A bar chart from Dong et al. (2025), which the slide cites. |
+| 18 | Headline screenshots from TIME ("Exclusive: OpenAI Used Kenyan Workers on Less Than 2 Dollars Per Hour to Make ChatGPT Less Toxic") and a second news site ("Inside Facebook's African Sweatshop"). |
+| 19 | A photograph of a cyclist, no source printed. |
+| 21 | A screenshot of a chat with a model and a robot-camera photograph, and a quotation cited to Rajpurkar & Topol (NYT 2025) and Goh et al. (JAMA 2024). |
+| 22 | Calibration plots of GPT-4 from OpenAI (2023) and from Tian et al. (2023), which the slide cites. |
+| 23 | Photographs of robot tasks and a results table from Luo et al. (2024), which the slide cites. |
+| 26 | A screenshot of a ChatGPT conversation credited "Source: https://x.com/joshwhiton/status/1916665761369645268", overlaid with an NBC News headline. |
+| 32 | AlphaFold protein renderings and logo, no source printed. |
+| 39 | A photograph of a robot lab and two frames (a robot video and a video model's prediction) from Finn's internship work, no source printed. |
+
+Not rendered from this deck: a decorative photograph of an indoor space (31) and the "Bottlenecks" picture of
+four green bottles (38), both described in the slide file; the title and section slides (1, 3, 29, 52); the
+agenda and outline slides (4, 9, 11, 13, 16, 20, 24, 28, 33, 41, 45, 49); and the text-only slides (2, 14, 17,
+25, 27, 30, 34–37, 40, 42–44, 46–48, 50, 51, 53).

@@ -179,3 +179,6 @@ reasoning](llm-reasoning.md).
   is what breaks offline.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#option-2-offline-rl-with-per-step-dpo):
   offline RL for math reasoning, with per-step DPO.
+- [Lecture 18 — Frontiers](18-frontiers.md#evaluating-generalist-systems): no reliable offline metric for
+  evaluating a policy, the open question of offline metrics that rule out bad models, and prior data used
+  without pre-trained weights.

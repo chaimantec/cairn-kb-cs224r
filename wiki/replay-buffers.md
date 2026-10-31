@@ -187,6 +187,16 @@ leaving no data from the states between the start and the goal. Forward-backward
 share buffer data with relabeled rewards, though in practice they often share little (≈26:20–27:05), and
 MEDAL can add its demonstrations to the buffers (≈33:15). See [autonomous and single-life RL](autonomous-rl.md).
 
+## Prior data in the buffer, not the weights
+
+The default way to use prior data is to initialize the weights from a pre-trained model and the replay buffer
+from offline data (Lecture 18, slide 10). Lecture 18's example of that being too constraining is Ball et al.
+(2023), whose method "initialized the buffer but they actually didn't pre-train the weights" and did better
+than with pre-trained weights (≈8:36). On slide 10's AntMaze chart it climbs to about 97 normalized return
+within 300,000 steps, while IQL with fine-tuning creeps to about 74 by a million. One explanation is that a
+pre-trained output layer may have converged to something fairly deterministic and no longer explores well
+(≈9:22). See [Lecture 18](18-frontiers.md#leveraging-prior-data-and-knowledge).
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-2-replay-buffers):
@@ -206,3 +216,5 @@ MEDAL can add its demonstrations to the buffers (≈33:15). See [autonomous and 
   task, and off-policy meta-training.
 - [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#why-it-fails-drift-and-state-distribution-collapse):
   SAC without resets, and the collapse of the buffer's state distribution around the goal.
+- [Lecture 18 — Frontiers](18-frontiers.md#leveraging-prior-data-and-knowledge): prior data loaded into
+  the replay buffer without pre-trained weights, which did better on AntMaze.

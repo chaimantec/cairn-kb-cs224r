@@ -176,3 +176,7 @@ GRPO's objective. See [RL for LLM reasoning](llm-reasoning.md#online-rl-with-an-
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#rma-learning-to-walk-in-simulation): PPO
   training walking policies in simulation, RMA's with about a billion samples and the vision policy's first
   phase in Isaac Gym; see [sim-to-real transfer](sim-to-real.md).
+- [Lecture 18 — Frontiers](18-frontiers.md#scaling-up-longer-horizons-and-less-online-data): PPO's
+  value functions, trained at scale but used only to reduce gradient variance, and whether value functions
+  can become accurate enough to optimize policies; and GPT-4 after PPO post-training, which is less
+  calibrated.

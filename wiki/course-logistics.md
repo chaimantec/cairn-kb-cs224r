@@ -87,7 +87,9 @@ Wednesday, May 21, reminds students "Project milestone due Friday." and "Homewor
 "Based on course feedback", announces "Posting tips on Ed for default project!" (Lecture 15, slides 2 and
 46). Lecture 16, on Friday, May 23, reminds students "Project milestone due tonight" and "Homework 4 due next
 Friday", and names the next lecture as a guest lecture from Ashish Kumar (Tesla Optimus) (Lecture 16, slides 2
-and 46; the recording does not discuss them). The
+and 46; the recording does not discuss them). Lecture 18, the last lecture, on Friday, May 30, reminds
+students "Homework 4 due today", "Poster session next Wednesday" and "Final report due following Monday",
+with "no extensions or late days" (Lecture 18, slide 2; the recording does not mention them). The
 poster session was Wednesday, June 4, and the final report was due Monday, June 9 (site).
 
 ## Advice from the course
@@ -97,6 +99,10 @@ example in simple environments, but they still take time, and an ambitious proje
 more. The staff recommend not starting homework or project deliverables the night before the
 deadline (slide 13). The staff also expect to make mistakes and want feedback; a detailed
 feedback form went weekly to a subset of students (slide 14).
+
+The last lecture closes with Finn's advice on doing research, for the final project and beyond: choosing an
+important problem with a plan, front-loading the risk, getting things to work, deciding when to pivot,
+sharing the work, and leaning on mentors; see [Lecture 18](18-frontiers.md#preface-and-backstory).
 
 ## First steps (slides 15 and 45)
 
@@ -123,3 +129,6 @@ at 1:30 in Gates B1.
   the milestone and Homework 4 dates, and the next guest lecture.
 - [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md): Ashish Kumar's guest lecture, which
   carries no course reminders.
+- [Lecture 18 — Frontiers](18-frontiers.md#course-reminders-in-the-slides-only): the last lecture's
+  reminders (Homework 4 due, the poster session and the final report), and Finn's advice on how to do
+  research.

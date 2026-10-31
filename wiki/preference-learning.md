@@ -150,3 +150,6 @@ time (slide 31, ≈1:03:29). Compare learning from goals and demonstrations on
   Bradley-Terry reward model for language models, RLHF and DPO.
 - [RL from human feedback](rlhf.md) and [direct preference optimization](direct-preference-optimization.md):
   the two ways Lecture 9 optimizes a language model on preferences.
+- [Lecture 18 — Frontiers](18-frontiers.md#domains-without-rewards): evidence that people's preferences
+  favour confident answers that agree with them over true ones, as an open problem for preference
+  optimization.

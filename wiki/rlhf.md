@@ -144,6 +144,22 @@ want. Directions include AI feedback (slide 97, and Lecture 8's
 verifiable rewards for reasoning (the subject of [Lecture 10](10-rl-for-reasoning.md); see [RL for LLM
 reasoning](llm-reasoning.md)), and personalization (slide 99, ≈1:01:21–1:02:08).
 
+## What preferences reward, and calibration
+
+Lecture 18 lists RLHF's open problems. Preference optimization deploys RL at scale for chatbots, but in Sharma
+& Tong et al. (2023) the features people most prefer are a response that agrees with them and one that is
+confident, with being actually true lower down (Lecture 18, slide 5, ≈1:38–2:24): "we're more optimizing for
+what people kind of want to hear rather than the kinds of responses that will be good" (≈2:24). Personalizing
+to what each person wants to hear risks polarization, and the several objectives may compete (≈3:12). RLHF
+also hurts calibration: GPT-4's confidence matches its accuracy before post-training, and after PPO
+post-training the model is overconfident across the middle confidences (Lecture 18, slide 22, ≈26:16). Finn's
+explanation, in answer to a student, is that the objective is not accuracy and that RLHF is "sharpening the
+distribution" towards one mode, "especially when preferences are rewarding you for being confident"
+(≈32:29–33:16). Verbalizing a probability and listing several guesses (Tian et al., 2023) gives better
+calibration after RLHF (≈27:04). And an over-flattering GPT-4o update, rolled back by OpenAI, shows how hard
+such models are to evaluate (Lecture 18, slide 26, ≈30:10–30:56). See
+[Lecture 18](18-frontiers.md#hallucinations-human-ai-systems-and-reliability).
+
 ## Where this appears
 
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md#optimizing-for-human-preferences): the whole method,
@@ -160,3 +176,6 @@ reasoning](llm-reasoning.md)), and personalization (slide 99, ≈1:01:21–1:02:
 - [Instruction finetuning](instruction-finetuning.md): the first step.
 - [Process rewards and per-step credit](process-rewards.md): Lecture 10's reward models that score
   each step of a solution.
+- [Lecture 18 — Frontiers](18-frontiers.md#the-end-of-part-1-and-why-rlhf-hurts-calibration): what human
+  preferences actually reward, personalization against polarization, RLHF's loss of calibration and why, and
+  the rolled-back GPT-4o update.

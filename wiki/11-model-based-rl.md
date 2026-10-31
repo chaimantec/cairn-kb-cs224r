@@ -731,3 +731,5 @@ multiple tasks and goals (≈1:12:52). See [course logistics](course-logistics.m
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md): the previous lecture.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md): the next lecture, which opens by teaching model-based
   policy optimization and when to use model-based RL aloud.
+- [Lecture 18 — Frontiers](18-frontiers.md#world-models-and-video-generation-models): video generation
+  models as world models, and why they mispredict actions their data does not cover.
