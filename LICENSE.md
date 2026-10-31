@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–14 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–15 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -395,3 +395,28 @@ credited to David Silver's lecture notes.
 Not rendered from this deck: slide 5, whose only image is slide 4's Montezuma's Revenge frame; equation and
 text slides whose content is transcribed exactly (7, 8, 13, 18, 21, 23, 28); and the title, reminder,
 agenda and divider slides (1, 2, 3, 12, 14, 29, 33, 34).
+
+### Lecture 15 — Hierarchical RL and IL
+
+Deck: [15_cs224r_hierarchy_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/15_cs224r_hierarchy_2025.pdf),
+given by Chelsea Finn. Rendered: 20 slides, in `raw/images/15-hierarchical-rl/`. The deck's text layer has
+no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 13 | Photographs of a slice of focaccia and of a tropical beach, and emoji, no source printed. |
+| 23 | Stills from videos of Physical Intelligence's π0.5, NVIDIA's Gr00t N1 (with a Fourier GR-1 robot), Figure's Helix and Gemini Robotics, credited only by those captions. |
+| 24 | Architecture diagrams of the same four systems, credited only by the captions. |
+| 27, 28, 30, 31, 32, 33, 35 | Segmented demonstration frames, a photograph of the ALOHA workcell, the architecture diagram and video frames of Shi, Hu, Zhao, Sharma, Pertsch, Leo, Levine, Finn, "Yell At Your Robot: Improving On-the-Fly from Language Corrections", RSS 2024, which the slides cite (27 and 28 print no citation); slide 27's second and third rows of sandwich-making frames carry no separate source. |
+| 34 | Charts from Lucy Shi et al., "Hi Robot", ICML 2025, and from "Yell At Your Robot", RSS 2024, which the slide cites. |
+| 36 | A video frame of π0.5 cleaning a bedroom, credited "Pi team. π0.5. arXiv 2025". |
+| 38, 39 | A photograph of a robot workspace (38, no source printed) and video frames from Black, Nakamoto, Atreya, Walke, Finn, Kumar, Levine, "SuSIE: Subgoal Synthesis via Image Editing", ICLR 2024, which slide 39 cites. |
+| 41 | A figure from Chen, Belkhale, et al., "Training Strategies for Efficient Embodied Reasoning", 2025, credited "Visual from". |
+| 43 | Rendered maze scenes from Nachum, Gu, Lee, Levine, "Data-Efficient Hierarchical Reinforcement Learning", NeurIPS '18; the slide also cites Jiang, Gu, Murphy, Finn, "Language as an Abstraction for Hierarchical Deep Reinforcement Learning", NeurIPS '19, whose video the PDF shows as a black square. |
+| 44 | Six frames of a simulated walker from Eysenbach, Gupta, Ibarz, Levine, "Diversity is all you need: Learning diverse skills without a reward function", ICLR 2019, which the slide cites. |
+| 3, 7, 11 | No third-party content identified: the deck's own policy diagrams. |
+
+Not rendered from this deck: build steps whose content a rendered slide shows (8, 10, 29); slides whose small
+policy diagram repeats slide 7's or 13's beside text transcribed exactly (14, 16, 17, 18, 20, 21); slide 40's
+table, transcribed cell by cell; text slides (5, 6, 9); and the title, reminder, agenda and divider slides (1,
+2, 4, 12, 15, 19, 22, 25, 26, 37, 42, 45, 46).

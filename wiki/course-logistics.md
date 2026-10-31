@@ -81,7 +81,10 @@ statement, black-box meta-RL methods and the next lecture's exploration as "part
 and 38). See [meta-RL](meta-rl.md). Lecture 14, on Friday, May 16, reminds students "Homework 3 due
 **tonight**", "(and HW4 out today)" and "Project milestone due **next Friday**" (Lecture 14, slides 2 and
 34), and marks "Efficiently Meta-Learning Optimal Exploration" as "Part of HW 4" (slide 3): students
-implement its DREAM algorithm in Homework 4 (≈1:04:26). See [exploration](exploration.md). The
+implement its DREAM algorithm in Homework 4 (≈1:04:26). See [exploration](exploration.md). Lecture 15, on
+Wednesday, May 21, reminds students "Project milestone due Friday." and "Homework 4 due next Friday", and,
+"Based on course feedback", announces "Posting tips on Ed for default project!" (Lecture 15, slides 2 and
+46). The
 poster session was Wednesday, June 4, and the final report was due Monday, June 9 (site).
 
 ## Advice from the course
@@ -111,3 +114,5 @@ at 1:30 in Gates B1.
   reminders again, the evening office hours, and meta-RL in Homework 4.
 - [Lecture 14 — Exploration](14-exploration.md#not-in-the-recording-the-plan-and-reminders): Homework 3
   due, Homework 4 out, the milestone, and DREAM in Homework 4.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#not-in-the-recording-the-summary-and-reminders):
+  the milestone and Homework 4 dates, and tips on Ed for the default project.

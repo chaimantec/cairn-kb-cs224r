@@ -129,6 +129,10 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
   looks like") at each photograph or screenshot slide, and a transcriber's "may be a video frame" is checked
   the same way, then kept or removed. A slide that launches a live demo (a web game) holds none of it:
   describe the demo under that slide from the transcript, as for a video.
+- PyMuPDF is in the user site-packages, which `python3 -I` disables, and this Python has no `-P`: run PyMuPDF
+  scripts without `-I` from a directory holding no `.py` files, and tell the transcriber so.
+- When a chart prints no axis values, have the transcriber give its printed labels (gaps, percentages) and the
+  bars' relative heights, not fractions of the panel, which mean nothing.
 - Tell the transcriber to give colours in prose ("in blue"), never as inline tags (`[blue]…[/blue]`):
   tags inside a printed phrase break every verbatim quotation of it.
 - An animated chart exports as its first frame: a few points on empty axes. Say so in the slide
@@ -178,6 +182,7 @@ attribution goes in [`LICENSE.md`](LICENSE.md).
 | 12 Multi-Task RL | 9 of 29 pages | the model-based policy optimization roll-outs, the task-distribution examples, the multi-task RL loop, the BC-Z and OpenVLA architectures, the two π0.5 video frames, the hockey relabeling example, the HER task renderings and chart |
 | 13 Meta RL | 19 of 39 pages | the multi-task fan recap, the espresso photograph, the Braque and Cezanne paintings and the few-shot framing, the maze meta-train and meta-test panels, the task-distribution examples, the black-box chain and its unrolled algorithm, the three architectures, the SNAIL maze video frames, the test-time compute chart, the multi-task digression, the inferred-task chain, the PEARL charts, the hallway and kitchen photographs, the coupling diagram, the posterior-sampling and alternative-exploration panels |
 | 14 Exploration | 18 of 34 pages | the Breakout and Montezuma frames, the Mao cards, the tractability spectrum, the regret and bandit-strategy slides, the kitchen and reasoning examples, the coupling cycle, the alternative strategies' trajectory panel, the Idea 3.0 boxes, the DREAM diagrams and objective, the sample-complexity and navigation charts, the navigation and video frames, the Bounce and Breakout frames and the grading results |
+| 15 Hierarchical RL and IL | 20 of 46 pages | the recap policies, the two-level policy and the hierarchy/flat/chain-of-thought comparison, the think-pair-share, the four robot systems and their architectures, the segmented demonstrations, the ALOHA architecture and the language-DAgger diagram, the correction and long-horizon video frames, the hierarchy and DAgger charts, the image-subgoal architecture and SuSIE frames, the chain-of-thought figure, the hierarchical-RL mazes, the skill-discovery frames |
 
 ## Rebuilding
 

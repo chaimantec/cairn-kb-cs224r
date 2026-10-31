@@ -122,7 +122,10 @@ A recent example, $\pi_{0.5}$ (Pi Team et al., 2025), follows instructions from 
 backward" to "throw the napkin away" (slides 21–22, ≈53:11–54:44). One policy for all tasks usually
 beats separate policies, which train each set of weights on less data and cost memory and switching
 time, though fitting many tasks into one model can raise optimization challenges (≈54:44–55:30). For
-high-level, long-horizon tasks like "clean the kitchen", slide 22 points to the lecture on hierarchy.
+high-level, long-horizon tasks like "clean the kitchen", slide 22 points to the lecture on hierarchy,
+[Lecture 15](15-hierarchical-rl.md), where a task- or goal-conditioned policy like these becomes the low level
+of a two-level policy whose high level chooses the goals (see
+[hierarchical RL and imitation](hierarchical-rl.md)).
 
 ## Multi-task RL
 
@@ -168,3 +171,5 @@ representation that generalizes better than a one-hot index (slides 20–23). Se
   identifiers.
 - [Lecture 14 — Exploration](14-exploration.md#solution-30-explore-to-identify-the-task): DREAM's
   ID-conditioned execution policy, trained as multi-task RL.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md): a multi-task, goal-conditioned policy as the
+  low level of a hierarchy, and why it shares knowledge across similar subtasks.

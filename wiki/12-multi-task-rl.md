@@ -431,7 +431,7 @@ Questions on these examples:
 - **Is it hierarchical?** Slide 22 asks about high-level, long-horizon tasks like "clean the kitchen".
   The videos show one single policy; told to clean the kitchen, it could not do what it did in the
   video. Hierarchy is very useful for higher-level tasks, and a lecture on it comes in about two
-  weeks; but even a single flat policy does reasonable things for somewhat high-level tasks
+  weeks ([Lecture 15](15-hierarchical-rl.md)); but even a single flat policy does reasonable things for somewhat high-level tasks
   (≈55:30–56:15).
 - **What is a long-horizon task?** One that takes many time steps and many different actions. It
   brings challenges: deciding what to do to complete it when there are many ways to, which can create

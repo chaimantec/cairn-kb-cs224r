@@ -165,3 +165,6 @@ with the same number of tokens, and the same accuracy with 1.6x fewer tokens tha
   test-time compute as a meta-RL problem.
 - [Lecture 14 — Exploration](14-exploration.md#exploration-in-robotics-and-language-models): why RL for
   language models needs a strong base model to explore from, and reasoning as exploring at test time.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#do-we-really-need-multiple-policies): chain of
+  thought as a single policy that predicts a goal and then an action, the alternative to a two-level
+  hierarchy.

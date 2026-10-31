@@ -17,7 +17,7 @@ every build follows, and each lesson in general form, are in
 
 | Lecture | Runs |
 | --- | --- |
-| 1 Class Intro | [Run 1](#run-1--lecture-1-class-intro-and-scaffold) (2026-10-28) |
+| 1 Class Intro | [Run 1](#run-1--lecture-1-class-intro-and-scaffold) (2026-10-28); [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31, link to the hierarchy topic) |
 | 2 Imitation Learning | [Run 2](#run-2--lecture-2-imitation-learning) (2026-10-28) |
 | 3 Policy Gradients | [Run 3](#run-3--lecture-3-policy-gradients) (2026-10-28) |
 | 4 Actor-Critic Methods | [Run 4](#run-4--lecture-4-actor-critic-methods) (2026-10-28) |
@@ -28,9 +28,10 @@ every build follows, and each lesson in general form, are in
 | 9 RL for LLMs | [Run 9](#run-9--lecture-9-rl-for-llms) (2026-10-29) |
 | 10 RL for LLM Reasoning | [Run 10](#run-10--lecture-10-rl-for-llm-reasoning) (2026-10-29) |
 | 11 Model-Based RL | [Run 11](#run-11--lecture-11-model-based-rl) (2026-10-29); [Run 12](#run-12--lecture-12-multi-task-rl) (2026-10-30, pointers to Lecture 12's teaching of the deferred slides) |
-| 12 Multi-Task RL | [Run 12](#run-12--lecture-12-multi-task-rl) (2026-10-30) |
+| 12 Multi-Task RL | [Run 12](#run-12--lecture-12-multi-task-rl) (2026-10-30); [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31, forward link to Lecture 15) |
 | 13 Meta RL | [Run 13](#run-13--lecture-13-meta-rl) (2026-10-31); [Run 14](#run-14--lecture-14-exploration) (2026-10-31, forward links to Lecture 14) |
-| 14 Exploration | [Run 14](#run-14--lecture-14-exploration) (2026-10-31) |
+| 14 Exploration | [Run 14](#run-14--lecture-14-exploration) (2026-10-31); [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31, forward link to Lecture 15) |
+| 15 Hierarchical RL and IL | [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31) |
 
 ## Runs
 

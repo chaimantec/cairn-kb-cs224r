@@ -165,3 +165,5 @@ games for bugs made grading 44% faster and 6% more accurate (slides 30–32, ≈
 - [Meta-RL](meta-rl.md): exploration in meta-RL, including DREAM, as a topic.
 - [MDPs and notation](mdp-and-notation.md#notation-for-exploration): the notation for bandits, regret and
   DREAM.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#why-may-hierarchy-help): a high-level policy
+  that proposes goals structures exploration in a higher-level goal space.

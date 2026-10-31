@@ -133,6 +133,17 @@ passing in when the policy is stochastic, since its sampled actions are not othe
 (≈23:02). Such a policy can be read as a multi-task policy whose task identifier is its own experience
 (slide 23, ≈42:16). See [meta-RL](meta-rl.md).
 
+## Hierarchical policies
+
+For long-horizon tasks, Lecture 15 splits a policy in two: a high-level policy
+$\pi_{\text{HL}}(\cdot \mid \mathbf{o}_ t, \text{prompt})$ that predicts an intermediate goal $\mathbf{g}_ t$,
+and a low-level policy $\pi_{\text{LL}}(\cdot \mid \mathbf{o}_ t, \mathbf{g}_ t)$, a goal-conditioned policy
+of the kind above, that pursues the goal by predicting actions at a higher frequency (Lecture 15, slides 7
+and 8, ≈7:49–12:27). The goal can be language, an image or a goal state; trained end to end with a latent
+goal, the pair is just "a flat policy" with a particular architecture (slide 16). A single policy can
+instead predict the goal and then the action, as in chain of thought (slides 10–11, ≈16:20–17:53).
+See [hierarchical RL and imitation](hierarchical-rl.md).
+
 ## Initializing a policy for online RL
 
 An online RL algorithm starts by initializing the policy, as when training any neural network:
@@ -161,3 +172,5 @@ See [policy gradients](policy-gradients.md).
   conditioned on a task identifier, and the architectures that take one.
 - [Lecture 13 — Meta RL](13-meta-rl.md#black-box-meta-rl): sequence-model policies conditioned on their
   own experience, with memory across episodes.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#the-main-idea-high-level-and-low-level-policies):
+  high-level and low-level policies, and how a hierarchical policy is rolled out.

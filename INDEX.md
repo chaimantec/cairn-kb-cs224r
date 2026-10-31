@@ -9,7 +9,7 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–14 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–15 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
@@ -22,11 +22,13 @@ complementary to the more theoretical CS234.
 > RL: learning dynamics models, planning by backpropagation and by sampling, model predictive control,
 > and a dexterous-manipulation case study), Lecture 12 (model-based policy optimization and when to
 > use a model; multi-task imitation and RL, goal-conditioned RL and hindsight relabeling), Lecture 13
-> (meta-RL: the problem statement, black-box methods and the challenge of learning to explore) and
+> (meta-RL: the problem statement, black-box methods and the challenge of learning to explore),
 > Lecture 14 (exploration: regret and bandit strategies, exploration in large MDPs, and DREAM's decoupled
-> exploration and execution in meta-RL): their edited transcripts, their slide decks as text, 236 of
+> exploration and execution in meta-RL) and Lecture 15 (hierarchical imitation and RL: high-level and
+> low-level policies, goal representations, supervising each level, when to move on to the next goal, and
+> systems with language and image subgoals): their edited transcripts, their slide decks as text, 256 of
 > their slides as images, and the topic pages they start. **It cannot answer questions about the
-> technical content of Lectures 15–19** (hierarchical RL onward, and the Q-learning TA session). For
+> technical content of Lectures 16–19** (RL for robots onward, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
@@ -81,13 +83,17 @@ complementary to the more theoretical CS234.
   game": the drug-trial game the class plays runs on a website, described from the transcript on the
   lecture page. Finn's regret curves and the bottleneck and DREAM derivations are drawn where the
   recording does not show them, and slides 21–23 print the unit Gaussian as N(0, 1) where Finn says
-  the identity is meant. Slides 27, 30 and 31 hold frames of videos.
+  the identity is meant. Slides 27, 30 and 31 hold frames of videos. Lecture 15's recording covers slides
+3–44 and closes on slide 46's "next time"; slide 45's summary outline and the reminders on slides 2 and 46
+are only in the slide file. Finn draws the hierarchical policy, the roll-out procedure and a pasta-making
+example's sets of states on a board the recording does not show, so the lecture page describes them from
+the transcript. Slides 31–33, 35, 36 and 39 hold frames of videos, and slide 43's video is not in the PDF.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 and 14 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 and 15 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
 3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9, 27 of
-Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13 and 18 of Lecture 14 rendered as pictures, each shown under its
+Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13, 18 of Lecture 14 and 20 of Lecture 15 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -101,9 +107,10 @@ Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13 and 18 of Lectur
 [`raw/slides/11-model-based-rl.md`](raw/slides/11-model-based-rl.md),
 [`raw/slides/12-multi-task-rl.md`](raw/slides/12-multi-task-rl.md),
 [`raw/slides/13-meta-rl.md`](raw/slides/13-meta-rl.md),
-[`raw/slides/14-exploration.md`](raw/slides/14-exploration.md)) and, where a wiki page cites that
+[`raw/slides/14-exploration.md`](raw/slides/14-exploration.md),
+[`raw/slides/15-hierarchical-rl.md`](raw/slides/15-hierarchical-rl.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these fourteen has one: the slide file's header lists which do.
+these fifteen has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -299,6 +306,20 @@ these fourteen has one: the slide file's header lists which do.
   for exploration, its sample-complexity analysis against RL² and the 3D navigation results; the three
   ways to learn to explore compared; and exploring students' Bounce and Breakout programs to find bugs,
   with CS106A's 44% faster and 6% more accurate grading.
+- [Lecture 15 — Hierarchical RL and IL](wiki/15-hierarchical-rl.md): stringing subtasks together into
+  long-horizon tasks. Why long-horizon tasks are hard (many states, mistakes, getting stuck); the main idea,
+  a high-level policy that predicts intermediate goals and a low-level policy that pursues them at a higher
+  frequency, with the cheesecake decomposition and the roll-out procedure; why hierarchy may help
+  (supervision, knowledge sharing, structured exploration, compute) and the questions on it; hierarchy
+  against a flat policy and chain of thought; the goal-representation think-pair-share (cooking, biking,
+  legal briefs, vacations) and what makes a good representation; supervising each level, with the pasta
+  example, why end-to-end training gives a flat policy, gaps between skills, adapting the levels to each
+  other and LLMs as high-level policies; when to move on (when done, or after a fixed number of steps);
+  π0.5, Gr00t N1, Helix and Gemini Robotics; hierarchical imitation with language subgoals (segmented
+  demonstrations, DAgger on the high level in language space, the correction videos, a 34% gain over a flat
+  policy); image subgoals from an image-editing model (SuSIE, human videos) and the questions on them; a
+  chain-of-thought version and RL fine-tuning as an open problem; hierarchical RL with state and language
+  goals and hindsight relabeling; and discovering skills without supervision.
 
 ## Topic pages
 
@@ -319,13 +340,15 @@ these fourteen has one: the slide file's header lists which do.
   bar, goal-conditioned rewards, relabeled data), and for meta-RL (exploration and task policies,
   training sets of experience, inferred task variables), with Lecture 13's POMDP in which only the task is
   hidden, and for exploration (bandits, regret, UCB and posterior sampling, task identifiers, bottlenecked
-  task representations and exploration rewards, Lecture 14).
+  task representations and exploration rewards, Lecture 14), and for hierarchy (high-level and low-level
+  policies, goals, the re-query interval, Lecture 15).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
   policy with the epsilon-greedy and Boltzmann exploration policies built around it, and Lecture 11's
   planner as a "policy" in quotes, and Lecture 12's task-conditioned policies and their architectures,
-  and Lecture 13's sequence-model policies that learn in context, with memory across episodes.
+  and Lecture 13's sequence-model policies that learn in context, with memory across episodes, and Lecture
+  15's two-level hierarchical policies.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
@@ -375,7 +398,8 @@ these fourteen has one: the slide file's header lists which do.
   learning a reward instead, and instruction finetuning as the supervised stage of training a chat
   model (Lecture 9), and rejection finetuning, spurious steps and causal confusion (Lecture 10), and
   distilling a planner's actions into a policy (Lecture 11), and multi-task imitation learning with
-  stratified sampling (Lecture 12).
+  stratified sampling (Lecture 12), and hierarchical imitation learning with DAgger on a language-space
+  high level (Lecture 15).
 - [Expressive policy distributions](wiki/expressive-policy-distributions.md): why a policy needs
   more than a mean; categorical, Gaussian, Gaussian-mixture, discretized autoregressive and
   diffusion policies, what each outputs and how each is trained; why a bigger network does not
@@ -410,7 +434,7 @@ these fourteen has one: the slide file's header lists which do.
   explain why RL has so many algorithms, with pointers to Lectures 9 and 10's RL for language models,
   and Lecture 11's map of the families so far and its answer to when to use a model, and Lecture 12's
   model-based policy optimization, and Lecture 13's meta-RL, which inherits its sample efficiency from
-  its RL optimizer, and Lecture 14's exploration.
+  its RL optimizer, and Lecture 14's exploration, and Lecture 15's hierarchy.
 - [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
@@ -501,12 +525,14 @@ these fourteen has one: the slide file's header lists which do.
   feeding the task to a network (BC-Z, OpenVLA, prompts), one policy against many, and conditioning the
   policy and Q-function in multi-task RL (Lecture 12), and how meta-RL differs, with experience as the
   task identifier and no aggregated MDP (Lecture 13), and DREAM's ID-conditioned execution policy,
-  trained as multi-task RL (Lecture 14).
+  trained as multi-task RL (Lecture 14), and the goal-conditioned policy as the low level of a hierarchy
+  (Lecture 15).
 - [Hindsight relabeling](wiki/hindsight-relabeling.md): sharing data across tasks by storing experience
   again under another task's identifier and reward (hindsight experience replay, HER): the hockey
   example, the algorithm, which task to relabel for, the conditions (same state and action spaces and
   dynamics, a computable reward, an off-policy learner) and importance weights, and goal-conditioned
-  relabeling with the last state as goal, with the HER paper's results and Homework 4 (Lecture 12).
+  relabeling with the last state as goal, with the HER paper's results and Homework 4 (Lecture 12), and
+  relabeling a high level's goal actions, or in language space, in hierarchical RL (Lecture 15).
 - [Meta-RL](wiki/meta-rl.md): learning a new task from a few episodes by training across a task
   distribution (Lecture 13): the three kinds of transfer and few-shot learning, the key assumption, the
   formal setting with episodic and online variants, black-box meta-RL (the sequence-model policy, its
@@ -520,7 +546,14 @@ these fourteen has one: the slide file's header lists which do.
   exploration-exploitation trade-off; epsilon-greedy and Boltzmann exploration (Lecture 6); bandits,
   regret, UCB and posterior sampling, with the drug-trial game's comparison; why large MDPs explore from
   demonstrations, base models and shaped rewards instead of from scratch; and learning to explore in
-  meta-RL, from the coupling problem to DREAM (Lectures 13–14).
+  meta-RL, from the coupling problem to DREAM (Lectures 13–14); and, from Lecture 15, the structured
+  exploration a high-level policy gives in goal space.
+- [Hierarchical RL and imitation](wiki/hierarchical-rl.md): why long-horizon tasks are hard; the two-level
+  policy (a high-level policy predicting goals, a low-level policy pursuing them at a higher frequency) and
+  how it is rolled out; why hierarchy may help, and the chain-of-thought alternative; goal representations;
+  supervising each level and adapting the levels to each other; when to move on to the next goal; and the
+  example systems (language and image subgoals, DAgger in language space, hierarchical RL with relabeling,
+  skill discovery) (Lecture 15).
 
 ## Course pages
 
@@ -529,7 +562,8 @@ these fourteen has one: the slide file's header lists which do.
   tools policy, and the first week's steps, from Lecture 1's slides and the course site, with
   Lecture 11's, 12's and 13's Homework 3 and milestone dates, hindsight relabeling in Homework 4,
   Lecture 13's evening office hours and meta-RL in Homework 4, and Lecture 14's reminders (Homework 3
-  due, Homework 4 out) and DREAM in Homework 4.
+  due, Homework 4 out) and DREAM in Homework 4, and Lecture 15's reminders (milestone due Friday, Homework 4
+  due next Friday, tips on Ed for the default project).
 
 ## Raw materials
 

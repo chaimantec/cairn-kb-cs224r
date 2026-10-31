@@ -174,7 +174,7 @@ topic that addresses it. How does a robot learn to represent what is good or bad
 (reward learning). How can an agent generalize to many scenarios, at scale? (offline RL, which
 leverages large and diverse datasets; multi-task RL and meta-RL, which transfer from other tasks
 and goals; see [multi-task RL](multi-task-rl.md) and [meta-RL](meta-rl.md)). Can RL learn long-horizon tasks like cooking a meal or, Finn adds, solving a really
-hard math problem? (hierarchy and reasoning). Can robots practice fully autonomously?
+hard math problem? (hierarchy and reasoning; see [hierarchical RL and imitation](hierarchical-rl.md)). Can robots practice fully autonomously?
 (reset-free RL).
 
 That last question is where the videos above mislead. Real-world RL often looks like a robot

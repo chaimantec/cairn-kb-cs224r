@@ -249,6 +249,17 @@ way, with each prompt a task (≈50:51). Against multi-task RL, imitation cannot
 on the expert data, but it is simple and easy to scale to large datasets (≈52:26–53:11). See
 [multi-task RL](multi-task-rl.md).
 
+## Hierarchical imitation learning
+
+For long-horizon tasks, Lecture 15 trains a high-level and a low-level policy with imitation learning on
+long demonstrations segmented into subtasks, each segment labelled with a language command: the high-level
+policy learns to output the labels from images, and the low-level policy to output actions from a label and
+the observations (slides 27–28, ≈46:16–50:07). DAgger then applies to the high level in language space: with
+the low level frozen, a person's spoken corrections override the high level's commands, and the high level
+is fine-tuned on them, which adapts it to the low level's mistakes (slides 28–30, ≈50:07–51:39). With image
+subgoals instead, the high level is an image-editing model, which can also learn from unlabeled videos of
+humans (slides 38–40, ≈55:27–59:20). See [hierarchical RL and imitation](hierarchical-rl.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
@@ -273,3 +284,5 @@ on the expert data, but it is simple and easy to scale to large datasets (≈52:
   learning, stratified sampling, and conditioning architectures from BC-Z to OpenVLA.
 - [Lecture 14 — Exploration](14-exploration.md#exploration-in-robotics-and-language-models): why
   exploration in large MDPs starts from demonstrations, or base models pretrained on them.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#hierarchical-imitation-with-language-subgoals):
+  hierarchical imitation with language and image subgoals, and DAgger on the high level in language space.

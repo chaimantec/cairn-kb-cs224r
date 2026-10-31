@@ -97,6 +97,15 @@ and pick-and-place about 95% by epoch 60 (values read from the chart by eye).
 "You will implement hindsight relabeling in homework 4!" (slide 26). Homework 4's handout implements
 Hindsight Experience Replay on top of a goal-conditioned DQN; see [course logistics](course-logistics.md).
 
+## Relabeling in hierarchical RL
+
+Lecture 15 shows relabeling one level up (slide 43, ≈1:05:28–1:07:44). In hierarchical RL with
+state-reaching goals, the low level is a goal-conditioned policy with a goal-reaching reward, and the high
+level's actions are the goal states it outputs; one work relabels those high-level actions in hindsight,
+the goals the high level should have output in certain circumstances, and uses an off-policy algorithm.
+With language goals, a language-conditioned low level is trained with hindsight relabeling in language
+space instead of goal space. See [hierarchical RL and imitation](hierarchical-rl.md).
+
 ## Where this appears
 
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#hindsight-relabeling): the hockey example, the
@@ -106,3 +115,5 @@ Hindsight Experience Replay on top of a goal-conditioned DQN; see [course logist
   buffers that hold relabeled data.
 - [Offline and online algorithms](offline-and-online.md#relabeled-data-is-off-policy): why relabeling
   needs an off-policy method.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#hierarchical-reinforcement-learning):
+  hindsight relabeling of high-level actions, and in language space.

@@ -361,6 +361,19 @@ Lecture 14; see [exploration](exploration.md).
   $\mathrm{MI}(z; \tau)$ the mutual information between $z$ and an exploration episode $\tau$ (slides 20 and
   23). $|\mathcal{A}|$ is the number of arms in slide 24's analysis.
 
+## Notation for hierarchy
+
+Lecture 15; see [hierarchical RL and imitation](hierarchical-rl.md).
+
+- $\pi_{\text{HL}}$ is the high-level policy and $\pi_{\text{LL}}$ the low-level policy (Finn says "pi LL",
+  ≈5:30). $\mathbf{g}_ t$ is the intermediate goal the high level outputs at time $t$, also called a subgoal,
+  subtask, skill, option or high-level action; "prompt" is the long-horizon task given to the high level, as
+  in $\pi_{\text{HL}}(\cdot \mid \mathbf{o}_ t, \text{prompt})$ and
+  $\pi_{\text{LL}}(\cdot \mid \mathbf{o}_ t, \mathbf{g}_ t)$ (slides 7 and 8).
+- $n$ is the fixed number of timesteps after which the high-level policy is re-queried (slide 21).
+- $\mathbf{o}_ {t+k}$ is the future image an image-subgoal high-level policy is trained to generate, $k$
+  steps ahead (≈1:01:38).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -391,3 +404,5 @@ Lecture 14; see [exploration](exploration.md).
   of experience, inferred task variables, and meta-RL as a POMDP.
 - [Lecture 14 — Exploration](14-exploration.md): the notation for bandits, regret, task identifiers,
   bottlenecked task representations and exploration rewards.
+- [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md): the notation for high-level and low-level
+  policies, goals and re-query intervals.
