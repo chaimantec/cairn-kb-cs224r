@@ -125,6 +125,18 @@ relabeling in language space, for simple object-arranging tasks (slide 43, ≈1:
 then be sequenced, is an active research area that is hard to scale to very large state spaces (slide 44,
 ≈1:07:44–1:09:15).
 
+
+## A task proposer is not a high-level policy
+
+In Lecture 16 a vision-language model proposes tasks for a robot to practise without resets, and a student
+asks how that differs from hierarchy (Lecture 16, ≈49:31–51:06). The proposer resembles a high-level policy
+that says what to do in a circumstance, "But its purpose is actually quite different": it should suggest
+many different things the robot could practise, so that it learns many things, whereas a high-level policy
+picks the next subtask towards an outcome and is "much more goal-directed in terms of accomplishing some sort
+of long-term objective" (≈50:19). The work in question (SOAR) does then use a hierarchical method, turning
+each proposed task into a goal image with an image-editing diffusion model, as with the image subgoals above
+(≈51:06). See [autonomous and single-life RL](autonomous-rl.md).
+
 ## Where this appears
 
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md): the whole topic, with the think-pair-share,
@@ -139,3 +151,5 @@ then be sequenced, is an active research area that is hard to scale to very larg
 - [Policies](policies.md#hierarchical-policies): the two-level policy among the course's kinds of policy.
 - [MDPs and notation](mdp-and-notation.md#notation-for-hierarchy): the notation for the two levels.
 - [Lecture 1 — Class Intro](01-class-intro.md): long-horizon tasks and hierarchy among the course's open problems.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#which-task-to-practise): a task
+  proposer for practice compared with a high-level policy.

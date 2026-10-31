@@ -180,6 +180,21 @@ learned from fewer labeled data can still be the less accurate of the two (≈26
 relabeling has the same need: data relabeled for another task needs that task's reward, so its form
 must be known or learned (≈1:09:21). See [hindsight relabeling](hindsight-relabeling.md).
 
+
+## Rewards for learning without resets
+
+Learning without resets needs rewards that do not come from a person either. The real world does not provide
+rewards, so reward learning is often combined with reset-free algorithms; in Lecture 16's two real-robot
+examples the rewards came from models, a vision-language model's for forward-backward RL and learned ones for
+MEDAL, so that the whole process could run overnight (Lecture 16, slide 26, ≈40:08–40:55). MEDAL's backward
+reward is itself a learned classifier of the kind above (≈31:44). It is trained to distinguish states visited
+by the policy from states in a few demonstrations, with the policy's states as the negatives, and the backward
+policy tries "to trick this reward function into thinking that the states it's visiting are states from the
+expert and not from the policy", which returns the agent to states along the expert's path. In the same
+lecture, SOAR turns each task a vision-language model proposes into a goal image, because a reward for
+closeness to an image is easier to define than a reward for every task (≈51:06). See
+[autonomous and single-life RL](autonomous-rl.md).
+
 ## Where this appears
 
 - [Lecture 8 — Reward Learning](08-reward-learning.md): the whole topic, with the student questions.
@@ -196,3 +211,6 @@ must be known or learned (≈1:09:21). See [hindsight relabeling](hindsight-rela
   a planner needs beside its dynamics model.
 - [Lecture 12 — Multi-Task RL](12-multi-task-rl.md#model-based-policy-optimization-synthetic-data-from-a-model):
   rewards for synthetic data, and for relabeled data.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#medal-resetting-to-the-experts-states):
+  a discriminator reward for returning to the demonstrations' states, and rewards from models for learning on
+  real robots without people.

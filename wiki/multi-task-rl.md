@@ -159,6 +159,18 @@ policy then learns to collect the experience that identifies the task, through a
 representation that generalizes better than a one-hot index (slides 20–23). See
 [exploration](exploration.md#learning-to-explore-meta-rl).
 
+
+## Practising tasks without resets
+
+Lecture 16 uses a task-conditioned policy to learn without resets (Lecture 16, slides 28–29,
+≈41:42–45:35). With several tasks, the agent practises whichever task makes sense from the state it is in,
+so that one task resets another: a robot that drops the cup while putting it in the coffee machine practises
+picking it up, then tries again. The algorithm proposes a task $\mathbf{z}_ i$ from the current state
+$\mathbf{s}$, rolls out $\pi(\cdot \mid \mathbf{s}, \mathbf{z}_ i)$ for $H$ steps and updates with the
+task's reward $r(\mathbf{s}, \mathbf{a}, \mathbf{z})$; with an off-policy algorithm the data can update any
+of the tasks (≈44:47). Which task to propose is open: a predefined graph of tasks, or a vision-language model
+asked what can be done in the scene (≈48:42–49:31). See [autonomous and single-life RL](autonomous-rl.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): multi-task RL and meta-RL among the course's topics and
@@ -173,3 +185,5 @@ representation that generalizes better than a one-hot index (slides 20–23). Se
   ID-conditioned execution policy, trained as multi-task RL.
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md): a multi-task, goal-conditioned policy as the
   low level of a hierarchy, and why it shares knowledge across similar subtasks.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#practising-a-cycle-of-tasks):
+  practising a cycle of tasks, chosen by state, so that a multi-task policy learns without resets.

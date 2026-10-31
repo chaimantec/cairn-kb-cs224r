@@ -666,7 +666,7 @@ This remains an active research area, and challenging to scale up, especially in
 
 *Slide 44 — six poses of the half cheetah from skills discovered without any reward function; the slide does not say which skill each frame shows. [Deck](https://cs224r.stanford.edu/spring_2025/slides/15_cs224r_hierarchy_2025.pdf)*
 
-Next time is RL for robotics, specifically learning with autonomy, and a guest lecture from Ashish Kumar of the
+Next time is RL for robotics, specifically learning with autonomy ([Lecture 16](16-autonomous-rl.md)), and a guest lecture from Ashish Kumar of the
 Tesla Optimus team (slide 46, ≈1:09:15); slide 46 names its topic as "sim2real transfer".
 
 ## Not in the recording: the summary and reminders

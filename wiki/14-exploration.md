@@ -702,7 +702,8 @@ meta-learning optimal exploration, "Part of HW 4", and meta-exploration for CS e
 prints "Meta-Exploration in for CS Education"). Slide 34's reminders, the same as slide 2's: "Homework 3
 due **tonight**", "(and HW4 out today)" and "Project milestone due **next Friday**". It previews next
 week: "Can we make reinforcement learning more autonomous?" and "Can we do extra long-horizon tasks
-leveraging hierarchy?" ([Lecture 15](15-hierarchical-rl.md) takes up hierarchy.) See
+leveraging hierarchy?" ([Lecture 15](15-hierarchical-rl.md) takes up hierarchy, and
+[Lecture 16](16-autonomous-rl.md) autonomy.) See
 [course logistics](course-logistics.md).
 
 ## Summary

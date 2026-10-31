@@ -167,3 +167,5 @@ games for bugs made grading 44% faster and 6% more accurate (slides 30–32, ≈
   DREAM.
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#why-may-hierarchy-help): a high-level policy
   that proposes goals structures exploration in a higher-level goal space.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#why-it-fails-drift-and-state-distribution-collapse):
+  exploration without resets, which can drift far from the good states, and a baseline that seeks novel states.

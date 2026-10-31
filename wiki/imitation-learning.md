@@ -260,6 +260,18 @@ is fine-tuned on them, which adapts it to the low level's mistakes (slides 28–
 subgoals instead, the high level is an image-editing model, which can also learn from unlabeled videos of
 humans (slides 38–40, ≈55:27–59:20). See [hierarchical RL and imitation](hierarchical-rl.md).
 
+
+## Demonstrations for learning without resets
+
+Lecture 16 uses demonstrations to help RL learn without resets. MEDAL is given a small set of demonstrations
+and rewards its backward policy for returning the agent to the states they visit, so that the forward policy
+practises from along the expert's path; the demonstrations can also go into the replay buffers (Lecture 16,
+slides 22–23, ≈29:26–33:15). Demonstrations of both a task and its reverse can bootstrap forward-backward RL
+when neither policy is good yet (≈40:55). Asked how such expert trajectories are generated (≈37:52), Finn
+lists a teleoperation device on a real robot (a puppeteering setup, a VR controller, a 3D mouse or a
+keyboard), and in simulation a scripted policy designed by a person or a policy trained with RL ahead of
+time. See [autonomous and single-life RL](autonomous-rl.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#types-of-algorithms-and-why-there-are-so-many):
@@ -286,3 +298,5 @@ humans (slides 38–40, ≈55:27–59:20). See [hierarchical RL and imitation](h
   exploration in large MDPs starts from demonstrations, or base models pretrained on them.
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#hierarchical-imitation-with-language-subgoals):
   hierarchical imitation with language and image subgoals, and DAgger on the high level in language space.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#medal-resetting-to-the-experts-states):
+  demonstrations as the target of MEDAL's backward policy, and how they are collected.

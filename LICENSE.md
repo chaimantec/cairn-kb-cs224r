@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–15 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–16 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -420,3 +420,31 @@ Not rendered from this deck: build steps whose content a rendered slide shows (8
 policy diagram repeats slide 7's or 13's beside text transcribed exactly (14, 16, 17, 18, 20, 21); slide 40's
 table, transcribed cell by cell; text slides (5, 6, 9); and the title, reminder, agenda and divider slides (1,
 2, 4, 12, 15, 19, 22, 25, 26, 37, 42, 45, 46).
+
+### Lecture 16 — RL for Robots: Autonomous Learning
+
+Deck: [16_cs224r_autonomy_2025.pdf](https://cs224r.stanford.edu/spring_2025/slides/16_cs224r_autonomy_2025.pdf),
+given by Chelsea Finn; most slides are credited "Slide adapted from Archit Sharma". Rendered: 25 slides, in
+`raw/images/16-autonomous-rl/`. The deck's text layer has no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 6 | A screenshot of a Gym code snippet, credited "[Code snippet from https://gym.openai.com/]". |
+| 7 | An aerial photograph of a road and parking lot, and cartoon robot arms, mugs and bookshelves, no source printed. |
+| 8 | Video frames from Chebotar et al. 2017, "Combining model-based and model-free updates for trajectory-centric reinforcement learning"; Yahya et al. 2016, "Collective Robot Reinforcement Learning with Distributed Asynchronous Guided Policy Search"; and Sharma et al. 2023, "Self-Improving Robots: End-to-End Autonomous Visuomotor Reinforcement Learning", which the slide cites. |
+| 16 | A rendered fish scene and a learning-curve chart, no source printed. |
+| 24, 25 | Simulated task renders and charts from the EARL benchmark, Sharma, Xu, et al., "Autonomous Reinforcement Learning: Formalism and Benchmarking", ICLR 2022, which the slides cite with VaPRL, FBRL and R3L. |
+| 26 | Video frames of forward-backward RL and MEDAL on real robots, no source printed. |
+| 28 | Pictogram icons of a coffee machine, cups and a person, no source printed. |
+| 30 | A photograph and a diagram of four photographs from Gupta, Yu, Zhao, Kumar, Rovinsky, Xu, Devlin, Levine, "Reset-Free Reinforcement Learning via Multi-Task Learning", 2021, which the slide cites. |
+| 31 | Video frames from Smith, Kew, Peng, Ha, Tan, Levine, "Legged Robots that Keep on Learning", 2021, and Han, Levine, Abbeel, "Learning Compound Multi-Step Controllers under Unknown Dynamics", which the slide cites. |
+| 32 | A frame of a figure from Zhou, Atreya, Lee, Walke, Mees, Levine, "SOAR: Autonomous Improvement of Instruction Following Skills via Foundation Models", which the slide cites. |
+| 33 | A video frame captioned "DYNA-1 autonomous, un-cut 24 hours", credited "Source: x.com/JasonMa2020/status/1917255026751553629". |
+| 39 | A video frame of a hand unlocking a glass door, no source printed. |
+| 40, 42, 43 | Diagrams, renders and video frames from Chen, Sharma, Levine, Finn, "You Only Live Once: Single-Life Reinforcement Learning", NeurIPS '22, which the slides cite. |
+| 44 | Video frames from Kumar, Fu, Pathak, Malik, "RMA: Rapid Motor Adaptation for Legged Robots", RSS 2021, and Chen, Lessing, Tang, Chada, Smith, Levine, Finn, "Commonsense Reasoning for Legged Robot Adaptation with Vision-Language Models", ICRA 2025, which the slide cites. |
+| 5, 11, 12, 13, 17, 19, 22, 23 | No third-party content identified: the deck's own diagrams, adapted from Archit Sharma's slides; slide 23 cites Kakade and Langford, ICML 2002, for a result, not a figure. |
+
+Not rendered from this deck: build steps or repeats whose content a rendered slide shows (10, 18, 29, 37, 38,
+41); text slides (14, 20, 21, 27, 35, 36); the title, reminder, plan and summary slides (1, 2, 3, 4, 9, 15,
+34, 45); and slide 46, whose only picture is a portrait of the next guest lecturer.

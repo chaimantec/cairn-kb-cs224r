@@ -374,6 +374,23 @@ Lecture 15; see [hierarchical RL and imitation](hierarchical-rl.md).
 - $\mathbf{o}_ {t+k}$ is the future image an image-subgoal high-level policy is trained to generate, $k$
   steps ahead (≈1:01:38).
 
+
+## Notation for autonomous RL
+
+Lecture 16; see [autonomous and single-life RL](autonomous-rl.md).
+
+- $\rho_0$ is the initial state distribution, $\rho_g$ a region of goal states with high reward, and
+  $\rho^\ast$ the distribution of states the optimal policy visits between them (slides 5 and 17; Finn says
+  "rho star", ≈20:52). $H$ is the number of steps per episode, or per roll-out of a policy (slides 10
+  and 19).
+- $\pi_f$ and $\pi_b$ are the forward and backward policies, $r_f(\mathbf{s}, \mathbf{a})$ the task's reward
+  and $r_b(\mathbf{s}, \mathbf{a})$ the backward policy's: for reaching $\rho_0$ in forward-backward RL, or
+  learned to match the demonstrations' states in MEDAL (slides 19 and 22).
+- $\mathbf{z}_ i$ is a proposed task, $\pi(\cdot \mid \mathbf{s}, \mathbf{z})$ the task-conditioned policy
+  and $r(\mathbf{s}, \mathbf{a}, \mathbf{z})$ the reward for task $\mathbf{z}$ (slide 29).
+- $h$ is the agent's lifetime in continuing policy evaluation, whose average reward is taken in the limit as
+  $h \to \infty$ (slide 13); the slide writes that formula with plain $s_t, a_t$.
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -406,3 +423,5 @@ Lecture 15; see [hierarchical RL and imitation](hierarchical-rl.md).
   bottlenecked task representations and exploration rewards.
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md): the notation for high-level and low-level
   policies, goals and re-query intervals.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md): the notation for autonomous RL:
+  state distributions, forward and backward policies and rewards, proposed tasks, and the lifetime.

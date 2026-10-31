@@ -176,6 +176,17 @@ as in PEARL, which uses SAC, meta-trains much more data efficiently than on-poli
 to a new task at test time is equally fast either way (slides 19 and 26, ≈50:00–51:34). See
 [meta-RL](meta-rl.md).
 
+
+## Without resets
+
+Soft actor-critic is Lecture 16's baseline for learning without resets: on a simple fish task, the longer the
+episodes, and so the rarer the resets, the worse the learned policy (Lecture 16, slide 16, ≈17:00–18:32). One
+of the two reasons concerns the buffer itself. An agent that reaches the goal and stays there collects most
+of its data around the goal, so "your state distribution in your replay buffer might collapse" (≈21:38),
+leaving no data from the states between the start and the goal. Forward-backward RL's two policies could
+share buffer data with relabeled rewards, though in practice they often share little (≈26:20–27:05), and
+MEDAL can add its demonstrations to the buffers (≈33:15). See [autonomous and single-life RL](autonomous-rl.md).
+
 ## Where this appears
 
 - [Lecture 5 — Off-Policy Actor Critic](05-off-policy-actor-critic.md#version-2-replay-buffers):
@@ -193,3 +204,5 @@ to a new task at test time is equally fast either way (slides 19 and 26, ≈50:0
   per-task replay buffers, and buffers holding relabeled data.
 - [Lecture 13 — Meta RL](13-meta-rl.md#example-3-off-policy-meta-rl): buffers of whole trajectories per
   task, and off-policy meta-training.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#why-it-fails-drift-and-state-distribution-collapse):
+  SAC without resets, and the collapse of the buffer's state distribution around the goal.

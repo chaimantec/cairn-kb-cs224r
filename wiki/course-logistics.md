@@ -84,7 +84,9 @@ and 38). See [meta-RL](meta-rl.md). Lecture 14, on Friday, May 16, reminds stude
 implement its DREAM algorithm in Homework 4 (≈1:04:26). See [exploration](exploration.md). Lecture 15, on
 Wednesday, May 21, reminds students "Project milestone due Friday." and "Homework 4 due next Friday", and,
 "Based on course feedback", announces "Posting tips on Ed for default project!" (Lecture 15, slides 2 and
-46). The
+46). Lecture 16, on Friday, May 23, reminds students "Project milestone due tonight" and "Homework 4 due next
+Friday", and names the next lecture as a guest lecture from Ashish Kumar (Tesla Optimus) (Lecture 16, slides 2
+and 46; the recording does not discuss them). The
 poster session was Wednesday, June 4, and the final report was due Monday, June 9 (site).
 
 ## Advice from the course
@@ -116,3 +118,5 @@ at 1:30 in Gates B1.
   due, Homework 4 out, the milestone, and DREAM in Homework 4.
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#not-in-the-recording-the-summary-and-reminders):
   the milestone and Homework 4 dates, and tips on Ed for the default project.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#not-in-the-recording-the-reminders):
+  the milestone and Homework 4 dates, and the next guest lecture.

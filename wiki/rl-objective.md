@@ -141,6 +141,26 @@ the starting model reweighted by the exponentiated reward, with $Z(x)$ the norma
 slide 76, ≈38:46–40:18). That closed form is what [direct preference optimization](direct-preference-optimization.md)
 builds on; [RL from human feedback](rlhf.md) optimizes the objective with RL instead.
 
+
+## Evaluating an agent that never resets
+
+Lecture 16 asks how to evaluate an agent that learns without resets, and gives two answers (Lecture 16,
+slide 13, ≈12:20–14:40). **Deployed policy evaluation** asks how good the learned policy is: after learning,
+start it from the initial state distribution $p(\mathbf{s}_ 1)$ and take its expected discounted return,
+which is the objective above written with a discount $\gamma$:
+
+$$J(\pi) = \mathbb{E}_ {\mathbf{s}_ 1 \sim p(\mathbf{s}_ 1), \mathbf{a}_ t \sim \pi} \left[ \sum_ t \gamma^t r(\mathbf{s}_ t, \mathbf{a}_ t) \right]$$
+
+**Continuing policy evaluation**, or average-reward RL, instead averages the reward over the agent's lifetime
+$h$, as the lifetime grows:
+
+$$\lim_{h \to \infty} \mathbb{E} \left[ \frac{1}{h} \sum_{t=0}^{h} r(s_t, a_t) \right]$$
+
+Its expectation "isn't under a single policy. It's over the learning process itself" (≈14:40). The first
+matters when the point is a good policy to deploy, such as a robot chef; the second when what counts is the
+reward collected while learning, such as a Mars rover's (≈10:02–11:35). See
+[autonomous and single-life RL](autonomous-rl.md).
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md#the-goal-of-reinforcement-learning): the objective,
@@ -153,3 +173,5 @@ builds on; [RL from human feedback](rlhf.md) optimizes the objective with RL ins
   reward in the objective comes from, and how to learn it.
 - [Lecture 9 — RL for LLMs](09-rl-for-llms.md#the-kl-penalty): the expected reward of a language
   model's samples, its KL-penalized form, and that form's closed-form optimum.
+- [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#two-ways-to-evaluate-an-autonomous-agent):
+  deployed and continuing policy evaluation for an agent that learns without resets.

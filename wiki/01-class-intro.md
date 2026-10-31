@@ -175,7 +175,7 @@ topic that addresses it. How does a robot learn to represent what is good or bad
 leverages large and diverse datasets; multi-task RL and meta-RL, which transfer from other tasks
 and goals; see [multi-task RL](multi-task-rl.md) and [meta-RL](meta-rl.md)). Can RL learn long-horizon tasks like cooking a meal or, Finn adds, solving a really
 hard math problem? (hierarchy and reasoning; see [hierarchical RL and imitation](hierarchical-rl.md)). Can robots practice fully autonomously?
-(reset-free RL).
+(reset-free RL; see [autonomous and single-life RL](autonomous-rl.md) and [Lecture 16](16-autonomous-rl.md)).
 
 That last question is where the videos above mislead. Real-world RL often looks like a robot
 trying to hit a hockey puck into a goal, which after every attempt has to be reset, because the
