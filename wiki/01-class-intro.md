@@ -88,7 +88,7 @@ objective is not just accuracy and is not differentiable (≈7:47).
 
 **2. Widely used in performant AI systems** (≈7:47–10:50). Legged robots that walk and dance
 were trained with deep RL in simulation and then transferred to real robots in the real world
-(slide 19, ≈8:32).
+(slide 19, ≈8:32). [Lecture 17](17-sim-to-real.md) teaches how; see [sim-to-real transfer](sim-to-real.md).
 
 ![Slide 19 — Why study deep reinforcement learning? (Widely used for performant AI systems): legged robots](../raw/images/01-class-intro/slide-19.jpg)
 

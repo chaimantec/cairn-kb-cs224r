@@ -391,6 +391,26 @@ Lecture 16; see [autonomous and single-life RL](autonomous-rl.md).
 - $h$ is the agent's lifetime in continuing policy evaluation, whose average reward is taken in the limit as
   $h \to \infty$ (slide 13); the slide writes that formula with plain $s_t, a_t$.
 
+## Notation for sim-to-real
+
+Lecture 17's guest deck uses its own symbols, which this KB follows when describing it; see
+[sim-to-real transfer](sim-to-real.md).
+
+- $x(t)$ is the robot's current state and $a(t-1)$ its previous action, the base policy's inputs (slide 14;
+  "the current state and the previous action", ≈26:59); $a_t$ is the action it outputs. The course's own
+  names are $\mathbf{s}_ t$ and $\mathbf{a}_ {t-1}$.
+- $z_t$ is the **extrinsics**, a compressed vector of the simulator's physical parameters, produced by the
+  environmental factor encoder in training and estimated from $x(t-50), a(t-50)$ through $x(t-1), a(t-1)$ by
+  the adaptation module at deployment (slides 14 and 18).
+- In the vision policy, $\pi_1$ is the policy's MLP; $m_t$ are the **scandots**, terrain heights sampled
+  around the robot, and $e_t$ the environment parameters ("[friction, payload.....]"), which RNNs turn into
+  $\gamma_t$ and $z_t$; $d_t$ is the egocentric depth image, and $\hat{\gamma}_ t$ and $\hat{z}_ t$ are the
+  deployed policy's estimates, regressed onto $\gamma_t$ and $z_t$ (slides 47–52). The slides do not name
+  $o_t$.
+- The ten reward terms of slide 16 are known only by their printed names (Forward, Lateral Movement and
+  Rotation, Work, Ground Impact, and so on); the slide defines none of their symbols, and a superscript $t$
+  marks the time step.
+
 ## Where this appears
 
 - [Lecture 1 — Class Intro](01-class-intro.md): all of the definitions above, with the towel
@@ -425,3 +445,5 @@ Lecture 16; see [autonomous and single-life RL](autonomous-rl.md).
   policies, goals and re-query intervals.
 - [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md): the notation for autonomous RL:
   state distributions, forward and backward policies and rewards, proposed tasks, and the lifetime.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md): the guest deck's notation for states,
+  actions, extrinsics and the vision policy's inputs.

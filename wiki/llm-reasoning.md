@@ -168,3 +168,6 @@ with the same number of tokens, and the same accuracy with 1.6x fewer tokens tha
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#do-we-really-need-multiple-policies): chain of
   thought as a single policy that predicts a goal and then an action, the alternative to a two-level
   hierarchy.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#what-rl-has-achieved-and-what-enabled-it):
+  reasoning in LLMs, "Coherent over long horizon", as one of RL's successes, resting on DeepSeek-R1's
+  rule-based reward and on rolling models out at scale; and RL exploiting rewards that are not verifiable.

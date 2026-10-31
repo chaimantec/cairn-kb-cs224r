@@ -235,6 +235,20 @@ actions taken by planner)", makes acting a single forward pass through a network
 still come from short-horizon planning, so the policy is "still limited to short-horizon problems"
 (slide 25). See [planning with a learned model](planning-with-models.md).
 
+## Distilling a privileged teacher
+
+Lecture 17 uses DAgger to move a policy from simulation to a real robot. A teacher is trained with RL in
+simulation using information a real robot never has: the simulator's physical parameters, compressed into an
+extrinsics vector, or perfect terrain heights around its feet. A student that sees only what the robot can
+sense (its recent states and actions, or an egocentric depth image) is then trained to reproduce the teacher's
+internal estimate. The data comes from the student's own roll-outs, and the teacher labels every step: "roll
+out the student policy to generate the data distribution and then you use the teacher to supervise every
+single point of the student policy" (Lecture 17, ≈12:18). Initially the student's data is bad, since it has
+learned nothing meaningful; each round of supervised learning improves it, and it is rolled out again
+(≈27:45–28:32). As in [corrective data](#fixing-it-with-corrective-data), the labels arrive on the states the
+learner actually visits, but here the expert is a network in simulation, so labels are free. See
+[sim-to-real transfer](sim-to-real.md).
+
 ## Multi-task imitation learning
 
 With demonstrations $\mathcal{D}_ i$ for each of several tasks, one policy can imitate them all, told
@@ -300,3 +314,6 @@ time. See [autonomous and single-life RL](autonomous-rl.md).
   hierarchical imitation with language and image subgoals, and DAgger on the high level in language space.
 - [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#medal-resetting-to-the-experts-states):
   demonstrations as the target of MEDAL's backward policy, and how they are collected.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#training-the-adaptation-module): DAgger
+  distilling a privileged teacher in simulation into a student that can be deployed, and the contrast between
+  imitation's off-policy data and RL's on-policy data (slide 2).

@@ -9,7 +9,7 @@ exploration, hierarchical RL, and RL for robots. The emphasis is applied and on 
 to deep neural networks, with use-cases in robotics and language modeling; the site describes it as
 complementary to the more theoretical CS234.
 
-> **Coverage: Lectures 1–16 only, of the 19 recordings in the catalog** (18 lectures and one
+> **Coverage: Lectures 1–17 only, of the 19 recordings in the catalog** (18 lectures and one
 > Q-learning TA session). This knowledge base holds Lecture 1 (course intro and MDPs), Lecture 2
 > (imitation learning), Lecture 3 (policy gradients), Lecture 4 (actor-critic methods), Lecture 5
 > (off-policy actor-critic: PPO and soft actor-critic), Lecture 6 (Q-learning: DQN, double
@@ -26,11 +26,13 @@ complementary to the more theoretical CS234.
 > Lecture 14 (exploration: regret and bandit strategies, exploration in large MDPs, and DREAM's decoupled
 > exploration and execution in meta-RL), Lecture 15 (hierarchical imitation and RL: high-level and
 > low-level policies, goal representations, supervising each level, when to move on to the next goal, and
-> systems with language and image subgoals) and Lecture 16 (RL for robots without human resets: defining
+> systems with language and image subgoals), Lecture 16 (RL for robots without human resets: defining
 > and evaluating autonomous RL, forward-backward RL, MEDAL, practising cycles of tasks, and single-life
-> RL): their edited transcripts, their slide decks as text, 281 of their slides as images, and the topic
-> pages they start. **It cannot answer questions about the technical content of Lectures 17–19** (the
-> guest lecture on sim-to-real transfer, frontiers, and the Q-learning TA session). For
+> RL) and Lecture 17 (a guest lecture on sim-to-real transfer: Rapid Motor Adaptation, legged locomotion
+> from egocentric depth without maps, in-hand rotation and drones, and what is left for humanoids and
+> manipulation): their edited transcripts, their slide decks as text, 320 of their slides as images, and the
+> topic pages they start. **It cannot answer questions about the technical content of Lectures 18–19**
+> (frontiers, and the Q-learning TA session). For
 > those lectures, point the learner to the lecture's slide deck, listed with every other course
 > document in [`sources.md`](sources.md).
 > Build progress is in [TODO.md](TODO.md).
@@ -96,12 +98,17 @@ slide's number is its page number. Finn writes the evaluation formulas and the f
 task-cycle algorithms on the slides where the recording does not show it, so the lecture page describes them
 from the transcript and the slides that follow. Slides 8, 26, 30, 31, 33, 39 and 42–44 hold frames of videos
 (37–38 the first frame of 39's), and slide 32 most likely the first frame of one.
+Lecture 17, a guest lecture by Ashish Kumar, is about 50 minutes; its recording covers slides 2–78 and ends
+on slide 78's question, and seven student questions (inaudible; Kumar restates most of them) come between
+slides 41 and 42. Its deck prints a number only on slides 62–67, but every slide's number is its page
+number. Slides 5–11, 22–27, 30, 31, 33–36, 45, 58, 62, 67, 69, 70, 73 and 74 hold frames of videos, and
+most likely 55 and 56; what they showed comes from the transcript. Slide 46 is blank in the PDF.
 
 ### Images
 
-Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 and 16 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
+Lectures 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 and 17 have images: 16 slides of Lecture 1, 15 of Lecture 2, 11 of Lecture
 3, 21 of Lecture 4, 15 of Lecture 5, 12 of Lecture 6, 14 of Lecture 7, 18 of Lecture 8, 24 of Lecture 9, 27 of
-Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13, 18 of Lecture 14, 20 of Lecture 15 and 25 of Lecture 16 rendered as pictures, each shown under its
+Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13, 18 of Lecture 14, 20 of Lecture 15, 25 of Lecture 16 and 39 of Lecture 17 rendered as pictures, each shown under its
 `## Slide N` heading in the lecture's slide file ([`raw/slides/01-class-intro.md`](raw/slides/01-class-intro.md),
 [`raw/slides/02-imitation-learning.md`](raw/slides/02-imitation-learning.md),
 [`raw/slides/03-policy-gradients.md`](raw/slides/03-policy-gradients.md),
@@ -117,9 +124,10 @@ Lecture 10, 17 of Lecture 11, 9 of Lecture 12, 19 of Lecture 13, 18 of Lecture 1
 [`raw/slides/13-meta-rl.md`](raw/slides/13-meta-rl.md),
 [`raw/slides/14-exploration.md`](raw/slides/14-exploration.md),
 [`raw/slides/15-hierarchical-rl.md`](raw/slides/15-hierarchical-rl.md),
-[`raw/slides/16-autonomous-rl.md`](raw/slides/16-autonomous-rl.md)) and, where a wiki page cites that
+[`raw/slides/16-autonomous-rl.md`](raw/slides/16-autonomous-rl.md),
+[`raw/slides/17-sim-to-real.md`](raw/slides/17-sim-to-real.md)) and, where a wiki page cites that
 slide, in the passage that cites it. **No other lecture has images yet**, and not every slide of
-these sixteen has one: the slide file's header lists which do.
+these seventeen has one: the slide file's header lists which do.
 
 - Use an image path you have actually read in a file. Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does.
@@ -343,6 +351,20 @@ these sixteen has one: the slide file's header lists which do.
   from a high-level policy; repeatable tasks (napkin folding); single-life RL (the key-in-the-lock video, the
   three settings, the walker that gets stuck), guiding towards familiar states and adapting in skill space
   (RMA, a VLM-guided legged robot); and the questions on safety and common sense.
+- [Lecture 17 — Advancing Robot Intelligence with Reinforcement Learning](wiki/17-sim-to-real.md): a guest
+  lecture by Ashish Kumar on sim-to-real transfer. Imitation and RL that work (off-policy data and generalists
+  against on-policy data and specialists); what RL has achieved and its two ingredients, well-specified rewards
+  and scalable evaluation; simulation for robots; the real-world videos of one blind walking policy; Rapid
+  Motor Adaptation (the base policy and extrinsics trained with PPO, the ten-term reward function, the
+  adaptation module trained with DAgger from 50 steps of history, 10 Hz and 100 Hz at test time); the indoor
+  tests (oil, payloads, planks), switching adaptation off, the gait, torque and extrinsics plots, and the
+  comparison table against domain randomization, system identification and fine-tuning; seven student
+  questions (real-world improvement, training phase 2 directly, history and simulator exploits, the size of
+  the extrinsics, balancing rewards, the previous action, DAgger); vision without terrain maps (two phases,
+  scandots, egocentric depth, RNNs), emergent hip abduction and footstep planning on stairs, live demos and
+  the comparison with blind and map-based policies; in-hand rotation with contact detection, and drones of
+  different sizes; and what is left: humanoids at Tesla, why manipulation lags (simulation and rewards), the
+  bitter lesson, a general reward model, and exceeding human capability.
 
 ## Topic pages
 
@@ -365,14 +387,16 @@ these sixteen has one: the slide file's header lists which do.
   hidden, and for exploration (bandits, regret, UCB and posterior sampling, task identifiers, bottlenecked
   task representations and exploration rewards, Lecture 14), and for hierarchy (high-level and low-level
   policies, goals, the re-query interval, Lecture 15), and for autonomous RL (state distributions, forward
-  and backward policies and rewards, proposed tasks, the lifetime, Lecture 16).
+  and backward policies and rewards, proposed tasks, the lifetime, Lecture 16), and for sim-to-real (state,
+  previous action, extrinsics, scandots, depth and the vision policy's estimates, Lecture 17).
 - [Policies](wiki/policies.md): the policy $\pi_\theta(\mathbf{a} \mid \mathbf{s})$ as a neural
   network, the roll-out loop and the words "roll-out" and "episode", policies with memory for
   observations, the two reasons policies are stochastic, and Lecture 6's deterministic greedy
   policy with the epsilon-greedy and Boltzmann exploration policies built around it, and Lecture 11's
   planner as a "policy" in quotes, and Lecture 12's task-conditioned policies and their architectures,
   and Lecture 13's sequence-model policies that learn in context, with memory across episodes, and Lecture
-  15's two-level hierarchical policies.
+  15's two-level hierarchical policies, and Lecture 17's policy that adapts from its recent history of states
+  and actions, with when a longer history lets it exploit the simulator.
 - [The RL objective](wiki/rl-objective.md): from the sum of rewards to the expected sum, the two
   sources of randomness, the trajectory distribution $p_\theta(\tau)$, why the policy enters only
   through that distribution, the horizon $T$, the discount factor (and Lecture 4's reading of it as
@@ -399,7 +423,8 @@ these sixteen has one: the slide file's header lists which do.
   and example hyperparameters, and where PPO is the right trade (simulation, language models, and
   Lecture 6's advice), and its use for the RL step of RL from human feedback (Lectures 8 and 9),
   with the complexity of a PPO-based RLHF pipeline that motivates DPO; and GRPO, which Lecture 10
-  describes as PPO with rollout-based advantages.
+  describes as PPO with rollout-based advantages; and Lecture 17's walking policies trained with PPO in
+  simulation.
 - [Replay buffers and soft actor-critic](wiki/replay-buffers.md): reusing all past data, why a
   value function fitted on a buffer belongs to a mixture of past policies, the recursive Q-function
   and targets with actions from the current policy, action coverage, the fixed policy update, the
@@ -426,7 +451,8 @@ these sixteen has one: the slide file's header lists which do.
   distilling a planner's actions into a policy (Lecture 11), and multi-task imitation learning with
   stratified sampling (Lecture 12), and hierarchical imitation learning with DAgger on a language-space
   high level (Lecture 15), and demonstrations as the target of MEDAL's backward policy, with how they are
-  collected (Lecture 16).
+  collected (Lecture 16), and DAgger distilling a privileged teacher in simulation into a deployable student
+  (Lecture 17).
 - [Expressive policy distributions](wiki/expressive-policy-distributions.md): why a policy needs
   more than a mean; categorical, Gaussian, Gaussian-mixture, discretized autoregressive and
   diffusion policies, what each outputs and how each is trained; why a bigger network does not
@@ -441,7 +467,7 @@ these sixteen has one: the slide file's header lists which do.
   for reasoning, compared by data efficiency; and Lecture 11's map of every algorithm so far, and why
   planning with a model is off-policy; and Lecture 12's offline and online versions of model-based policy
   optimization, and why relabeled data is off-policy; and Lecture 13's off-policy against on-policy
-  meta-training.
+  meta-training; and Lecture 17's contrast between off-policy imitation and on-policy RL.
 - [Policy gradients](wiki/policy-gradients.md): the method as a whole, from the online loop and
   the derivation to REINFORCE, the reading as reward-weighted imitation, its three weaknesses
   (high variance, sensitivity to reward scale, need for dense rewards and large batches) and the
@@ -462,7 +488,7 @@ these sixteen has one: the slide file's header lists which do.
   and Lecture 11's map of the families so far and its answer to when to use a model, and Lecture 12's
   model-based policy optimization, and Lecture 13's meta-RL, which inherits its sample efficiency from
   its RL optimizer, and Lecture 14's exploration, and Lecture 15's hierarchy, and Lecture 16's learning
-  without resets.
+  without resets, and Lecture 17's sim-to-real transfer.
 - [Q-learning](wiki/q-learning.md): the value-based method as a whole: the greedy policy a
   Q-function defines and why it is at least as good, policy iteration and backups, the max target,
   convergence, epsilon-greedy and Boltzmann exploration, the full algorithm with a replay buffer,
@@ -500,7 +526,8 @@ these sixteen has one: the slide file's header lists which do.
   their own goals, Lecture 9's over-optimized reward models, and Lecture 10's process reward models
   and verifiers, and Lecture 11's reward model for planning, and Lecture 12's rewards for synthetic and
   relabeled data, and Lecture 16's discriminator reward for returning to demonstrated states and rewards from
-  models for learning without resets.
+  models for learning without resets, and Lecture 17's hand-designed ten-term locomotion reward, why
+  manipulation rewards do not scale, and the hope of a general reward model.
 - [Learning rewards from preferences](wiki/preference-learning.md): why comparing trajectories is
   easier than scoring them, the reward model and its sigmoid log-likelihood objective, partial
   roll-outs and the missing margin, the complete algorithm over ranked batches and in the loop of RL,
@@ -516,7 +543,8 @@ these sixteen has one: the slide file's header lists which do.
   the three-step pipeline, the Bradley-Terry reward model and why comparisons beat scores, reward-model
   accuracy, the RL step and why it is RL (discrete tokens), the KL penalty, what it achieves, and its
   costs and limitations (complexity, reward hacking and over-optimization, sycophancy, hallucination,
-  data) (Lectures 8 and 9).
+  data) (Lectures 8 and 9), and Lecture 17's use of over-long RLHF tuning as a warning for general reward
+  models.
 - [Direct preference optimization (DPO)](wiki/direct-preference-optimization.md): training a language
   model on preferences with a classification loss, its notation, the five-step derivation from the
   KL-constrained objective's closed-form optimum (with the partition function cancelling), what the
@@ -528,7 +556,8 @@ these sixteen has one: the slide file's header lists which do.
   working (spurious steps), the three uses of per-step advantages (filtering, per-step DPO, process
   advantage verifiers as a dense reward), online RL with an outcome reward and GRPO, and how
   thinking models such as DeepSeek-R1 are trained, with test-time scaling from the slides, and Lecture
-  13's view of optimizing test-time compute as a meta-RL problem.
+  13's view of optimizing test-time compute as a meta-RL problem, and Lecture 17's account of reasoning as one
+  of RL's successes, resting on a rule-based reward.
 - [Process rewards and per-step credit](wiki/process-rewards.md): the Q-value of a step of a
   solution under a rollout policy, estimated by rollouts from each prefix; the advantage as one
   Q-value minus the previous one, with a worked example; choosing the rollout policy (a different
@@ -570,7 +599,7 @@ these sixteen has one: the slide file's header lists which do.
   exploration: why end-to-end training is hard (the coupling problem) and the alternatives (posterior
   sampling, intrinsic rewards, task dynamics and reward prediction), and DREAM, which decouples
   exploration from execution with a bottlenecked task representation, with its theory and results
-  (Lecture 14).
+  (Lecture 14), and Lecture 17's RMA as adaptation in context.
 - [Exploration](wiki/exploration.md): why exploration is hard (Montezuma's Revenge, Mao) and the
   exploration-exploitation trade-off; epsilon-greedy and Boltzmann exploration (Lecture 6); bandits,
   regret, UCB and posterior sampling, with the drug-trial game's comparison; why large MDPs explore from
@@ -591,6 +620,12 @@ these sixteen has one: the slide file's header lists which do.
   forward-backward RL; MEDAL's learned reward for returning to the demonstrations' states and its EARL
   results; practising a cycle of tasks with a task-conditioned policy, and choosing tasks; and single-life RL,
   adapting within one episode by steering towards familiar states and adapting in skill space.
+- [Sim-to-real transfer](wiki/sim-to-real.md): training a robot's policy in simulation and deploying it on
+  the real robot (Lectures 1, 5, 16 and 17). Why simulation supplies RL's two ingredients; domain
+  randomization and telling the policy the parameters (extrinsics); inferring them online from history with an
+  adaptation module trained by DAgger, as in-context adaptation; the comparison with system identification and
+  real-world fine-tuning; vision without terrain maps, through a privileged teacher and a depth student; what a
+  policy can exploit in simulation; hands and drones; and why manipulation still falls short.
 
 ## Course pages
 
@@ -601,7 +636,7 @@ these sixteen has one: the slide file's header lists which do.
   Lecture 13's evening office hours and meta-RL in Homework 4, and Lecture 14's reminders (Homework 3
   due, Homework 4 out) and DREAM in Homework 4, and Lecture 15's reminders (milestone due Friday, Homework 4
   due next Friday, tips on Ed for the default project), and Lecture 16's reminders (milestone due that night,
-  Homework 4 due next Friday, a guest lecture from Ashish Kumar next).
+  Homework 4 due next Friday, a guest lecture from Ashish Kumar next), and Lecture 17, that guest lecture.
 
 ## Raw materials
 

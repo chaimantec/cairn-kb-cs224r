@@ -681,7 +681,8 @@ goal.
 *Slide 43 — the ideas: steer towards familiar states, adapt in a space of pre-trained skills, use a language model's reasoning; the video frame is the walker guided towards familiar states, which gets back up and reaches the goal. [Deck](https://cs224r.stanford.edu/spring_2025/slides/16_cs224r_autonomy_2025.pdf)*
 
 Slide 44 contrasts adapting at the two levels (≈1:00:25–1:02:00). **Adaptation in low-level action space**
-(Kumar, Fu, Pathak and Malik, *RMA: Rapid Motor Adaptation for Legged Robots*, RSS 2021): a system trained
+(Kumar, Fu, Pathak and Malik, *RMA: Rapid Motor Adaptation for Legged Robots*, RSS 2021, which Ashish Kumar
+presents in [Lecture 17](17-sim-to-real.md#rma-learning-to-walk-in-simulation)): a system trained
 to adapt from recent history, which handles small out-of-distribution changes such as different terrains.
 For situations more drastically different from anything seen before, **adaptation in high-level skill
 space** can help (Chen, Lessing, Tang, Chada, Smith, Levine and Finn, *Commonsense Reasoning for Legged
@@ -723,7 +724,7 @@ tasks, and single-life RL "to prevent drift".
 
 Slide 2 and slide 46 hold the reminders, which the recording does not discuss: "Project milestone due
 tonight" and "Homework 4 due next Friday". Slide 46 adds "Next time": a guest lecture from Ashish Kumar
-(Tesla Optimus). At the start of the lecture Finn describes it as a guest lecture "talking about sim-to-real
+(Tesla Optimus), [Lecture 17](17-sim-to-real.md). At the start of the lecture Finn describes it as a guest lecture "talking about sim-to-real
 transfer and humanoid robots" (≈0:05). See [course logistics](course-logistics.md).
 
 ## Summary

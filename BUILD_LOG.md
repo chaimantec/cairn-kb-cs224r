@@ -17,11 +17,11 @@ every build follows, and each lesson in general form, are in
 
 | Lecture | Runs |
 | --- | --- |
-| 1 Class Intro | [Run 1](#run-1--lecture-1-class-intro-and-scaffold) (2026-10-28); [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31, link to the hierarchy topic); [Run 16](#run-16--lecture-16-rl-for-robots-autonomous-learning) (2026-10-31, link to the autonomous-RL topic) |
+| 1 Class Intro | [Run 1](#run-1--lecture-1-class-intro-and-scaffold) (2026-10-28); [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31, link to the hierarchy topic); [Run 16](#run-16--lecture-16-rl-for-robots-autonomous-learning) (2026-10-31, link to the autonomous-RL topic); [Run 17](#run-17--lecture-17-advancing-robot-intelligence-guest-lecture) (2026-10-31, links to Lecture 17 and the sim-to-real topic) |
 | 2 Imitation Learning | [Run 2](#run-2--lecture-2-imitation-learning) (2026-10-28) |
 | 3 Policy Gradients | [Run 3](#run-3--lecture-3-policy-gradients) (2026-10-28) |
 | 4 Actor-Critic Methods | [Run 4](#run-4--lecture-4-actor-critic-methods) (2026-10-28) |
-| 5 Off-Policy Actor Critic | [Run 5](#run-5--lecture-5-off-policy-actor-critic) (2026-10-28) |
+| 5 Off-Policy Actor Critic | [Run 5](#run-5--lecture-5-off-policy-actor-critic) (2026-10-28); [Run 17](#run-17--lecture-17-advancing-robot-intelligence-guest-lecture) (2026-10-31, links to Lecture 17 and the sim-to-real topic) |
 | 6 Q-Learning | [Run 6](#run-6--lecture-6-q-learning) (2026-10-28) |
 | 7 Offline RL | [Run 7](#run-7--lecture-7-offline-rl) (2026-10-29) |
 | 8 Reward Learning | [Run 8](#run-8--lecture-8-reward-learning) (2026-10-29) |
@@ -32,7 +32,8 @@ every build follows, and each lesson in general form, are in
 | 13 Meta RL | [Run 13](#run-13--lecture-13-meta-rl) (2026-10-31); [Run 14](#run-14--lecture-14-exploration) (2026-10-31, forward links to Lecture 14) |
 | 14 Exploration | [Run 14](#run-14--lecture-14-exploration) (2026-10-31); [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31, forward link to Lecture 15); [Run 16](#run-16--lecture-16-rl-for-robots-autonomous-learning) (2026-10-31, forward link to Lecture 16) |
 | 15 Hierarchical RL and IL | [Run 15](#run-15--lecture-15-hierarchical-rl-and-il) (2026-10-31); [Run 16](#run-16--lecture-16-rl-for-robots-autonomous-learning) (2026-10-31, forward link to Lecture 16) |
-| 16 RL for Robots: Autonomous Learning | [Run 16](#run-16--lecture-16-rl-for-robots-autonomous-learning) (2026-10-31) |
+| 16 RL for Robots: Autonomous Learning | [Run 16](#run-16--lecture-16-rl-for-robots-autonomous-learning) (2026-10-31); [Run 17](#run-17--lecture-17-advancing-robot-intelligence-guest-lecture) (2026-10-31, forward links to Lecture 17) |
+| 17 Advancing Robot Intelligence | [Run 17](#run-17--lecture-17-advancing-robot-intelligence-guest-lecture) (2026-10-31) |
 
 ## Runs
 

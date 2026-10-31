@@ -181,6 +181,28 @@ relabeling has the same need: data relabeled for another task needs that task's 
 must be known or learned (≈1:09:21). See [hindsight relabeling](hindsight-relabeling.md).
 
 
+## Hand-designed rewards for locomotion, and a general reward model
+
+Lecture 17's guest lecture shows the other end of the spectrum: a reward written by hand, term by term. RMA's
+walking policy is trained in simulation on ten terms (Lecture 17, slide 16): forward progress (capped),
+penalties on lateral movement and rotation, on work and ground impact ("Energetics"), and on jerky torques,
+action magnitude, joint speed, body orientation, vertical acceleration and foot slip ("Stability + Minimize
+hardware damage"). "This is not very elegant, but we tried to be as principled as we can" (≈10:00). The last
+group injects a bias the simulator lacks, "because in simulation there's no concept of hardware damage"
+(≈10:45). Asked how the terms are balanced, Kumar answers "There's no good way to do it": add one term at a
+time, see what the current set lacks, and tune only the new term against the others, which avoids an
+exponential search but probably leaves the coefficients short of optimal (≈26:14–26:59).
+
+Locomotion is the easy case: a reward to track a velocity is the full task specification, and randomizing the
+terrain then gives a general policy. Manipulation is not: chopping a vegetable needs a reward that measures
+each slice, depending on the dish, and stretching dough needs another, "So it's a very manual process and even
+if you get one of this right, it will not scale to anything else" (slide 75, ≈44:42–45:29). Kumar speculates
+about a general reward model, a large model trained for general understanding (slide 77, ≈47:01–47:47): it
+could work, "but RL as we know has exploited weaknesses in the model if they exist", as with continued RLHF
+tuning and with non-verifiable rewards in the DeepSeek paper. The reason for optimism is the worst case:
+humans label the rewards, "and humans are very scalable because we have billions of them" (≈47:47). See
+[sim-to-real transfer](sim-to-real.md) and [RLHF](rlhf.md).
+
 ## Rewards for learning without resets
 
 Learning without resets needs rewards that do not come from a person either. The real world does not provide
@@ -214,3 +236,6 @@ closeness to an image is easier to define than a reward for every task (≈51:06
 - [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#medal-resetting-to-the-experts-states):
   a discriminator reward for returning to the demonstrations' states, and rewards from models for learning on
   real robots without people.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#the-reward-function): well-specified,
+  programmatic rewards as one of RL's two ingredients, RMA's ten-term locomotion reward, why manipulation
+  rewards do not scale, and a general reward model as a hope.

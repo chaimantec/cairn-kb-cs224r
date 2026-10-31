@@ -133,6 +133,24 @@ passing in when the policy is stochastic, since its sampled actions are not othe
 (≈23:02). Such a policy can be read as a multi-task policy whose task identifier is its own experience
 (slide 23, ≈42:16). See [meta-RL](meta-rl.md).
 
+## Adapting from a history of states and actions
+
+Lecture 17's RMA splits the job of memory differently. A base policy acts from the current state $x(t)$, the
+previous action $a(t-1)$ and a short vector $z_t$ describing the environment, the **extrinsics**; an
+**adaptation module** estimates $z_t$ from the last 50 states and actions, $x(t-50), a(t-50)$ through
+$x(t-1), a(t-1)$ (Lecture 17, slides 18–20, ≈11:32–13:03). The discrepancy between commanded and actual
+movement in that history tells it, for example, that a foot slipped, so the policy adapts within a fraction of
+a second, "closer to in context learning where you take the history of everything and then the learning
+happens in the feed forward pass itself" (≈20:05). The vision policy uses RNNs to integrate information over
+time, enough context for walking though they do not preserve very long-horizon information (≈33:59–34:45).
+
+Kumar's answers to students add two cautions (≈24:44–27:45). The previous action is worth keeping as an
+input, because "the state is lossy" and the last command lets the policy be smooth and correct itself. But
+most successful sim-to-real policies use only the current state, which makes them "state indexed" rather than
+indexed by state and time; a long history in simulation gives the policy room to exploit the simulator, the
+environment or the reward, as when a robot learns to brace only when it expects a periodic push. See
+[sim-to-real transfer](sim-to-real.md).
+
 ## Hierarchical policies
 
 For long-horizon tasks, Lecture 15 splits a policy in two: a high-level policy
@@ -174,3 +192,5 @@ See [policy gradients](policy-gradients.md).
   own experience, with memory across episodes.
 - [Lecture 15 — Hierarchical RL and IL](15-hierarchical-rl.md#the-main-idea-high-level-and-low-level-policies):
   high-level and low-level policies, and how a hierarchical policy is rolled out.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#deploying-it-extrinsics-from-the-observation-history):
+  a policy that adapts from its recent history of states and actions, and when a longer history hurts.

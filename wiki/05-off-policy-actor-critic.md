@@ -627,6 +627,8 @@ For manipulation, sim-to-real transfer is "a lot harder" in general. The example
 solving a Rubik's cube with a policy trained in simulation with PPO, which completes the cube after
 about 5 minutes of the roll-out (slide 27; OpenAI, *Solving Rubik's Cube with a Robot Hand*, 2019).
 The inset grid shows the same hand and cube rendered with varied colours and textures.
+[Lecture 17](17-sim-to-real.md) is a guest lecture on sim-to-real transfer for legs, hands and drones; see
+[sim-to-real transfer](sim-to-real.md).
 
 ![Slide 27 — PPO = Common algorithm of choice for stable, less efficient learning](../raw/images/05-off-policy-actor-critic/slide-27.jpg)
 

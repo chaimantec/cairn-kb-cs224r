@@ -232,5 +232,8 @@ optimize in practice, but "requires task identifier". DREAM is part of Homework 
   Compute requires Solving a Meta-RL Problem" among the readings on thinking models.
 - [Multi-task RL](multi-task-rl.md): the aggregated MDP and task identifiers meta-RL is contrasted with.
 - [Policies](policies.md): policies with memory, including memory across episodes.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#quantitative-comparison): RMA, which
+  adapts to the real world from its recent history in the forward pass, an approach Kumar calls "closer to in
+  context learning" than fine-tuning at test time (≈20:05); see [sim-to-real transfer](sim-to-real.md).
 - [Replay buffers and soft actor-critic](replay-buffers.md): the off-policy learner behind PEARL.
 - [Course logistics](course-logistics.md): Homework 4's meta-RL part.

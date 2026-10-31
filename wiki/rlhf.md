@@ -150,6 +150,9 @@ reasoning](llm-reasoning.md)), and personalization (slide 99, ≈1:01:21–1:02:
   the questions on it, and its limitations.
 - [Lecture 8 — Reward Learning](08-reward-learning.md#rewards-for-language-models): the omelette
   example and the three-stage pipeline.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#a-general-reward-model): RLHF tuned for
+  too long as the example of RL exploiting a learned reward, in an argument about general reward models for
+  robots.
 - [Learning rewards from preferences](preference-learning.md): the preference objective in general.
 - [Direct preference optimization](direct-preference-optimization.md): the same objective without the
   RL loop.

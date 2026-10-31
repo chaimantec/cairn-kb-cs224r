@@ -54,7 +54,7 @@ course staff (Stanford University, Spring 2025). They are published through the 
 <https://cs224r.stanford.edu/spring_2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-10-28, no licence, copyright or reuse statement appears on the course
-website, and none is printed on any page of the Lecture 1–16 decks. Publicly downloadable is not the
+website, and none is printed on any page of the Lecture 1–17 decks. Publicly downloadable is not the
 same as licensed. Absent an express grant the default applies: copyright arises automatically,
 and no reuse rights pass to anyone.
 
@@ -448,3 +448,27 @@ given by Chelsea Finn; most slides are credited "Slide adapted from Archit Sharm
 Not rendered from this deck: build steps or repeats whose content a rendered slide shows (10, 18, 29, 37, 38,
 41); text slides (14, 20, 21, 27, 35, 36); the title, reminder, plan and summary slides (1, 2, 3, 4, 9, 15,
 34, 45); and slide 46, whose only picture is a portrait of the next guest lecturer.
+
+### Lecture 17 — Advancing Robot Intelligence with Reinforcement Learning
+
+Deck: [17_rl_for_robotics.pdf](https://cs224r.stanford.edu/spring_2025/slides/17_rl_for_robotics.pdf),
+a guest lecture given by Ashish Kumar, whose name the title slide prints. Rendered: 39 slides, in
+`raw/images/17-sim-to-real/`. The deck's text layer has no licence notice.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 12, 14, 15, 17, 18, 19, 20, 23, 27, 28, 30, 31, 34, 36 | Diagrams, simulator renders, plots and frames of real-robot videos from Kumar, Fu, Pathak, Malik, "Rapid Motor Adaptation for Legged Robots" (RSS 2021), whose title page is slide 13; no further source printed. |
+| 40 | Three photographs (stepping stones over water, a quadruped on steps and on ledges), no source printed. |
+| 42 | Terrain-map figures and photographs from Miki et al., "Learning robust perceptive locomotion for quadrupedal robots in the wild", *Science Robotics* 2022, and Kim et al., "Vision aided dynamic exploration of unstructured terrain with a small-scale quadruped robot", ICRA 2020, which the slide cites. |
+| 43 | Noisy terrain-sample renderings from Miki et al. 2022, which the slide cites, and two photographs. |
+| 45, 47, 48, 49, 50, 51, 52, 53, 54, 56, 57, 58 | Diagrams, simulator renders, photographs and video frames from Agarwal, Kumar, Malik, Pathak, "Legged Locomotion in Challenging Terrains using Egocentric Vision" (CoRL 2022), whose title page is slide 41. Slide 54 shows photographs of the ANYmalC, Spot and A1 robots; slide 58 photographs of live demos at CoRL 2022 and CVPR 2022. |
+| 62, 63, 65, 66 | Video frames, photographs and charts from Qi et al., "In-Hand Object Rotation via Rapid Motor Adaptation", CoRL 2022, which slide 62 cites. |
+| 67 | Photographs of demos captioned "University of Bristol", "CoRL 2022" and "ICRA 2024"; the text layer holds a credit not visible on the page, "Credit: Max Yang, University of Bristol". |
+| 69, 70 | Frames of drone-flight videos, no source printed. |
+| 73, 74 | Frames of humanoid-robot videos, no source printed; slide 74's overlay reads "Optimus is learning many new tasks", and Kumar presents them as progress made at Tesla. |
+| 75 | First-person kitchen frames labelled "Epic Kitchens", no further source printed. |
+
+Not rendered from this deck: video frames whose content a rendered slide shows (5–11, 22, 24, 25, 26, 33, 35,
+55, 64); the equation list and tables reproduced in the slide file (16, 38, 60); the blank page 46; text
+slides (2, 3, 4, 21, 29, 32, 37, 39, 44, 59, 61, 68, 71, 72, 76, 77, 78, 79); and the title slides (1, 13,
+41).

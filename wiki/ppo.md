@@ -173,3 +173,6 @@ GRPO's objective. See [RL for LLM reasoning](llm-reasoning.md#online-rl-with-an-
   InstructGPT and ChatGPT, and the complexity of a PPO-based RLHF pipeline.
 - [Lecture 10 — RL for LLM Reasoning](10-rl-for-reasoning.md#online-rl-with-a-01-reward): GRPO
   as PPO with rollout-based advantages, and its use for DeepSeek-R1.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#rma-learning-to-walk-in-simulation): PPO
+  training walking policies in simulation, RMA's with about a billion samples and the vision policy's first
+  phase in Isaac Gym; see [sim-to-real transfer](sim-to-real.md).

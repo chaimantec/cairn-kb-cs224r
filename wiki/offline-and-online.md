@@ -85,6 +85,17 @@ except that pure offline RL can never collect more data (≈12:27–13:13). Runn
 such as soft actor-critic on the fixed data fails, because the critic is evaluated on actions the data
 does not contain and the Q-values become overestimated (slides 10–11). See [offline RL](offline-rl.md).
 
+## Imitation and RL that work: a guest's contrast
+
+Lecture 17 opens with a contrast in the same terms, drawn from the methods that have actually succeeded
+(Lecture 17, slide 2, ≈0:05–2:22). Successful imitation learning "Relies heavily on off-policy data",
+collected by humans or from sources unrelated to the policy being improved, cleaned so that it learns from
+good examples, and it gives generalists. Successful RL is on-policy: the policy being improved generates the
+data, "every data point that is generated during the policy rollout is fair game", it learns from bad data as
+well as good, and it gives specialists or specializes a pre-trained generalist. Kumar adds that neither is
+strictly better, and that the two are combined: imitation warm-starts the RL for Go and for language models
+(≈2:22). See [sim-to-real transfer](sim-to-real.md), where simulation makes on-policy data cheap.
+
 ## Preference optimization for language models
 
 Lecture 9 draws the same line for language models. [RL from human feedback](rlhf.md) samples from the
@@ -176,3 +187,5 @@ to a new task at test time is about as efficient either way (slide 26, ≈49:13�
   of model-based policy optimization, and why relabeled data needs an off-policy method.
 - [Lecture 13 — Meta RL](13-meta-rl.md#example-3-off-policy-meta-rl): off-policy against on-policy
   meta-training.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md#imitation-and-reinforcement-learning-that-work):
+  off-policy imitation against on-policy RL, as the guest lecture frames the methods that have worked.

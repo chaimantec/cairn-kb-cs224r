@@ -158,7 +158,8 @@ but then leaves it stuck on its back, unable to recover without interventions (s
 which got the walker back on its feet and to the goal (≈58:06, ≈1:00:25); adapt in a space of pre-trained
 skills rather than of actions, so the agent changes strategy rather than weights; and use pre-trained language
 models' common sense to reason about how to adapt. Slide 44 contrasts adaptation in low-level action space
-(RMA, which handles small changes such as new terrain) with adaptation in high-level skill space (a legged
+(RMA, which handles small changes such as new terrain; [Lecture 17](17-sim-to-real.md) teaches it, see
+[sim-to-real transfer](sim-to-real.md)) with adaptation in high-level skill space (a legged
 robot that tries strategies such as moving left or backwards, with a vision-language model's guidance,
 ≈1:01:13–1:02:00, ≈1:04:20).
 
@@ -185,4 +186,6 @@ robot companies are using today." (Lecture 16, ≈41:42)
   high-level policy.
 - [Imitation learning](imitation-learning.md#demonstrations-for-learning-without-resets): the demonstrations
   MEDAL matches.
+- [Sim-to-real transfer](sim-to-real.md) and [Lecture 17](17-sim-to-real.md): the second robotics lecture,
+  and RMA, the low-level adaptation slide 44 refers to.
 - [MDPs and notation](mdp-and-notation.md#notation-for-autonomous-rl): the symbols used here.

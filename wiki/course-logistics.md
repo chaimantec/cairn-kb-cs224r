@@ -16,7 +16,8 @@ authoritative. This page records a past offering.
   still to be announced. The site's schedule has Archit Sharma on RL for LLMs: preference
   optimization ([Lecture 9](09-rl-for-llms.md)), Aviral Kumar on RL for LLMs: reasoning
   ([Lecture 10](10-rl-for-reasoning.md)) and Ashish Kumar on
-  RL for robots: sim-to-real transfer (Lecture 17).
+  RL for robots: sim-to-real transfer ([Lecture 17](17-sim-to-real.md), whose title slide reads
+  "Advancing Robot Intelligence with Reinforcement Learning").
 - **Contact** (slide 5): the course website, <https://cs224r.stanford.edu/>; Ed and Gradescope,
   through Canvas; and the staff mailing list, cs224r-staff-spr2425@cs.stanford.edu, which reaches
   the student liaison, course manager, head CA and instructor. OAE letters go to the mailing list
@@ -120,3 +121,5 @@ at 1:30 in Gates B1.
   the milestone and Homework 4 dates, and tips on Ed for the default project.
 - [Lecture 16 — RL for Robots: Autonomous Learning](16-autonomous-rl.md#not-in-the-recording-the-reminders):
   the milestone and Homework 4 dates, and the next guest lecture.
+- [Lecture 17 — Advancing Robot Intelligence](17-sim-to-real.md): Ashish Kumar's guest lecture, which
+  carries no course reminders.
